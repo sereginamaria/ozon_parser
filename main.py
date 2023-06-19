@@ -27,7 +27,7 @@ try:
         json.dump(parsed_json, outfile, indent=4, sort_keys=False, ensure_ascii=False,separators=(',', ': '))
     # print(type(driver.page_source))
     # print(driver.page_source.json())
-
+    #####
 except Exception as ex:
     print(ex)
 finally:
