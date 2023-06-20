@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import itertools
 import glob
+from get_product_json import get_product_json
 
 def get_pages() -> list:
     return glob.glob('pages/*.html')
@@ -12,32 +13,18 @@ def get_html(page: str):
 def parse_data(html: str) -> str:
     soup = BeautifulSoup(html, 'html.parser')
 
-    links = []
+    product_links = set([a.get('href').split('?')[0] for a in list(itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'io6'})]))])
 
-    # print(soup)
-    products = soup.find('div')
-    products2 = set([a.get('href') for a in list(itertools.chain(*[div.find_all('a') for div in products.find_all(attrs={'class', 'io6'})]))])
-    # from pprint import pprint
-    # print(len(products2))
+    from pprint import pprint
+    # print(len(product_links))
     # print()
-    # pprint(products2)
-    products3 = products.find_all('a')
-    # products3 = products2.find_all('a')
-    # products3 = products.find_all('a')
-    # print('products')
-    # print(products3)
-    # with open('soup.txt', 'w', encoding='utf-8') as f:
-    #         f.write(soup)
-    # for product in products:
-    #     links.append(product.get('href').split('?')[0])
-    #
-    for product in products3:
-        links.append(product.get('href'))
+    # pprint(product_links)
+
 
     # print(links)
-    return set(links)
+    return product_links
 
-def main():
+def get_urls():
     pages = get_pages()
 
     all_links = []
@@ -52,12 +39,11 @@ def main():
     # print(all_links)
     # print(len(all_links))
 
-    # with open('product_links.txt', 'w', encoding='utf-8') as f:
-        # for link in all_links:
+    with open('product_links.txt', 'w', encoding='utf-8') as f:
+        for link in all_links:
             # print(link)
             # print(type(link))
-            # f.write(link)
+            get_product_json(link)
+            # f.write(link + '\n')
+        # print('1234')
 
-
-if __name__ == '__main__':
-    main()
