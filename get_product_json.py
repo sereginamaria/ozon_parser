@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 import json
 from pprint import pprint
+from connect import connect
 
 
 def get_product_json(url):
@@ -46,6 +47,30 @@ def get_product_json(url):
             else:
                 d2[k1][k2] = v2
     # pprint(d2)
+
+    product_images = ''
+    for object in d2['webGallery-1748356-default-1']['images']:
+        for k, v in object.items():
+            if k == 'src':
+                product_images += v + ', '
+
+    product_categories = ''
+    for object in d2['breadCrumbs-1619260-default-1']['breadcrumbs']:
+        for k, v in object.items():
+            product_categories += v + ', '
+
+    print(product_categories)
+    connect(
+        d2['webProductHeading-943795-default-1']['title'],
+        d2['webPrice-2136014-default-1']['originalPrice'],
+        d2['webPrice-2136014-default-1']['price'],
+        d2['webOzonAccountPrice-2136009-default-1']['priceTextRs'][0]['content'],
+        product_images,
+        d2['webCurrentSeller-735663-default-1']['name'],
+        d2['webCurrentSeller-735663-default-1']['link'],
+        d2['webCurrentSeller-735663-default-1']['mainAdvantages'][0]['content']['headRs'][0]['content'],
+        product_categories
+    )
 
     with open('product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
