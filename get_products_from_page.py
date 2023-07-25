@@ -28,9 +28,9 @@ class UseSelenium:
             driver = undetected_chromedriver.Chrome()
 
             driver.get(self.url)
-            # time.sleep(3)
+            time.sleep(3)
             driver.execute_script("window.scrollTo(5,4000);")
-            # time.sleep(5)
+            #time.sleep(5)
             html = driver.page_source
             with open('pages/' + self.filename, 'w', encoding='utf-8') as f:
                 f.write(html)

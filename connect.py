@@ -6,8 +6,8 @@ def connect(product_name, product_price_original, product_price, product_price_w
             product_sizes, product_all_articles
 
             ):
-    print('connect name')
-    print(product_name)
+    # print('connect name')
+    # print(product_name)
     # открываем файл с базой данных
     con = sl.connect('product_db.db')
 
@@ -47,7 +47,7 @@ def connect(product_name, product_price_original, product_price, product_price_w
                     """)
 
         # подготавливаем множественный запрос
-        sql = 'INSERT INTO products (product_name, product_price_original, ' \
+        sql = 'INSERT or IGNORE INTO products (product_name, product_price_original, ' \
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
@@ -75,10 +75,10 @@ def connect(product_name, product_price_original, product_price, product_price_w
             con.executemany(sql, data)
 
         # выводим содержимое таблицы на экран
-        with con:
-            data = con.execute("SELECT * FROM products")
-            for row in data:
-                print(row)
+        # with con:
+        #     data = con.execute("SELECT * FROM products")
+        #     for row in data:
+        #         print(row)
 
     # """ Connect to the PostgreSQL database server """
     # conn = None
