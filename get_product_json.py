@@ -104,7 +104,22 @@ def get_product_json(url):
     product_sizes = ''
     if 'webAspects-418189-default-1' in d2:
         if 'aspects' in d2['webAspects-418189-default-1']:
-            if len(d2['webAspects-418189-default-1']['aspects']) > 1:
+            if len(d2['webAspects-418189-default-1']['aspects']) == 3:
+                for object in d2['webAspects-418189-default-1']['aspects'][1]['variants']:
+                    for k, v in object.items():
+                        if k == 'sku':
+                            product_all_articles += str(v) + ', '
+                        if k == 'link' and v.split('?')[0] == url:
+                            for k1, v1 in object.items():
+                                if k1 == 'sku':
+                                    product_article = v1
+                                if k1 == 'data':
+                                    product_color = v1['searchableText']
+                for object in d2['webAspects-418189-default-1']['aspects'][2]['variants']:
+                    for k, v in object.items():
+                        if k == 'data':
+                            product_sizes += v['searchableText'] + ', '
+            if len(d2['webAspects-418189-default-1']['aspects']) == 2:
                 for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'sku':
@@ -119,7 +134,7 @@ def get_product_json(url):
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
-            else:
+            if len(d2['webAspects-418189-default-1']['aspects']) == 1:
                 for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'data':

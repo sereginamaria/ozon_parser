@@ -8,13 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Одежда для спорта"
+                "text": "Платья и сарафаны"
             },
             {
-                "text": "Спортивные платья и юбки"
-            },
-            {
-                "text": "MMAR"
+                "text": "SELEYA BETTER"
             }
         ]
     },
@@ -27,121 +24,190 @@
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#ffff00",
-                                "#287a41"
+                                "#924900",
+                                "#ffffff"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-1/wc140/6659608825.jpg",
-                            "originalPrice": "9 900 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-1/c100/wc140/6659608825.jpg",
-                            "price": "2 454 ₽",
-                            "searchableText": "жёлтый неон",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6591665808.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-0/c100/wc140/6591665808.jpg",
+                            "price": "1 086 ₽",
+                            "searchableText": "Белый",
                             "textRs": [
                                 {
-                                    "content": "жёлтый неон",
+                                    "content": "Белый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье MMAR Casual"
+                            "title": "Платье SELEYA BETTER"
                         },
-                        "link": "/product/plate-mmar-casual-993974935/?from_sku=993971669&oos_search=false&sh=dgn_ejEBuA",
-                        "sku": 993974935
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#ff9900",
-                                "#ffff00"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6659608836.jpg",
-                            "originalPrice": "9 900 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-c/c100/wc140/6659608836.jpg",
-                            "price": "2 777 ₽",
-                            "searchableText": "оранжевый неон",
-                            "textRs": [
-                                {
-                                    "content": "оранжевый неон",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье MMAR Casual"
-                        },
-                        "link": "/product/plate-mmar-casual-993970959/?from_sku=993971669&oos_search=false&sh=dgn_ejEBuA",
-                        "sku": 993970959
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#fd85b2",
-                                "#dc143c",
-                                "#f152db"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-7/wc140/6659608795.jpg",
-                            "originalPrice": "9 900 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-7/c100/wc140/6659608795.jpg",
-                            "price": "4 849 ₽",
-                            "searchableText": "розовый неон",
-                            "textRs": [
-                                {
-                                    "content": "розовый неон",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье MMAR Casual"
-                        },
-                        "link": "/product/plate-mmar-casual-993994824/?from_sku=993971669&oos_search=false&sh=dgn_ejEBuA",
-                        "sku": 993994824
+                        "link": "/product/plate-seleya-better-899218378/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899218378
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#000000",
-                                "#171717",
-                                "#474a51"
+                                "#924900",
+                                "#ffffff"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6659608805.jpg",
-                            "originalPrice": "9 900 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-h/c100/wc140/6659608805.jpg",
-                            "price": "2 454 ₽",
-                            "searchableText": "чёрный",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-e/c100/wc140/6653050790.jpg",
+                            "price": "1 046 ₽",
+                            "searchableText": "Насыщенный коричневый",
                             "textRs": [
                                 {
-                                    "content": "чёрный",
+                                    "content": "Насыщенный коричневый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье MMAR Casual"
+                            "title": "Платье SELEYA BETTER"
                         },
-                        "link": "/product/plate-mmar-casual-993971669/?from_sku=993971669&oos_search=false&sh=dgn_ejEBuA",
-                        "sku": 993971669
+                        "link": "/product/plate-seleya-better-899220649/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899220649
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#000000",
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6591669365.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6591669365.jpg",
+                            "price": "1 218 ₽",
+                            "searchableText": "Глубокий черный",
+                            "textRs": [
+                                {
+                                    "content": "Глубокий черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-899216760/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899216760
                     }
                 ]
             },
             {
                 "variants": [
                     {
-                        "active": true,
+                        "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6659608805.jpg",
-                            "originalPrice": "9 900 ₽",
-                            "price": "2 454 ₽",
-                            "searchableText": "40–44 RU / oversize ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 046 ₽",
+                            "searchableText": "42 RU / 42 ",
                             "textRs": [
                                 {
-                                    "content": "40–44 RU / oversize ",
+                                    "content": "42 RU / 42 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье MMAR Casual"
+                            "title": "Платье SELEYA BETTER"
                         },
-                        "link": "/product/plate-mmar-casual-993971669/?from_sku=993971669&oos_search=false&sh=dgn_ejEBuA",
-                        "sku": 993971669
+                        "link": "/product/plate-seleya-better-899218045/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899218045
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 046 ₽",
+                            "searchableText": "44 RU / 44 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / 44 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-899216857/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899216857
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 046 ₽",
+                            "searchableText": "46 RU / 46 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / 46 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-899220649/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899220649
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 046 ₽",
+                            "searchableText": "48 RU / 48 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / 48 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-899215618/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 899215618
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 336 ₽",
+                            "searchableText": "50 RU / 50 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / 50 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-1045130897/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 1045130897
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
+                            "originalPrice": "2 999 ₽",
+                            "price": "1 336 ₽",
+                            "searchableText": "52 RU / 52 ",
+                            "textRs": [
+                                {
+                                    "content": "52 RU / 52 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье SELEYA BETTER"
+                        },
+                        "link": "/product/plate-seleya-better-1045131189/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
+                        "sku": 1045131189
                     }
                 ]
             }
@@ -157,7 +223,8 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "text": "Демисезон"
+                                "link": "/category/platya-zhenskie-vsesezonnye/",
+                                "text": "На любой сезон"
                             }
                         ]
                     },
@@ -167,7 +234,13 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "text": "Футер двухнитка"
+                                "link": "/category/platya-i-sarafany-zhenskie-poliester/",
+                                "text": "Полиэстер"
+                            },
+                            {
+                                "key": "Material_1",
+                                "link": "/category/platya-i-sarafany-zhenskie-viskoza/",
+                                "text": "Вискоза"
                             }
                         ]
                     },
@@ -177,7 +250,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "72% хлопок, 20% полиэстер, 8% эластан"
+                                "text": "Полиэстер - 70%; вискоза 30%"
                             }
                         ]
                     },
@@ -192,29 +265,35 @@
                         ]
                     },
                     {
-                        "key": "SizeHeight",
-                        "name": "Рост",
+                        "key": "StyleApparel",
+                        "name": "Стиль",
                         "values": [
                             {
-                                "key": "SizeHeight_0",
-                                "text": "150-168"
+                                "key": "StyleApparel_0",
+                                "link": "/category/sarafany-zhenskie-vechernie/",
+                                "text": "Вечерний"
+                            },
+                            {
+                                "key": "StyleApparel_1",
+                                "link": "/category/zhenskie-kokteylnye-platya/",
+                                "text": "Коктейльный"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-mmar-casual-993971669/features/"
+        "link": "https://www.ozon.ru/product/plate-seleya-better-899220649/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 837532,
-        "link": "https://www.ozon.ru/seller/mmar-837532/",
+        "id": 1009721,
+        "link": "https://www.ozon.ru/seller/ip-yarovoy-s-v-1009721/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,9",
+                            "content": "4,8",
                             "type": "textBold"
                         },
                         {
@@ -247,37 +326,79 @@
                 }
             }
         ],
-        "name": "MMAR"
+        "name": "ИП Яровой С.В."
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6659608805.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6653050790.jpg"
             },
             {
-                "alt": "Платье MMAR Casual #1"
+                "alt": "Платье SELEYA BETTER #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-0/6659608788.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-1/6653050849.jpg"
             },
             {
-                "alt": "Платье MMAR Casual #2"
+                "alt": "Платье SELEYA BETTER #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-7/6659608867.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6653050782.jpg"
             },
             {
-                "alt": "Платье MMAR Casual #3"
+                "alt": "Платье SELEYA BETTER #3"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6653050821.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #4"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-v/6653050843.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #5"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-2/6653050850.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #6"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-z/6653050811.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6653050852.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #8"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-3/6653050851.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #9"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6653050780.jpg"
+            },
+            {
+                "alt": "Платье SELEYA BETTER #10"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "2 332 ₽",
+        "cardPrice": "994 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "9 900 ₽",
-        "price": "2 454 ₽"
+        "originalPrice": "2 999 ₽",
+        "price": "1 046 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье MMAR Casual"
+        "title": "Платье SELEYA BETTER"
     }
 }
