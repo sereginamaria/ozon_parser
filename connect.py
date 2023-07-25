@@ -1,11 +1,9 @@
-import psycopg2
-from database.config import config
-
 # подключаем SQLite
 import sqlite3 as sl
 
 def connect(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
-            product_brend_name, product_brend_link, product_rating, product_categories
+            product_brand_name, product_brand_link, product_rating, product_categories, product_color, product_article,
+            product_sizes, product_all_articles
 
             ):
     print('connect name')
@@ -37,20 +35,23 @@ def connect(product_name, product_price_original, product_price, product_price_w
                             product_price TEXT,
                             product_price_with_ozon_card TEXT,
                             product_images TEXT,
-                            product_brend_name TEXT,
-                            product_brend_link TEXT,
+                            product_brand_name TEXT,
+                            product_brand_link TEXT,
                             product_rating TEXT,
                             product_categories TEXT,
                             product_sizes TEXT,
-                            product_color TEXT
+                            product_color TEXT,
+                            product_article TEXT unique on conflict fail,
+                            product_all_articles TEXT
                         );
                     """)
 
         # подготавливаем множественный запрос
         sql = 'INSERT INTO products (product_name, product_price_original, ' \
               'product_price, product_price_with_ozon_card, product_images,' \
-              'product_brend_name, product_brend_link, product_rating, ' \
-              'product_categories) values(?,?,?,?,?,?,?,?,?)'
+              'product_brand_name, product_brand_link, product_rating, ' \
+              'product_categories, product_color, product_article, product_sizes,' \
+              'product_all_articles) values(?,?,?,?,?,?,?,?,?,?,?,?,?)'
         # указываем данные для запроса
         data = [
             (product_name,
@@ -58,10 +59,14 @@ def connect(product_name, product_price_original, product_price, product_price_w
              product_price,
              product_price_with_ozon_card,
              product_images,
-             product_brend_name,
-             product_brend_link,
+             product_brand_name,
+             product_brand_link,
              product_rating,
              product_categories,
+             product_color,
+             product_article,
+             product_sizes,
+             product_all_articles
              )
         ]
 

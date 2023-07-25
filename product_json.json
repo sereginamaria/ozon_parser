@@ -8,10 +8,13 @@
                 "text": "Женщинам"
             },
             {
+                "text": "Одежда для беременных"
+            },
+            {
                 "text": "Платья и сарафаны"
             },
             {
-                "text": "ТВОЕ"
+                "text": "аdatto a tutti"
             }
         ]
     },
@@ -23,47 +26,308 @@
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#ffff00"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/c360/6614297581.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-d/c100/wc140/6614297581.jpg",
-                            "price": "1 269 ₽",
-                            "searchableText": "ярко-желтый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "Новые",
                             "textRs": [
                                 {
-                                    "content": "ярко-желтый",
+                                    "content": "Новые",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923426779/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923426779
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559379/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559379
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-z/wc140/6605739107.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "price": "1 550 ₽",
+                            "searchableText": "Уцененные",
+                            "textRs": [
+                                {
+                                    "content": "Уцененные",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-1059819681/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 1059819681
+                    }
+                ]
+            },
+            {
+                "variants": [
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-s/c100/wc140/6656832748.jpg",
+                            "price": "1 245 ₽",
+                            "searchableText": "белый",
+                            "textRs": [
+                                {
+                                    "content": "белый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559379/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559379
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#0000ff"
+                                "#00b4ff",
+                                "#808000",
+                                "#7fff00",
+                                "#00541f"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/c360/6614297895.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-3/c100/wc140/6614297895.jpg",
-                            "price": "1 336 ₽",
-                            "searchableText": "синий",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6605739103.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-8/c100/wc140/6672168080.jpg",
+                            "price": "1 323 ₽",
+                            "searchableText": "черный",
                             "textRs": [
                                 {
-                                    "content": "синий",
+                                    "content": "черный",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923426605/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923426605
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-735264746/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 735264746
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#9b2d30",
+                                "#4a1517"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-a/wc140/6652859662.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-a/c100/wc140/6652859662.jpg",
+                            "price": "1 940 ₽",
+                            "searchableText": "бордовый;темно-бордовый",
+                            "textRs": [
+                                {
+                                    "content": "бордовый;темно-бордовый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-984459859/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 984459859
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#c3e6fe",
+                                "#007fff",
+                                "#4040ff",
+                                "#0000ff",
+                                "#00007e"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6605739103.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-8/c100/wc140/6672168080.jpg",
+                            "price": "1 323 ₽",
+                            "searchableText": "черный",
+                            "textRs": [
+                                {
+                                    "content": "черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-735264746/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 735264746
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#7e1e00",
+                                "#ff0000",
+                                "#dc143c"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6605739103.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-8/c100/wc140/6672168080.jpg",
+                            "price": "1 323 ₽",
+                            "searchableText": "черный",
+                            "textRs": [
+                                {
+                                    "content": "черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-735264746/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 735264746
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#924900"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6652383080.jpg",
+                            "originalPrice": "8 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-w/c100/wc140/6652383080.jpg",
+                            "price": "1 284 ₽",
+                            "searchableText": "коричневый",
+                            "textRs": [
+                                {
+                                    "content": "коричневый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-982475521/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 982475521
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#ff0000"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-p/wc140/6652859641.jpg",
+                            "originalPrice": "10 002 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-p/c100/wc140/6652859641.jpg",
+                            "price": "1 284 ₽",
+                            "searchableText": "красный",
+                            "textRs": [
+                                {
+                                    "content": "красный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-1016219712/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 1016219712
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#89eb89"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6659734528.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-s/c100/wc140/6659734528.jpg",
+                            "price": "1 245 ₽",
+                            "searchableText": "мятный",
+                            "textRs": [
+                                {
+                                    "content": "мятный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-994110419/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 994110419
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#00541f"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6656830061.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-5/c100/wc140/6656830061.jpg",
+                            "price": "1 245 ₽",
+                            "searchableText": "темно-зеленый",
+                            "textRs": [
+                                {
+                                    "content": "темно-зеленый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-984459905/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 984459905
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#00007e",
+                                "#0000ff",
+                                "#00b4ff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6652859844.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-c/c100/wc140/6652859844.jpg",
+                            "price": "1 284 ₽",
+                            "searchableText": "темно-синий;синий;бирюзовый",
+                            "textRs": [
+                                {
+                                    "content": "темно-синий;синий;бирюзовый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-984459873/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 984459873
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#6600cc"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-7/wc140/6652859695.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-7/c100/wc140/6652859695.jpg",
+                            "price": "1 284 ₽",
+                            "searchableText": "фиолетовый",
+                            "textRs": [
+                                {
+                                    "content": "фиолетовый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-984459933/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 984459933
                     },
                     {
                         "active": false,
@@ -72,10 +336,10 @@
                             "colors": [
                                 "#000000"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-j/c360/6614297767.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-j/c100/wc140/6614297767.jpg",
-                            "price": "1 336 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6605739103.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-8/c100/wc140/6672168080.jpg",
+                            "price": "1 323 ₽",
                             "searchableText": "черный",
                             "textRs": [
                                 {
@@ -83,10 +347,33 @@
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923426840/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923426840
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-735264746/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 735264746
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#171717"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6605739103.jpg",
+                            "originalPrice": "4 154 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-8/c100/wc140/6672168080.jpg",
+                            "price": "1 323 ₽",
+                            "searchableText": "черный",
+                            "textRs": [
+                                {
+                                    "content": "черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-735264746/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 735264746
                     }
                 ]
             },
@@ -96,86 +383,138 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/c360/6614297581.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "price": "1 269 ₽",
-                            "searchableText": "44 RU / S ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 284 ₽",
+                            "searchableText": "40 RU / 40 ",
                             "textRs": [
                                 {
-                                    "content": "44 RU / S ",
+                                    "content": "40 RU / 40 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923427107/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923427107
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-986092412/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 986092412
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "42 RU",
+                            "textRs": [
+                                {
+                                    "content": "42 RU",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559247/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559247
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 284 ₽",
+                            "searchableText": "44 RU",
+                            "textRs": [
+                                {
+                                    "content": "44 RU",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559435/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559435
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "46 RU",
+                            "textRs": [
+                                {
+                                    "content": "46 RU",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559389/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559389
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "48 RU",
+                            "textRs": [
+                                {
+                                    "content": "48 RU",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье аdatto a tutti Мода и стиль"
+                        },
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559288/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559288
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/c360/6614297581.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "price": "1 269 ₽",
-                            "searchableText": "46 RU / M ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "50 RU",
                             "textRs": [
                                 {
-                                    "content": "46 RU / M ",
+                                    "content": "50 RU",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923426779/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923426779
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-989559379/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 989559379
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/c360/6614297581.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "price": "1 269 ₽",
-                            "searchableText": "48 RU / L ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6656832748.jpg",
+                            "originalPrice": "10 000 ₽",
+                            "price": "1 245 ₽",
+                            "searchableText": "52 RU / 52 ",
                             "textRs": [
                                 {
-                                    "content": "48 RU / L ",
+                                    "content": "52 RU / 52 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Платье аdatto a tutti Мода и стиль"
                         },
-                        "link": "/product/plate-tvoe-923427318/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923427318
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/c360/6614297581.jpg",
-                            "originalPrice": "1 799 ₽",
-                            "price": "1 269 ₽",
-                            "searchableText": "50 RU / XL ",
-                            "textRs": [
-                                {
-                                    "content": "50 RU / XL ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ТВОЕ"
-                        },
-                        "link": "/product/plate-tvoe-923426752/?from_sku=923426779&oos_search=false&sh=gXqMSLB9jg",
-                        "sku": 923426752
+                        "link": "/product/plate-adatto-a-tutti-moda-i-stil-986092352/?from_sku=989559379&oos_search=false&sh=i5gTxyzL9w",
+                        "sku": 986092352
                     }
                 ]
             }
         ]
-    },
-    "webBrand-1033259-default-1": {
-        "id": 148454281,
-        "link": "/brand/tvoe-148454281/",
-        "name": "ТВОЕ"
     },
     "webCharacteristics-545750-default-1": {
         "characteristics": [
@@ -187,8 +526,8 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/zhenskie-platya-dlya-leta/",
-                                "text": "Лето"
+                                "link": "/category/platya-dlya-beremennyh-demisezonnye/",
+                                "text": "Демисезон"
                             }
                         ]
                     },
@@ -198,13 +537,8 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/platya-i-sarafany-zhenskie-poliester/",
-                                "text": "Полиэстер"
-                            },
-                            {
-                                "key": "Material_1",
-                                "link": "/category/platya-i-sarafany-zhenskie-elastan/",
-                                "text": "Эластан"
+                                "link": "/category/platya-dlya-beremennyh-viskoza/",
+                                "text": "Вискоза"
                             }
                         ]
                     },
@@ -214,7 +548,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "97% Полиэстер; 3% Эластан"
+                                "text": "вискоза 70%, полиэстер 30%"
                             }
                         ]
                     },
@@ -224,7 +558,7 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Весна-лето 2023"
+                                "text": "Базовая коллекция"
                             }
                         ]
                     },
@@ -234,19 +568,28 @@
                         "values": [
                             {
                                 "key": "StyleApparel_0",
-                                "link": "/category/platya-zhenskie-povsednevnye/",
-                                "text": "Повседневный"
+                                "text": "Вечерний"
+                            },
+                            {
+                                "key": "StyleApparel_1",
+                                "link": "/category/platya-dlya-beremennyh-delovye/",
+                                "text": "Деловой"
+                            },
+                            {
+                                "key": "StyleApparel_2",
+                                "link": "/category/platya-dlya-beremennyh-klassicheskie/",
+                                "text": "Классический"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-tvoe-923426779/features/"
+        "link": "https://www.ozon.ru/product/plate-adatto-a-tutti-moda-i-stil-989559379/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 22114,
-        "link": "https://www.ozon.ru/seller/ooo-tvoe-22114/",
+        "id": 636079,
+        "link": "https://www.ozon.ru/seller/adatto-a-tutti-636079/",
         "mainAdvantages": [
             {
                 "content": {
@@ -285,58 +628,67 @@
                 }
             }
         ],
-        "name": "ООО ТВОЕ"
+        "name": "Adatto a tutti"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6614297581.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-s/6656832748.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #1"
+                "alt": "Платье аdatto a tutti Мода и стиль #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6614297915.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-8/6656832764.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #2"
+                "alt": "Платье аdatto a tutti Мода и стиль #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-o/6614297736.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-k/6656832740.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #3"
+                "alt": "Платье аdatto a tutti Мода и стиль #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6614298016.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-u/6656832750.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #4"
+                "alt": "Платье аdatto a tutti Мода и стиль #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-u/6614297598.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6656832770.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #5"
+                "alt": "Платье аdatto a tutti Мода и стиль #5"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6656832749.jpg"
+            },
+            {
+                "alt": "Платье аdatto a tutti Мода и стиль #6"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-y/6656832754.jpg"
+            },
+            {
+                "alt": "Платье аdatto a tutti Мода и стиль #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6656832736.jpg"
+            },
+            {
+                "alt": "Платье аdatto a tutti Мода и стиль #8"
             }
         ]
     },
-    "webOzonAccountPrice-2136009-default-1": {
+    "webPrice-2111817-default-1": {
+        "cardPrice": "1 184 ₽",
         "link": "/modal/withoutOzonAccount",
-        "priceTextRs": [
-            {
-                "content": "1 203 ₽"
-            },
-            {
-                "content": " при оплате Ozon Картой"
-            }
-        ]
-    },
-    "webPrice-2136014-default-1": {
-        "originalPrice": "1 799 ₽",
-        "price": "1 269 ₽"
+        "originalPrice": "10 000 ₽",
+        "price": "1 245 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье ТВОЕ"
+        "title": "Платье аdatto a tutti Мода и стиль"
     }
 }

@@ -7,6 +7,7 @@ from connect import connect
 
 
 def get_product_json(url):
+    global product_name, product_price_original, product_price, product_article
     driver = undetected_chromedriver.Chrome()
     driver.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
     # time.sleep(1)
@@ -15,15 +16,15 @@ def get_product_json(url):
     parsed_json = json.loads(content)
     parsed_data_json = parsed_json["widgetStates"]
 
+    # pprint(parsed_data_json)
     keys_to_save1 = ['webCharacteristics-545750-default-1', 'webBrand-1033259-default-1',
                          'webAspects-418189-default-1',
-                         'breadCrumbs-1619260-default-1',
-                         'webOzonAccountPrice-2136009-default-1', 'webGallery-1748356-default-1',
-                         'webCurrentSeller-735663-default-1', 'webPrice-2136014-default-1',
+                         'breadCrumbs-1619260-default-1', 'webGallery-1748356-default-1',
+                         'webCurrentSeller-735663-default-1', 'webPrice-2111817-default-1',
                          'webProductHeading-943795-default-1']
 
     keys_to_save2 = ['breadcrumbs', 'aspects', 'id', 'name', 'link', 'characteristics', 'mainAdvantages', 'images',
-                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'title']
+                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'cardPrice', 'title']
 
     keys_to_save3 = ['text', 'priceTextRs', 'content', 'description', 'name', 'alt', 'src', 'mainAdvantages', 'short',
                      'variants']
@@ -46,30 +47,96 @@ def get_product_json(url):
 
             else:
                 d2[k1][k2] = v2
+    # pprint(d2['webProductHeading-943795-default-1']['title'])
     # pprint(d2)
 
+    product_name = ''
+    product_price_original = ''
+    product_price = ''
+    product_price_with_ozon_card = ''
+
+    if 'webProductHeading-943795-default-1' in d2:
+        if 'title' in d2['webProductHeading-943795-default-1']:
+            product_name = d2['webProductHeading-943795-default-1']['title']
+
+    if 'webPrice-2111817-default-1' in d2:
+        if 'originalPrice' in d2['webPrice-2111817-default-1']:
+            product_price_original = d2['webPrice-2111817-default-1']['originalPrice']
+        if 'price' in d2['webPrice-2111817-default-1']:
+            product_price = d2['webPrice-2111817-default-1']['price']
+        if 'cardPrice' in d2['webPrice-2111817-default-1']:
+            product_price_with_ozon_card = d2['webPrice-2111817-default-1']['cardPrice']
+
+
     product_images = ''
-    for object in d2['webGallery-1748356-default-1']['images']:
-        for k, v in object.items():
-            if k == 'src':
-                product_images += v + ', '
+    if 'webGallery-1748356-default-1' in d2:
+        if 'images' in d2['webGallery-1748356-default-1']:
+            for object in d2['webGallery-1748356-default-1']['images']:
+                for k, v in object.items():
+                    if k == 'src':
+                        product_images += v + ', '
+
+    product_brand_name = ''
+    product_brand_link = ''
+    if 'webCurrentSeller-735663-default-1' in d2:
+        if 'name' in d2['webCurrentSeller-735663-default-1']:
+            product_brand_name = d2['webCurrentSeller-735663-default-1']['name']
+
+    if 'webCurrentSeller-735663-default-1' in d2:
+        if 'link' in d2['webCurrentSeller-735663-default-1']:
+            product_brand_link = d2['webCurrentSeller-735663-default-1']['link']
+
+    product_rating = ''
+    if 'webCurrentSeller-735663-default-1' in d2:
+        if 'mainAdvantages' in d2['webCurrentSeller-735663-default-1']:
+            product_rating = d2['webCurrentSeller-735663-default-1']['mainAdvantages'][0]['content']['headRs'][0]['content']
 
     product_categories = ''
-    for object in d2['breadCrumbs-1619260-default-1']['breadcrumbs']:
-        for k, v in object.items():
-            product_categories += v + ', '
+    if 'breadCrumbs-1619260-default-1' in d2:
+        if 'breadcrumbs' in d2['breadCrumbs-1619260-default-1']:
+            for object in d2['breadCrumbs-1619260-default-1']['breadcrumbs']:
+                for k, v in object.items():
+                    product_categories += v + ', '
 
-    print(product_categories)
+    product_article = ''
+    product_all_articles = ''
+    product_color = ''
+    if 'webAspects-418189-default-1' in d2:
+        if 'aspects' in d2['webAspects-418189-default-1']:
+            for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
+                for k, v in object.items():
+                    if k == 'sku':
+                        product_all_articles += str(v) + ', '
+                    if k == 'link' and v.split('?')[0] == url:
+                        for k1, v1 in object.items():
+                            if k1 == 'sku':
+                                product_article = v1
+                            if k1 == 'data':
+                                product_color = v1['searchableText']
+
+    product_sizes = ''
+    if 'webAspects-418189-default-1' in d2:
+        if 'aspects' in d2['webAspects-418189-default-1']:
+            for object in d2['webAspects-418189-default-1']['aspects'][1]['variants']:
+                for k, v in object.items():
+                    if k == 'data':
+                        product_sizes += v['searchableText'] + ', '
+
+    # print(d2['webPrice-2136014-default-1']['originalPrice'])
     connect(
-        d2['webProductHeading-943795-default-1']['title'],
-        d2['webPrice-2136014-default-1']['originalPrice'],
-        d2['webPrice-2136014-default-1']['price'],
-        d2['webOzonAccountPrice-2136009-default-1']['priceTextRs'][0]['content'],
+        product_name,
+        product_price_original,
+        product_price,
+        product_price_with_ozon_card,
         product_images,
-        d2['webCurrentSeller-735663-default-1']['name'],
-        d2['webCurrentSeller-735663-default-1']['link'],
-        d2['webCurrentSeller-735663-default-1']['mainAdvantages'][0]['content']['headRs'][0]['content'],
-        product_categories
+        product_brand_name,
+        product_brand_link,
+        product_rating,
+        product_categories,
+        product_color,
+        product_article,
+        product_sizes,
+        product_all_articles
     )
 
     with open('product_json.json', 'w', encoding="utf-8") as outfile:

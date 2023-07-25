@@ -3,10 +3,10 @@ from get_products_from_page import get_products_from_page
 
 def main():
     #Получить json продукта по ссылке на продукт
-    get_product_json("/product/plate-tvoe-923426779/")
+    # get_product_json("/product/plate-tvoe-923426779/")
 
     # Получить ссылки на продукты по страницам
-    # get_products_from_page("https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Летнее+платье")
+    get_products_from_page("https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Летнее+платье")
 
 
 if __name__ == "__main__":

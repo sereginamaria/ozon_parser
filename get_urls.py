@@ -11,25 +11,28 @@ def get_html(page: str):
         return f.read()
 
 def parse_data(html: str) -> str:
+    print('parse_date')
     soup = BeautifulSoup(html, 'html.parser')
 
-    product_links = set([a.get('href').split('?')[0] for a in list(itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'io6'})]))])
+    product_links = set([a.get('href').split('?')[0] for a in list(itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'hz2'})]))])
 
     from pprint import pprint
-    # print(len(product_links))
-    # print()
-    # pprint(product_links)
+    print(len(product_links))
+    print()
+    pprint(product_links)
 
 
     # print(links)
     return product_links
 
 def get_urls():
+    print('get_urls')
     pages = get_pages()
 
     all_links = []
 
     for page in pages:
+        # print(page)
         html = get_html(page)
         # print(html)
         links = parse_data(html)
@@ -38,12 +41,21 @@ def get_urls():
 
     # print(all_links)
     # print(len(all_links))
+    #
 
-    with open('product_links.txt', 'w', encoding='utf-8') as f:
-        for link in all_links:
-            # print(link)
-            # print(type(link))
-            get_product_json(link)
-            # f.write(link + '\n')
-        # print('1234')
+    for link in all_links:
+        print('1')
+        # print(link)
+        # print(type(link))
+        get_product_json(link)
+
+    # with open('product_links.txt', 'w', encoding='utf-8') as f:
+    #     print()
+    #     for link in all_links:
+    #         # print(link)
+    #         # print(type(link))
+    #         get_product_json(link)
+    #         print('123456')
+    #         # f.write(link + '\n')
+    #     # print('1234')
 
