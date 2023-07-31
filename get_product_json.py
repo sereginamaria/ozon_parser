@@ -4,6 +4,7 @@ import time
 import json
 from pprint import pprint
 from connect import connect
+from made_png import made_png
 
 
 def get_product_json(url):
@@ -164,3 +165,4 @@ def get_product_json(url):
     with open('product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
+    made_png(product_images)

@@ -42,7 +42,7 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
                         "sku": 881711556
                     },
                     {
@@ -68,7 +68,7 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/1105023321/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "link": "/product/1105023321/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
                         "sku": 1105023321
                     }
                 ]
@@ -95,7 +95,7 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-896723319/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "link": "/product/dzhinsy-jelika-896723319/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
                         "sku": 896723319
                     },
                     {
@@ -118,7 +118,7 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
                         "sku": 881711556
                     }
                 ]
@@ -131,7 +131,7 @@
                         "data": {
                             "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
                             "originalPrice": "9 495 ₽",
-                            "price": "1 334 ₽",
+                            "price": "1 410 ₽",
                             "searchableText": "42 RU / 42 ",
                             "textRs": [
                                 {
@@ -141,8 +141,27 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-881711529/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
-                        "sku": 881711529
+                        "link": "/product/dzhinsy-jelika-1023547853/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
+                        "sku": 1023547853
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 168 ₽",
+                            "searchableText": "46 RU / 46 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / 46 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-881711238/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
+                        "sku": 881711238
                     },
                     {
                         "active": true,
@@ -160,7 +179,7 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
                         "sku": 881711556
                     },
                     {
@@ -169,7 +188,7 @@
                         "data": {
                             "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
                             "originalPrice": "9 495 ₽",
-                            "price": "1 151 ₽",
+                            "price": "1 343 ₽",
                             "searchableText": "50 RU / 50 ",
                             "textRs": [
                                 {
@@ -179,8 +198,8 @@
                             ],
                             "title": "Джинсы Jelika"
                         },
-                        "link": "/product/dzhinsy-jelika-881711519/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
-                        "sku": 881711519
+                        "link": "/product/dzhinsy-jelika-1075574209/?from_sku=881711556&oos_search=false&sh=KRD6oNIp_Q",
+                        "sku": 1075574209
                     }
                 ]
             }
