@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Платья и сарафаны"
+                "text": "Джинсы и джеггинсы"
             },
             {
-                "text": "SELEYA BETTER"
+                "text": "Jelika"
             }
         ]
     },
@@ -20,76 +20,56 @@
             {
                 "variants": [
                     {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#924900",
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6591665808.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-0/c100/wc140/6591665808.jpg",
-                            "price": "1 086 ₽",
-                            "searchableText": "Белый",
-                            "textRs": [
-                                {
-                                    "content": "Белый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье SELEYA BETTER"
-                        },
-                        "link": "/product/plate-seleya-better-899218378/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899218378
-                    },
-                    {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#924900",
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-e/c100/wc140/6653050790.jpg",
-                            "price": "1 046 ₽",
-                            "searchableText": "Насыщенный коричневый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 168 ₽",
+                            "searchableText": "Новые",
                             "textRs": [
                                 {
-                                    "content": "Насыщенный коричневый",
+                                    "content": "Новые",
                                     "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 1 168 ₽",
+                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Платье SELEYA BETTER"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-seleya-better-899220649/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899220649
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#000000",
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6591669365.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6591669365.jpg",
-                            "price": "1 218 ₽",
-                            "searchableText": "Глубокий черный",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6679113280.jpg",
+                            "originalPrice": "11 036 ₽",
+                            "price": "1 112 ₽",
+                            "searchableText": "Уцененные",
                             "textRs": [
                                 {
-                                    "content": "Глубокий черный",
+                                    "content": "Уцененные",
                                     "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 1 112 ₽",
+                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Платье SELEYA BETTER"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-seleya-better-899216760/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899216760
+                        "link": "/product/1105023321/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 1105023321
                     }
                 ]
             },
@@ -99,9 +79,59 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 046 ₽",
+                            "colors": [
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6679113280.jpg",
+                            "originalPrice": "10 995 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-g/c100/wc140/6679113280.jpg",
+                            "price": "1 080 ₽",
+                            "searchableText": "Белый",
+                            "textRs": [
+                                {
+                                    "content": "Белый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-896723319/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 896723319
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#c3e6fe"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/c100/wc140/6668524055.jpg",
+                            "price": "1 168 ₽",
+                            "searchableText": "Голубой",
+                            "textRs": [
+                                {
+                                    "content": "Голубой",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
+                    }
+                ]
+            },
+            {
+                "variants": [
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 334 ₽",
                             "searchableText": "42 RU / 42 ",
                             "textRs": [
                                 {
@@ -109,56 +139,18 @@
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье SELEYA BETTER"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-seleya-better-899218045/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899218045
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 046 ₽",
-                            "searchableText": "44 RU / 44 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / 44 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье SELEYA BETTER"
-                        },
-                        "link": "/product/plate-seleya-better-899216857/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899216857
+                        "link": "/product/dzhinsy-jelika-881711529/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711529
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 046 ₽",
-                            "searchableText": "46 RU / 46 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / 46 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье SELEYA BETTER"
-                        },
-                        "link": "/product/plate-seleya-better-899220649/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899220649
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 046 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 168 ₽",
                             "searchableText": "48 RU / 48 ",
                             "textRs": [
                                 {
@@ -166,18 +158,18 @@
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье SELEYA BETTER"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-seleya-better-899215618/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 899215618
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 336 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 151 ₽",
                             "searchableText": "50 RU / 50 ",
                             "textRs": [
                                 {
@@ -185,29 +177,10 @@
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье SELEYA BETTER"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-seleya-better-1045130897/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 1045130897
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6653050790.jpg",
-                            "originalPrice": "2 999 ₽",
-                            "price": "1 336 ₽",
-                            "searchableText": "52 RU / 52 ",
-                            "textRs": [
-                                {
-                                    "content": "52 RU / 52 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье SELEYA BETTER"
-                        },
-                        "link": "/product/plate-seleya-better-1045131189/?from_sku=899220649&oos_search=false&sh=db9MY3JYTA",
-                        "sku": 1045131189
+                        "link": "/product/dzhinsy-jelika-881711519/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711519
                     }
                 ]
             }
@@ -223,8 +196,8 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/platya-zhenskie-vsesezonnye/",
-                                "text": "На любой сезон"
+                                "link": "/category/dzhinsy-zhenskie-demisezonnye/",
+                                "text": "Демисезон"
                             }
                         ]
                     },
@@ -234,13 +207,8 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/platya-i-sarafany-zhenskie-poliester/",
-                                "text": "Полиэстер"
-                            },
-                            {
-                                "key": "Material_1",
-                                "link": "/category/platya-i-sarafany-zhenskie-viskoza/",
-                                "text": "Вискоза"
+                                "link": "/category/zhenskie-dzhinsy-iz-hlopka/",
+                                "text": "Хлопок"
                             }
                         ]
                     },
@@ -250,7 +218,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "Полиэстер - 70%; вискоза 30%"
+                                "text": "100% Хлопок"
                             }
                         ]
                     },
@@ -270,24 +238,19 @@
                         "values": [
                             {
                                 "key": "StyleApparel_0",
-                                "link": "/category/sarafany-zhenskie-vechernie/",
-                                "text": "Вечерний"
-                            },
-                            {
-                                "key": "StyleApparel_1",
-                                "link": "/category/zhenskie-kokteylnye-platya/",
-                                "text": "Коктейльный"
+                                "link": "/category/dzhinsy-zhenskie-povsednevnye/",
+                                "text": "Повседневный"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-seleya-better-899220649/features/"
+        "link": "https://www.ozon.ru/product/dzhinsy-jelika-881711556/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 1009721,
-        "link": "https://www.ozon.ru/seller/ip-yarovoy-s-v-1009721/",
+        "id": 168376,
+        "link": "https://www.ozon.ru/seller/i-love-mum-168376/",
         "mainAdvantages": [
             {
                 "content": {
@@ -326,79 +289,85 @@
                 }
             }
         ],
-        "name": "ИП Яровой С.В."
+        "name": "I Love mum"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6653050790.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6668524055.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #1"
+                "alt": "Джинсы Jelika #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-1/6653050849.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-m/6668524066.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #2"
+                "alt": "Джинсы Jelika #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6653050782.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-l/6668524065.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #3"
+                "alt": "Джинсы Jelika #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6653050821.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-c/6668524056.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #4"
+                "alt": "Джинсы Jelika #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-v/6653050843.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6668524057.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #5"
+                "alt": "Джинсы Jelika #5"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-2/6653050850.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6668524067.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #6"
+                "alt": "Джинсы Jelika #6"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-z/6653050811.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6668524059.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #7"
+                "alt": "Джинсы Jelika #7"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6653050852.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6668524069.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #8"
+                "alt": "Джинсы Jelika #8"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-3/6653050851.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6668524060.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #9"
+                "alt": "Джинсы Jelika #9"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6653050780.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6668524063.jpg"
             },
             {
-                "alt": "Платье SELEYA BETTER #10"
+                "alt": "Джинсы Jelika #10"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6668524058.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #11"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "994 ₽",
+        "cardPrice": "1 112 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "2 999 ₽",
-        "price": "1 046 ₽"
+        "originalPrice": "9 495 ₽",
+        "price": "1 168 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье SELEYA BETTER"
+        "title": "Джинсы Jelika"
     }
 }
