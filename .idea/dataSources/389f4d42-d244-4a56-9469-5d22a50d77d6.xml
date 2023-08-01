@@ -1483,37 +1483,41 @@
       <DasType>TEXT|0s</DasType>
       <Position>14</Position>
     </column>
-    <index id="520" parent="504" name="sqlite_autoindex_products_1">
+    <column id="520" parent="504" name="validation">
+      <DasType>BLOB|0s</DasType>
+      <Position>15</Position>
+    </column>
+    <index id="521" parent="504" name="sqlite_autoindex_products_1">
       <ColNames>product_article</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="521" parent="504">
+    <key id="522" parent="504">
       <ColNames>product_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="522" parent="504">
+    <key id="523" parent="504">
       <ColNames>product_article</ColNames>
       <OnConflict>fail</OnConflict>
       <UnderlyingIndexName>sqlite_autoindex_products_1</UnderlyingIndexName>
     </key>
-    <column id="523" parent="505" name="type">
+    <column id="524" parent="505" name="type">
       <DasType>TEXT|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="524" parent="505" name="name">
+    <column id="525" parent="505" name="name">
       <DasType>TEXT|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="525" parent="505" name="tbl_name">
+    <column id="526" parent="505" name="tbl_name">
       <DasType>TEXT|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="526" parent="505" name="rootpage">
+    <column id="527" parent="505" name="rootpage">
       <DasType>INT|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="527" parent="505" name="sql">
+    <column id="528" parent="505" name="sql">
       <DasType>TEXT|0s</DasType>
       <Position>5</Position>
     </column>

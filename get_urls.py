@@ -14,7 +14,7 @@ def parse_data(html: str) -> str:
     print('parse_date')
     soup = BeautifulSoup(html, 'html.parser')
     print(soup)
-    product_links = set([a.get('href').split('?')[0] for a in list(itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i2j'})]))])
+    product_links = set([a.get('href').split('?')[0] for a in list(itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'ji8'})]))])
 
     from pprint import pprint
     # print('product_length')
