@@ -1,13 +1,12 @@
 import undetected_chromedriver
 from selenium.webdriver.common.by import By
-import time
 import json
-from pprint import pprint
-from queue_service.add_to_db import add_to_db
-from make_card_service.main import made_png
+from parser.add_to_db import add_to_db
+from datetime import date
 
 
 def get_product(url):
+    print('hello')
     driver = undetected_chromedriver.Chrome()
     driver.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
     # time.sleep(1)
@@ -146,7 +145,7 @@ def get_product(url):
 
     # print(d2['webPrice-2136014-default-1']['originalPrice'])
 
-    
+    add_date = date.today()
     add_to_db(
         product_name,
         product_price_original,
@@ -160,10 +159,9 @@ def get_product(url):
         product_color,
         product_article,
         product_sizes,
-        product_all_articles
+        product_all_articles,
+        add_date
     )
 
-    with open('product_json.json', 'w', encoding="utf-8") as outfile:
+    with open('../parser/product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
-
-    made_png(product_images)

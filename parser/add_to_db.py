@@ -3,11 +3,8 @@ import sqlite3 as sl
 
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
             product_brand_name, product_brand_link, product_rating, product_categories, product_color, product_article,
-            product_sizes, product_all_articles
-
+            product_sizes, product_all_articles, add_date
             ):
-    # print('connect name')
-    # print(product_name)
     # открываем файл с базой данных
     con = sl.connect('ozon_product_db.db')
 
@@ -17,14 +14,6 @@ def add_to_db(product_name, product_price_original, product_price, product_price
         for row in data:
             # если таких таблиц нет
             if row[0] == 0:
-                # # создаём таблицу для товаров
-                # with con:
-                #     con.execute("""
-                #         CREATE TABLE products (
-                #              product_name TEXT PRIMARY KEY
-                #         );
-                #     """)
-
                 # создаём таблицу для товаров
                 with con:
                     con.execute("""
@@ -42,7 +31,9 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             product_sizes TEXT,
                             product_color TEXT,
                             product_article TEXT unique on conflict fail,
-                            product_all_articles TEXT
+                            product_all_articles TEXT,
+                            add_date DATE,
+                            verification BOOLEAN 
                         );
                     """)
 
@@ -51,7 +42,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles) values(?,?,?,?,?,?,?,?,?,?,?,?,?)'
+              'product_all_articles, add_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
         # указываем данные для запроса
         data = [
             (product_name,
@@ -66,7 +57,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
              product_color,
              product_article,
              product_sizes,
-             product_all_articles
+             product_all_articles,
+             add_date
              )
         ]
 
@@ -79,36 +71,3 @@ def add_to_db(product_name, product_price_original, product_price, product_price
         #     data = con.execute("SELECT * FROM products")
         #     for row in data:
         #         print(row)
-
-    # """ Connect to the PostgreSQL database server """
-    # conn = None
-    # try:
-    #     # read connection parameters
-    #     params = config()
-    #
-    #     # connect to the PostgreSQL server
-    #     print('Connecting to the PostgreSQL database...')
-    #     conn = psycopg2.connect(**params)
-    #
-    #     # create a cursor
-    #     cur = conn.cursor()
-    #
-    #     # execute a statement
-    #     print('PostgreSQL database version:')
-    #     cur.execute('SELECT product_name FROM products')
-    #
-    #     rows = cur.fetchall()
-    #     for row in rows:
-    #         print("FIELD =", row)
-    #     # # display the PostgreSQL database server version
-    #     # db_version = cur.fetchone()
-    #     # print(db_version)
-    #
-    #     # close the communication with the PostgreSQL
-    #     cur.close()
-    # except (Exception, psycopg2.DatabaseError) as error:
-    #     print(error)
-    # finally:
-    #     if conn is not None:
-    #         conn.close()
-    #         print('Database connection closed.')

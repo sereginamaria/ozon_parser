@@ -1,6 +1,6 @@
 from flask import Flask
-from get_product import get_product
-from get_products_from_page import get_products_from_page
+from parser.get_product import get_product
+from parser.get_products_from_page import get_products_from_page
 
 app = Flask(__name__)
 
@@ -18,7 +18,8 @@ def get_page():
 
 
 @app.route('/get_product')
-def get_product():
+def get_ozon_product():
+    print('123')
     get_product("/product/dzhinsy-jelika-881711556/")
     return 'Получаем информацию о товаре'
 

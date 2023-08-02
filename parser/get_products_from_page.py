@@ -3,10 +3,12 @@ import undetected_chromedriver
 import time
 from bs4 import BeautifulSoup
 import itertools
-from get_product import get_product
+from parser.get_product import get_product
+
 
 def get_products_from_page(url):
     # Ограничим парсинг первыми n страницами
+    print('hello')
     MAX_PAGE = 1
     i = 1
     while i <= MAX_PAGE:
@@ -19,9 +21,10 @@ def get_products_from_page(url):
 
 
 def get_html(url):
+    print('get_html')
     driver = undetected_chromedriver.Chrome()
     driver.get(url)
-    # time.sleep(3)
+    time.sleep(3)
     driver.execute_script("window.scrollTo(5,4000);")
     # time.sleep(5)
     html = driver.page_source
@@ -31,35 +34,25 @@ def get_html(url):
 
 
 def parse_data(html: str) -> set[Any]:
-    # print('parse_date')
+    print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     # print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'ji8'})]))])
-
-    # from pprint import pprint
-    # print('product_length')
-    # print(len(product_links))
-    # print()
-    # pprint(product_links)
-    # print(links)
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i8j'})]))])
     return product_links
 
 
 def get_urls(html):
-    # print('get_urls')
-
+    print('get_urls')
     all_links = []
     links = parse_data(html)
     all_links = all_links + list(links)
 
-    # print('all_links')
-    # print(all_links)
-    # print(len(all_links))
-
-    for link in all_links:
-        # print('1')
-        # print(link)
-        # print('aaaaaaaaaaaaa')
-        # print(type(link))
-        get_product(link)
+    print(all_links)
+    print(len(all_links))
+    if len(all_links) == 36:
+        for link in all_links:
+            print('get_product')
+            get_product(link)
+    else:
+        print('ERROR')
