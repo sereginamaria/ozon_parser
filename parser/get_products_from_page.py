@@ -24,7 +24,7 @@ def get_html(url):
     print('get_html')
     driver = undetected_chromedriver.Chrome()
     driver.get(url)
-    time.sleep(3)
+    # time.sleep(3)
     driver.execute_script("window.scrollTo(5,4000);")
     # time.sleep(5)
     html = driver.page_source
@@ -36,9 +36,9 @@ def get_html(url):
 def parse_data(html: str) -> set[Any]:
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
-    # print(soup)
+    print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i8j'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i9j'})]))])
     return product_links
 
 

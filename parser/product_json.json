@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Джинсы и джеггинсы"
+                "text": "Одежда больших размеров"
             },
             {
-                "text": "Jelika"
+                "text": "Платья"
             }
         ]
     },
@@ -20,42 +20,166 @@
             {
                 "variants": [
                     {
-                        "active": true,
+                        "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "Новые",
+                            "colors": [
+                                "#c0987e"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6710831141.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-5/c100/wc140/6710831141.jpg",
+                            "price": "1 664 ₽",
+                            "searchableText": "бежевый",
                             "textRs": [
                                 {
-                                    "content": "Новые",
+                                    "content": "бежевый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Джинсы Jelika"
+                            "title": "Платье"
                         },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711556
+                        "link": "/product/plate-1093894314/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1093894314
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/wc140/6574700295.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 343 ₽",
-                            "searchableText": "Уцененные",
+                            "colors": [
+                                "#924900"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-1/wc140/6713509717.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-1/c100/wc140/6713509717.jpg",
+                            "price": "1 779 ₽",
+                            "searchableText": "Коричневый",
                             "textRs": [
                                 {
-                                    "content": "Уцененные",
+                                    "content": "Коричневый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Джинсы Jelika"
+                            "title": "Платье"
                         },
-                        "link": "/product/dzhinsy-jelika-986910723/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 986910723
+                        "link": "/product/plate-1099945252/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1099945252
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#808000"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6683014463.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-n/c100/wc140/6683014463.jpg",
+                            "price": "1 856 ₽",
+                            "searchableText": "ментоловый",
+                            "textRs": [
+                                {
+                                    "content": "ментоловый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье"
+                        },
+                        "link": "/product/plate-1026198892/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1026198892
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#e2d2c3",
+                                "#c0987e"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/c100/wc140/6683068559.jpg",
+                            "price": "2 234 ₽",
+                            "searchableText": "Айвори",
+                            "textRs": [
+                                {
+                                    "content": "Айвори",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье"
+                        },
+                        "link": "/product/plate-1040289631/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1040289631
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#0000ff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-9/wc140/6683027013.jpg",
+                            "originalPrice": "4 900 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-9/c100/wc140/6683027013.jpg",
+                            "price": "1 683 ₽",
+                            "searchableText": "Синий",
+                            "textRs": [
+                                {
+                                    "content": "Синий",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Сарафан"
+                        },
+                        "link": "/product/sarafan-1026157716/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1026157716
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#000000"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-1/wc140/6700038805.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-1/c100/wc140/6700038805.jpg",
+                            "price": "1 856 ₽",
+                            "searchableText": "ментоловый",
+                            "textRs": [
+                                {
+                                    "content": "ментоловый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье"
+                        },
+                        "link": "/product/plate-1057725149/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1057725149
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#000000"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-o/wc140/6710823348.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-o/c100/wc140/6710823348.jpg",
+                            "price": "2 115 ₽",
+                            "searchableText": "черный",
+                            "textRs": [
+                                {
+                                    "content": "черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье"
+                        },
+                        "link": "/product/plate-1093886185/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1093886185
                     }
                 ]
             },
@@ -65,146 +189,58 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6679113280.jpg",
-                            "originalPrice": "10 995 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-g/c100/wc140/6679113280.jpg",
-                            "price": "1 049 ₽",
-                            "searchableText": "Белый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "price": "1 857 ₽",
+                            "searchableText": "50–52 RU / 50-52 ",
                             "textRs": [
                                 {
-                                    "content": "Белый",
+                                    "content": "50–52 RU / 50-52 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Джинсы Jelika"
+                            "title": "Платье"
                         },
-                        "link": "/product/dzhinsy-jelika-896723319/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 896723319
+                        "link": "/product/plate-1040067278/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1040067278
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#c3e6fe"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/c100/wc140/6668524055.jpg",
-                            "price": "1 298 ₽",
-                            "searchableText": "Голубой",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "price": "2 234 ₽",
+                            "searchableText": "54–56 RU / 54-56 ",
                             "textRs": [
                                 {
-                                    "content": "Голубой",
+                                    "content": "54–56 RU / 54-56 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Джинсы Jelika"
+                            "title": "Платье"
                         },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711556
-                    }
-                ]
-            },
-            {
-                "variants": [
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "42 RU / 42 ",
-                            "textRs": [
-                                {
-                                    "content": "42 RU / 42 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Джинсы Jelika"
-                        },
-                        "link": "/product/dzhinsy-jelika-881711529/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711529
+                        "link": "/product/plate-1040289631/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1040289631
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "44 RU / 44 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
+                            "originalPrice": "4 590 ₽",
+                            "price": "1 857 ₽",
+                            "searchableText": "58–60 RU / 58-60 ",
                             "textRs": [
                                 {
-                                    "content": "44 RU / 44 ",
+                                    "content": "58–60 RU / 58-60 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Джинсы Jelika"
+                            "title": "Платье"
                         },
-                        "link": "/product/dzhinsy-jelika-881711542/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711542
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "46 RU / 46 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / 46 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Джинсы Jelika"
-                        },
-                        "link": "/product/dzhinsy-jelika-881711238/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711238
-                    },
-                    {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "48 RU / 48 ",
-                            "textRs": [
-                                {
-                                    "content": "48 RU / 48 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Джинсы Jelika"
-                        },
-                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711556
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
-                            "originalPrice": "9 495 ₽",
-                            "price": "1 298 ₽",
-                            "searchableText": "50 RU / 50 ",
-                            "textRs": [
-                                {
-                                    "content": "50 RU / 50 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Джинсы Jelika"
-                        },
-                        "link": "/product/dzhinsy-jelika-881711519/?from_sku=881711556&oos_search=false&sh=8TqExx6M3A",
-                        "sku": 881711519
+                        "link": "/product/plate-1040302997/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
+                        "sku": 1040302997
                     }
                 ]
             }
@@ -220,8 +256,7 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/dzhinsy-zhenskie-demisezonnye/",
-                                "text": "Демисезон"
+                                "text": "На любой сезон"
                             }
                         ]
                     },
@@ -231,8 +266,7 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/zhenskie-dzhinsy-iz-hlopka/",
-                                "text": "Хлопок"
+                                "text": "Вискозный шелк"
                             }
                         ]
                     },
@@ -242,7 +276,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "100% Хлопок"
+                                "text": "шелк и вискоза"
                             }
                         ]
                     },
@@ -252,7 +286,7 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Весна-лето 2023"
+                                "text": "Базовая коллекция"
                             }
                         ]
                     },
@@ -262,7 +296,10 @@
                         "values": [
                             {
                                 "key": "StyleApparel_0",
-                                "link": "/category/dzhinsy-zhenskie-povsednevnye/",
+                                "text": "Классический"
+                            },
+                            {
+                                "key": "StyleApparel_1",
                                 "text": "Повседневный"
                             }
                         ]
@@ -270,17 +307,17 @@
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/dzhinsy-jelika-881711556/features/"
+        "link": "https://www.ozon.ru/product/plate-1040289631/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 168376,
-        "link": "https://www.ozon.ru/seller/i-love-mum-168376/",
+        "id": 1118183,
+        "link": "https://www.ozon.ru/seller/time-savvy-1118183/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,8",
+                            "content": "4,7",
                             "type": "textBold"
                         },
                         {
@@ -313,85 +350,61 @@
                 }
             }
         ],
-        "name": "I Love mum"
+        "name": "TIME SAVVY"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6668524055.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6683068559.jpg"
             },
             {
-                "alt": "Джинсы Jelika #1"
+                "alt": "Платье #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-m/6668524066.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6683068573.jpg"
             },
             {
-                "alt": "Джинсы Jelika #2"
+                "alt": "Платье #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-l/6668524065.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6683068567.jpg"
             },
             {
-                "alt": "Джинсы Jelika #3"
+                "alt": "Платье #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-c/6668524056.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-k/6683068568.jpg"
             },
             {
-                "alt": "Джинсы Jelika #4"
+                "alt": "Платье #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6668524057.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6683068561.jpg"
             },
             {
-                "alt": "Джинсы Jelika #5"
+                "alt": "Платье #5"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6668524067.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-m/6683068570.jpg"
             },
             {
-                "alt": "Джинсы Jelika #6"
+                "alt": "Платье #6"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6668524059.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6683068563.jpg"
             },
             {
-                "alt": "Джинсы Jelika #7"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6668524069.jpg"
-            },
-            {
-                "alt": "Джинсы Jelika #8"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6668524060.jpg"
-            },
-            {
-                "alt": "Джинсы Jelika #9"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6668524063.jpg"
-            },
-            {
-                "alt": "Джинсы Jelika #10"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6668524058.jpg"
-            },
-            {
-                "alt": "Джинсы Jelika #11"
+                "alt": "Платье #7"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "1 235 ₽",
+        "cardPrice": "2 123 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "9 495 ₽",
-        "price": "1 298 ₽"
+        "originalPrice": "4 590 ₽",
+        "price": "2 234 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Джинсы Jelika"
+        "title": "Платье"
     }
 }

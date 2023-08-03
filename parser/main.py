@@ -17,11 +17,22 @@ def get_page():
     return 'Получаем ссылки на продукты со страниц'
 
 
-@app.route('/get_product')
-def get_ozon_product():
+@app.post('/get_product')
+def get_ozon_product(message):
     print('123')
-    get_product("/product/dzhinsy-jelika-881711556/")
+    print(message)
+    get_product(message)
     return 'Получаем информацию о товаре'
+
+    #
+    # if request.method == 'POST':
+    #     print('123')
+    #     get_product("/product/plate-1040289631/")
+    #     return 'Получаем информацию о товаре'
+    # if request.method == 'POST':
+    #     print('123')
+    #     get_product("/product/plate-1040289631/")
+    #     return 'Получаем информацию о товаре'
 
 
 if __name__ == "__main__":
