@@ -1,5 +1,8 @@
 # подключаем SQLite
 import sqlite3 as sl
+import requests
+
+telegram_url = "https://api.telegram.org/bot6449461079:AAFLbOPkGMwVzTmuWBielCBuILSm4xfIeY0"
 
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
             product_brand_name, product_brand_link, product_rating, product_categories, product_color, product_article,
@@ -66,6 +69,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
         with con:
             con.executemany(sql, data)
 
+        print(telegram_url + '/sendMessage?chat_id=6181726421&text=done')
+        requests.post(telegram_url + '/sendMessage?chat_id=6181726421&text=done')
         # выводим содержимое таблицы на экран
         # with con:
         #     data = con.execute("SELECT * FROM products")

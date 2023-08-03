@@ -10,29 +10,25 @@ def hello():
     return "Hello!"
 
 
-@app.route('/get_products_from_page')
+@app.route('/get_products_from_page', methods=['GET', 'POST'])
 def get_page():
-    get_products_from_page(
-        "https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Летнее+платье")
-    return 'Получаем ссылки на продукты со страниц'
+    if request.method == 'POST':
+        get_products_from_page(request.data.decode('UTF-8'))
+        return 'Получаем ссылки на продукты со страниц'
+    if request.method == 'GET':
+        return 'Получаем ссылки на продукты со страниц'
+
+    # get_products_from_page(
+    #     "https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Летнее+платье")
+
 
 
 @app.route('/get_product', methods=['GET', 'POST'])
 def get_ozon_product():
-    # print('123')
-    # print(message)
-    # get_product(message)
-    # return 'Получаем информацию о товаре'
-    #
-
     if request.method == 'POST':
-        print('123')
-        print(request)
-        print(request.data)
         get_product(request.data.decode('UTF-8'))
         return 'Получаем информацию о товаре'
     if request.method == 'GET':
-        print('GET')
         return 'Получаем информацию о товаре'
 
 

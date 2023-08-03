@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Платья и сарафаны"
+                "text": "Джинсы и джеггинсы"
             },
             {
-                "text": "RA.STYLE"
+                "text": "Jelika"
             }
         ]
     },
@@ -20,50 +20,56 @@
             {
                 "variants": [
                     {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#924900"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6559859477.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-5/c100/wc140/6559859477.jpg",
-                            "price": "1 096 ₽",
-                            "searchableText": "Коричневый",
-                            "textRs": [
-                                {
-                                    "content": "Коричневый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье RA.STYLE"
-                        },
-                        "link": "/product/plate-ra-style-848756600/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848756600
-                    },
-                    {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#000000"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6637362386.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-e/c100/wc140/6637362386.jpg",
-                            "price": "1 786 ₽",
-                            "searchableText": "черный",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 168 ₽",
+                            "searchableText": "Новые",
                             "textRs": [
                                 {
-                                    "content": "черный",
+                                    "content": "Новые",
                                     "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 1 168 ₽",
+                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Платье RA.STYLE"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-ra-style-848757537/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848757537
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6679113280.jpg",
+                            "originalPrice": "11 036 ₽",
+                            "price": "1 112 ₽",
+                            "searchableText": "Уцененные",
+                            "textRs": [
+                                {
+                                    "content": "Уцененные",
+                                    "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 1 112 ₽",
+                                    "type": "textGray"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/1105023321/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 1105023321
                     }
                 ]
             },
@@ -73,77 +79,108 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6637362386.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "price": "1 501 ₽",
-                            "searchableText": "42 RU",
+                            "colors": [
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6679113280.jpg",
+                            "originalPrice": "10 995 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-g/c100/wc140/6679113280.jpg",
+                            "price": "1 080 ₽",
+                            "searchableText": "Белый",
                             "textRs": [
                                 {
-                                    "content": "42 RU",
+                                    "content": "Белый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье RA.STYLE"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-ra-style-848757525/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848757525
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6637362386.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "price": "1 771 ₽",
-                            "searchableText": "44 RU",
-                            "textRs": [
-                                {
-                                    "content": "44 RU",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье RA.STYLE"
-                        },
-                        "link": "/product/plate-ra-style-848757523/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848757523
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6637362386.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "price": "1 396 ₽",
-                            "searchableText": "46 RU",
-                            "textRs": [
-                                {
-                                    "content": "46 RU",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье RA.STYLE"
-                        },
-                        "link": "/product/plate-ra-style-848757531/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848757531
+                        "link": "/product/dzhinsy-jelika-896723319/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 896723319
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-e/wc140/6637362386.jpg",
-                            "originalPrice": "6 050 ₽",
-                            "price": "1 786 ₽",
-                            "searchableText": "48 RU",
+                            "colors": [
+                                "#c3e6fe"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/c100/wc140/6668524055.jpg",
+                            "price": "1 168 ₽",
+                            "searchableText": "Голубой",
                             "textRs": [
                                 {
-                                    "content": "48 RU",
+                                    "content": "Голубой",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье RA.STYLE"
+                            "title": "Джинсы Jelika"
                         },
-                        "link": "/product/plate-ra-style-848757537/?from_sku=848757537&oos_search=false&sh=htaaUrJcHw",
-                        "sku": 848757537
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
+                    }
+                ]
+            },
+            {
+                "variants": [
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 334 ₽",
+                            "searchableText": "42 RU / 42 ",
+                            "textRs": [
+                                {
+                                    "content": "42 RU / 42 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-881711529/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711529
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 168 ₽",
+                            "searchableText": "48 RU / 48 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / 48 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-881711556/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711556
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6668524055.jpg",
+                            "originalPrice": "9 495 ₽",
+                            "price": "1 151 ₽",
+                            "searchableText": "50 RU / 50 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / 50 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Джинсы Jelika"
+                        },
+                        "link": "/product/dzhinsy-jelika-881711519/?from_sku=881711556&oos_search=false&sh=vosINRYhIg",
+                        "sku": 881711519
                     }
                 ]
             }
@@ -159,6 +196,7 @@
                         "values": [
                             {
                                 "key": "Season_0",
+                                "link": "/category/dzhinsy-zhenskie-demisezonnye/",
                                 "text": "Демисезон"
                             }
                         ]
@@ -169,8 +207,8 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/platya-i-sarafany-zhenskie-viskoza/",
-                                "text": "Вискоза"
+                                "link": "/category/zhenskie-dzhinsy-iz-hlopka/",
+                                "text": "Хлопок"
                             }
                         ]
                     },
@@ -180,7 +218,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "вискоза 70%, полиэстер 30%"
+                                "text": "100% Хлопок"
                             }
                         ]
                     },
@@ -190,28 +228,29 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Базовая коллекция"
+                                "text": "Весна-лето 2023"
                             }
                         ]
                     },
                     {
-                        "key": "SizeHeight",
-                        "name": "Рост",
+                        "key": "StyleApparel",
+                        "name": "Стиль",
                         "values": [
                             {
-                                "key": "SizeHeight_0",
-                                "text": "160-180"
+                                "key": "StyleApparel_0",
+                                "link": "/category/dzhinsy-zhenskie-povsednevnye/",
+                                "text": "Повседневный"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-ra-style-848757537/features/"
+        "link": "https://www.ozon.ru/product/dzhinsy-jelika-881711556/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 877108,
-        "link": "https://www.ozon.ru/seller/ra-style-877108/",
+        "id": 168376,
+        "link": "https://www.ozon.ru/seller/i-love-mum-168376/",
         "mainAdvantages": [
             {
                 "content": {
@@ -250,49 +289,85 @@
                 }
             }
         ],
-        "name": "RA.STYLE"
+        "name": "I Love mum"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6637362386.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6668524055.jpg"
             },
             {
-                "alt": "Платье RA.STYLE #1"
+                "alt": "Джинсы Jelika #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-s/6592633912.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-m/6668524066.jpg"
             },
             {
-                "alt": "Платье RA.STYLE #2"
+                "alt": "Джинсы Jelika #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-y/6592633918.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-l/6668524065.jpg"
             },
             {
-                "alt": "Платье RA.STYLE #3"
+                "alt": "Джинсы Jelika #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-l/6541921557.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-c/6668524056.jpg"
             },
             {
-                "alt": "Платье RA.STYLE #4"
+                "alt": "Джинсы Jelika #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6591579531.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6668524057.jpg"
             },
             {
-                "alt": "Платье RA.STYLE #5"
+                "alt": "Джинсы Jelika #5"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6668524067.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #6"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6668524059.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6668524069.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #8"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6668524060.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #9"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6668524063.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #10"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6668524058.jpg"
+            },
+            {
+                "alt": "Джинсы Jelika #11"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "1 700 ₽",
+        "cardPrice": "1 112 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "6 050 ₽",
-        "price": "1 786 ₽"
+        "originalPrice": "9 495 ₽",
+        "price": "1 168 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье RA.STYLE"
+        "title": "Джинсы Jelika"
     }
 }

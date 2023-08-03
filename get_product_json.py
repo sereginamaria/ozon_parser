@@ -166,3 +166,4 @@ def get_product_json(url):
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
     made_png(product_images)
+    made_png(product_images)

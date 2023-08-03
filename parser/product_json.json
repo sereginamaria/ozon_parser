@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Одежда больших размеров"
+                "text": "Брюки, бриджи, капри"
             },
             {
-                "text": "Платья"
+                "text": "AIVA fashion"
             }
         ]
     },
@@ -24,139 +24,184 @@
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#c0987e"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6710831141.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-5/c100/wc140/6710831141.jpg",
-                            "price": "1 664 ₽",
-                            "searchableText": "бежевый",
-                            "textRs": [
-                                {
-                                    "content": "бежевый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье"
-                        },
-                        "link": "/product/plate-1093894314/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1093894314
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#924900"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-1/wc140/6713509717.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-1/c100/wc140/6713509717.jpg",
-                            "price": "1 779 ₽",
-                            "searchableText": "Коричневый",
-                            "textRs": [
-                                {
-                                    "content": "Коричневый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье"
-                        },
-                        "link": "/product/plate-1099945252/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1099945252
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
                                 "#808000"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6683014463.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-n/c100/wc140/6683014463.jpg",
-                            "price": "1 856 ₽",
-                            "searchableText": "ментоловый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-u/wc140/6688110918.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-u/c100/wc140/6688110918.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "оливковый",
                             "textRs": [
                                 {
-                                    "content": "ментоловый",
+                                    "content": "оливковый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/plate-1026198892/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1026198892
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516468/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516468
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#fd85b2"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6688809751.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-v/c100/wc140/6688809751.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "розовый",
+                            "textRs": [
+                                {
+                                    "content": "розовый",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-1048886411/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 1048886411
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#fd85b2"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6688809751.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-v/c100/wc140/6688809751.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "фуксия",
+                            "textRs": [
+                                {
+                                    "content": "фуксия",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-495985919/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 495985919
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#9c85cd"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/wc140/6688162083.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-3/c100/wc140/6688162083.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "сирень",
+                            "textRs": [
+                                {
+                                    "content": "сирень",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260517302/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260517302
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#fbf3e1"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-z/wc140/6687700235.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-z/c100/wc140/6687700235.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "молочный",
+                            "textRs": [
+                                {
+                                    "content": "молочный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260517425/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260517425
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#dcbe96"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6688182072.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-c/c100/wc140/6688182072.jpg",
+                            "price": "1 791 ₽",
+                            "searchableText": "какао",
+                            "textRs": [
+                                {
+                                    "content": "какао",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-496040804/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 496040804
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#e2d2c3",
-                                "#c0987e"
+                                "#474a51"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/c100/wc140/6683068559.jpg",
-                            "price": "2 234 ₽",
-                            "searchableText": "Айвори",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-d/c100/wc140/6687710473.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "графит",
                             "textRs": [
                                 {
-                                    "content": "Айвори",
+                                    "content": "графит",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/plate-1040289631/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1040289631
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516745/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516745
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#0000ff"
+                                "#6600cc"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-9/wc140/6683027013.jpg",
-                            "originalPrice": "4 900 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-9/c100/wc140/6683027013.jpg",
-                            "price": "1 683 ₽",
-                            "searchableText": "Синий",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-f/wc140/6689547915.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-f/c100/wc140/6689547915.jpg",
+                            "price": "2 600 ₽",
+                            "searchableText": "лаванда",
                             "textRs": [
                                 {
-                                    "content": "Синий",
+                                    "content": "лаванда",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Сарафан"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/sarafan-1026157716/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1026157716
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#000000"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-1/wc140/6700038805.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-1/c100/wc140/6700038805.jpg",
-                            "price": "1 856 ₽",
-                            "searchableText": "ментоловый",
-                            "textRs": [
-                                {
-                                    "content": "ментоловый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье"
-                        },
-                        "link": "/product/plate-1057725149/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1057725149
+                        "link": "/product/bryuki-aiva-fashion-ofis-260577192/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260577192
                     },
                     {
                         "active": false,
@@ -165,10 +210,10 @@
                             "colors": [
                                 "#000000"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-o/wc140/6710823348.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-o/c100/wc140/6710823348.jpg",
-                            "price": "2 115 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/wc140/6688508331.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-3/c100/wc140/6688508331.jpg",
+                            "price": "1 720 ₽",
                             "searchableText": "черный",
                             "textRs": [
                                 {
@@ -176,10 +221,10 @@
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/plate-1093886185/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1093886185
+                        "link": "/product/bryuki-aiva-fashion-ofis-1049319910/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 1049319910
                     }
                 ]
             },
@@ -189,58 +234,457 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "price": "1 857 ₽",
-                            "searchableText": "50–52 RU / 50-52 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "42 RU / XS/164 ",
                             "textRs": [
                                 {
-                                    "content": "50–52 RU / 50-52 ",
+                                    "content": "42 RU / XS/164 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/plate-1040067278/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1040067278
-                    },
-                    {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "price": "2 234 ₽",
-                            "searchableText": "54–56 RU / 54-56 ",
-                            "textRs": [
-                                {
-                                    "content": "54–56 RU / 54-56 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье"
-                        },
-                        "link": "/product/plate-1040289631/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1040289631
+                        "link": "/product/bryuki-aiva-fashion-ofis-260517110/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260517110
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6683068559.jpg",
-                            "originalPrice": "4 590 ₽",
-                            "price": "1 857 ₽",
-                            "searchableText": "58–60 RU / 58-60 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "42 RU / XS/176 ",
                             "textRs": [
                                 {
-                                    "content": "58–60 RU / 58-60 ",
+                                    "content": "42 RU / XS/176 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье"
+                            "title": "Брюки AIVA fashion Офис"
                         },
-                        "link": "/product/plate-1040302997/?from_sku=1040289631&oos_search=false&sh=P0I-QKuSKQ",
-                        "sku": 1040302997
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516759/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516759
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "42 RU / XS/182 ",
+                            "textRs": [
+                                {
+                                    "content": "42 RU / XS/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-827380171/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 827380171
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "44 RU / S/152 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / S/152 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-799396017/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 799396017
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "44 RU / S/164 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / S/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516734/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516734
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "44 RU / S/176 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / S/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260517123/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260517123
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "44 RU / S/182 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / S/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-646412926/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 646412926
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "46 RU / M/152 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / M/152 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-799396010/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 799396010
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "46 RU / M/164 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / M/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260517116/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260517116
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "46 RU / M/176 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / M/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516736/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516736
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "46 RU / M/182 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / M/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-646420645/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 646420645
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "48 RU / L/164 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / L/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516745/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516745
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "48 RU / L/176 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / L/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516739/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516739
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "48 RU / L/182 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / L/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-646419305/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 646419305
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "50 RU / XL/152 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / XL/152 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-827374115/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 827374115
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "50 RU / XL/164 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / XL/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516743/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516743
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "50 RU / XL/176 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / XL/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-260516741/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 260516741
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "50 RU / XL/182 ",
+                            "textRs": [
+                                {
+                                    "content": "50 RU / XL/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-827381474/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 827381474
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "52 RU / 2XL/164 ",
+                            "textRs": [
+                                {
+                                    "content": "52 RU / 2XL/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-495887842/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 495887842
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "52 RU / 2XL/176 ",
+                            "textRs": [
+                                {
+                                    "content": "52 RU / 2XL/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-495917680/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 495917680
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "1 720 ₽",
+                            "searchableText": "52 RU / XL/182 ",
+                            "textRs": [
+                                {
+                                    "content": "52 RU / XL/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-1048902490/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 1048902490
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "54 RU / 3XL/164 ",
+                            "textRs": [
+                                {
+                                    "content": "54 RU / 3XL/164 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-646421162/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 646421162
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "2 600 ₽",
+                            "searchableText": "54 RU / 3XL/176 ",
+                            "textRs": [
+                                {
+                                    "content": "54 RU / 3XL/176 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-646421160/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 646421160
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
+                            "originalPrice": "4 500 ₽",
+                            "price": "1 791 ₽",
+                            "searchableText": "54 RU / XL/182 ",
+                            "textRs": [
+                                {
+                                    "content": "54 RU / XL/182 ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Брюки AIVA fashion Офис"
+                        },
+                        "link": "/product/bryuki-aiva-fashion-ofis-1048903208/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
+                        "sku": 1048903208
                     }
                 ]
             }
@@ -266,7 +710,7 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "text": "Вискозный шелк"
+                                "text": "Хлопок"
                             }
                         ]
                     },
@@ -276,7 +720,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "шелк и вискоза"
+                                "text": "хлопок-92, эластан-8"
                             }
                         ]
                     },
@@ -286,38 +730,34 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Базовая коллекция"
+                                "text": "Весна-лето 2023"
                             }
                         ]
                     },
                     {
-                        "key": "StyleApparel",
-                        "name": "Стиль",
+                        "key": "SizeHeight",
+                        "name": "Рост",
                         "values": [
                             {
-                                "key": "StyleApparel_0",
-                                "text": "Классический"
-                            },
-                            {
-                                "key": "StyleApparel_1",
-                                "text": "Повседневный"
+                                "key": "SizeHeight_0",
+                                "text": "164"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-1040289631/features/"
+        "link": "https://www.ozon.ru/product/bryuki-aiva-fashion-ofis-260516745/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 1118183,
-        "link": "https://www.ozon.ru/seller/time-savvy-1118183/",
+        "id": 105530,
+        "link": "https://www.ozon.ru/seller/aiva-fashion-105530/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,7",
+                            "content": "4,9",
                             "type": "textBold"
                         },
                         {
@@ -337,74 +777,112 @@
                 "content": {
                     "headRs": [
                         {
-                            "content": "Доставка и сервис Ozon",
+                            "content": "100% ",
+                            "type": "textBold"
+                        },
+                        {
+                            "content": "вовремя",
                             "type": "text"
                         }
                     ],
                     "hintRs": [
                         {
-                            "content": "Качественные доставка и хранение",
+                            "content": "Столько заказов за последние 30 дней продавец передал в доставку без опозданий",
                             "type": "text"
                         }
                     ]
                 }
             }
         ],
-        "name": "TIME SAVVY"
+        "name": "AIVA fashion"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6683068559.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6687710473.jpg"
             },
             {
-                "alt": "Платье #1"
+                "alt": "Брюки AIVA fashion Офис #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6683068573.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6687710476.jpg"
             },
             {
-                "alt": "Платье #2"
+                "alt": "Брюки AIVA fashion Офис #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6683068567.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6687690918.jpg"
             },
             {
-                "alt": "Платье #3"
+                "alt": "Брюки AIVA fashion Офис #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-k/6683068568.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6687710471.jpg"
             },
             {
-                "alt": "Платье #4"
+                "alt": "Брюки AIVA fashion Офис #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6683068561.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6687710837.jpg"
             },
             {
-                "alt": "Платье #5"
+                "alt": "Брюки AIVA fashion Офис #5"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-m/6683068570.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6687710469.jpg"
             },
             {
-                "alt": "Платье #6"
+                "alt": "Брюки AIVA fashion Офис #6"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6683068563.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6687710477.jpg"
             },
             {
-                "alt": "Платье #7"
+                "alt": "Брюки AIVA fashion Офис #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6687710474.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #8"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-8/6687710468.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #9"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-a/6687710470.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #10"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-i/6687710478.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #11"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6687710475.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #12"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-a/6686903782.jpg"
+            },
+            {
+                "alt": "Брюки AIVA fashion Офис #13"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "2 123 ₽",
-        "link": "/modal/withoutOzonAccount",
-        "originalPrice": "4 590 ₽",
-        "price": "2 234 ₽"
+        "originalPrice": "4 500 ₽",
+        "price": "2 600 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье"
+        "title": "Брюки AIVA fashion Офис"
     }
 }

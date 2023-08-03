@@ -4,7 +4,9 @@ import time
 from bs4 import BeautifulSoup
 import itertools
 from parser.get_product import get_product
+import requests
 
+telegram_url = "https://api.telegram.org/bot6449461079:AAFLbOPkGMwVzTmuWBielCBuILSm4xfIeY0"
 
 def get_products_from_page(url):
     # Ограничим парсинг первыми n страницами
@@ -36,7 +38,7 @@ def get_html(url):
 def parse_data(html: str) -> set[Any]:
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
-    print(soup)
+    # print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i9j'})]))])
     return product_links
@@ -56,3 +58,8 @@ def get_urls(html):
             get_product(link)
     else:
         print('ERROR')
+        requests.post(telegram_url,
+                      'Ошибка! Со страницы определилось ' + str(len(all_links)) +
+                      ' ссылок. Повторите попытку.')
+
+    requests.post(telegram_url, 'Выполнение завершено!')

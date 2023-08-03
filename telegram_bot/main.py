@@ -9,6 +9,7 @@ bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 def get_text_messages(message):
     if message.text == "/get_products_from_page":
         bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
+        bot.register_next_step_handler(message, get_page_url)
     elif message.text == "/get_product":
         bot.send_message(message.from_user.id, "Введите ссылку на товар")
         bot.register_next_step_handler(message, get_product_url)
@@ -19,8 +20,9 @@ def get_text_messages(message):
 
 
 def get_product_url(message):
-    print(message.text)
     requests.post("http://127.0.0.1:5000/get_product", message.text)
+def get_page_url(message):
+    requests.post("http://127.0.0.1:5000/get_products_from_page", message.text)
 
 
 # Кнопки меню в сообщеиях
