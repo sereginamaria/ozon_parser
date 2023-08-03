@@ -28,6 +28,8 @@ def get_ozon_product():
     if request.method == 'POST':
         print('123')
         print(request)
+        print(request.data)
+        get_product(request.data.decode('UTF-8'))
         return 'Получаем информацию о товаре'
     if request.method == 'GET':
         print('GET')

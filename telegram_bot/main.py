@@ -20,7 +20,7 @@ def get_text_messages(message):
 
 def get_product_url(message):
     print(message.text)
-    requests.post("http://127.0.0.1:5000/get_product", data={'message': message.text})
+    requests.post("http://127.0.0.1:5000/get_product", message.text)
 
 
 # Кнопки меню в сообщеиях

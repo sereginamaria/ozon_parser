@@ -7,7 +7,9 @@ from datetime import date
 
 def get_product(url):
     print('hello')
+    print(type(url))
     print(url)
+
     driver = undetected_chromedriver.Chrome()
     driver.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
     # time.sleep(1)
