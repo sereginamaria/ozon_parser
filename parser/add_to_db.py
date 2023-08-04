@@ -1,23 +1,44 @@
 # подключаем SQLite
 import sqlite3 as sl
-import requests
-
-telegram_url = "https://api.telegram.org/bot6449461079:AAFLbOPkGMwVzTmuWBielCBuILSm4xfIeY0"
 
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
-            product_brand_name, product_brand_link, product_rating, product_categories, product_color, product_article,
-            product_sizes, product_all_articles, add_date
-            ):
+              product_brand_name, product_brand_link, product_rating, product_categories, product_color,
+              product_article,
+              product_sizes, product_all_articles
+              ):
     # открываем файл с базой данных
-    con = sl.connect('ozon_product_db.db')
+    con = sl.connect('../ozon_product_db.db')
+    cursor = con.cursor()
+
+    with con:
+        # получаем количество таблиц с нужным нам именем
+        data = con.execute("select count(*) from sqlite_master where type='table' and name='offset'")
+        for row in data:
+            # если таких таблиц нет
+            print('нет таблиц смещения')
+            if row[0] == 0:
+                # создаём таблицу для смещения
+                with con:
+                    con.execute("""
+                        CREATE TABLE offset (
+                            id INTEGER PRIMARY KEY
+                        );
+                    """)
+
+        # подготавливаем множественный запрос
+        sql = 'INSERT or IGNORE INTO offset (id) values(0)'
+        cursor.execute(sql)
 
     with con:
         # получаем количество таблиц с нужным нам именем
         data = con.execute("select count(*) from sqlite_master where type='table' and name='ozon_products'")
         for row in data:
             # если таких таблиц нет
+            print('нет таблиц товаров')
+            print(row[0])
             if row[0] == 0:
                 # создаём таблицу для товаров
+                print('эсоздае таблицу товаров')
                 with con:
                     con.execute("""
                         CREATE TABLE ozon_products (
@@ -35,8 +56,10 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             product_color TEXT,
                             product_article TEXT unique on conflict fail,
                             product_all_articles TEXT,
-                            add_date DATE,
-                            verification BOOLEAN 
+                            date_of_publication DATE,
+                            publication_category TEXT,
+                            publishing_platform TEXT,
+                            verification BOOLEAN
                         );
                     """)
 
@@ -45,7 +68,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles, add_date) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
+              'product_all_articles) values(?,?,?,?,?,?,?,?,?,?,?,?,?)'
+
         # указываем данные для запроса
         data = [
             (product_name,
@@ -61,7 +85,6 @@ def add_to_db(product_name, product_price_original, product_price, product_price
              product_article,
              product_sizes,
              product_all_articles,
-             add_date
              )
         ]
 
@@ -69,8 +92,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
         with con:
             con.executemany(sql, data)
 
-        print(telegram_url + '/sendMessage?chat_id=6181726421&text=done')
-        requests.post(telegram_url + '/sendMessage?chat_id=6181726421&text=done')
+
+
         # выводим содержимое таблицы на экран
         # with con:
         #     data = con.execute("SELECT * FROM products")

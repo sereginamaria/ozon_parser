@@ -2,8 +2,8 @@ import undetected_chromedriver
 from selenium.webdriver.common.by import By
 import json
 from parser.add_to_db import add_to_db
-from datetime import date
 
+telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 def get_product(url):
     print('hello')
@@ -106,7 +106,7 @@ def get_product(url):
     product_sizes = ''
     if 'webAspects-418189-default-1' in d2:
         if 'aspects' in d2['webAspects-418189-default-1']:
-            if len(d2['webAspects-418189-default-1']['aspects']) == 3:
+            if len(d2['webAspects-418189-default-1']['aspects']) >= 3:
                 for object in d2['webAspects-418189-default-1']['aspects'][1]['variants']:
                     for k, v in object.items():
                         if k == 'sku':
@@ -137,34 +137,39 @@ def get_product(url):
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
             if len(d2['webAspects-418189-default-1']['aspects']) == 1:
+                print('article')
                 for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
                         if k == 'link' and v.split('?')[0] == url:
+                            print('article')
                             for k1, v1 in object.items():
                                 if k1 == 'sku':
                                     product_article = v1
 
     # print(d2['webPrice-2136014-default-1']['originalPrice'])
 
-    add_date = date.today()
-    add_to_db(
-        product_name,
-        product_price_original,
-        product_price,
-        product_price_with_ozon_card,
-        product_images,
-        product_brand_name,
-        product_brand_link,
-        product_rating,
-        product_categories,
-        product_color,
-        product_article,
-        product_sizes,
-        product_all_articles,
-        add_date
-    )
+    if product_rating != '':
+        if float(product_rating.replace(',', '.')) >= float('4.4'):
+            add_to_db(
+                product_name,
+                product_price_original,
+                product_price,
+                product_price_with_ozon_card,
+                product_images,
+                product_brand_name,
+                product_brand_link,
+                product_rating,
+                product_categories,
+                product_color,
+                product_article,
+                product_sizes,
+                product_all_articles
+            )
 
     with open('../parser/product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
+
+    driver.close()
+    driver.quit()

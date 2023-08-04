@@ -1,6 +1,7 @@
 from flask import Flask
 from parser.get_product import get_product
 from parser.get_products_from_page import get_products_from_page
+from card_creator.main import card_creator
 from flask import request
 app = Flask(__name__)
 
@@ -31,6 +32,13 @@ def get_ozon_product():
     if request.method == 'GET':
         return 'Получаем информацию о товаре'
 
+@app.route('/card_creator', methods=['GET', 'POST'])
+def card_creator():
+    if request.method == 'POST':
+        card_creator(request.data.decode('UTF-8'))
+        return 'Получаем информацию о товаре'
+    if request.method == 'GET':
+        return 'Получаем информацию о товаре'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

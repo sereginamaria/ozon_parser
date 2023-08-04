@@ -6,7 +6,7 @@ import itertools
 from parser.get_product import get_product
 import requests
 
-telegram_url = "https://api.telegram.org/bot6449461079:AAFLbOPkGMwVzTmuWBielCBuILSm4xfIeY0"
+telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 def get_products_from_page(url):
     # Ограничим парсинг первыми n страницами
@@ -26,7 +26,7 @@ def get_html(url):
     print('get_html')
     driver = undetected_chromedriver.Chrome()
     driver.get(url)
-    # time.sleep(3)
+    time.sleep(3)
     driver.execute_script("window.scrollTo(5,4000);")
     # time.sleep(5)
     html = driver.page_source
@@ -38,7 +38,7 @@ def get_html(url):
 def parse_data(html: str) -> set[Any]:
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
-    # print(soup)
+    print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i9j'})]))])
     return product_links
@@ -58,8 +58,8 @@ def get_urls(html):
             get_product(link)
     else:
         print('ERROR')
-        requests.post(telegram_url,
-                      'Ошибка! Со страницы определилось ' + str(len(all_links)) +
-                      ' ссылок. Повторите попытку.')
-
-    requests.post(telegram_url, 'Выполнение завершено!')
+        requests.post(
+            url=telegram_url + '/sendMessage',
+            data={'chat_id': 6181726421, 'text': 'Ошибка! Со страницы определилось ' + str(len(all_links)) +
+                      ' ссылок. Повторите попытку.'}
+        ).json()

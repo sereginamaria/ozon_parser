@@ -2,16 +2,19 @@
     "breadCrumbs-1619260-default-1": {
         "breadcrumbs": [
             {
-                "text": "Одежда"
+                "text": "Дом и сад"
             },
             {
-                "text": "Женщинам"
+                "text": "Декор и интерьер"
             },
             {
-                "text": "Брюки, бриджи, капри"
+                "text": "Свечи и подсвечники"
             },
             {
-                "text": "AIVA fashion"
+                "text": "Свечи"
+            },
+            {
+                "text": "AROMANTIQUE"
             }
         ]
     },
@@ -20,211 +23,42 @@
             {
                 "variants": [
                     {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#808000"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-u/wc140/6688110918.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-u/c100/wc140/6688110918.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "оливковый",
-                            "textRs": [
-                                {
-                                    "content": "оливковый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516468/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516468
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#fd85b2"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6688809751.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-v/c100/wc140/6688809751.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "розовый",
-                            "textRs": [
-                                {
-                                    "content": "розовый",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-1048886411/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 1048886411
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#fd85b2"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-v/wc140/6688809751.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-v/c100/wc140/6688809751.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "фуксия",
-                            "textRs": [
-                                {
-                                    "content": "фуксия",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-495985919/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 495985919
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#9c85cd"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/wc140/6688162083.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-3/c100/wc140/6688162083.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "сирень",
-                            "textRs": [
-                                {
-                                    "content": "сирень",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260517302/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260517302
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#fbf3e1"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-z/wc140/6687700235.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-z/c100/wc140/6687700235.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "молочный",
-                            "textRs": [
-                                {
-                                    "content": "молочный",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260517425/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260517425
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#dcbe96"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6688182072.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-c/c100/wc140/6688182072.jpg",
-                            "price": "1 791 ₽",
-                            "searchableText": "какао",
-                            "textRs": [
-                                {
-                                    "content": "какао",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-496040804/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 496040804
-                    },
-                    {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#474a51"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-d/c100/wc140/6687710473.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "графит",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "Новые",
                             "textRs": [
                                 {
-                                    "content": "графит",
+                                    "content": "Новые",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516745/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516745
+                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178785163
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#6600cc"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-f/wc140/6689547915.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-f/c100/wc140/6689547915.jpg",
-                            "price": "2 600 ₽",
-                            "searchableText": "лаванда",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "242 ₽",
+                            "searchableText": "Уцененные",
                             "textRs": [
                                 {
-                                    "content": "лаванда",
+                                    "content": "Уцененные",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г. Уцененный товар"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260577192/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260577192
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "colors": [
-                                "#000000"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-3/wc140/6688508331.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-3/c100/wc140/6688508331.jpg",
-                            "price": "1 720 ₽",
-                            "searchableText": "черный",
-                            "textRs": [
-                                {
-                                    "content": "черный",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-1049319910/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 1049319910
+                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-utsenennyy-tovar-1070578695/?ectx=1&from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 1070578695
                     }
                 ]
             },
@@ -232,532 +66,276 @@
                 "variants": [
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "42 RU / XS/164 ",
+                            "colors": [
+                                "#ffffff",
+                                "#ffff00"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6045934596.jpg",
+                            "originalPrice": "385 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-q/wc140/6061294922.jpg",
+                            "price": "269 ₽",
+                            "searchableText": "Фруктовое суфле",
                             "textRs": [
                                 {
-                                    "content": "42 RU / XS/164 ",
+                                    "content": "Фруктовое суфле",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая десертная Aromantique \"Фруктовое суфле\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260517110/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260517110
+                        "link": "/product/svecha-aromaticheskaya-desertnaya-aromantique-fruktovoe-sufle-40-g-178783114/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178783114
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "42 RU / XS/176 ",
+                            "colors": [
+                                "#924900"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
+                            "originalPrice": "385 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6065616995.jpg",
+                            "price": "191 ₽",
+                            "searchableText": "Шоколадное суфле",
                             "textRs": [
                                 {
-                                    "content": "42 RU / XS/176 ",
+                                    "content": "Шоколадное суфле",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516759/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516759
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "42 RU / XS/182 ",
-                            "textRs": [
-                                {
-                                    "content": "42 RU / XS/182 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-827380171/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 827380171
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "44 RU / S/152 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / S/152 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-799396017/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 799396017
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "44 RU / S/164 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / S/164 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516734/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516734
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "44 RU / S/176 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / S/176 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260517123/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260517123
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "44 RU / S/182 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / S/182 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-646412926/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 646412926
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "46 RU / M/152 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / M/152 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-799396010/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 799396010
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "46 RU / M/164 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / M/164 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260517116/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260517116
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "46 RU / M/176 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / M/176 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516736/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516736
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "46 RU / M/182 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / M/182 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-646420645/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 646420645
+                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178880201
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "48 RU / L/164 ",
+                            "colors": [
+                                "#ff0000",
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
+                            "originalPrice": "385 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-9/wc140/6065616993.jpg",
+                            "price": "191 ₽",
+                            "searchableText": "Ягодное парфе",
                             "textRs": [
                                 {
-                                    "content": "48 RU / L/164 ",
+                                    "content": "Ягодное парфе",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516745/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516745
+                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178785163
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "48 RU / L/176 ",
+                            "colors": [
+                                "#ff9900",
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995505.jpg",
+                            "originalPrice": "385 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-7/wc140/6065616991.jpg",
+                            "price": "191 ₽",
+                            "searchableText": "Цитрусовый мусс",
                             "textRs": [
                                 {
-                                    "content": "48 RU / L/176 ",
+                                    "content": "Цитрусовый мусс",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Цитрусовый мусс\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516739/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516739
+                        "link": "/product/svecha-aromaticheskaya-aromantique-tsitrusovyy-muss-40-g-178783868/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178783868
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "48 RU / L/182 ",
+                            "colors": [
+                                "#6600cc"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6161997173.jpg",
+                            "originalPrice": "385 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6065616997.jpg",
+                            "price": "191 ₽",
+                            "searchableText": "Ежевичный щербет",
                             "textRs": [
                                 {
-                                    "content": "48 RU / L/182 ",
+                                    "content": "Ежевичный щербет",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Ежевичный щербет\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-646419305/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 646419305
+                        "link": "/product/svecha-aromaticheskaya-aromantique-ezhevichnyy-shcherbet-40-g-178781542/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178781542
+                    }
+                ]
+            },
+            {
+                "variants": [
+                    {
+                        "active": false,
+                        "availability": "noSuchCombination",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6161997173.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "Ежевичный щербет",
+                            "textRs": [
+                                {
+                                    "content": "Ежевичный щербет",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Свеча ароматическая Aromantique \"Ежевичный щербет\", 40 г"
+                        },
+                        "link": "/product/svecha-aromaticheskaya-aromantique-ezhevichnyy-shcherbet-40-g-178781542/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178781542
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "50 RU / XL/152 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6045934596.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "269 ₽",
+                            "searchableText": "Фруктовое суфле",
                             "textRs": [
                                 {
-                                    "content": "50 RU / XL/152 ",
+                                    "content": "Фруктовое суфле",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая десертная Aromantique \"Фруктовое суфле\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-827374115/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 827374115
+                        "link": "/product/svecha-aromaticheskaya-desertnaya-aromantique-fruktovoe-sufle-40-g-178783114/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178783114
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "50 RU / XL/164 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995505.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "Цитрусовый мусс",
                             "textRs": [
                                 {
-                                    "content": "50 RU / XL/164 ",
+                                    "content": "Цитрусовый мусс",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Цитрусовый мусс\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516743/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516743
+                        "link": "/product/svecha-aromaticheskaya-aromantique-tsitrusovyy-muss-40-g-178783868/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178783868
                     },
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "50 RU / XL/176 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "Шоколадное суфле",
                             "textRs": [
                                 {
-                                    "content": "50 RU / XL/176 ",
+                                    "content": "Шоколадное суфле",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-260516741/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 260516741
+                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178880201
                     },
                     {
-                        "active": false,
+                        "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "50 RU / XL/182 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "Ягодное парфе",
                             "textRs": [
                                 {
-                                    "content": "50 RU / XL/182 ",
+                                    "content": "Ягодное парфе",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-827381474/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 827381474
-                    },
+                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178785163
+                    }
+                ]
+            },
+            {
+                "variants": [
                     {
                         "active": false,
-                        "availability": "inStock",
+                        "availability": "noSuchCombination",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "52 RU / 2XL/164 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "3.5",
                             "textRs": [
                                 {
-                                    "content": "52 RU / 2XL/164 ",
+                                    "content": "3.5",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-495887842/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 495887842
+                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178880201
                     },
                     {
-                        "active": false,
+                        "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "52 RU / 2XL/176 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
+                            "originalPrice": "385 ₽",
+                            "price": "191 ₽",
+                            "searchableText": "6",
                             "textRs": [
                                 {
-                                    "content": "52 RU / 2XL/176 ",
+                                    "content": "6",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки AIVA fashion Офис"
+                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
                         },
-                        "link": "/product/bryuki-aiva-fashion-ofis-495917680/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 495917680
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "1 720 ₽",
-                            "searchableText": "52 RU / XL/182 ",
-                            "textRs": [
-                                {
-                                    "content": "52 RU / XL/182 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-1048902490/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 1048902490
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "54 RU / 3XL/164 ",
-                            "textRs": [
-                                {
-                                    "content": "54 RU / 3XL/164 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-646421162/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 646421162
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "2 600 ₽",
-                            "searchableText": "54 RU / 3XL/176 ",
-                            "textRs": [
-                                {
-                                    "content": "54 RU / 3XL/176 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-646421160/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 646421160
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6687710473.jpg",
-                            "originalPrice": "4 500 ₽",
-                            "price": "1 791 ₽",
-                            "searchableText": "54 RU / XL/182 ",
-                            "textRs": [
-                                {
-                                    "content": "54 RU / XL/182 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Брюки AIVA fashion Офис"
-                        },
-                        "link": "/product/bryuki-aiva-fashion-ofis-1048903208/?from_sku=260516745&oos_search=false&sh=Br3s_rPIzQ",
-                        "sku": 1048903208
+                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
+                        "sku": 178785163
                     }
                 ]
             }
         ]
     },
-    "webCharacteristics-545750-default-1": {
-        "characteristics": [
-            {
-                "short": [
-                    {
-                        "key": "Season",
-                        "name": "Сезон",
-                        "values": [
-                            {
-                                "key": "Season_0",
-                                "text": "На любой сезон"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "Material",
-                        "name": "Материал",
-                        "values": [
-                            {
-                                "key": "Material_0",
-                                "text": "Хлопок"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "Composition",
-                        "name": "Состав материала",
-                        "values": [
-                            {
-                                "key": "Composition_0",
-                                "text": "хлопок-92, эластан-8"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "Collection",
-                        "name": "Коллекция",
-                        "values": [
-                            {
-                                "key": "Collection_0",
-                                "text": "Весна-лето 2023"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "SizeHeight",
-                        "name": "Рост",
-                        "values": [
-                            {
-                                "key": "SizeHeight_0",
-                                "text": "164"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "link": "https://www.ozon.ru/product/bryuki-aiva-fashion-ofis-260516745/features/"
-    },
     "webCurrentSeller-735663-default-1": {
-        "id": 105530,
-        "link": "https://www.ozon.ru/seller/aiva-fashion-105530/",
+        "id": 65419,
+        "link": "https://www.ozon.ru/seller/aroma-houm-65419/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,9",
+                            "content": "4,7",
                             "type": "textBold"
                         },
                         {
@@ -777,112 +355,60 @@
                 "content": {
                     "headRs": [
                         {
-                            "content": "100% ",
-                            "type": "textBold"
-                        },
-                        {
-                            "content": "вовремя",
+                            "content": "Доставка и сервис Ozon",
                             "type": "text"
                         }
                     ],
                     "hintRs": [
                         {
-                            "content": "Столько заказов за последние 30 дней продавец передал в доставку без опозданий",
+                            "content": "Качественные доставка и хранение",
                             "type": "text"
                         }
                     ]
                 }
             }
         ],
-        "name": "AIVA fashion"
+        "name": "Арома Хоум"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6687710473.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6161995829.jpg"
             },
             {
-                "alt": "Брюки AIVA fashion Офис #1"
+                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6687710476.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6065622244.jpg"
             },
             {
-                "alt": "Брюки AIVA fashion Офис #2"
+                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6687690918.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-3/6065622243.jpg"
             },
             {
-                "alt": "Брюки AIVA fashion Офис #3"
+                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6687710471.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6065622245.jpg"
             },
             {
-                "alt": "Брюки AIVA fashion Офис #4"
+                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6687710837.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6065622251.jpg"
             },
             {
-                "alt": "Брюки AIVA fashion Офис #5"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6687710469.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #6"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6687710477.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #7"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6687710474.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #8"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-8/6687710468.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #9"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-a/6687710470.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #10"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-i/6687710478.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #11"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6687710475.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #12"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-a/6686903782.jpg"
-            },
-            {
-                "alt": "Брюки AIVA fashion Офис #13"
+                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #5"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "originalPrice": "4 500 ₽",
-        "price": "2 600 ₽"
+        "originalPrice": "385 ₽",
+        "price": "191 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Брюки AIVA fashion Офис"
+        "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
     }
 }

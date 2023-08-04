@@ -1,6 +1,7 @@
 import telebot
 from telebot import types
 import requests
+from connect_db import verification
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
@@ -13,6 +14,9 @@ def get_text_messages(message):
     elif message.text == "/get_product":
         bot.send_message(message.from_user.id, "Введите ссылку на товар")
         bot.register_next_step_handler(message, get_product_url)
+    elif message.text == "/verification":
+        bot.send_message(message.from_user.id, "Хочу верифицировать")
+        bot.register_next_step_handler(message, verification)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
@@ -21,8 +25,10 @@ def get_text_messages(message):
 
 def get_product_url(message):
     requests.post("http://127.0.0.1:5000/get_product", message.text)
+    bot.send_message(message.from_user.id, "Выполнение завершено!")
 def get_page_url(message):
     requests.post("http://127.0.0.1:5000/get_products_from_page", message.text)
+    bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
 # Кнопки меню в сообщеиях
