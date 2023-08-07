@@ -41,6 +41,7 @@ def get_page_url(message):
 #         bot.send_message(a.chat.id, 'Это главное меню!', reply_markup=mainmenu)
 
 
+
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     if call.data == "mainmenu":
