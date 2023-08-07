@@ -15,7 +15,6 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Введите ссылку на товар")
         bot.register_next_step_handler(message, get_product_url)
     elif message.text == "/verification":
-        bot.send_message(message.from_user.id, "Хочу верифицировать")
         bot.register_next_step_handler(message, verification)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")

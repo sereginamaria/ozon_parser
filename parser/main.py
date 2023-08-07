@@ -32,8 +32,8 @@ def get_ozon_product():
     if request.method == 'GET':
         return 'Получаем информацию о товаре'
 
-@app.route('/card_creator', methods=['GET', 'POST'])
-def card_creator():
+@app.route('/create_card', methods=['GET', 'POST'])
+def create_card():
     if request.method == 'POST':
         card_creator(request.data.decode('UTF-8'))
         return 'Получаем информацию о товаре'
