@@ -1,10 +1,13 @@
 import telebot
 from telebot import types
 import requests
-from connect_db import verification
+
+import sqlite3 as sl
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
+# открываем файл с базой данных
+con = sl.connect('ozon_product_db.db', check_same_thread=False)
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
@@ -15,7 +18,7 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Введите ссылку на товар")
         bot.register_next_step_handler(message, get_product_url)
     elif message.text == "/verification":
-        bot.register_next_step_handler(message, verification)
+        verification_message(message)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
@@ -25,44 +28,46 @@ def get_text_messages(message):
 def get_product_url(message):
     requests.post("http://127.0.0.1:5000/get_product", message.text)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
+
+
 def get_page_url(message):
     requests.post("http://127.0.0.1:5000/get_products_from_page", message.text)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
-# Кнопки меню в сообщеиях
-# def inline_key(a):
-#     if a.text == "Inline_menu":
-#         mainmenu = types.InlineKeyboardMarkup()
-#         key1 = types.InlineKeyboardButton(text='Кнопка 1', callback_data='key1')
-#         key2 = types.InlineKeyboardButton(text='Кнопка 2', callback_data='key2')
-#         mainmenu.add(key1, key2)
-#         bot.send_message(a.chat.id, 'Это главное меню!', reply_markup=mainmenu)
+def verification_message(message):
+    print('ver')
+    print(message.text)
 
+    with con:
+        products = con.execute(
+            "select product_images from ozon_products where product_id >= (select id from offset)")
+    for product in products:
+        # print(product)
+        # print(type(product))
+        # print(len(product))
+        # print(product[0])
+        # print(type(product[0]))
+        # product_image = str(product_image[0]).split(',')
 
+        main_menu = types.InlineKeyboardMarkup()
+        key1 = types.InlineKeyboardButton(text='Да', callback_data='yes')
+        key2 = types.InlineKeyboardButton(text='Нет', callback_data='no')
+        main_menu.add(key1, key2)
+
+        bot.send_photo(chat_id=message.chat.id, photo=product[0].split(',')[0], caption='Оставляем?',
+                       reply_markup=main_menu)
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-    if call.data == "mainmenu":
-        mainmenu = types.InlineKeyboardMarkup()
-        key1 = types.InlineKeyboardButton(text='Кнопка 1', callback_data='key1')
-        key2 = types.InlineKeyboardButton(text='Кнопка 2', callback_data='key2')
-        mainmenu.add(key1, key2)
-        bot.edit_message_reply_markup(call.message.chat.id, call.message.message_id, reply_markup=mainmenu)
-    elif call.data == "key1":
-        next_menu = types.InlineKeyboardMarkup()
-        key3 = types.InlineKeyboardButton(text='Кнопка 3', callback_data='key3')
-        back = types.InlineKeyboardButton(text='Назад', callback_data='mainmenu')
-        next_menu.add(key3, back)
-        bot.edit_message_text('Это меню уровня 2, для кнопки1!', call.message.chat.id, call.message.message_id,
-                              reply_markup=next_menu)
-    elif call.data == "key2":
-        next_menu2 = types.InlineKeyboardMarkup()
-        key4 = types.InlineKeyboardButton(text='Кнопка 4', callback_data='key4')
-        back = types.InlineKeyboardButton(text='Назад', callback_data='mainmenu')
-        next_menu2.add(key4, back)
-        bot.edit_message_text('Это меню уровня 2, для кнопки2!', call.message.chat.id, call.message.message_id,
-                              reply_markup=next_menu2)
-
+    if call.data == "yes":
+        print()
+        with con:
+            con.execute("update ozon_products set verification = true where product_id == (select id from offset)")
+    elif call.data == "no":
+        with con:
+            con.execute("delete from ozon_products where product_id == (select id from offset)")
+    con.execute("UPDATE offset SET id = id + 1")
 
 bot.polling(none_stop=True, interval=0)
+
