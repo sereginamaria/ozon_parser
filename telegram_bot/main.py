@@ -67,7 +67,8 @@ def callback_inline(call):
     elif call.data == "no":
         with con:
             con.execute("delete from ozon_products where product_id == (select id from offset)")
-    con.execute("UPDATE offset SET id = id + 1")
+    with con:
+        con.execute("UPDATE offset SET id = id + 1")
 
 bot.polling(none_stop=True, interval=0)
 

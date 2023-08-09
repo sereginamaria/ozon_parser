@@ -2,19 +2,19 @@
     "breadCrumbs-1619260-default-1": {
         "breadcrumbs": [
             {
-                "text": "Дом и сад"
+                "text": "Одежда"
             },
             {
-                "text": "Декор и интерьер"
+                "text": "Женщинам"
             },
             {
-                "text": "Свечи и подсвечники"
+                "text": "Одежда больших размеров"
             },
             {
-                "text": "Свечи"
+                "text": "Платья"
             },
             {
-                "text": "AROMANTIQUE"
+                "text": "ZARKA"
             }
         ]
     },
@@ -26,39 +26,53 @@
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
                             "searchableText": "Новые",
                             "textRs": [
                                 {
                                     "content": "Новые",
                                     "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 2 200 ₽",
+                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178785163
+                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649921653
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "242 ₽",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6660988589.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "1 760 ₽",
                             "searchableText": "Уцененные",
                             "textRs": [
                                 {
                                     "content": "Уцененные",
                                     "type": "text"
+                                },
+                                {
+                                    "type": "newLine"
+                                },
+                                {
+                                    "content": "от 1 760 ₽",
+                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г. Уцененный товар"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-utsenennyy-tovar-1070578695/?ectx=1&from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 1070578695
+                        "link": "/product/plate-zarka-1123115675/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 1123115675
                     }
                 ]
             },
@@ -66,121 +80,51 @@
                 "variants": [
                     {
                         "active": false,
-                        "availability": "noSuchCombination",
-                        "data": {
-                            "colors": [
-                                "#ffffff",
-                                "#ffff00"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6045934596.jpg",
-                            "originalPrice": "385 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-q/wc140/6061294922.jpg",
-                            "price": "269 ₽",
-                            "searchableText": "Фруктовое суфле",
-                            "textRs": [
-                                {
-                                    "content": "Фруктовое суфле",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Свеча ароматическая десертная Aromantique \"Фруктовое суфле\", 40 г"
-                        },
-                        "link": "/product/svecha-aromaticheskaya-desertnaya-aromantique-fruktovoe-sufle-40-g-178783114/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178783114
-                    },
-                    {
-                        "active": false,
-                        "availability": "noSuchCombination",
-                        "data": {
-                            "colors": [
-                                "#924900"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
-                            "originalPrice": "385 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-b/wc140/6065616995.jpg",
-                            "price": "191 ₽",
-                            "searchableText": "Шоколадное суфле",
-                            "textRs": [
-                                {
-                                    "content": "Шоколадное суфле",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
-                        },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178880201
-                    },
-                    {
-                        "active": true,
                         "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#ff0000",
+                                "#287a41",
                                 "#ffffff"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
-                            "originalPrice": "385 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-9/wc140/6065616993.jpg",
-                            "price": "191 ₽",
-                            "searchableText": "Ягодное парфе",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6660988589.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6660988589.jpg",
+                            "price": "1 718 ₽",
+                            "searchableText": "зеленый;белый",
                             "textRs": [
                                 {
-                                    "content": "Ягодное парфе",
+                                    "content": "зеленый;белый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178785163
+                        "link": "/product/plate-zarka-588846774/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 588846774
                     },
                     {
-                        "active": false,
-                        "availability": "noSuchCombination",
+                        "active": true,
+                        "availability": "inStock",
                         "data": {
                             "colors": [
-                                "#ff9900",
+                                "#666666",
                                 "#ffffff"
                             ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995505.jpg",
-                            "originalPrice": "385 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-7/wc140/6065616991.jpg",
-                            "price": "191 ₽",
-                            "searchableText": "Цитрусовый мусс",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-n/c100/wc140/6660942683.jpg",
+                            "price": "2 200 ₽",
+                            "searchableText": "серый;белый",
                             "textRs": [
                                 {
-                                    "content": "Цитрусовый мусс",
+                                    "content": "серый;белый",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Цитрусовый мусс\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-tsitrusovyy-muss-40-g-178783868/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178783868
-                    },
-                    {
-                        "active": false,
-                        "availability": "noSuchCombination",
-                        "data": {
-                            "colors": [
-                                "#6600cc"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6161997173.jpg",
-                            "originalPrice": "385 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-d/wc140/6065616997.jpg",
-                            "price": "191 ₽",
-                            "searchableText": "Ежевичный щербет",
-                            "textRs": [
-                                {
-                                    "content": "Ежевичный щербет",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Свеча ароматическая Aromantique \"Ежевичный щербет\", 40 г"
-                        },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-ezhevichnyy-shcherbet-40-g-178781542/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178781542
+                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649921653
                     }
                 ]
             },
@@ -188,154 +132,172 @@
                 "variants": [
                     {
                         "active": false,
-                        "availability": "noSuchCombination",
+                        "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-h/wc140/6161997173.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "Ежевичный щербет",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
+                            "searchableText": "44–46 RU / 44-46 ",
                             "textRs": [
                                 {
-                                    "content": "Ежевичный щербет",
+                                    "content": "44–46 RU / 44-46 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Ежевичный щербет\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-ezhevichnyy-shcherbet-40-g-178781542/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178781542
+                        "link": "/product/plate-zarka-649918952/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649918952
                     },
                     {
                         "active": false,
-                        "availability": "noSuchCombination",
+                        "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-0/wc140/6045934596.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "269 ₽",
-                            "searchableText": "Фруктовое суфле",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
+                            "searchableText": "48–50 RU / 48-50 ",
                             "textRs": [
                                 {
-                                    "content": "Фруктовое суфле",
+                                    "content": "48–50 RU / 48-50 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая десертная Aromantique \"Фруктовое суфле\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-desertnaya-aromantique-fruktovoe-sufle-40-g-178783114/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178783114
+                        "link": "/product/plate-zarka-649921140/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649921140
                     },
                     {
                         "active": false,
-                        "availability": "noSuchCombination",
+                        "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995505.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "Цитрусовый мусс",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
+                            "searchableText": "52–54 RU / 52-54 ",
                             "textRs": [
                                 {
-                                    "content": "Цитрусовый мусс",
+                                    "content": "52–54 RU / 52-54 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Цитрусовый мусс\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-tsitrusovyy-muss-40-g-178783868/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178783868
+                        "link": "/product/plate-zarka-649922612/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649922612
                     },
                     {
                         "active": false,
-                        "availability": "noSuchCombination",
+                        "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "Шоколадное суфле",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
+                            "searchableText": "56–58 RU / 56-58 ",
                             "textRs": [
                                 {
-                                    "content": "Шоколадное суфле",
+                                    "content": "56–58 RU / 56-58 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178880201
+                        "link": "/product/plate-zarka-649921717/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649921717
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "Ягодное парфе",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
+                            "originalPrice": "3 290 ₽",
+                            "price": "2 200 ₽",
+                            "searchableText": "60–62 RU / 60-62 ",
                             "textRs": [
                                 {
-                                    "content": "Ягодное парфе",
+                                    "content": "60–62 RU / 60-62 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
+                            "title": "Платье ZARKA"
                         },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178785163
-                    }
-                ]
-            },
-            {
-                "variants": [
-                    {
-                        "active": false,
-                        "availability": "noSuchCombination",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-c/wc140/6562506420.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "3.5",
-                            "textRs": [
-                                {
-                                    "content": "3.5",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Свеча ароматическая Aromantique \"Шоколадное суфле\", 40 г"
-                        },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-shokoladnoe-sufle-40-g-178880201/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178880201
-                    },
-                    {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-5/wc140/6161995829.jpg",
-                            "originalPrice": "385 ₽",
-                            "price": "191 ₽",
-                            "searchableText": "6",
-                            "textRs": [
-                                {
-                                    "content": "6",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
-                        },
-                        "link": "/product/svecha-aromaticheskaya-aromantique-yagodnoe-parfe-40-g-178785163/?from_sku=178785163&oos_search=false&sh=6aU36JQXWQ",
-                        "sku": 178785163
+                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
+                        "sku": 649921653
                     }
                 ]
             }
         ]
     },
+    "webCharacteristics-545750-default-1": {
+        "characteristics": [
+            {
+                "short": [
+                    {
+                        "key": "Season",
+                        "name": "Сезон",
+                        "values": [
+                            {
+                                "key": "Season_0",
+                                "text": "Лето"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "Material",
+                        "name": "Материал",
+                        "values": [
+                            {
+                                "key": "Material_0",
+                                "link": "/category/platya-zhenskie-bolshih-razmerov-len/",
+                                "text": "Лен"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "Composition",
+                        "name": "Состав материала",
+                        "values": [
+                            {
+                                "key": "Composition_0",
+                                "text": "Хлопок 60%, Лен 40%"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "Collection",
+                        "name": "Коллекция",
+                        "values": [
+                            {
+                                "key": "Collection_0",
+                                "text": "Весна-лето 2022"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "SizeHeight",
+                        "name": "Рост",
+                        "values": [
+                            {
+                                "key": "SizeHeight_0",
+                                "text": "164-170"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "link": "https://www.ozon.ru/product/plate-zarka-649921653/features/"
+    },
     "webCurrentSeller-735663-default-1": {
-        "id": 65419,
-        "link": "https://www.ozon.ru/seller/aroma-houm-65419/",
+        "id": 30120,
+        "link": "https://www.ozon.ru/seller/zarka-30120/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,7",
+                            "content": "4,8",
                             "type": "textBold"
                         },
                         {
@@ -368,47 +330,107 @@
                 }
             }
         ],
-        "name": "Арома Хоум"
+        "name": "ZARKA"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6161995829.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6660942683.jpg"
             },
             {
-                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #1"
+                "alt": "Платье ZARKA #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-4/6065622244.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6660942677.jpg"
             },
             {
-                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #2"
+                "alt": "Платье ZARKA #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-3/6065622243.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6660942665.jpg"
             },
             {
-                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #3"
+                "alt": "Платье ZARKA #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6065622245.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-0/6660942696.jpg"
             },
             {
-                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #4"
+                "alt": "Платье ZARKA #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6065622251.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6660942715.jpg"
             },
             {
-                "alt": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г #5"
+                "alt": "Платье ZARKA #5"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6660942679.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #6"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-y/6660942694.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-7/6660942667.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #8"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-z/6660942695.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #9"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6660942675.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #10"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-2/6660942698.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #11"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-1/6660942697.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #12"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-i/6660942678.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #13"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6660942674.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #14"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6660942666.jpg"
+            },
+            {
+                "alt": "Платье ZARKA #15"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "originalPrice": "385 ₽",
-        "price": "191 ₽"
+        "originalPrice": "3 290 ₽",
+        "price": "2 200 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Свеча ароматическая Aromantique \"Ягодное парфе\", 40 г"
+        "title": "Платье ZARKA"
     }
 }

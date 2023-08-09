@@ -40,7 +40,7 @@ def parse_data(html: str) -> set[Any]:
     soup = BeautifulSoup(html, 'html.parser')
     print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i9j'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'oi2'})]))])
     return product_links
 
 
