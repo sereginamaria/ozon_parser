@@ -4,8 +4,8 @@ from parser.get_products_from_page import get_products_from_page
 from card_creator.main import card_creator
 from flask import request
 app = Flask(__name__)
-
-
+import json
+import sys
 @app.route('/')
 def hello():
     return "Hello!"
@@ -14,7 +14,23 @@ def hello():
 @app.route('/get_products_from_page', methods=['GET', 'POST'])
 def get_page():
     if request.method == 'POST':
-        get_products_from_page(request.data.decode('UTF-8'))
+
+        print(request)
+        print(request.data)
+        print(type(request.data))
+        print(request.data.decode('UTF-8'))
+        print('vws')
+        print(type(request.data.decode('UTF-8')))
+
+        s = json.loads(request.data.decode('UTF-8'))
+        print(type(s))
+        print(s)
+        print(s.get('page_url'))
+        print(s.get('publication_category'))
+        #
+        # print(getattr(sys.modules[__name__], request.data.decode('UTF-8')))
+        # print(type(getattr(sys.modules[__name__], request.data.decode('UTF-8'))))
+        # get_products_from_page(request.data.decode('UTF-8'))
         return 'Получаем ссылки на продукты со страниц'
     if request.method == 'GET':
         return 'Получаем ссылки на продукты со страниц'

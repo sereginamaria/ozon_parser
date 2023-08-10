@@ -10,10 +10,13 @@ bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 con = sl.connect('ozon_product_db.db', check_same_thread=False)
 
 @bot.message_handler(content_types=['text'])
-def get_text_messages(message):
+def get_text_message(message):
     if message.text == "/get_products_from_page":
-        bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
-        bot.register_next_step_handler(message, get_page_url)
+        bot.send_message(message.from_user.id, "Введите название категории для публикации")
+        bot.register_next_step_handler(message, get_page_url_message)
+        #
+        # bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
+        # bot.register_next_step_handler(message, get_page_url, publication_category)
     elif message.text == "/get_product":
         bot.send_message(message.from_user.id, "Введите ссылку на товар")
         bot.register_next_step_handler(message, get_product_url)
@@ -25,13 +28,24 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
 
-def get_product_url(message):
-    requests.post("http://127.0.0.1:5000/get_product", message.text)
+
+def get_page_url_message(message):
+    global publication_category
+    publication_category = message.text
+    bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
+    bot.register_next_step_handler(message, get_products_from_page_message)
+
+
+def get_products_from_page_message(message):
+    global page_url
+    page_url = message.text
+    data = {"publication_category": publication_category, "page_url": page_url}
+    requests.post("http://127.0.0.1:5000/get_products_from_page", json=data)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
-def get_page_url(message):
-    requests.post("http://127.0.0.1:5000/get_products_from_page", message.text)
+def get_product_url(message):
+    requests.post("http://127.0.0.1:5000/get_product", message.text)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
