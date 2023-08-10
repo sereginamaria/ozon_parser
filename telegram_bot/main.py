@@ -37,11 +37,10 @@ def get_page_url(message):
 
 def verification_message(message):
     print('ver')
-    print(message.text)
 
     with con:
         products = con.execute(
-            "select product_images from ozon_products where product_id >= (select id from offset)")
+            "select product_images from ozon_products where product_id >= (select id from offset) limit 1")
     for product in products:
         # print(product)
         # print(type(product))
@@ -61,7 +60,6 @@ def verification_message(message):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
     if call.data == "yes":
-        print()
         with con:
             con.execute("update ozon_products set verification = true where product_id == (select id from offset)")
     elif call.data == "no":
@@ -69,6 +67,8 @@ def callback_inline(call):
             con.execute("delete from ozon_products where product_id == (select id from offset)")
     with con:
         con.execute("UPDATE offset SET id = id + 1")
+
+    verification_message(call.message)
 
 bot.polling(none_stop=True, interval=0)
 
