@@ -5,7 +5,7 @@ from parser.add_to_db import add_to_db
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
-def get_product(url):
+def get_product(url, publication_category):
     print('hello')
     print(type(url))
     print(url)
@@ -165,7 +165,8 @@ def get_product(url):
                 product_color,
                 product_article,
                 product_sizes,
-                product_all_articles
+                product_all_articles,
+                publication_category
             )
 
     with open('../parser/product_json.json', 'w', encoding="utf-8") as outfile:

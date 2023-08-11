@@ -14,23 +14,23 @@ def hello():
 @app.route('/get_products_from_page', methods=['GET', 'POST'])
 def get_page():
     if request.method == 'POST':
-
-        print(request)
-        print(request.data)
-        print(type(request.data))
-        print(request.data.decode('UTF-8'))
-        print('vws')
-        print(type(request.data.decode('UTF-8')))
-
-        s = json.loads(request.data.decode('UTF-8'))
-        print(type(s))
-        print(s)
-        print(s.get('page_url'))
-        print(s.get('publication_category'))
+        request_data = json.loads(request.data.decode('UTF-8'))
+        publication_category = request_data.get('publication_category')
+        page_url = request_data.get('page_url')
+        # print(request)
+        # print(request.data)
+        # print(type(request.data))
+        # print(request.data.decode('UTF-8'))
+        # print('vws')
+        # print(type(request.data.decode('UTF-8')))
         #
-        # print(getattr(sys.modules[__name__], request.data.decode('UTF-8')))
-        # print(type(getattr(sys.modules[__name__], request.data.decode('UTF-8'))))
-        # get_products_from_page(request.data.decode('UTF-8'))
+        # s = json.loads(request.data.decode('UTF-8'))
+        # print(type(s))
+        # print(s)
+        # print(s.get('page_url'))
+        # print(s.get('publication_category'))
+
+        get_products_from_page(publication_category, page_url)
         return 'Получаем ссылки на продукты со страниц'
     if request.method == 'GET':
         return 'Получаем ссылки на продукты со страниц'

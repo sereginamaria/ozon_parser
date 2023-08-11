@@ -50,39 +50,54 @@ def get_product_url(message):
 
 
 def verification_message(message):
-    print('ver')
-
     with con:
+        global products
         products = con.execute(
-            "select product_images from ozon_products where product_id >= (select id from offset) limit 1")
-    for product in products:
-        # print(product)
-        # print(type(product))
-        # print(len(product))
-        # print(product[0])
-        # print(type(product[0]))
-        # product_image = str(product_image[0]).split(',')
+            "select product_id, product_images from ozon_products where (product_id >= (select id from offset)) and (verification != true) limit 1")
+    print(type(products))
+    print(list(products.fetchall()))
+    produst_list = list(products.fetchall())
+    print(type(produst_list))
+    print(len(produst_list))
 
-        main_menu = types.InlineKeyboardMarkup()
-        key1 = types.InlineKeyboardButton(text='Да', callback_data='yes')
-        key2 = types.InlineKeyboardButton(text='Нет', callback_data='no')
-        main_menu.add(key1, key2)
+    if len(list(products.fetchall())) != 0:
+        for product in products:
+            print('1234')
+            print(product)
+            print(type(product))
+            print(len(product))
+            product_id, product_images = product
+            # print(product_id)
+            # print(product_images)
+            # print(type(product_id))
+            # print(product_images.split(','))
 
-        bot.send_photo(chat_id=message.chat.id, photo=product[0].split(',')[0], caption='Оставляем?',
-                       reply_markup=main_menu)
+            # product_image = str(product_image[0]).split(',')
+
+            main_menu = types.InlineKeyboardMarkup()
+            key1 = types.InlineKeyboardButton(text='Да', callback_data='yes')
+            key2 = types.InlineKeyboardButton(text='Нет', callback_data='no')
+            main_menu.add(key1, key2)
+
+            bot.send_photo(chat_id=message.chat.id, photo=product_images.split(',')[0],
+                           caption='Оставляем?\nАртикул: ' + str(product_id),
+                           reply_markup=main_menu)
+    else:
+        bot.send_message(message.chat.id, "Все товары проверифицированы")
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-    if call.data == "yes":
+    if len(list(products.fetchall())) != 0:
+        if call.data == "yes":
+            with con:
+                con.execute("update ozon_products set verification = true where product_id == (select id from offset)")
+        elif call.data == "no":
+            with con:
+                con.execute("delete from ozon_products where product_id == (select id from offset)")
         with con:
-            con.execute("update ozon_products set verification = true where product_id == (select id from offset)")
-    elif call.data == "no":
-        with con:
-            con.execute("delete from ozon_products where product_id == (select id from offset)")
-    with con:
-        con.execute("UPDATE offset SET id = id + 1")
+            con.execute("UPDATE offset SET id = id + 1")
 
-    verification_message(call.message)
+        verification_message(call.message)
 
 bot.polling(none_stop=True, interval=0)
 

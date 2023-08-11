@@ -8,13 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Одежда больших размеров"
+                "text": "Платья и сарафаны"
             },
             {
-                "text": "Платья"
-            },
-            {
-                "text": "ZARKA"
+                "text": "ТВОЕ"
             }
         ]
     },
@@ -23,56 +20,50 @@
             {
                 "variants": [
                     {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "Новые",
-                            "textRs": [
-                                {
-                                    "content": "Новые",
-                                    "type": "text"
-                                },
-                                {
-                                    "type": "newLine"
-                                },
-                                {
-                                    "content": "от 2 200 ₽",
-                                    "type": "textGray"
-                                }
-                            ],
-                            "title": "Платье ZARKA"
-                        },
-                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649921653
-                    },
-                    {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6660988589.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "1 760 ₽",
-                            "searchableText": "Уцененные",
+                            "colors": [
+                                "#ffffff"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-q/wc140/6678443438.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-q/c100/wc140/6678443438.jpg",
+                            "price": "1 595 ₽",
+                            "searchableText": "белый",
                             "textRs": [
                                 {
-                                    "content": "Уцененные",
+                                    "content": "белый",
                                     "type": "text"
-                                },
-                                {
-                                    "type": "newLine"
-                                },
-                                {
-                                    "content": "от 1 760 ₽",
-                                    "type": "textGray"
                                 }
                             ],
-                            "title": "Платье ZARKA"
+                            "title": "Платье ТВОЕ"
                         },
-                        "link": "/product/plate-zarka-1123115675/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 1123115675
+                        "link": "/product/plate-tvoe-1030322889/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030322889
+                    },
+                    {
+                        "active": true,
+                        "availability": "inStock",
+                        "data": {
+                            "colors": [
+                                "#000000"
+                            ],
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6678463817.jpg",
+                            "price": "893 ₽",
+                            "searchableText": "черный",
+                            "textRs": [
+                                {
+                                    "content": "черный",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье ТВОЕ"
+                        },
+                        "link": "/product/plate-tvoe-1030332528/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030332528
                     }
                 ]
             },
@@ -82,152 +73,105 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#287a41",
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6660988589.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6660988589.jpg",
-                            "price": "1 718 ₽",
-                            "searchableText": "зеленый;белый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "price": "893 ₽",
+                            "searchableText": "42 RU / XS ",
                             "textRs": [
                                 {
-                                    "content": "зеленый;белый",
+                                    "content": "42 RU / XS ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ZARKA"
+                            "title": "Платье ТВОЕ"
                         },
-                        "link": "/product/plate-zarka-588846774/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 588846774
+                        "link": "/product/plate-tvoe-1030394070/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030394070
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "price": "893 ₽",
+                            "searchableText": "44 RU / S ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / S ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье ТВОЕ"
+                        },
+                        "link": "/product/plate-tvoe-1030333858/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030333858
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "price": "893 ₽",
+                            "searchableText": "46 RU / M ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / M ",
+                                    "type": "text"
+                                }
+                            ],
+                            "title": "Платье ТВОЕ"
+                        },
+                        "link": "/product/plate-tvoe-1030333255/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030333255
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#666666",
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-n/c100/wc140/6660942683.jpg",
-                            "price": "2 200 ₽",
-                            "searchableText": "серый;белый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "price": "893 ₽",
+                            "searchableText": "48 RU / L ",
                             "textRs": [
                                 {
-                                    "content": "серый;белый",
+                                    "content": "48 RU / L ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ZARKA"
+                            "title": "Платье ТВОЕ"
                         },
-                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649921653
-                    }
-                ]
-            },
-            {
-                "variants": [
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "44–46 RU / 44-46 ",
-                            "textRs": [
-                                {
-                                    "content": "44–46 RU / 44-46 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ZARKA"
-                        },
-                        "link": "/product/plate-zarka-649918952/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649918952
+                        "link": "/product/plate-tvoe-1030332528/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030332528
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "48–50 RU / 48-50 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
+                            "originalPrice": "2 299 ₽",
+                            "price": "893 ₽",
+                            "searchableText": "50 RU / XL ",
                             "textRs": [
                                 {
-                                    "content": "48–50 RU / 48-50 ",
+                                    "content": "50 RU / XL ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ZARKA"
+                            "title": "Платье ТВОЕ"
                         },
-                        "link": "/product/plate-zarka-649921140/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649921140
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "52–54 RU / 52-54 ",
-                            "textRs": [
-                                {
-                                    "content": "52–54 RU / 52-54 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ZARKA"
-                        },
-                        "link": "/product/plate-zarka-649922612/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649922612
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "56–58 RU / 56-58 ",
-                            "textRs": [
-                                {
-                                    "content": "56–58 RU / 56-58 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ZARKA"
-                        },
-                        "link": "/product/plate-zarka-649921717/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649921717
-                    },
-                    {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-n/wc140/6660942683.jpg",
-                            "originalPrice": "3 290 ₽",
-                            "price": "2 200 ₽",
-                            "searchableText": "60–62 RU / 60-62 ",
-                            "textRs": [
-                                {
-                                    "content": "60–62 RU / 60-62 ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ZARKA"
-                        },
-                        "link": "/product/plate-zarka-649921653/?from_sku=649921653&oos_search=false&sh=QTdkg_QjNQ",
-                        "sku": 649921653
+                        "link": "/product/plate-tvoe-1030333752/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
+                        "sku": 1030333752
                     }
                 ]
             }
         ]
+    },
+    "webBrand-1033259-default-1": {
+        "id": 148454281,
+        "link": "/brand/tvoe-148454281/",
+        "name": "ТВОЕ"
     },
     "webCharacteristics-545750-default-1": {
         "characteristics": [
@@ -239,6 +183,7 @@
                         "values": [
                             {
                                 "key": "Season_0",
+                                "link": "/category/zhenskie-platya-dlya-leta/",
                                 "text": "Лето"
                             }
                         ]
@@ -249,8 +194,13 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/platya-zhenskie-bolshih-razmerov-len/",
-                                "text": "Лен"
+                                "link": "/category/platya-i-sarafany-zhenskie-poliester/",
+                                "text": "Полиэстер"
+                            },
+                            {
+                                "key": "Material_1",
+                                "link": "/category/platya-i-sarafany-zhenskie-elastan/",
+                                "text": "Эластан"
                             }
                         ]
                     },
@@ -260,7 +210,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "Хлопок 60%, Лен 40%"
+                                "text": "99% Полиэстер; 1% Эластан"
                             }
                         ]
                     },
@@ -270,28 +220,34 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Весна-лето 2022"
+                                "text": "Весна-лето 2023"
                             }
                         ]
                     },
                     {
-                        "key": "SizeHeight",
-                        "name": "Рост",
+                        "key": "StyleApparel",
+                        "name": "Стиль",
                         "values": [
                             {
-                                "key": "SizeHeight_0",
-                                "text": "164-170"
+                                "key": "StyleApparel_0",
+                                "link": "/category/platya-zhenskie-povsednevnye/",
+                                "text": "Повседневный"
+                            },
+                            {
+                                "key": "StyleApparel_1",
+                                "link": "/category/platya-shkolnye/",
+                                "text": "Школа"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-zarka-649921653/features/"
+        "link": "https://www.ozon.ru/product/plate-tvoe-1030332528/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 30120,
-        "link": "https://www.ozon.ru/seller/zarka-30120/",
+        "id": 22114,
+        "link": "https://www.ozon.ru/seller/ooo-tvoe-22114/",
         "mainAdvantages": [
             {
                 "content": {
@@ -330,107 +286,49 @@
                 }
             }
         ],
-        "name": "ZARKA"
+        "name": "ООО ТВОЕ"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6660942683.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6678463817.jpg"
             },
             {
-                "alt": "Платье ZARKA #1"
+                "alt": "Платье ТВОЕ #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6660942677.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6678464013.jpg"
             },
             {
-                "alt": "Платье ZARKA #2"
+                "alt": "Платье ТВОЕ #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-5/6660942665.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6678463578.jpg"
             },
             {
-                "alt": "Платье ZARKA #3"
+                "alt": "Платье ТВОЕ #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-0/6660942696.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6678463984.jpg"
             },
             {
-                "alt": "Платье ZARKA #4"
+                "alt": "Платье ТВОЕ #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6660942715.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6678464082.jpg"
             },
             {
-                "alt": "Платье ZARKA #5"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6660942679.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #6"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-y/6660942694.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #7"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-7/6660942667.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #8"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-z/6660942695.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #9"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6660942675.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #10"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-2/6660942698.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #11"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-1/6660942697.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #12"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-i/6660942678.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #13"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6660942674.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #14"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6660942666.jpg"
-            },
-            {
-                "alt": "Платье ZARKA #15"
+                "alt": "Платье ТВОЕ #5"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "originalPrice": "3 290 ₽",
-        "price": "2 200 ₽"
+        "cardPrice": "848 ₽",
+        "link": "/modal/withoutOzonAccount",
+        "originalPrice": "2 299 ₽",
+        "price": "893 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье ZARKA"
+        "title": "Платье ТВОЕ"
     }
 }

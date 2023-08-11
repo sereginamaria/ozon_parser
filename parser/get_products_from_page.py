@@ -8,9 +8,11 @@ import requests
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
-def get_products_from_page(url):
+def get_products_from_page(publication_category, url):
     # Ограничим парсинг первыми n страницами
     print('hello')
+    global category
+    category = publication_category
     MAX_PAGE = 1
     i = 1
     while i <= MAX_PAGE:
@@ -40,7 +42,7 @@ def parse_data(html: str) -> set[Any]:
     soup = BeautifulSoup(html, 'html.parser')
     print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'oi2'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'o6i'})]))])
     return product_links
 
 
@@ -55,7 +57,7 @@ def get_urls(html):
     if len(all_links) == 36:
         for link in all_links:
             print('get_product')
-            get_product(link)
+            get_product(link, category)
     else:
         print('ERROR')
         requests.post(

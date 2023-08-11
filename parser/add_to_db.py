@@ -4,7 +4,7 @@ import sqlite3 as sl
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
               product_brand_name, product_brand_link, product_rating, product_categories, product_color,
               product_article,
-              product_sizes, product_all_articles
+              product_sizes, product_all_articles, publication_category
               ):
     # открываем файл с базой данных
     con = sl.connect('../ozon_product_db.db')
@@ -24,10 +24,11 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             id INTEGER PRIMARY KEY
                         );
                     """)
+                    # подготавливаем множественный запрос
+                sql = 'INSERT INTO offset (id) values(1)'
+                cursor.execute(sql)
 
-        # подготавливаем множественный запрос
-        sql = 'INSERT or IGNORE INTO offset (id) values(0)'
-        cursor.execute(sql)
+
 
     with con:
         # получаем количество таблиц с нужным нам именем
@@ -68,7 +69,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles) values(?,?,?,?,?,?,?,?,?,?,?,?,?)'
+              'product_all_articles, publication_category) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
 
         # указываем данные для запроса
         data = [
@@ -85,17 +86,10 @@ def add_to_db(product_name, product_price_original, product_price, product_price
              product_article,
              product_sizes,
              product_all_articles,
+             publication_category
              )
         ]
 
         # добавляем с помощью множественного запроса все данные сразу
         with con:
             con.executemany(sql, data)
-
-
-
-        # выводим содержимое таблицы на экран
-        # with con:
-        #     data = con.execute("SELECT * FROM products")
-        #     for row in data:
-        #         print(row)
