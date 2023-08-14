@@ -1,3 +1,5 @@
+import os
+
 import telebot
 from telebot import types
 import requests
@@ -22,6 +24,8 @@ def get_text_message(message):
         bot.register_next_step_handler(message, get_product_url)
     elif message.text == "/verification":
         verification_message(message)
+    elif message.text == "/create_card":
+        create_card_message(message)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
@@ -56,14 +60,10 @@ def verification_message(message):
             "select product_id, product_images from ozon_products where (product_id >= (select id from offset)) and (verification != true) limit 1")
     # print(type(products))
     # print(list(products.fetchall()))
-    produst_list = products.fetchall()
+    product_list = products.fetchall()
 
-    if produst_list:
-        for product in produst_list:
-            print('1234')
-            print(product)
-            print(type(product))
-            print(len(product))
+    if product_list:
+        for product in product_list:
             product_id, product_images = product
             # print(product_id)
             # print(product_images)
@@ -80,8 +80,13 @@ def verification_message(message):
             bot.send_photo(chat_id=message.chat.id, photo=product_images.split(',')[0],
                            caption='Оставляем?\nАртикул: ' + str(product_id),
                            reply_markup=main_menu)
+
     else:
         bot.send_message(message.chat.id, "Все товары проверифицированы")
+
+def create_card_message(message):
+    requests.post("http://127.0.0.1:5000/create_card", message.text)
+    bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):

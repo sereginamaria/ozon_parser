@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    width: 1024px;
+    height: 1280px;
+    padding: 5% 2%;
+    box-sizing: border-box;
+}
+.img1, .img2 {
+    width: 95%;
+    height: 49%;
+}
+
+.img1 {
+    background: url("https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg") 100% / cover no-repeat;
+}
+.img2 {
+    background: url("https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg") 100% / cover no-repeat;
+}
+.img3 {
+    background: url("https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg") 100% / cover no-repeat;
+    height: 80%;
+}

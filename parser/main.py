@@ -1,7 +1,7 @@
 from flask import Flask
 from parser.get_product import get_product
 from parser.get_products_from_page import get_products_from_page
-from card_creator.main import card_creator
+from card_creator.card_creator import card_creator
 from flask import request
 app = Flask(__name__)
 import json
@@ -17,19 +17,6 @@ def get_page():
         request_data = json.loads(request.data.decode('UTF-8'))
         publication_category = request_data.get('publication_category')
         page_url = request_data.get('page_url')
-        # print(request)
-        # print(request.data)
-        # print(type(request.data))
-        # print(request.data.decode('UTF-8'))
-        # print('vws')
-        # print(type(request.data.decode('UTF-8')))
-        #
-        # s = json.loads(request.data.decode('UTF-8'))
-        # print(type(s))
-        # print(s)
-        # print(s.get('page_url'))
-        # print(s.get('publication_category'))
-
         get_products_from_page(publication_category, page_url)
         return 'Получаем ссылки на продукты со страниц'
     if request.method == 'GET':
@@ -52,9 +39,10 @@ def get_ozon_product():
 def create_card():
     if request.method == 'POST':
         card_creator(request.data.decode('UTF-8'))
-        return 'Получаем информацию о товаре'
+        return 'Создаю карточку'
     if request.method == 'GET':
-        return 'Получаем информацию о товаре'
+        card_creator('ghbdtn')
+        return 'Создаю карточку'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
