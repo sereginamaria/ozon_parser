@@ -54,14 +54,12 @@ def verification_message(message):
         global products
         products = con.execute(
             "select product_id, product_images from ozon_products where (product_id >= (select id from offset)) and (verification != true) limit 1")
-    print(type(products))
-    print(list(products.fetchall()))
-    produst_list = list(products.fetchall())
-    print(type(produst_list))
-    print(len(produst_list))
+    # print(type(products))
+    # print(list(products.fetchall()))
+    produst_list = products.fetchall()
 
-    if len(list(products.fetchall())) != 0:
-        for product in products:
+    if produst_list:
+        for product in produst_list:
             print('1234')
             print(product)
             print(type(product))
@@ -101,3 +99,6 @@ def callback_inline(call):
 
 bot.polling(none_stop=True, interval=0)
 
+
+if __name__ == '__main__':
+    verification_message("asdasd")
