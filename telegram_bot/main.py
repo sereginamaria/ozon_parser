@@ -95,12 +95,15 @@ def create_card_message(message):
 
     product_list = product.fetchall()
 
-    post = ';'.join(map(str, product_list))
+    print(product_list)
+    print(type(product_list))
 
-    print(post)
-    print(type(post))
+    # post = ';'.join(map(str, product_list))
+    #
+    # print(post)
+    # print(type(post))
 
-    requests.post("http://127.0.0.1:5000/create_card", json.dumps(post))
+    requests.post("http://127.0.0.1:5000/create_card", json=json.dumps(product_list))
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 @bot.callback_query_handler(func=lambda call: True)

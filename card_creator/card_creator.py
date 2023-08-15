@@ -1,19 +1,32 @@
 import requests
 from flask import render_template
 from html2image import Html2Image
+import json
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 
 def card_creator(product_list):
+    product_list = json.loads(product_list)
     print('lisy')
     print(product_list)
     print(type(product_list))
-    list = product_list.split(';')
-    print(list)
-    print(type(list))
-    print(list[0])
-    print(type(list[0]))
+
+
+    # print(product_list)
+    # print(type(product_list))
+    # list = product_list.split(';')
+    # print(list)
+    # print(type(list))
+    # print(list[0])
+    # print(type(list[0]))
+
+    if product_list:
+        for product in product_list:
+            product_id, product_images = product
+            print(product)
+            print(product_id)
+            print(product_images)
     # if product_list:
     #     for product in product_list:
     #         product_id, product_name = product
