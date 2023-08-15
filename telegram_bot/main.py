@@ -1,3 +1,4 @@
+import json
 import os
 
 import telebot
@@ -91,30 +92,15 @@ def create_card_message(message):
     with con:
         product = con.execute(
             "select product_id, product_name from ozon_products where verification == true")
-    #     print(product)
-    #     print(type(product))
 
-    print(type(product))
     product_list = product.fetchall()
 
-    # print(product_list)
-    # print(type(product_list))
-    # print(type(product_list[0]))
-    #
-    # for product_data in product_list:
-    #     print(product_data)
-    #     post_data += ",".join(map(str, product_data))
-    #
-    #
-    # # post_data = ",".join("".join(product_list))
-    # print(post_data)
-    # print(type(post_data))
+    post = ';'.join(map(str, product_list))
 
-    post = ','.join(map(str, product_list))
     print(post)
     print(type(post))
 
-    requests.post("http://127.0.0.1:5000/create_card", post)
+    requests.post("http://127.0.0.1:5000/create_card", json.dumps(post))
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 @bot.callback_query_handler(func=lambda call: True)

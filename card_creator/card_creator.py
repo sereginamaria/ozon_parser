@@ -8,7 +8,12 @@ telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmK
 def card_creator(product_list):
     print('lisy')
     print(product_list)
-
+    print(type(product_list))
+    list = product_list.split(';')
+    print(list)
+    print(type(list))
+    print(list[0])
+    print(type(list[0]))
     # if product_list:
     #     for product in product_list:
     #         product_id, product_name = product
