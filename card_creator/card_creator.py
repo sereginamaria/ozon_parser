@@ -1,3 +1,5 @@
+import html
+
 import requests
 from flask import render_template
 from html2image import Html2Image
@@ -7,13 +9,12 @@ telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmK
 def card_creator(message):
     print(message)
 
-    # render_html = render()
-    # f = open('card_creator/render_html.html', 'w', encoding='UTF-8')  # открытие в режиме записи
-    # f.write(render_html)
+    render_html = render()
+    print(render_html)
+    print(type(render_html))
+    f = open('card_creator/render_html.html', 'w', encoding='UTF-8')  # открытие в режиме записи
+    f.write(html.escape(render_html))
 
-    card()
-
-def card():
     hti = Html2Image(
         output_path='card_creator',
         custom_flags=[
@@ -33,6 +34,7 @@ def card():
         url=telegram_url + '/sendPhoto',
         data={'chat_id': 6181726421}, files=files
     )
+
 
 def render():
     return render_template('cardtest.html', name='eee')
