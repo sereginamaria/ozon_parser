@@ -3,7 +3,9 @@ from parser.get_product import get_product
 from parser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from flask import request
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder='templates')
+
 import json
 import sys
 @app.route('/')
