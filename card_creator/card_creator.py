@@ -5,17 +5,31 @@ from html2image import Html2Image
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 
-def card_creator(message):
-    print(message)
+def card_creator(product_list):
+    print('lisy')
+    print(product_list)
 
-    render_html = render()
-    # f = open('card_creator/render_html.html', 'w', encoding='UTF-8')  # открытие в режиме записи
-    # f.write(render_html)
+    # if product_list:
+    #     for product in product_list:
+    #         product_id, product_name = product
+    #         render_html = html_render(product_id, product_name)
+    #         render_css = css_render()
+    #         card(render_html, render_css)
 
-    card(render_html)
+            # print(product_id)
+            # print(product_images)
+            # print(type(product_id))
+            # print(product_images.split(','))
+
+            # product_image = str(product_image[0]).split(',')
 
 
-def card(html):
+    # render_html = html_render()
+    # render_css = css_render()
+    # card(render_html, render_css)
+
+
+def card(html, css):
     hti = Html2Image(
         output_path='card_creator/',
         custom_flags=[
@@ -26,7 +40,7 @@ def card(html):
     )
 
     hti.screenshot(
-        html_str=html,
+        html_str=html, css_str=css,
         save_as='card.png', size=(1024, 1280)
     )
 
@@ -37,12 +51,11 @@ def card(html):
     )
 
 
-def render():
-    return render_template('cardtest.html', name='eee')
+def html_render(product_id, product_name):
+    return render_template('card.html', name=product_name, article=product_id)
 
 
-if __name__ == '__main__':
-    from parser.main import app
-
-    with app.app_context():
-        card_creator("dsfsdf")
+def css_render():
+    return render_template('card.css', url_img1='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg',
+                           url_img2='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg',
+                           url_img3='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg')

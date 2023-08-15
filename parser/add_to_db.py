@@ -8,27 +8,6 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               ):
     # открываем файл с базой данных
     con = sl.connect('../ozon_product_db.db')
-    cursor = con.cursor()
-
-    with con:
-        # получаем количество таблиц с нужным нам именем
-        data = con.execute("select count(*) from sqlite_master where type='table' and name='offset'")
-        for row in data:
-            # если таких таблиц нет
-            print('нет таблиц смещения')
-            if row[0] == 0:
-                # создаём таблицу для смещения
-                with con:
-                    con.execute("""
-                        CREATE TABLE offset (
-                            id INTEGER PRIMARY KEY
-                        );
-                    """)
-                    # подготавливаем множественный запрос
-                sql = 'INSERT INTO offset (id) values(1)'
-                cursor.execute(sql)
-
-
 
     with con:
         # получаем количество таблиц с нужным нам именем

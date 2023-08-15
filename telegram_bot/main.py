@@ -54,10 +54,11 @@ def get_product_url(message):
 
 
 def verification_message(message):
+    print(type(message))
+    global current_id
     with con:
-        global products
         products = con.execute(
-            "select product_id, product_images from ozon_products where (product_id >= (select id from offset)) and (verification != true) limit 1")
+            "select product_id, product_images from ozon_products where (verification != true) limit 1")
     # print(type(products))
     # print(list(products.fetchall()))
     product_list = products.fetchall()
@@ -65,6 +66,7 @@ def verification_message(message):
     if product_list:
         for product in product_list:
             product_id, product_images = product
+            current_id = product_id
             # print(product_id)
             # print(product_images)
             # print(type(product_id))
@@ -85,20 +87,44 @@ def verification_message(message):
         bot.send_message(message.chat.id, "Все товары проверифицированы")
 
 def create_card_message(message):
-    requests.post("http://127.0.0.1:5000/create_card", message.text)
+    global post_data
+    with con:
+        product = con.execute(
+            "select product_id, product_name from ozon_products where verification == true")
+    #     print(product)
+    #     print(type(product))
+
+    print(type(product))
+    product_list = product.fetchall()
+
+    # print(product_list)
+    # print(type(product_list))
+    # print(type(product_list[0]))
+    #
+    # for product_data in product_list:
+    #     print(product_data)
+    #     post_data += ",".join(map(str, product_data))
+    #
+    #
+    # # post_data = ",".join("".join(product_list))
+    # print(post_data)
+    # print(type(post_data))
+
+    post = ','.join(map(str, product_list))
+    print(post)
+    print(type(post))
+
+    requests.post("http://127.0.0.1:5000/create_card", post)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-    if len(list(products.fetchall())) != 0:
         if call.data == "yes":
             with con:
-                con.execute("update ozon_products set verification = true where product_id == (select id from offset)")
+                con.execute("update ozon_products set verification = true where product_id ==" + str(current_id))
         elif call.data == "no":
             with con:
-                con.execute("delete from ozon_products where product_id == (select id from offset)")
-        with con:
-            con.execute("UPDATE offset SET id = id + 1")
+                con.execute("delete from ozon_products where product_id == " + str(current_id))
 
         verification_message(call.message)
 

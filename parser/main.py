@@ -4,7 +4,7 @@ from parser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from flask import request
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='../card_creator/templates')
 
 import json
 import sys
@@ -40,6 +40,9 @@ def get_ozon_product():
 @app.route('/create_card', methods=['GET', 'POST'])
 def create_card():
     if request.method == 'POST':
+        print(request)
+        print(request.data)
+        print(request.data.decode('UTF-8'))
         card_creator(request.data.decode('UTF-8'))
         return 'Создаю карточку'
     if request.method == 'GET':
