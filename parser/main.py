@@ -41,9 +41,10 @@ def get_ozon_product():
 def create_card():
     if request.method == 'POST':
         print(request)
-        print(request.data)
-        print(request.data.decode('UTF-8'))
-        card_creator(request.data.decode('UTF-8'))
+        print(request.json)
+        print(type(json.loads(request.json)))
+
+        card_creator(json.loads(request.json))
         return 'Создаю карточку'
     if request.method == 'GET':
         card_creator('ghbdtn')

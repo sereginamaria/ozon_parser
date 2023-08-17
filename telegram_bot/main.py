@@ -6,11 +6,13 @@ from telebot import types
 import requests
 
 import sqlite3 as sl
+from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 # открываем файл с базой данных
 con = sl.connect('ozon_product_db.db', check_same_thread=False)
+
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
@@ -25,13 +27,12 @@ def get_text_message(message):
         bot.register_next_step_handler(message, get_product_url)
     elif message.text == "/verification":
         verification_message(message)
-    elif message.text == "/create_card":
-        create_card_message(message)
+    elif message.text == "/create_post":
+        publishing_platform_message(message)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
-
 
 
 def get_page_url_message(message):
@@ -87,35 +88,74 @@ def verification_message(message):
     else:
         bot.send_message(message.chat.id, "Все товары проверифицированы")
 
+
+def publishing_platform_message(message):
+    main_menu = types.InlineKeyboardMarkup()
+    key1 = types.InlineKeyboardButton(text='Вконтакте', callback_data='vk')
+    key2 = types.InlineKeyboardButton(text='Телеграмм', callback_data='tg')
+    key3 = types.InlineKeyboardButton(text='Инстаграмм', callback_data='inst')
+    main_menu.add(key1, key2, key3)
+    bot.send_message(message.chat.id, 'Выберите платформу для публикации', reply_markup=main_menu)
+
+
+def date_of_publication(message):
+    calendar, step = DetailedTelegramCalendar().build()
+    bot.send_message(message.chat.id,
+                     f"Select {LSTEP[step]}",
+                     reply_markup=calendar)
+
+
 def create_card_message(message):
     global post_data
     with con:
         product = con.execute(
-            "select product_id, product_name from ozon_products where verification == true")
+            "select product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where verification == true")
 
     product_list = product.fetchall()
 
     print(product_list)
     print(type(product_list))
 
-    # post = ';'.join(map(str, product_list))
-    #
-    # print(post)
-    # print(type(post))
-
     requests.post("http://127.0.0.1:5000/create_card", json=json.dumps(product_list))
-    bot.send_message(message.from_user.id, "Выполнение завершено!")
+
+    bot.send_message(message.chat.id, "Выберите нужные карточки")
+
+
+@bot.callback_query_handler(func=DetailedTelegramCalendar.func())
+def call(call):
+    result, key, step = DetailedTelegramCalendar().process(call.data)
+    if not result and key:
+        bot.edit_message_text(f"Select {LSTEP[step]}",
+                              call.message.chat.id,
+                              call.message.message_id,
+                              reply_markup=key)
+    elif result:
+        print(f"Дата публикации: {result}")
+        create_card_message(call.message)
+        # bot.edit_message_text(f"Вы ввели: {result}",
+        #                       c.message.chat.id,
+        #                       c.message.message_id)
+
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_inline(call):
-        if call.data == "yes":
-            with con:
-                con.execute("update ozon_products set verification = true where product_id ==" + str(current_id))
-        elif call.data == "no":
-            with con:
-                con.execute("delete from ozon_products where product_id == " + str(current_id))
-
+    if call.data == "yes":
+        with con:
+            con.execute("update ozon_products set verification = true where product_id ==" + str(current_id))
+        verification_message(call.message)
+    if call.data == "no":
+        with con:
+            con.execute("delete from ozon_products where product_id == " + str(current_id))
         verification_message(call.message)
 
-bot.polling(none_stop=True, interval=0)
+    if call.data == "vk":
+        print('vk')
+        date_of_publication(call.message)
+    if call.data == "tg":
+        print('tg')
+        date_of_publication(call.message)
+    if call.data == "inst":
+        print('inst')
+        date_of_publication(call.message)
 
+bot.polling(none_stop=True, interval=0)

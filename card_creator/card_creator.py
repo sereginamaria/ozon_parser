@@ -7,39 +7,17 @@ telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmK
 
 
 def card_creator(product_list):
-    product_list = json.loads(product_list)
     print('lisy')
     print(product_list)
     print(type(product_list))
 
-
-    # print(product_list)
-    # print(type(product_list))
-    # list = product_list.split(';')
-    # print(list)
-    # print(type(list))
-    # print(list[0])
-    # print(type(list[0]))
-
     if product_list:
         for product in product_list:
-            product_id, product_images = product
-            print(product)
-            print(product_id)
-            print(product_images)
-    # if product_list:
-    #     for product in product_list:
-    #         product_id, product_name = product
-    #         render_html = html_render(product_id, product_name)
-    #         render_css = css_render()
-    #         card(render_html, render_css)
+            product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+            render_html = html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card)
+            render_css = css_render(product_images)
+            card(render_html, render_css)
 
-            # print(product_id)
-            # print(product_images)
-            # print(type(product_id))
-            # print(product_images.split(','))
-
-            # product_image = str(product_image[0]).split(',')
 
 
     # render_html = html_render()
@@ -61,19 +39,29 @@ def card(html, css):
         html_str=html, css_str=css,
         save_as='card.png', size=(1024, 1280)
     )
-
-    files = {'photo': open("card_creator/card.png", "rb")}
+    #
+    # from telebot.types import InputMediaPhoto
+    # pic2 = open("card_creator/card.png", "rb")
+    # media = []
+    # media += InputMediaPhoto(pic2)
+    files = []
+    files += {'photo': open("card_creator/card.png", "rb")}
     requests.post(
-        url=telegram_url + '/sendPhoto',
+        url=telegram_url + '/sendMediaGroup',
         data={'chat_id': 6181726421}, files=files
     )
 
 
-def html_render(product_id, product_name):
-    return render_template('card.html', name=product_name, article=product_id)
+def html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card):
+    return render_template('card.html', name=product_name, article=product_article, size=product_sizes, price=product_price,
+                           ozon_card_price=product_price_with_ozon_card)
 
 
-def css_render():
-    return render_template('card.css', url_img1='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg',
-                           url_img2='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg',
-                           url_img3='https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg')
+def css_render(product_images):
+    print(product_images.split(','))
+
+    product_image = str(product_images[0]).split(',')
+    print(product_image)
+    return render_template('card.css', url_img1=str(product_images[0]).split(','),
+                           url_img2=str(product_images[1]).split(','),
+                           url_img3=str(product_images[2]).split(','))
