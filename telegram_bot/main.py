@@ -28,7 +28,7 @@ def get_text_message(message):
     elif message.text == "/verification":
         verification_message(message)
     elif message.text == "/create_post":
-        publishing_platform_message(message)
+        publication_category_message(message)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
@@ -88,8 +88,15 @@ def verification_message(message):
     else:
         bot.send_message(message.chat.id, "Все товары проверифицированы")
 
+def publication_category_message(message):
+    bot.send_message(message.chat.id, 'Введите категорию для публикации:')
+    bot.register_next_step_handler(message, publishing_platform_message)
 
 def publishing_platform_message(message):
+    print(message.text)
+    global publication_category_post
+    publication_category_post = message.text
+
     main_menu = types.InlineKeyboardMarkup()
     key1 = types.InlineKeyboardButton(text='Вконтакте', callback_data='vk')
     key2 = types.InlineKeyboardButton(text='Телеграмм', callback_data='tg')
@@ -106,10 +113,10 @@ def date_of_publication(message):
 
 
 def create_card_message(message):
-    global post_data
+    print(publication_category_post)
     with con:
         product = con.execute(
-            "select product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where verification == true")
+            "select product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and date_of_publication is null and publishing_platform is null and verification == true) limit 2" %publication_category_post)
 
     product_list = product.fetchall()
 

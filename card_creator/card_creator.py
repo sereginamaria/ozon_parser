@@ -1,28 +1,48 @@
+from io import BytesIO
+
 import requests
 from flask import render_template
 from html2image import Html2Image
 import json
 
+from telebot.types import InputMediaPhoto
+
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
-
 def card_creator(product_list):
+    global nomer, files, media_list
+    nomer = 1
+
     print('lisy')
     print(product_list)
     print(type(product_list))
+    print(len(product_list))
 
     if product_list:
+        files = {}
+        media_list = []
         for product in product_list:
             product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+
             render_html = html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card)
             render_css = css_render(product_images)
             card(render_html, render_css)
 
+            name = f'photo{nomer}'
+            # files += {'name'+str(nomer): open("card_creator/card" + str(nomer) + ".png", "rb")}
+
+            files.update({name: open("card_creator/card" + str(nomer) + ".png", "rb")})
+
+            # files.append(dict('name'+str(nomer)=open("card_creator/card" + str(nomer) + ".png", "rb")))
+            # a list of InputMediaPhoto. attach refers to the name of the file in the files dict
+            media_list.append(dict(type='photo', media=f'attach://{name}'))
 
 
-    # render_html = html_render()
-    # render_css = css_render()
-    # card(render_html, render_css)
+            nomer+=1
+
+    requests.post(
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)}, files=files
+    )
 
 
 def card(html, css):
@@ -37,19 +57,21 @@ def card(html, css):
 
     hti.screenshot(
         html_str=html, css_str=css,
-        save_as='card.png', size=(1024, 1280)
+        save_as='card' + str(nomer) + '.png', size=(1024, 1280)
     )
     #
     # from telebot.types import InputMediaPhoto
     # pic2 = open("card_creator/card.png", "rb")
     # media = []
     # media += InputMediaPhoto(pic2)
-    files = []
-    files += {'photo': open("card_creator/card.png", "rb")}
-    requests.post(
-        url=telegram_url + '/sendMediaGroup',
-        data={'chat_id': 6181726421}, files=files
-    )
+    import cv2
+    # original = cv2.imread('card_creator/card.png')
+    #
+    # print('123')
+    # print(original)
+    # media.append(dict(type='photo', media=open("card_creator/card.png", "rb")))
+    # print(media)
+
 
 
 def html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card):
