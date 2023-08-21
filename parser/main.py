@@ -32,7 +32,10 @@ def get_page():
 @app.route('/get_product', methods=['GET', 'POST'])
 def get_ozon_product():
     if request.method == 'POST':
-        get_product(request.data.decode('UTF-8'))
+        request_data = json.loads(request.data.decode('UTF-8'))
+        publication_category = request_data.get('publication_category')
+        page_url = request_data.get('page_url')
+        get_product(page_url, publication_category)
         return 'Получаем информацию о товаре'
     if request.method == 'GET':
         return 'Получаем информацию о товаре'

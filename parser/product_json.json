@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Платья и сарафаны"
+                "text": "Брюки, бриджи, капри"
             },
             {
-                "text": "ТВОЕ"
+                "text": "Магазинити"
             }
         ]
     },
@@ -23,155 +23,78 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#ffffff"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-q/wc140/6678443438.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-q/c100/wc140/6678443438.jpg",
-                            "price": "1 595 ₽",
-                            "searchableText": "белый",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
+                            "originalPrice": "2 222 ₽",
+                            "price": "747 ₽",
+                            "searchableText": "42 RU / S ",
                             "textRs": [
                                 {
-                                    "content": "белый",
+                                    "content": "42 RU / S ",
                                     "type": "text"
                                 }
-                            ],
-                            "title": "Платье ТВОЕ"
+                            ]
                         },
-                        "link": "/product/plate-tvoe-1030322889/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030322889
+                        "link": "/product/bryuki-679897228/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
+                        "sku": 679897228
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "colors": [
-                                "#000000"
-                            ],
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "picture": "https://cdn1.ozone.ru/s3/multimedia-t/c100/wc140/6678463817.jpg",
-                            "price": "893 ₽",
-                            "searchableText": "черный",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
+                            "originalPrice": "2 222 ₽",
+                            "price": "747 ₽",
+                            "searchableText": "46 RU / L ",
                             "textRs": [
                                 {
-                                    "content": "черный",
+                                    "content": "46 RU / L ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Платье ТВОЕ"
+                            "title": "Брюки Магазинити"
                         },
-                        "link": "/product/plate-tvoe-1030332528/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030332528
-                    }
-                ]
-            },
-            {
-                "variants": [
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "price": "893 ₽",
-                            "searchableText": "42 RU / XS ",
-                            "textRs": [
-                                {
-                                    "content": "42 RU / XS ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ТВОЕ"
-                        },
-                        "link": "/product/plate-tvoe-1030394070/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030394070
+                        "link": "/product/bryuki-magaziniti-679900721/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
+                        "sku": 679900721
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "price": "893 ₽",
-                            "searchableText": "44 RU / S ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
+                            "originalPrice": "2 222 ₽",
+                            "price": "747 ₽",
+                            "searchableText": "48 RU / XL ",
                             "textRs": [
                                 {
-                                    "content": "44 RU / S ",
+                                    "content": "48 RU / XL ",
                                     "type": "text"
                                 }
-                            ],
-                            "title": "Платье ТВОЕ"
+                            ]
                         },
-                        "link": "/product/plate-tvoe-1030333858/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030333858
+                        "link": "/product/bryuki-679892812/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
+                        "sku": 679892812
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "price": "893 ₽",
-                            "searchableText": "46 RU / M ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
+                            "originalPrice": "2 222 ₽",
+                            "price": "811 ₽",
+                            "searchableText": "50 RU / 2XL ",
                             "textRs": [
                                 {
-                                    "content": "46 RU / M ",
+                                    "content": "50 RU / 2XL ",
                                     "type": "text"
                                 }
-                            ],
-                            "title": "Платье ТВОЕ"
+                            ]
                         },
-                        "link": "/product/plate-tvoe-1030333255/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030333255
-                    },
-                    {
-                        "active": true,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "price": "893 ₽",
-                            "searchableText": "48 RU / L ",
-                            "textRs": [
-                                {
-                                    "content": "48 RU / L ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ТВОЕ"
-                        },
-                        "link": "/product/plate-tvoe-1030332528/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030332528
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-t/wc140/6678463817.jpg",
-                            "originalPrice": "2 299 ₽",
-                            "price": "893 ₽",
-                            "searchableText": "50 RU / XL ",
-                            "textRs": [
-                                {
-                                    "content": "50 RU / XL ",
-                                    "type": "text"
-                                }
-                            ],
-                            "title": "Платье ТВОЕ"
-                        },
-                        "link": "/product/plate-tvoe-1030333752/?from_sku=1030332528&oos_search=false&sh=vlMtxWPh-Q",
-                        "sku": 1030333752
+                        "link": "/product/bryuki-679893926/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
+                        "sku": 679893926
                     }
                 ]
             }
         ]
-    },
-    "webBrand-1033259-default-1": {
-        "id": 148454281,
-        "link": "/brand/tvoe-148454281/",
-        "name": "ТВОЕ"
     },
     "webCharacteristics-545750-default-1": {
         "characteristics": [
@@ -183,24 +106,8 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/zhenskie-platya-dlya-leta/",
-                                "text": "Лето"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "Material",
-                        "name": "Материал",
-                        "values": [
-                            {
-                                "key": "Material_0",
-                                "link": "/category/platya-i-sarafany-zhenskie-poliester/",
-                                "text": "Полиэстер"
-                            },
-                            {
-                                "key": "Material_1",
-                                "link": "/category/platya-i-sarafany-zhenskie-elastan/",
-                                "text": "Эластан"
+                                "link": "/category/bryuki-zhenskie-demisezonnye/",
+                                "text": "Демисезон"
                             }
                         ]
                     },
@@ -210,7 +117,7 @@
                         "values": [
                             {
                                 "key": "Composition_0",
-                                "text": "99% Полиэстер; 1% Эластан"
+                                "text": "Хлопок 80%, Стрейч 20%"
                             }
                         ]
                     },
@@ -220,7 +127,7 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Весна-лето 2023"
+                                "text": "Осень-зима 2022"
                             }
                         ]
                     },
@@ -230,30 +137,36 @@
                         "values": [
                             {
                                 "key": "StyleApparel_0",
-                                "link": "/category/platya-zhenskie-povsednevnye/",
+                                "link": "/category/zhenskie-bryuki-casual/",
                                 "text": "Повседневный"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "key": "Type",
+                        "name": "Тип",
+                        "values": [
                             {
-                                "key": "StyleApparel_1",
-                                "link": "/category/platya-shkolnye/",
-                                "text": "Школа"
+                                "key": "Type_0",
+                                "link": "/category/dlinnye-zhenskie-bryuki/",
+                                "text": "Брюки"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/plate-tvoe-1030332528/features/"
+        "link": "https://www.ozon.ru/product/bryuki-magaziniti-679900721/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 22114,
-        "link": "https://www.ozon.ru/seller/ooo-tvoe-22114/",
+        "id": 147982,
+        "link": "https://www.ozon.ru/seller/magaziniti-147982/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,8",
+                            "content": "4,5",
                             "type": "textBold"
                         },
                         {
@@ -286,49 +199,49 @@
                 }
             }
         ],
-        "name": "ООО ТВОЕ"
+        "name": "МагазинитИ"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6678463817.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-s/6389741824.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #1"
+                "alt": "Брюки Магазинити #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6678464013.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6389741812.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #2"
+                "alt": "Брюки Магазинити #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6678463578.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-q/6389741786.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #3"
+                "alt": "Брюки Магазинити #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6678463984.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6389741785.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #4"
+                "alt": "Брюки Магазинити #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6678464082.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-r/6389741823.jpg"
             },
             {
-                "alt": "Платье ТВОЕ #5"
+                "alt": "Брюки Магазинити #5"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "848 ₽",
+        "cardPrice": "702 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "2 299 ₽",
-        "price": "893 ₽"
+        "originalPrice": "2 222 ₽",
+        "price": "747 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Платье ТВОЕ"
+        "title": "Брюки Магазинити"
     }
 }

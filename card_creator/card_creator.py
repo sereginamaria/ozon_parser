@@ -22,7 +22,15 @@ def card_creator(product_list):
         files = {}
         media_list = []
         for product in product_list:
-            product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+            if nomer == 11 or nomer == 21:
+                requests.post(
+                    url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
+                    files=files
+                )
+                files = {}
+                media_list = []
+
+            product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
 
             render_html = html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card)
             render_css = css_render(product_images)
@@ -40,10 +48,11 @@ def card_creator(product_list):
 
             nomer+=1
 
-    requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)}, files=files
-    )
-
+        if nomer == 31:
+            requests.post(
+                url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
+                files=files
+            )
 
 def card(html, css):
     hti = Html2Image(
@@ -59,18 +68,6 @@ def card(html, css):
         html_str=html, css_str=css,
         save_as='card' + str(nomer) + '.png', size=(1024, 1280)
     )
-    #
-    # from telebot.types import InputMediaPhoto
-    # pic2 = open("card_creator/card.png", "rb")
-    # media = []
-    # media += InputMediaPhoto(pic2)
-    import cv2
-    # original = cv2.imread('card_creator/card.png')
-    #
-    # print('123')
-    # print(original)
-    # media.append(dict(type='photo', media=open("card_creator/card.png", "rb")))
-    # print(media)
 
 
 
@@ -80,10 +77,11 @@ def html_render(product_name, product_article, product_sizes, product_price, pro
 
 
 def css_render(product_images):
-    print(product_images.split(','))
 
-    product_image = str(product_images[0]).split(',')
-    print(product_image)
-    return render_template('card.css', url_img1=str(product_images[0]).split(','),
-                           url_img2=str(product_images[1]).split(','),
-                           url_img3=str(product_images[2]).split(','))
+    product_image = product_images.split(',')
+
+    print(product_image[0])
+
+    return render_template('card.css', url_img1=product_image[0],
+                           url_img2=product_image[1],
+                           url_img3=product_image[2])

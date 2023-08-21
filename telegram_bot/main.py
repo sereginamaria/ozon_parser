@@ -19,12 +19,9 @@ def get_text_message(message):
     if message.text == "/get_products_from_page":
         bot.send_message(message.from_user.id, "Введите название категории для публикации")
         bot.register_next_step_handler(message, get_page_url_message)
-        #
-        # bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
-        # bot.register_next_step_handler(message, get_page_url, publication_category)
     elif message.text == "/get_product":
-        bot.send_message(message.from_user.id, "Введите ссылку на товар")
-        bot.register_next_step_handler(message, get_product_url)
+        bot.send_message(message.from_user.id, "Введите название категории для публикации")
+        bot.register_next_step_handler(message, get_product_url_message)
     elif message.text == "/verification":
         verification_message(message)
     elif message.text == "/create_post":
@@ -36,22 +33,34 @@ def get_text_message(message):
 
 
 def get_page_url_message(message):
-    global publication_category
-    publication_category = message.text
+    global publication_category_page
+    publication_category_page = message.text
+    print(publication_category_page)
+
+
     bot.send_message(message.from_user.id, "Введите ссылку на категорию/список страниц с товарами")
     bot.register_next_step_handler(message, get_products_from_page_message)
 
 
 def get_products_from_page_message(message):
-    global page_url
     page_url = message.text
-    data = {"publication_category": publication_category, "page_url": page_url}
+    data = {"publication_category": publication_category_page, "page_url": page_url}
     requests.post("http://127.0.0.1:5000/get_products_from_page", json=data)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
-def get_product_url(message):
-    requests.post("http://127.0.0.1:5000/get_product", message.text)
+def get_product_url_message(message):
+    global publication_category_product
+    publication_category_product = message.text
+
+    bot.send_message(message.from_user.id, "Введите ссылку на товар")
+    bot.register_next_step_handler(message, get_product_message)
+
+
+
+def get_product_message(message):
+    data = {"publication_category": publication_category_product, "page_url": message.text}
+    requests.post("http://127.0.0.1:5000/get_product", json=data)
     bot.send_message(message.from_user.id, "Выполнение завершено!")
 
 
@@ -63,8 +72,9 @@ def verification_message(message):
             "select product_id, product_images from ozon_products where (verification != true) limit 1")
     # print(type(products))
     # print(list(products.fetchall()))
+    print(products)
     product_list = products.fetchall()
-
+    print(product_list)
     if product_list:
         for product in product_list:
             product_id, product_images = product
@@ -98,14 +108,14 @@ def publishing_platform_message(message):
     publication_category_post = message.text
 
     main_menu = types.InlineKeyboardMarkup()
-    key1 = types.InlineKeyboardButton(text='Вконтакте', callback_data='vk')
-    key2 = types.InlineKeyboardButton(text='Телеграмм', callback_data='tg')
-    key3 = types.InlineKeyboardButton(text='Инстаграмм', callback_data='inst')
+    key1 = types.InlineKeyboardButton(text='Вконтакте', callback_data='platform' + '|' + 'vk')
+    key2 = types.InlineKeyboardButton(text='Телеграмм', callback_data='platform' + '|' + 'tg')
+    key3 = types.InlineKeyboardButton(text='Инстаграмм',  callback_data='platform' + '|' + 'inst')
     main_menu.add(key1, key2, key3)
     bot.send_message(message.chat.id, 'Выберите платформу для публикации', reply_markup=main_menu)
 
 
-def date_of_publication(message):
+def date_of_publication_message(message):
     calendar, step = DetailedTelegramCalendar().build()
     bot.send_message(message.chat.id,
                      f"Select {LSTEP[step]}",
@@ -116,7 +126,7 @@ def create_card_message(message):
     print(publication_category_post)
     with con:
         product = con.execute(
-            "select product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and date_of_publication is null and publishing_platform is null and verification == true) limit 2" %publication_category_post)
+            "select product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and date_of_publication is null and publishing_platform is null and few_photos == false and verification == true) limit 30" %publication_category_post)
 
     product_list = product.fetchall()
 
@@ -125,7 +135,16 @@ def create_card_message(message):
 
     requests.post("http://127.0.0.1:5000/create_card", json=json.dumps(product_list))
 
-    bot.send_message(message.chat.id, "Выберите нужные карточки")
+    main_menu = types.InlineKeyboardMarkup()
+    k = 1
+    for product_id_list in product_list:
+        product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product_id_list
+        key = types.InlineKeyboardButton(text=k, callback_data='choice' + '|' + str(product_id) + '|' + str(k))
+        main_menu.add(key)
+        k = k + 1
+
+    bot.send_message(message.chat.id, 'Выберите нужные карточки', reply_markup=main_menu)
+
 
 
 @bot.callback_query_handler(func=DetailedTelegramCalendar.func())
@@ -138,10 +157,9 @@ def call(call):
                               reply_markup=key)
     elif result:
         print(f"Дата публикации: {result}")
+        global date_of_publication
+        date_of_publication =result
         create_card_message(call.message)
-        # bot.edit_message_text(f"Вы ввели: {result}",
-        #                       c.message.chat.id,
-        #                       c.message.message_id)
 
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -155,14 +173,21 @@ def callback_inline(call):
             con.execute("delete from ozon_products where product_id == " + str(current_id))
         verification_message(call.message)
 
-    if call.data == "vk":
-        print('vk')
-        date_of_publication(call.message)
-    if call.data == "tg":
-        print('tg')
-        date_of_publication(call.message)
-    if call.data == "inst":
-        print('inst')
-        date_of_publication(call.message)
+    if call.data.split('|')[0] == 'platform':
+        global publishing_platform
+        publishing_platform = call.data.split('|')[1]
+        print(publishing_platform)
+        date_of_publication_message(call.message)
+
+    if call.data.split('|')[0] == 'choice':
+        print('!!!')
+        print(call.data)
+        print(call.data.split('|')[0])
+        print(call.data.split('|')[1])
+        print(call.data.split('|')[2])
+        with con:
+            con.execute(
+                "update ozon_products set date_of_publication = '%s', publishing_platform = '%s' where product_id = '%s'" %(date_of_publication, publishing_platform, call.data.split('|')[1]))
+
 
 bot.polling(none_stop=True, interval=0)

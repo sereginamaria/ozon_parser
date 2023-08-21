@@ -76,6 +76,10 @@ def get_product(url, publication_category):
                 for k, v in object.items():
                     if k == 'src':
                         product_images += v + ', '
+    few_photos = False
+    if len(product_images.split(',')) < 3:
+        print('<3')
+        few_photos = True
 
     product_brand_name = ''
     product_brand_link = ''
@@ -150,8 +154,10 @@ def get_product(url, publication_category):
 
     # print(d2['webPrice-2136014-default-1']['originalPrice'])
 
+    print(product_rating)
     if product_rating != '':
         if float(product_rating.replace(',', '.')) >= float('4.4'):
+            print('ну норм')
             add_to_db(
                 product_name,
                 product_price_original,
@@ -166,10 +172,11 @@ def get_product(url, publication_category):
                 product_article,
                 product_sizes,
                 product_all_articles,
-                publication_category
+                publication_category,
+                few_photos
             )
 
-    with open('../parser/product_json.json', 'w', encoding="utf-8") as outfile:
+    with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
     driver.close()
