@@ -8,10 +8,10 @@
                 "text": "Женщинам"
             },
             {
-                "text": "Брюки, бриджи, капри"
+                "text": "Одежда для беременных"
             },
             {
-                "text": "Магазинити"
+                "text": "Верхняя одежда"
             }
         ]
     },
@@ -23,74 +23,182 @@
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
-                            "originalPrice": "2 222 ₽",
-                            "price": "747 ₽",
-                            "searchableText": "42 RU / S ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "42 RU / 42 ",
                             "textRs": [
                                 {
-                                    "content": "42 RU / S ",
+                                    "content": "42 RU / 42 ",
                                     "type": "text"
                                 }
                             ]
                         },
-                        "link": "/product/bryuki-679897228/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
-                        "sku": 679897228
+                        "link": "/product/kurtka-924940847/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940847
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "44 RU / 44 ",
+                            "textRs": [
+                                {
+                                    "content": "44 RU / 44 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-924940878/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940878
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "46 RU / 46 ",
+                            "textRs": [
+                                {
+                                    "content": "46 RU / 46 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-926436686/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 926436686
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "48 RU / 48 ",
+                            "textRs": [
+                                {
+                                    "content": "48 RU / 48 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-924940851/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940851
                     },
                     {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
-                            "originalPrice": "2 222 ₽",
-                            "price": "747 ₽",
-                            "searchableText": "46 RU / L ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "50 RU / 50 ",
                             "textRs": [
                                 {
-                                    "content": "46 RU / L ",
+                                    "content": "50 RU / 50 ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Брюки Магазинити"
+                            "title": "Куртка"
                         },
-                        "link": "/product/bryuki-magaziniti-679900721/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
-                        "sku": 679900721
+                        "link": "/product/kurtka-924940891/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940891
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
-                            "originalPrice": "2 222 ₽",
-                            "price": "747 ₽",
-                            "searchableText": "48 RU / XL ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "52 RU / 52 ",
                             "textRs": [
                                 {
-                                    "content": "48 RU / XL ",
+                                    "content": "52 RU / 52 ",
                                     "type": "text"
                                 }
                             ]
                         },
-                        "link": "/product/bryuki-679892812/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
-                        "sku": 679892812
+                        "link": "/product/kurtka-924940936/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940936
                     },
                     {
                         "active": false,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-s/wc140/6389741824.jpg",
-                            "originalPrice": "2 222 ₽",
-                            "price": "811 ₽",
-                            "searchableText": "50 RU / 2XL ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "54 RU / 54 ",
                             "textRs": [
                                 {
-                                    "content": "50 RU / 2XL ",
+                                    "content": "54 RU / 54 ",
                                     "type": "text"
                                 }
                             ]
                         },
-                        "link": "/product/bryuki-679893926/?from_sku=679900721&oos_search=false&sh=efVNY4Lbvg",
-                        "sku": 679893926
+                        "link": "/product/kurtka-924940912/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940912
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "56 RU / 56 ",
+                            "textRs": [
+                                {
+                                    "content": "56 RU / 56 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-924940921/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940921
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "58 RU / 58 ",
+                            "textRs": [
+                                {
+                                    "content": "58 RU / 58 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-924940864/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940864
+                    },
+                    {
+                        "active": false,
+                        "availability": "inStock",
+                        "data": {
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
+                            "originalPrice": "12 399 ₽",
+                            "price": "5 257 ₽",
+                            "searchableText": "60 RU / 60 ",
+                            "textRs": [
+                                {
+                                    "content": "60 RU / 60 ",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "link": "/product/kurtka-924940899/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
+                        "sku": 924940899
                     }
                 ]
             }
@@ -106,18 +214,44 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/bryuki-zhenskie-demisezonnye/",
+                                "link": "/category/verhnyaya-odezhda-dlya-beremennyh-demisezonnaya/",
                                 "text": "Демисезон"
                             }
                         ]
                     },
                     {
-                        "key": "Composition",
-                        "name": "Состав материала",
+                        "key": "Material",
+                        "name": "Материал",
                         "values": [
                             {
-                                "key": "Composition_0",
-                                "text": "Хлопок 80%, Стрейч 20%"
+                                "key": "Material_0",
+                                "link": "/category/bombery-zhenskie-sintepon/",
+                                "text": "Синтепон"
+                            },
+                            {
+                                "key": "Material_1",
+                                "link": "/category/dzhinsovye-kurtki-zhenskie-tekstil/",
+                                "text": "Текстиль"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "FillerMaterialap",
+                        "name": "Материал наполнителя",
+                        "values": [
+                            {
+                                "key": "FillerMaterialap_0",
+                                "text": "Синтепон"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "TempRange",
+                        "name": "Диапазон температур, °С",
+                        "values": [
+                            {
+                                "key": "TempRange_0",
+                                "text": "-5 до +10"
                             }
                         ]
                     },
@@ -127,46 +261,24 @@
                         "values": [
                             {
                                 "key": "Collection_0",
-                                "text": "Осень-зима 2022"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "StyleApparel",
-                        "name": "Стиль",
-                        "values": [
-                            {
-                                "key": "StyleApparel_0",
-                                "link": "/category/zhenskie-bryuki-casual/",
-                                "text": "Повседневный"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "Type",
-                        "name": "Тип",
-                        "values": [
-                            {
-                                "key": "Type_0",
-                                "link": "/category/dlinnye-zhenskie-bryuki/",
-                                "text": "Брюки"
+                                "text": "Весна-лето 2023"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/bryuki-magaziniti-679900721/features/"
+        "link": "https://www.ozon.ru/product/kurtka-924940891/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 147982,
-        "link": "https://www.ozon.ru/seller/magaziniti-147982/",
+        "id": 638177,
+        "link": "https://www.ozon.ru/seller/shee-638177/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "4,5",
+                            "content": "5,0",
                             "type": "textBold"
                         },
                         {
@@ -199,49 +311,85 @@
                 }
             }
         ],
-        "name": "МагазинитИ"
+        "name": "SHEE"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-s/6389741824.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-w/6714399020.jpg"
             },
             {
-                "alt": "Брюки Магазинити #1"
+                "alt": "Куртка #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6389741812.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6714399033.jpg"
             },
             {
-                "alt": "Брюки Магазинити #2"
+                "alt": "Куртка #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-q/6389741786.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6714399053.jpg"
             },
             {
-                "alt": "Брюки Магазинити #3"
+                "alt": "Куртка #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6389741785.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6714399017.jpg"
             },
             {
-                "alt": "Брюки Магазинити #4"
+                "alt": "Куртка #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-r/6389741823.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6714398999.jpg"
             },
             {
-                "alt": "Брюки Магазинити #5"
+                "alt": "Куртка #5"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6714399013.jpg"
+            },
+            {
+                "alt": "Куртка #6"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6714399011.jpg"
+            },
+            {
+                "alt": "Куртка #7"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6714399038.jpg"
+            },
+            {
+                "alt": "Куртка #8"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6714399039.jpg"
+            },
+            {
+                "alt": "Куртка #9"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-7/6714399031.jpg"
+            },
+            {
+                "alt": "Куртка #10"
+            },
+            {
+                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6714399030.jpg"
+            },
+            {
+                "alt": "Куртка #11"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "702 ₽",
+        "cardPrice": "4 942 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "2 222 ₽",
-        "price": "747 ₽"
+        "originalPrice": "12 399 ₽",
+        "price": "5 257 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Брюки Магазинити"
+        "title": "Куртка"
     }
 }

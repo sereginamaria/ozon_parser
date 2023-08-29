@@ -1,12 +1,8 @@
-from io import BytesIO
-
 import requests
 from flask import render_template
 from html2image import Html2Image
 import json
-
-from telebot.types import InputMediaPhoto
-
+import db
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 def card_creator(product_list):
@@ -23,6 +19,7 @@ def card_creator(product_list):
         media_list = []
         for product in product_list:
             if nomer == 11 or nomer == 21:
+
                 requests.post(
                     url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
                     files=files
@@ -39,7 +36,7 @@ def card_creator(product_list):
             name = f'photo{nomer}'
             # files += {'name'+str(nomer): open("card_creator/card" + str(nomer) + ".png", "rb")}
 
-            files.update({name: open("card_creator/card" + str(nomer) + ".png", "rb")})
+            files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
 
             # files.append(dict('name'+str(nomer)=open("card_creator/card" + str(nomer) + ".png", "rb")))
             # a list of InputMediaPhoto. attach refers to the name of the file in the files dict
@@ -48,15 +45,14 @@ def card_creator(product_list):
 
             nomer+=1
 
-        if nomer == 31:
-            requests.post(
-                url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
-                files=files
-            )
+        requests.post(
+            url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
+            files=files
+        )
 
 def card(html, css):
     hti = Html2Image(
-        output_path='card_creator/',
+        output_path='card_creator/cards',
         custom_flags=[
             '--no-sandbox'
             '--remote-allow-origins=*',
