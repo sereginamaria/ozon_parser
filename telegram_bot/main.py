@@ -9,6 +9,7 @@ bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
+
     match message.text:
         case "/get_products_from_page":
             bot.send_message(message.from_user.id, "Введите название категории для публикации")
