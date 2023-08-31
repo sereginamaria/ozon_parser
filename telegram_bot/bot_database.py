@@ -27,7 +27,7 @@ def get_post_create_card_db(get_post_publication_category_post, get_post_publish
             "select product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and publishing_platform = '%s' and date_of_publication = '%s' and few_photos == false and verification == true) limit 30" % (get_post_publication_category_post, get_post_publishing_platform, get_post_date_of_publication))
 
     product_list = product.fetchall()
-    bot_requests.create_card_request(product_list)
+    bot_requests.create_card(product_list)
     return product_list
 
 def create_card_db(publication_category_post):
@@ -36,7 +36,7 @@ def create_card_db(publication_category_post):
             "select product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and date_of_publication is null and publishing_platform is null and few_photos == false and verification == true) limit 30" % publication_category_post)
 
     product_list = product.fetchall()
-    bot_requests.create_card_request(product_list)
+    bot_requests.create_card(product_list)
     return product_list
 
 def choice_db(date_of_publication, publishing_platform, data):
@@ -44,3 +44,12 @@ def choice_db(date_of_publication, publishing_platform, data):
         con.execute(
             "update ozon_products set date_of_publication = '%s', publishing_platform = '%s' where product_id = '%s'" % (
                 date_of_publication, publishing_platform, data.split('|')[1]))
+
+
+def get_post_from_db(publication_category, publication_platform, date_of_publication):
+    with con:
+        product = con.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images from ozon_products where (publication_category = '%s' and publishing_platform = '%s' and date_of_publication = '%s' and few_photos == false and verification == true) limit 30" % (publication_category, publication_platform, date_of_publication))
+
+    product_list = product.fetchall()
+    bot_requests.create_card(product_list)

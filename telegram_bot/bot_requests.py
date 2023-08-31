@@ -14,5 +14,5 @@ def get_product_request(message, publication_category_product):
     requests.post("http://127.0.0.1:5000/get_product", json=data)
 
 
-def create_card_request(product_list):
+def create_card(product_list):
     requests.post("http://127.0.0.1:5000/create_card", json=json.dumps(product_list))

@@ -1,5 +1,6 @@
 from telebot import types
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
+import bot_database
 def init_bot(message, telegram_bot):
     global bot
     bot = telegram_bot
@@ -36,19 +37,8 @@ def get_publication_platform(message, callback_publication_platform):
 def get_date_of_publication(message, callback_date_of_publication):
     global date_of_publication
     date_of_publication = callback_date_of_publication
+    bot.send_message(message.chat.id, 'Пост: ' + publication_category + publication_platform + str(date_of_publication))
+    bot_database.get_post_from_db(publication_category, publication_platform, date_of_publication)
 
-def post_post():
-    print('post')
-# def create_card_message get_post_date_of_publication_message(message):
-#     product_list = db.create_card_db(get_post_publication_category_post)
-#     main_menu = types.InlineKeyboardMarkup()
-#     k = 1
-#     for product_id_list in product_list:
-#         product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product_id_list
-#         key = types.InlineKeyboardButton(text=k, callback_data='choice' + '|' + str(product_id) + '|' + str(k))
-#         main_menu.add(key)
-#         k = k + 1
-#
-#     bot.send_message(message.chat.id, 'Выберите нужные карточки', reply_markup=main_menu)
 
 

@@ -144,8 +144,10 @@ def get_post_date_of_publication_message(message):
 
 @bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=2))
 def call(call):
+    print('1')
     result, key, step = DetailedTelegramCalendar().process(call.data)
     if not result and key:
+        print('2')
         bot.edit_message_text(f"Select {LSTEP[step]}",
                               call.message.chat.id,
                               call.message.message_id,
