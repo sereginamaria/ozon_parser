@@ -7,7 +7,6 @@ from flask import request
 app = Flask(__name__, template_folder='../card_creator/templates')
 
 import json
-import sys
 @app.route('/')
 def hello():
     return "Hello!"
