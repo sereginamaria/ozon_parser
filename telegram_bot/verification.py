@@ -1,5 +1,5 @@
 from telebot import types
-from telegram_bot import bot_database
+import bot_database
 
 
 def init_bot(message, telegram_bot):

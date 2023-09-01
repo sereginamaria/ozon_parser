@@ -1,11 +1,12 @@
 import telebot
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
-
+import datetime
 import bot_database
 import create_post
 import get_post
 import get_products_from_page
 import verification
+import time
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
@@ -28,6 +29,24 @@ def get_text_message(message):
         case _:
             bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 
+
+while True:
+    # Получаем текущее время
+    now = datetime.datetime.now()
+    print(now)
+    bot_database.autoposting_date(now)
+    # # Проходим по всем чатам в словаре
+    # for chat_id in delayed_messages:
+    #     # Проходим по всем сообщениям в списке
+    #     for time, text in delayed_messages[chat_id]:
+    #         # Если время отправки наступило или прошло
+    #         if time <= now:
+    #             # Отправляем сообщение в чат
+    #             bot.send_message(chat_id, text)
+    #             # Удаляем сообщение из списка
+    #             delayed_messages[chat_id].remove((time, text))
+    # # Делаем небольшую паузу, чтобы не перегружать процессор
+    time.sleep(1)
 
 @bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=1))
 def call(call):

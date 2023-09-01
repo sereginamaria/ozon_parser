@@ -1,6 +1,6 @@
 from flask import render_template
 from html2image import Html2Image
-import card_creator_requests
+from card_creator import card_creator_requests
 
 def card_creator(product_list):
     global nomer, files, media_list
