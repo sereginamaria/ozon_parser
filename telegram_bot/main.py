@@ -1,6 +1,7 @@
 import telebot
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 import datetime
+from datetime import date
 import bot_database
 import create_post
 import get_post
@@ -32,9 +33,13 @@ def get_text_message(message):
 
 while True:
     # Получаем текущее время
-    now = datetime.datetime.now()
+    now = date.today()
+    current_date_time = datetime.datetime.now()
+    current_time = current_date_time.time()
     print(now)
-    bot_database.autoposting_date(now)
+    print(current_time)
+
+    bot_database.autoposting_date(now, current_time)
     # # Проходим по всем чатам в словаре
     # for chat_id in delayed_messages:
     #     # Проходим по всем сообщениям в списке
@@ -46,7 +51,7 @@ while True:
     #             # Удаляем сообщение из списка
     #             delayed_messages[chat_id].remove((time, text))
     # # Делаем небольшую паузу, чтобы не перегружать процессор
-    time.sleep(1)
+    time.sleep(5)
 
 @bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=1))
 def call(call):

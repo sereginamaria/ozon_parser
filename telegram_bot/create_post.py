@@ -39,6 +39,13 @@ def get_date_of_publication(message, callback_date_of_publication):
     global date_of_publication
     date_of_publication = callback_date_of_publication
 
+    bot.send_message(message.chat.id, 'Введите время публикации (в формате 12:00)')
+    bot.register_next_step_handler(message, get_time_of_publication)
+
+def get_time_of_publication(message):
+    global time_of_publication
+    time_of_publication = message.text
+
     product_list = bot_database.create_card(publication_category)
 
     menu = types.InlineKeyboardMarkup()
@@ -54,4 +61,4 @@ def get_date_of_publication(message, callback_date_of_publication):
 
 
 def record_data(product_id):
-    bot_database.create_post(date_of_publication, publication_platform, product_id)
+    bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)

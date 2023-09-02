@@ -36,6 +36,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             product_article TEXT unique on conflict fail,
                             product_all_articles TEXT,
                             date_of_publication DATE,
+                            time_of_publication TIME,
                             publication_category TEXT,
                             publishing_platform TEXT,
                             verification BOOLEAN,

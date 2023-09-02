@@ -21,11 +21,11 @@ def callback_verification(data):
             con.execute("delete from ozon_products where product_id == " + str(data.split('|')[2]))
 
 
-def create_post(date_of_publication, publishing_platform, data):
+def create_post(date_of_publication, time_of_publication, publishing_platform, product_id):
     with con:
         con.execute(
-            "update ozon_products set date_of_publication = '%s', publishing_platform = '%s' where product_id = '%s'" % (
-                date_of_publication, publishing_platform, data.split('|')[1]))
+            "update ozon_products set date_of_publication = '%s', time_of_publication = '%s', publishing_platform = '%s' where product_id = '%s'" % (
+                date_of_publication, time_of_publication, publishing_platform, product_id))
 
 
 def create_card(publication_category):
@@ -52,11 +52,13 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
     product_list = product.fetchall()
     bot_requests.create_card(product_list)
 
-def autoposting_date(now):
+def autoposting_date(now, time):
     with con:
         product = con.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
-            "product_price_with_ozon_card, product_images from ozon_products where (date_of_publication = '%s' and few_photos == false and verification == "
-            "true)" % now)
+            "product_price_with_ozon_card, product_images from ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' and few_photos == false and verification == "
+            "true)" % (now, time))
+
     product_list = product.fetchall()
+    print(product_list)
     bot_requests.create_card(product_list)
