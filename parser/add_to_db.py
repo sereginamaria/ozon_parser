@@ -40,7 +40,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             publication_category TEXT,
                             publishing_platform TEXT,
                             verification BOOLEAN,
-                            few_photos BOOLEAN
+                            few_photos BOOLEAN,
+                            published BOOLEAN
                         );
                     """)
 
@@ -49,7 +50,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles, publication_category, verification, few_photos) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,false,?)'
+              'product_all_articles, publication_category, verification, few_photos, published) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,false,?,false)'
 
         print(publication_category)
         # указываем данные для запроса

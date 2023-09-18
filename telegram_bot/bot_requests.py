@@ -15,3 +15,6 @@ def get_product(message, publication_category_product):
 
 def create_card(product_list):
     requests.post("http://127.0.0.1:5000/create_card", json=json.dumps(product_list))
+
+def create_post(product_list):
+    requests.post("http://127.0.0.1:5000/create_post", json=json.dumps(product_list))

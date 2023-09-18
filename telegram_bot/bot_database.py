@@ -57,8 +57,17 @@ def autoposting_date(now, time):
         product = con.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
             "product_price_with_ozon_card, product_images from ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' and few_photos == false and verification == "
-            "true)" % (now, time))
+            "true and published == false)" % (str(now), time))
+
+
 
     product_list = product.fetchall()
+    bot_requests.create_post(product_list)
+
     print(product_list)
-    bot_requests.create_card(product_list)
+    for product in product_list:
+        product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+        print(product_id)
+        with con:
+            con.execute(
+                "update ozon_products set published = true where product_id = '%s'" % (product_id))

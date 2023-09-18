@@ -3,6 +3,25 @@ from html2image import Html2Image
 from card_creator import card_creator_requests
 
 def card_creator(product_list):
+    print('create_card')
+    rerq = create_card(product_list)
+    print(rerq)
+
+    print('media_list')
+    print(rerq[0])
+    print(rerq[1])
+
+    card_creator_requests.send_media_group(rerq[0], rerq[1])
+
+
+def post_creator(product_list):
+    print('create_post')
+    rerq = create_card(product_list)
+    print(rerq)
+
+
+    card_creator_requests.send_post(rerq[0], rerq[1])
+def create_card(product_list):
     global nomer, files, media_list
     nomer = 1
 
@@ -10,10 +29,10 @@ def card_creator(product_list):
     print(product_list)
     print(type(product_list))
     print(len(product_list))
-
+    files = {}
+    media_list = []
     if product_list:
-        files = {}
-        media_list = []
+
         for product in product_list:
             if nomer == 11 or nomer == 21:
                 card_creator_requests.send_media_group(media_list, files)
@@ -22,7 +41,8 @@ def card_creator(product_list):
 
             product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
 
-            render_html = html_render(product_name, product_article, product_sizes, product_price, product_price_with_ozon_card)
+            render_html = html_render(product_name, product_article, product_sizes, product_price,
+                                      product_price_with_ozon_card)
             render_css = css_render(product_images)
             card(render_html, render_css)
 
@@ -30,11 +50,14 @@ def card_creator(product_list):
 
             files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
 
-            media_list.append(dict(type='photo', media=f'attach://{name}'))
+            if nomer == 1:
+                media_list.append(dict(type='photo', caption='1234567890', media=f'attach://{name}'))
+            else:
+                media_list.append(dict(type='photo', media=f'attach://{name}'))
 
-            nomer+=1
+            nomer += 1
 
-        card_creator_requests.send_media_group(media_list, files)
+    return media_list, files
 
 def card(html, css):
     hti = Html2Image(
