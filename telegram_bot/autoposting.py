@@ -77,7 +77,7 @@ def autop():
             today_time_minute = "0" + str(today_time_minute)
 
 
-        current_time = today_time_hour + ':' + today_time_minute
+        current_time = str(today_time_hour) + ':' + str(today_time_minute)
 
         print(current_time)
         bot_database.autoposting_date(today_date, current_time)

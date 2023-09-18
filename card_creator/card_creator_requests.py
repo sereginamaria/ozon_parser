@@ -12,6 +12,6 @@ def send_media_group(media_list, files):
 def send_post(media_list, files):
     print('122222222222222222')
     requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'caption': 'hkhbkhgjr', 'media': json.dumps(media_list)},
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': '@ozon_trend_plus', 'caption': 'hkhbkhgjr', 'media': json.dumps(media_list)},
         files=files
     )
