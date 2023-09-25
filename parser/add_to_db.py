@@ -4,7 +4,7 @@ import sqlite3 as sl
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
               product_brand_name, product_brand_link, product_rating, product_categories, product_color,
               product_article,
-              product_sizes, product_all_articles, publication_category, few_photos
+              product_sizes, product_all_articles, publication_category, few_photos, product_url
               ):
     # открываем файл с базой данных
     con = sl.connect('ozon_product_db.db')
@@ -35,6 +35,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
                             product_color TEXT,
                             product_article TEXT unique on conflict fail,
                             product_all_articles TEXT,
+                            product_url TEXT,
                             date_of_publication DATE,
                             time_of_publication TIME,
                             publication_category TEXT,
@@ -50,7 +51,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               'product_price, product_price_with_ozon_card, product_images,' \
               'product_brand_name, product_brand_link, product_rating, ' \
               'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles, publication_category, verification, few_photos, published) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,false,?,false)'
+              'product_all_articles, product_url, publication_category, verification, few_photos, published) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,false,?,false)'
 
         print(publication_category)
         # указываем данные для запроса
@@ -68,6 +69,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
              product_article,
              product_sizes,
              product_all_articles,
+             product_url,
              publication_category,
              few_photos
              )

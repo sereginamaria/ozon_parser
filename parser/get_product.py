@@ -173,7 +173,8 @@ def get_product(url, publication_category):
                 product_sizes,
                 product_all_articles,
                 publication_category,
-                few_photos
+                few_photos,
+                url
             )
 
     with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:

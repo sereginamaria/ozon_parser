@@ -56,7 +56,9 @@ def autoposting_date(now, time):
     with con:
         product = con.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
-            "product_price_with_ozon_card, product_images from ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' and few_photos == false and verification == "
+            "product_price_with_ozon_card, product_images, publication_category, product_url "
+            "from ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' "
+            "and few_photos == false and verification == "
             "true and published == false)" % (str(now), time))
 
 
@@ -66,7 +68,8 @@ def autoposting_date(now, time):
 
     print(product_list)
     for product in product_list:
-        product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+        (product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card,
+         product_images, publication_category, product_url) = product
         print(product_id)
         with con:
             con.execute(

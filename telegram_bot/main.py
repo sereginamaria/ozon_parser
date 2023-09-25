@@ -8,6 +8,7 @@ import bot_database
 import create_post
 import get_post
 import get_products_from_page
+import get_product
 import verification
 import autoposting
 import time
@@ -23,7 +24,7 @@ def get_text_message(message):
         case "/get_products_from_page":
             get_products_from_page.init_bot(message, bot)
         case "/get_product":
-            get_products_from_page.init_bot(message, bot)
+            get_product.init_bot(message, bot)
         case "/verification":
             verification.init_bot(message, bot)
         case "/create_post":

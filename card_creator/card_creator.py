@@ -20,9 +20,9 @@ def post_creator(product_list):
     print(rerq)
 
 
-    card_creator_requests.send_post(rerq[0], rerq[1])
+    card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 def create_card(product_list):
-    global nomer, files, media_list
+    global nomer, files, media_list, publication_category, product_name, product_url
     nomer = 1
 
     print('lisy')
@@ -32,14 +32,14 @@ def create_card(product_list):
     files = {}
     media_list = []
     if product_list:
-
         for product in product_list:
             if nomer == 11 or nomer == 21:
                 card_creator_requests.send_media_group(media_list, files)
                 files = {}
                 media_list = []
 
-            product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card, product_images = product
+            (product_id, product_name, product_article, product_sizes, product_price,
+             product_price_with_ozon_card, product_images, publication_category, product_url) = product
 
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card)
@@ -51,13 +51,13 @@ def create_card(product_list):
             files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
 
             if nomer == 1:
-                media_list.append(dict(type='photo', caption='1234567890', media=f'attach://{name}'))
+                media_list.append(dict(type='photo', caption='1234567890', parse_mode = 'HTML', media=f'attach://{name}'))
             else:
                 media_list.append(dict(type='photo', media=f'attach://{name}'))
 
             nomer += 1
 
-    return media_list, files
+    return media_list, files, publication_category, product_name, product_url
 
 def card(html, css):
     hti = Html2Image(

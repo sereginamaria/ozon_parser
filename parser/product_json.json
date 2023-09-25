@@ -5,13 +5,13 @@
                 "text": "Одежда"
             },
             {
-                "text": "Женщинам"
+                "text": "Мужчинам"
             },
             {
-                "text": "Одежда для беременных"
+                "text": "Рубашки"
             },
             {
-                "text": "Верхняя одежда"
+                "text": "LUKANCLAN"
             }
         ]
     },
@@ -20,185 +20,23 @@
             {
                 "variants": [
                     {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "42 RU / 42 ",
-                            "textRs": [
-                                {
-                                    "content": "42 RU / 42 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940847/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940847
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "44 RU / 44 ",
-                            "textRs": [
-                                {
-                                    "content": "44 RU / 44 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940878/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940878
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "46 RU / 46 ",
-                            "textRs": [
-                                {
-                                    "content": "46 RU / 46 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-926436686/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 926436686
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "48 RU / 48 ",
-                            "textRs": [
-                                {
-                                    "content": "48 RU / 48 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940851/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940851
-                    },
-                    {
                         "active": true,
                         "availability": "inStock",
                         "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "50 RU / 50 ",
+                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-g/wc140/6576260800.jpg",
+                            "originalPrice": "3 900 ₽",
+                            "price": "1 069 ₽",
+                            "searchableText": "46–48 RU / M ",
                             "textRs": [
                                 {
-                                    "content": "50 RU / 50 ",
+                                    "content": "46–48 RU / M ",
                                     "type": "text"
                                 }
                             ],
-                            "title": "Куртка"
+                            "title": "Рубашка LUKANCLAN"
                         },
-                        "link": "/product/kurtka-924940891/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940891
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "52 RU / 52 ",
-                            "textRs": [
-                                {
-                                    "content": "52 RU / 52 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940936/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940936
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "54 RU / 54 ",
-                            "textRs": [
-                                {
-                                    "content": "54 RU / 54 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940912/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940912
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "56 RU / 56 ",
-                            "textRs": [
-                                {
-                                    "content": "56 RU / 56 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940921/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940921
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "58 RU / 58 ",
-                            "textRs": [
-                                {
-                                    "content": "58 RU / 58 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940864/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940864
-                    },
-                    {
-                        "active": false,
-                        "availability": "inStock",
-                        "data": {
-                            "coverImage": "https://cdn1.ozone.ru/s3/multimedia-w/wc140/6714399020.jpg",
-                            "originalPrice": "12 399 ₽",
-                            "price": "5 257 ₽",
-                            "searchableText": "60 RU / 60 ",
-                            "textRs": [
-                                {
-                                    "content": "60 RU / 60 ",
-                                    "type": "text"
-                                }
-                            ]
-                        },
-                        "link": "/product/kurtka-924940899/?from_sku=924940891&oos_search=false&sh=VV7IwN5gFw",
-                        "sku": 924940899
+                        "link": "/product/rubashka-lukanclan-883143751/?from_sku=883143751&oos_search=false&sh=489hoLhtLw",
+                        "sku": 883143751
                     }
                 ]
             }
@@ -214,8 +52,7 @@
                         "values": [
                             {
                                 "key": "Season_0",
-                                "link": "/category/verhnyaya-odezhda-dlya-beremennyh-demisezonnaya/",
-                                "text": "Демисезон"
+                                "text": "На любой сезон"
                             }
                         ]
                     },
@@ -225,33 +62,17 @@
                         "values": [
                             {
                                 "key": "Material_0",
-                                "link": "/category/bombery-zhenskie-sintepon/",
-                                "text": "Синтепон"
+                                "text": "Джинс"
                             },
                             {
                                 "key": "Material_1",
-                                "link": "/category/dzhinsovye-kurtki-zhenskie-tekstil/",
-                                "text": "Текстиль"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "FillerMaterialap",
-                        "name": "Материал наполнителя",
-                        "values": [
+                                "link": "/category/rubashki-muzhskie-denim/",
+                                "text": "Деним"
+                            },
                             {
-                                "key": "FillerMaterialap_0",
-                                "text": "Синтепон"
-                            }
-                        ]
-                    },
-                    {
-                        "key": "TempRange",
-                        "name": "Диапазон температур, °С",
-                        "values": [
-                            {
-                                "key": "TempRange_0",
-                                "text": "-5 до +10"
+                                "key": "Material_2",
+                                "link": "/category/rubashki-muzhskie-hlopkovoe-volokno/",
+                                "text": "Хлопковое волокно"
                             }
                         ]
                     },
@@ -264,21 +85,52 @@
                                 "text": "Весна-лето 2023"
                             }
                         ]
+                    },
+                    {
+                        "key": "StyleApparel",
+                        "name": "Стиль",
+                        "values": [
+                            {
+                                "key": "StyleApparel_0",
+                                "link": "/category/muzhskie-rubashki-kezhual/",
+                                "text": "Повседневный"
+                            },
+                            {
+                                "key": "StyleApparel_1",
+                                "link": "/category/rubashki-muzhskie-sportivnye/",
+                                "text": "Спортивный"
+                            },
+                            {
+                                "key": "StyleApparel_2",
+                                "link": "/category/rubashki-muzhskie-vechernie/",
+                                "text": "Вечерний"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "SizeM",
+                        "name": "Размер товара на фото",
+                        "values": [
+                            {
+                                "key": "SizeM_0",
+                                "text": "48-50"
+                            }
+                        ]
                     }
                 ]
             }
         ],
-        "link": "https://www.ozon.ru/product/kurtka-924940891/features/"
+        "link": "https://www.ozon.ru/product/rubashka-lukanclan-883143751/features/"
     },
     "webCurrentSeller-735663-default-1": {
-        "id": 638177,
-        "link": "https://www.ozon.ru/seller/shee-638177/",
+        "id": 770029,
+        "link": "https://www.ozon.ru/seller/lukanclan-770029/",
         "mainAdvantages": [
             {
                 "content": {
                     "headRs": [
                         {
-                            "content": "5,0",
+                            "content": "4,9",
                             "type": "textBold"
                         },
                         {
@@ -298,98 +150,90 @@
                 "content": {
                     "headRs": [
                         {
-                            "content": "Доставка и сервис Ozon",
+                            "content": "100% ",
+                            "type": "textBold"
+                        },
+                        {
+                            "content": "вовремя",
                             "type": "text"
                         }
                     ],
                     "hintRs": [
                         {
-                            "content": "Качественные доставка и хранение",
+                            "content": "Столько заказов за последние 30 дней продавец передал в доставку без опозданий",
                             "type": "text"
                         }
                     ]
                 }
             }
         ],
-        "name": "SHEE"
+        "name": "Lukanclan"
     },
     "webGallery-1748356-default-1": {
         "images": [
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-w/6714399020.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-g/6576260800.jpg"
             },
             {
-                "alt": "Куртка #1"
+                "alt": "Рубашка LUKANCLAN #1"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-9/6714399033.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6576260799.jpg"
             },
             {
-                "alt": "Куртка #2"
+                "alt": "Рубашка LUKANCLAN #2"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6714399053.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-i/6576260802.jpg"
             },
             {
-                "alt": "Куртка #3"
+                "alt": "Рубашка LUKANCLAN #3"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-t/6714399017.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-u/6576260814.jpg"
             },
             {
-                "alt": "Куртка #4"
+                "alt": "Рубашка LUKANCLAN #4"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-b/6714398999.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-1/6576260821.jpg"
             },
             {
-                "alt": "Куртка #5"
+                "alt": "Рубашка LUKANCLAN #5"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-p/6714399013.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-d/6576260797.jpg"
             },
             {
-                "alt": "Куртка #6"
+                "alt": "Рубашка LUKANCLAN #6"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-n/6714399011.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-j/6576260803.jpg"
             },
             {
-                "alt": "Куртка #7"
+                "alt": "Рубашка LUKANCLAN #7"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-e/6714399038.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-h/6576260801.jpg"
             },
             {
-                "alt": "Куртка #8"
+                "alt": "Рубашка LUKANCLAN #8"
             },
             {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-f/6714399039.jpg"
+                "src": "https://cdn1.ozone.ru/s3/multimedia-k/6576260804.jpg"
             },
             {
-                "alt": "Куртка #9"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-7/6714399031.jpg"
-            },
-            {
-                "alt": "Куртка #10"
-            },
-            {
-                "src": "https://cdn1.ozone.ru/s3/multimedia-6/6714399030.jpg"
-            },
-            {
-                "alt": "Куртка #11"
+                "alt": "Рубашка LUKANCLAN #9"
             }
         ]
     },
     "webPrice-2111817-default-1": {
-        "cardPrice": "4 942 ₽",
+        "cardPrice": "1 018 ₽",
         "link": "/modal/withoutOzonAccount",
-        "originalPrice": "12 399 ₽",
-        "price": "5 257 ₽"
+        "originalPrice": "3 900 ₽",
+        "price": "1 069 ₽"
     },
     "webProductHeading-943795-default-1": {
-        "title": "Куртка"
+        "title": "Рубашка LUKANCLAN"
     }
 }
