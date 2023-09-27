@@ -1,16 +1,19 @@
-from typing import Any
 import undetected_chromedriver
 import time
 from bs4 import BeautifulSoup
 import itertools
+
+from undetected_chromedriver import ChromeOptions
+
 from parser.get_product import get_product
-import requests
+from parser import parser_requests
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 def get_products_from_page(publication_category, url):
     # Ограничим парсинг первыми n страницами
-    print('hello')
+    print('Start get_products_from_page')
+    parser_requests.wait()
     global category
     category = publication_category
     MAX_PAGE = 1
@@ -26,7 +29,10 @@ def get_products_from_page(publication_category, url):
 
 def get_html(url):
     print('get_html')
-    driver = undetected_chromedriver.Chrome()
+
+    options = ChromeOptions()
+    options.headless = False
+    driver = undetected_chromedriver.Chrome(options=options)
     driver.get(url)
     time.sleep(3)
     driver.execute_script("window.scrollTo(5,4000);")
@@ -39,10 +45,11 @@ def get_html(url):
 
 def parse_data(html):
     print('parse_data')
+    print(html)
     soup = BeautifulSoup(html, 'html.parser')
     print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'o6i'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'it7'})]))])
     return product_links
 
 
@@ -57,11 +64,13 @@ def get_urls(html):
     if len(all_links) == 36:
         for link in all_links:
             print('get_product')
-            get_product(link, category)
+            message_type = False
+            get_product(link, category, message_type)
     else:
-        print('ERROR')
-        requests.post(
-            url=telegram_url + '/sendMessage',
-            data={'chat_id': 6181726421, 'text': 'Ошибка! Со страницы определилось ' + str(len(all_links)) +
-                      ' ссылок. Повторите попытку.'}
-        ).json()
+        text = ('Ошибка! Со страницы определилось ' + str(len(all_links)) +
+                ' ссылок. Повторите попытку.')
+
+        parser_requests.error(text)
+
+    message_type = True
+    parser_requests.execution_completed(message_type)

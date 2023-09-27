@@ -1,5 +1,4 @@
 from threading import Thread
-
 import telebot
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 import datetime
@@ -16,23 +15,21 @@ import time
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 th_1 = Thread(target=autoposting.autop)
-
-
 # th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
     if message.text == "/get_products_from_page":
         get_products_from_page.init_bot(message, bot)
-    if message.text == "/get_product":
+    elif message.text == "/get_product":
         get_product.init_bot(message, bot)
-    if message.text == "/verification":
+    elif message.text == "/verification":
         verification.init_bot(message, bot)
-    if message.text == "/create_post":
+    elif message.text == "/create_post":
         create_post.init_bot(message, bot)
-    if message.text == "/get_post":
+    elif message.text == "/get_post":
         get_post.init_bot(message, bot)
-    if message.text == "/help":
+    elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")

@@ -35,7 +35,8 @@ def get_ozon_product():
         request_data = json.loads(request.data.decode('UTF-8'))
         publication_category = request_data.get('publication_category')
         page_url = request_data.get('page_url')
-        get_product(page_url, publication_category)
+        message_type = True
+        get_product(page_url, publication_category, message_type)
         return 'Получаем информацию о товаре'
     if request.method == 'GET':
         return 'Получаем информацию о товаре'

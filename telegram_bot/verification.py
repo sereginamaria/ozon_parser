@@ -22,7 +22,7 @@ def verification(message):
             main_menu.add(key1, key2)
 
             bot.send_photo(chat_id=message.chat.id, photo=product_images.split(',')[0],
-                           caption='Оставляем?\nАртикул: ' + str(product_id),
+                           caption='Оставляем?\nID: ' + str(product_id),
                            reply_markup=main_menu)
 
     else:

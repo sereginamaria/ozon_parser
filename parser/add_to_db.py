@@ -1,7 +1,3 @@
-# подключаем SQLite
-# import sqlite3 as sl
-# import mysql.connector as sl
-
 import psycopg2 as pg
 
 connection = pg.connect(
@@ -14,23 +10,12 @@ connection = pg.connect(
 
 cursor = connection.cursor()
 
-# connection = sl.connect(host="mashunya.mysql.pythonanywhere-services.com",
-#                  user="mashunya",
-#                  password="Mysqlpassword")
-# cursor = connection.cursor()
-
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
               product_brand_name, product_brand_link, product_rating, product_categories, product_color,
               product_article,
               product_sizes, product_all_articles, publication_category, few_photos, product_url
               ):
-    # открываем файл с базой данных
-
-
-    # получаем количество таблиц с нужным нам именем
-
-    # создаём таблицу для товаров
-    print('создаем таблицу товаров')
+    print('Start add_to_db')
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS public.ozon_products (
             product_id SERIAL PRIMARY KEY,
@@ -66,7 +51,6 @@ def add_to_db(product_name, product_price_original, product_price, product_price
           'product_all_articles, product_url, publication_category, verification, few_photos, published) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
-    print(publication_category)
     # указываем данные для запроса
     data = [
         (product_name,

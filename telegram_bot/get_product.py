@@ -20,4 +20,3 @@ def get_publication_category(message):
 
 def get_link(message, publication_category):
     bot_requests.get_product(message, publication_category)
-    bot.send_message(message.from_user.id, "Выполнение завершено!")

@@ -3,12 +3,12 @@ from undetected_chromedriver.options import ChromeOptions
 from selenium.webdriver.common.by import By
 import json
 from parser.add_to_db import add_to_db
+from parser import parser_requests
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
-def get_product(url, publication_category):
-    print('hello')
-    print(type(url))
+def get_product(url, publication_category, message_type):
+    print('Start get_product')
     print(url)
 
     options = ChromeOptions()
@@ -21,7 +21,6 @@ def get_product(url, publication_category):
     parsed_json = json.loads(content)
     parsed_data_json = parsed_json["widgetStates"]
 
-    # pprint(parsed_data_json)
     keys_to_save1 = ['webCharacteristics-545750-default-1', 'webBrand-1033259-default-1',
                      'webAspects-418189-default-1',
                      'breadCrumbs-1619260-default-1', 'webGallery-1748356-default-1',
@@ -81,7 +80,6 @@ def get_product(url, publication_category):
                         product_images += v + ', '
     few_photos = False
     if len(product_images.split(',')) < 3:
-        print('<3')
         few_photos = True
 
     product_brand_name = ''
@@ -157,10 +155,9 @@ def get_product(url, publication_category):
 
     # print(d2['webPrice-2136014-default-1']['originalPrice'])
 
-    print(product_rating)
     if product_rating != '':
         if float(product_rating.replace(',', '.')) >= float('4.4'):
-            print('ну норм')
+            print('Go to add_to_db')
             add_to_db(
                 product_name,
                 product_price_original,
@@ -185,3 +182,5 @@ def get_product(url, publication_category):
 
     driver.close()
     driver.quit()
+
+    parser_requests.execution_completed(message_type)
