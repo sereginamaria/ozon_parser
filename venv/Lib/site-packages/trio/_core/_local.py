@@ -1,9 +1,8 @@
 # Runvar implementations
 import attr
 
-from . import _run
-
 from .._util import Final
+from . import _run
 
 
 @attr.s(eq=False, hash=False, slots=True)
@@ -92,4 +91,4 @@ class RunVar(metaclass=Final):
         token.redeemed = True
 
     def __repr__(self):
-        return "<RunVar name={!r}>".format(self._name)
+        return f"<RunVar name={self._name!r}>"

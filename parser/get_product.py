@@ -1,4 +1,5 @@
 import undetected_chromedriver
+from undetected_chromedriver.options import ChromeOptions
 from selenium.webdriver.common.by import By
 import json
 from parser.add_to_db import add_to_db
@@ -10,7 +11,9 @@ def get_product(url, publication_category):
     print(type(url))
     print(url)
 
-    driver = undetected_chromedriver.Chrome()
+    options = ChromeOptions()
+    options.headless = False
+    driver = undetected_chromedriver.Chrome(options=options)
     driver.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
     # time.sleep(1)
 

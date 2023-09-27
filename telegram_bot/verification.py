@@ -10,7 +10,7 @@ def init_bot(message, telegram_bot):
 
 def verification(message):
     products = bot_database.verification()
-    product_list = products.fetchall()
+    product_list = products
     if product_list:
         for product in product_list:
             product_id, product_images = product

@@ -37,7 +37,7 @@ def get_html(url):
     driver.quit()
 
 
-def parse_data(html: str) -> set[Any]:
+def parse_data(html):
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     print(soup)

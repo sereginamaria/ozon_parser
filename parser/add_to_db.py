@@ -1,5 +1,23 @@
 # подключаем SQLite
-import sqlite3 as sl
+# import sqlite3 as sl
+# import mysql.connector as sl
+
+import psycopg2 as pg
+
+connection = pg.connect(
+    host='194.87.232.115',
+    database='postgres',
+    port=5432,
+    user='postgres',
+    password='postgrespassword'
+)
+
+cursor = connection.cursor()
+
+# connection = sl.connect(host="mashunya.mysql.pythonanywhere-services.com",
+#                  user="mashunya",
+#                  password="Mysqlpassword")
+# cursor = connection.cursor()
 
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
               product_brand_name, product_brand_link, product_rating, product_categories, product_color,
@@ -7,74 +25,69 @@ def add_to_db(product_name, product_price_original, product_price, product_price
               product_sizes, product_all_articles, publication_category, few_photos, product_url
               ):
     # открываем файл с базой данных
-    con = sl.connect('ozon_product_db.db')
 
-    with con:
-        # получаем количество таблиц с нужным нам именем
-        data = con.execute("select count(*) from sqlite_master where type='table' and name='ozon_products'")
-        for row in data:
-            # если таких таблиц нет
-            print(row[0])
-            if row[0] == 0:
-                # создаём таблицу для товаров
-                print('создаем таблицу товаров')
-                with con:
-                    con.execute("""
-                        CREATE TABLE ozon_products (
-                            product_id INTEGER PRIMARY KEY,
-                            product_name TEXT,
-                            product_price_original TEXT,
-                            product_price TEXT,
-                            product_price_with_ozon_card TEXT,
-                            product_images TEXT,
-                            product_brand_name TEXT,
-                            product_brand_link TEXT,
-                            product_rating TEXT,
-                            product_categories TEXT,
-                            product_sizes TEXT,
-                            product_color TEXT,
-                            product_article TEXT unique on conflict fail,
-                            product_all_articles TEXT,
-                            product_url TEXT,
-                            date_of_publication DATE,
-                            time_of_publication TIME,
-                            publication_category TEXT,
-                            publishing_platform TEXT,
-                            verification BOOLEAN,
-                            few_photos BOOLEAN,
-                            published BOOLEAN
-                        );
-                    """)
 
-        # подготавливаем множественный запрос
-        sql = 'INSERT or IGNORE INTO ozon_products (product_name, product_price_original, ' \
-              'product_price, product_price_with_ozon_card, product_images,' \
-              'product_brand_name, product_brand_link, product_rating, ' \
-              'product_categories, product_color, product_article, product_sizes,' \
-              'product_all_articles, product_url, publication_category, verification, few_photos, published) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,false,?,false)'
+    # получаем количество таблиц с нужным нам именем
 
-        print(publication_category)
-        # указываем данные для запроса
-        data = [
-            (product_name,
-             product_price_original,
-             product_price,
-             product_price_with_ozon_card,
-             product_images,
-             product_brand_name,
-             product_brand_link,
-             product_rating,
-             product_categories,
-             product_color,
-             product_article,
-             product_sizes,
-             product_all_articles,
-             product_url,
-             publication_category,
-             few_photos
-             )
-        ]
+    # создаём таблицу для товаров
+    print('создаем таблицу товаров')
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS public.ozon_products (
+            product_id SERIAL PRIMARY KEY,
+            product_name TEXT,
+            product_price_original TEXT,
+            product_price TEXT,
+            product_price_with_ozon_card TEXT,
+            product_images TEXT,
+            product_brand_name TEXT,
+            product_brand_link TEXT,
+            product_rating TEXT,
+            product_categories TEXT,
+            product_sizes TEXT,
+            product_color TEXT,
+            product_article TEXT unique,
+            product_all_articles TEXT,
+            product_url TEXT,
+            date_of_publication DATE,
+            time_of_publication TIME,
+            publication_category TEXT,
+            publishing_platform TEXT,
+            verification BOOLEAN,
+            few_photos BOOLEAN,
+            published BOOLEAN
+        );
+    """)
 
-        # добавляем с помощью множественного запроса все данные сразу
-        with con:
-            con.executemany(sql, data)
+    # подготавливаем множественный запрос
+    sql = 'INSERT INTO public.ozon_products (product_name, product_price_original, ' \
+          'product_price, product_price_with_ozon_card, product_images,' \
+          'product_brand_name, product_brand_link, product_rating, ' \
+          'product_categories, product_color, product_article, product_sizes,' \
+          'product_all_articles, product_url, publication_category, verification, few_photos, published) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE)' \
+          'ON CONFLICT (product_article) DO NOTHING;'
+
+    print(publication_category)
+    # указываем данные для запроса
+    data = [
+        (product_name,
+         product_price_original,
+         product_price,
+         product_price_with_ozon_card,
+         product_images,
+         product_brand_name,
+         product_brand_link,
+         product_rating,
+         product_categories,
+         product_color,
+         product_article,
+         product_sizes,
+         product_all_articles,
+         product_url,
+         publication_category,
+         few_photos
+         )
+    ]
+
+    # добавляем с помощью множественного запроса все данные сразу
+    cursor.executemany(sql, data)
+    connection.commit()
