@@ -9,15 +9,20 @@ def send_media_group(media_list, files):
         files=files
     )
 
-def send_post(media_list, files, publication_category, product_name, product_url):
+def send_post(media_list, files, publication_category, names_list, urls_list):
     print('122222222222222222')
-    print(type(product_name))
-    print(type(product_url))
-    print(product_url)
     new_publication_category = ''.join(publication_category.split( ))
+    i = 0
+    str = ''
+    for name in names_list:
+        str = str + "\n<a href=\'https://www.ozon.ru" + urls_list[i] + "\'>" + name + "</a>"
+        i = i + 1
+    #
+    # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
+    #                urls_list[i] + "\'>" + name + "</a>")
 
-    new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
-                   product_url + "\'>" + product_name + "</a>")
+    new_caption = ("#" + new_publication_category + str)
+
     print(new_caption)
     print(type(new_caption))
     for el in media_list:

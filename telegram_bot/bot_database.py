@@ -40,7 +40,7 @@ def create_post(date_of_publication, time_of_publication, publishing_platform, p
 def create_card(publication_category):
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images from public.ozon_products where (publication_category = '%s' and "
+        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
         "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
         "true) limit 30" % publication_category)
 
@@ -52,13 +52,12 @@ def create_card(publication_category):
 def get_post_from_db(publication_category, publication_platform, date_of_publication):
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images from public.ozon_products where (publication_category = '%s' and "
+        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
         "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
         "true) limit 30" % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
     bot_requests.create_card(product_list)
-
 
 def autoposting_date(now, time):
     cursor.execute(
@@ -66,7 +65,7 @@ def autoposting_date(now, time):
         "product_price_with_ozon_card, product_images, publication_category, product_url "
         "from public.ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' "
         "and few_photos = false and verification = "
-        "true and published = false)" % (str(now), time))
+        "true and is_published = false)" % (str(now), time))
 
     product_list = cursor.fetchall()
     bot_requests.create_post(product_list)
@@ -77,4 +76,5 @@ def autoposting_date(now, time):
          product_images, publication_category, product_url) = product
         print(product_id)
         cursor.execute(
-            "update public.ozon_products set published = true where product_id = '%s'" % (product_id))
+            "update public.ozon_products set is_published = true where product_id = '%s'" % (product_id))
+        connection.commit()

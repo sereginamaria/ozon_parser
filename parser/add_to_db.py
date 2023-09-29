@@ -39,7 +39,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
             publishing_platform TEXT,
             verification BOOLEAN,
             few_photos BOOLEAN,
-            published BOOLEAN
+            is_published BOOLEAN
         );
     """)
 
@@ -48,7 +48,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
           'product_price, product_price_with_ozon_card, product_images,' \
           'product_brand_name, product_brand_link, product_rating, ' \
           'product_categories, product_color, product_article, product_sizes,' \
-          'product_all_articles, product_url, publication_category, verification, few_photos, published) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE)' \
+          'product_all_articles, product_url, publication_category, verification, few_photos, is_published) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
     # указываем данные для запроса

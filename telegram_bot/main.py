@@ -15,7 +15,7 @@ import time
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 th_1 = Thread(target=autoposting.autop)
-# th_1.start()
+th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
@@ -73,7 +73,7 @@ def callback_inline(call):
 
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'choice')
 def callback_inline(call):
-    create_post.record_data(call.data.split('|')[1])
+    create_post.record_data(call.message, call.data.split('|')[1], call.data.split('|')[2])
 
 
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'get_post_platform')
