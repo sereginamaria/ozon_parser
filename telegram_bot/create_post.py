@@ -50,16 +50,20 @@ def get_time_of_publication(message):
 
     print('kbyyf')
     print(len(product_list))
-    menu = types.InlineKeyboardMarkup()
-    k = 1
-    for product_id_list in product_list:
-        product_id, product_name, product_article, product_sizes, product_price, \
-            product_price_with_ozon_card, product_images, publication_category_i, product_url = product_id_list
-        key = types.InlineKeyboardButton(text=k, callback_data='choice' + '|' + str(product_id) + '|' + str(k))
-        menu.add(key)
-        k = k + 1
 
-    bot.send_message(message.chat.id, 'Выберите нужные карточки', reply_markup=menu)
+    if len(product_list) < 9:
+        bot.send_message(message.chat.id, 'В базе данных недостаточно товаров для данной категории')
+    else:
+        menu = types.InlineKeyboardMarkup()
+        k = 1
+        for product_id_list in product_list:
+            product_id, product_name, product_article, product_sizes, product_price, \
+                product_price_with_ozon_card, product_images, publication_category_i, product_url = product_id_list
+            key = types.InlineKeyboardButton(text=k, callback_data='choice' + '|' + str(product_id) + '|' + str(k))
+            menu.add(key)
+            k = k + 1
+
+        bot.send_message(message.chat.id, 'Выберите нужные карточки', reply_markup=menu)
 
 count = 0
 mass = []

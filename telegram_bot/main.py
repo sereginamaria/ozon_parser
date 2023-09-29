@@ -15,7 +15,7 @@ import time
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 th_1 = Thread(target=autoposting.autop)
-th_1.start()
+# th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
