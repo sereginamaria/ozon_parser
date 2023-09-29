@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    width: 1024px;
+    height: 1280px;
+    padding: 5% 2%;
+    box-sizing: border-box;
+}
+.img{
+    width: 95%;
+    height: 95%;
+}
+
+.img {
+    background: url("{{ url_img1 }}") 100% / cover no-repeat;
+}

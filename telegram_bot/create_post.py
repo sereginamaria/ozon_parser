@@ -73,7 +73,7 @@ def record_data(message, product_id, k):
     print(count)
     print(k)
 
-    if count <= 10:
+    if count <= 9:
         bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
     else:
-        bot.send_message(message.chat.id, 'Вы выбрали 10 карточек, пост создан')
+        bot.send_message(message.chat.id, 'Вы выбрали 9 карточек, пост создан')

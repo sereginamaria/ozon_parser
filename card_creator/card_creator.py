@@ -4,7 +4,7 @@ from card_creator import card_creator_requests
 
 def card_creator(product_list):
     print('create_card')
-    rerq = create_card(product_list)
+    rerq = create_card(product_list, 'without_title')
     print(rerq)
 
     print('media_list')
@@ -16,15 +16,15 @@ def card_creator(product_list):
 
 def post_creator(product_list):
     print('create_post')
-    rerq = create_card(product_list)
+    rerq = create_card(product_list, 'with_title')
     print(rerq)
 
 
     card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
-def create_card(product_list):
+def create_card(product_list, mess):
     global nomer, files, media_list, urls_list, publication_category
     nomer = 1
-
+    make_title = False
     print('lisy')
     print(product_list)
     print(type(product_list))
@@ -47,12 +47,25 @@ def create_card(product_list):
             (product_id, product_name, product_article, product_sizes, product_price,
              product_price_with_ozon_card, product_images, publication_category, product_url) = product
 
+            if mess == 'with_title' and make_title == False:
+                name = f'photo{nomer}'
+                print('with_title')
+                render_title_html = title_html_render(publication_category)
+                render_title_css = title_css_render(product_images)
+                card(render_title_html, render_title_css)
+                make_title = True
+                files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
+                media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
+                nomer += 1
+
+            name = f'photo{nomer}'
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card)
+
             render_css = css_render(product_images)
             card(render_html, render_css)
 
-            name = f'photo{nomer}'
+
             urls_list.append(product_url)
             names_list.append(product_name)
             files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
@@ -95,3 +108,14 @@ def css_render(product_images):
     return render_template('card.css', url_img1=product_image[0],
                            url_img2=product_image[1],
                            url_img3=product_image[2])
+
+
+def title_html_render(category):
+    return render_template('title_card.html', category=category)
+
+
+def title_css_render(product_images):
+
+    product_image = product_images.split(',')
+
+    return render_template('title_card.css', url_img=product_image[0])
