@@ -68,4 +68,4 @@ def create_post():
         return 'Создаю пост'
 
 if __name__ == "__main__":
-    app.run(host="194.87.232.115", port=5001, debug=True)
+    app.run(host="195.133.32.87", port=5001, debug=True)

@@ -1,9 +1,11 @@
-import undetected_chromedriver
-from undetected_chromedriver.options import ChromeOptions
+import undetected_chromedriver as uc
+from undetected_chromedriver import ChromeOptions
+
 from selenium.webdriver.common.by import By
 import json
 from parser.add_to_db import add_to_db
 from parser import parser_requests
+from selenium.webdriver.chrome.options import Options
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
@@ -11,13 +13,21 @@ def get_product(url, publication_category, message_type):
     print('Start get_product')
     print(url)
 
-    options = ChromeOptions()
-    options.headless = False
-    driver = undetected_chromedriver.Chrome(options=options)
-    driver.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
-    # time.sleep(1)
+    options1 = Options()
+    options1.add_argument('--no-sandbox')
+    options1.add_argument('--disable-dev-shm-usage')
+    print('111111111111111111111111')
+    options1.headless = False
+    driver1 = uc.Chrome(options=options1, version_main=117)
+    driver1.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
+    print('22222222222222')
+    # time.sleep(3)
 
-    content = driver.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+    content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+    driver1.close()
+    driver1.quit()
+
+
     parsed_json = json.loads(content)
     parsed_data_json = parsed_json["widgetStates"]
 
@@ -180,7 +190,23 @@ def get_product(url, publication_category, message_type):
     with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
-    driver.close()
-    driver.quit()
-
     parser_requests.execution_completed(message_type)
+    print("konec")
+
+
+if __name__ == '__main__':
+    options = ChromeOptions()
+    options.add_argument("--no-sandbox")
+    options.headless = False
+    options.add_argument("--disable-extensions")
+    options.add_argument('--disable-application-cache')
+    options.add_argument("--disable-setuid-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--remote-allow-origins=*")
+    options.add_argument("--log-path=/home/masha/chromelogs")
+    options.add_argument("--disable-dev-shm-usage")
+    driver = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False, options=options,
+                              version_main=117, log_level=10)
+    print('created')
+    driver.quit()
