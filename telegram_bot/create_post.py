@@ -4,7 +4,9 @@ import bot_database
 
 
 def init_bot(message, telegram_bot):
-    global bot
+    global bot, count, mass
+    count = 0
+    mass = []
     bot = telegram_bot
     create_post(message)
 
@@ -46,10 +48,9 @@ def get_time_of_publication(message):
     global time_of_publication
     time_of_publication = message.text
 
+    bot.send_message(message.chat.id, 'Ожидайте...')
     product_list = bot_database.create_card(publication_category)
 
-    print('kbyyf')
-    print(len(product_list))
 
     if len(product_list) < 9:
         bot.send_message(message.chat.id, 'В базе данных недостаточно товаров для данной категории')
@@ -65,8 +66,6 @@ def get_time_of_publication(message):
 
         bot.send_message(message.chat.id, 'Выберите нужные карточки', reply_markup=menu)
 
-count = 0
-mass = []
 def record_data(message, product_id, k):
     global count, mass
 
@@ -74,10 +73,10 @@ def record_data(message, product_id, k):
         mass.append(k)
         count = count + 1
 
-    print(count)
-    print(k)
-
-    if count <= 9:
+    if count < 9:
         bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
+    elif count == 9:
+        bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
+        bot.send_message(message.chat.id, 'Вы выбрали 9 карточек, пост создан')
     else:
         bot.send_message(message.chat.id, 'Вы выбрали 9 карточек, пост создан')

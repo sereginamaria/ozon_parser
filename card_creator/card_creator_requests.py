@@ -10,10 +10,10 @@ def send_media_group(media_list, files):
     )
 
 def send_post(media_list, files, publication_category, names_list, urls_list):
-    print('122222222222222222')
     new_publication_category = ''.join(publication_category.split( ))
     i = 0
     str = ''
+
     for name in names_list:
         str = str + "\n<a href=\'https://www.ozon.ru" + urls_list[i] + "\'>" + name + "</a>"
         i = i + 1
@@ -23,15 +23,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
 
     new_caption = ("#" + new_publication_category + str)
 
-    print(new_caption)
-    print(type(new_caption))
     for el in media_list:
         if 'caption' in el:
             el['caption'] = new_caption
 
-    print(media_list)
     requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': '6181726421', 'media': json.dumps(media_list)},
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': '@ozon_trend_plus', 'media': json.dumps(media_list)},
         files=files
     )
 

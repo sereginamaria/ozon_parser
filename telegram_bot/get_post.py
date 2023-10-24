@@ -38,5 +38,6 @@ def get_publication_platform(message, callback_publication_platform):
 def get_date_of_publication(message, callback_date_of_publication):
     global date_of_publication
     date_of_publication = callback_date_of_publication
-    bot.send_message(message.chat.id, 'Пост: ' + publication_category + publication_platform + str(date_of_publication))
+    bot.send_message(message.chat.id, 'Формируется пост: ' + publication_category + publication_platform + str(date_of_publication)
+                     + '. Ожидайте...')
     bot_database.get_post_from_db(publication_category, publication_platform, date_of_publication)

@@ -44,10 +44,6 @@ def get_ozon_product():
 @app.route('/create_card', methods=['GET', 'POST'])
 def create_card():
     if request.method == 'POST':
-        print(request)
-        print(request.json)
-        print(type(json.loads(request.json)))
-
         card_creator(json.loads(request.json))
         return 'Создаю карточку'
     if request.method == 'GET':
@@ -57,10 +53,6 @@ def create_card():
 @app.route('/create_post', methods=['GET', 'POST'])
 def create_post():
     if request.method == 'POST':
-        print(request)
-        print(request.json)
-        print(type(json.loads(request.json)))
-
         post_creator(json.loads(request.json))
         return 'Создаю пост'
     if request.method == 'GET':

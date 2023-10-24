@@ -31,14 +31,12 @@ def get_html(url):
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
-    print('111111111111111111111111')
     options.headless = False
     driver = uc.Chrome(options=options, version_main=117)
     driver.get(url)
     driver.execute_script("window.scrollTo(5,4000);")
     time.sleep(10)
     html = driver.page_source
-    print('22222222222222')
     # time.sleep(3)
 
     driver.close()
@@ -48,9 +46,7 @@ def get_html(url):
 
 def parse_data(html):
     print('parse_data')
-    print(html)
     soup = BeautifulSoup(html, 'html.parser')
-    # print(soup)
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'u1i'})]))])
     return product_links
@@ -62,11 +58,8 @@ def get_urls(html):
     links = parse_data(html)
     all_links = all_links + list(links)
 
-    print(all_links)
-    print(len(all_links))
     if len(all_links) == 36:
         for link in all_links:
-            print('get_product')
             message_type = False
             get_product(link, category, message_type)
     else:
@@ -77,3 +70,4 @@ def get_urls(html):
 
     message_type = True
     parser_requests.execution_completed(message_type)
+    print('End get_products_from_page')

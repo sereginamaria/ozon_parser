@@ -75,3 +75,4 @@ def add_to_db(product_name, product_price_original, product_price, product_price
     # добавляем с помощью множественного запроса все данные сразу
     cursor.executemany(sql, data)
     connection.commit()
+    print('End add_to_db')

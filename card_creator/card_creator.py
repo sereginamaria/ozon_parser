@@ -3,32 +3,20 @@ from html2image import Html2Image
 from card_creator import card_creator_requests
 
 def card_creator(product_list):
-    print('create_card')
+    print('Start create_card')
     rerq = create_card(product_list, 'without_title')
-    print(rerq)
-
-    print('media_list')
-    print(rerq[0])
-    print(rerq[1])
-
     card_creator_requests.send_media_group(rerq[0], rerq[1])
 
 
 def post_creator(product_list):
-    print('create_post')
+    print('Start create_post')
     rerq = create_card(product_list, 'with_title')
-    print(rerq)
-
-
     card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
+
 def create_card(product_list, mess):
     global nomer, files, media_list, urls_list, publication_category
     nomer = 1
     make_title = False
-    print('lisy')
-    print(product_list)
-    print(type(product_list))
-    print(len(product_list))
     files = {}
     media_list = []
 
@@ -38,18 +26,18 @@ def create_card(product_list, mess):
     urls_list = []
     if product_list:
         for product in product_list:
-            print(product)
             if nomer == 11 or nomer == 21:
                 card_creator_requests.send_media_group(media_list, files)
                 files = {}
                 media_list = []
+                names_list = []
+                urls_list = []
 
             (product_id, product_name, product_article, product_sizes, product_price,
              product_price_with_ozon_card, product_images, publication_category, product_url) = product
 
             if mess == 'with_title' and make_title == False:
                 name = f'photo{nomer}'
-                print('with_title')
                 render_title_html = title_html_render(publication_category)
                 render_title_css = title_css_render(product_images)
                 card(render_title_html, render_title_css)

@@ -15,7 +15,7 @@ import time
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 th_1 = Thread(target=autoposting.autop)
-# th_1.start()
+th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
@@ -30,7 +30,13 @@ def get_text_message(message):
     elif message.text == "/get_post":
         get_post.init_bot(message, bot)
     elif message.text == "/help":
-        bot.send_message(message.from_user.id, "Список команд:")
+        bot.send_message(message.from_user.id, "Список команд:"
+                                               "/get_products_from_page - распарсить страницу с товарами"
+                                               "/get_product - распарсить товар"
+                                               "/verification - проверифицирвоать товары"
+                                               "/create_post - создать пост"
+                                               "/get_post - посмотреть пост"
+                                               "/help - помощь")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
 

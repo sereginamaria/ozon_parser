@@ -11,16 +11,13 @@ telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmK
 
 def get_product(url, publication_category, message_type):
     print('Start get_product')
-    print(url)
 
     options1 = Options()
     options1.add_argument('--no-sandbox')
     options1.add_argument('--disable-dev-shm-usage')
-    print('111111111111111111111111')
     options1.headless = False
     driver1 = uc.Chrome(options=options1, version_main=117)
     driver1.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
-    print('22222222222222')
     # time.sleep(3)
 
     content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
@@ -89,7 +86,7 @@ def get_product(url, publication_category, message_type):
                     if k == 'src':
                         product_images += v + ', '
     few_photos = False
-    if len(product_images.split(',')) < 3:
+    if len(product_images.split(',')) <= 3:
         few_photos = True
 
     product_brand_name = ''
@@ -152,13 +149,11 @@ def get_product(url, publication_category, message_type):
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
             if len(d2['webAspects-418189-default-1']['aspects']) == 1:
-                print('article')
                 for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
                         if k == 'link' and v.split('?')[0] == url:
-                            print('article')
                             for k1, v1 in object.items():
                                 if k1 == 'sku':
                                     product_article = v1
@@ -191,7 +186,7 @@ def get_product(url, publication_category, message_type):
         outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
     parser_requests.execution_completed(message_type)
-    print("konec")
+    print('End get_product')
 
 
 if __name__ == '__main__':

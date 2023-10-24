@@ -9,8 +9,6 @@ def autop():
         today_time = datetime.datetime.now().time()
         today_time_hour = today_time.hour
         today_time_minute =today_time.minute
-        print(today_date)
-        print(today_time)
 
         if today_time_hour < 10:
             today_time_hour = "0" + str(today_time_hour)
@@ -24,4 +22,4 @@ def autop():
         print(current_time)
         bot_database.autoposting_date(today_date, current_time)
 
-        time.sleep(15)
+        time.sleep(600)
