@@ -39,7 +39,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
             publishing_platform TEXT,
             verification BOOLEAN,
             few_photos BOOLEAN,
-            is_published BOOLEAN
+            is_published BOOLEAN,
+            post_type TEXT
         );
     """)
 

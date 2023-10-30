@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="title_card.css">
 </head>
-<body>
+<body style="margin: 0">
     <div class="container">
-        <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between">
+        <div style="width: 60%;">
             <div class="img">
 
             </div>
         </div>
-        <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between">
-            <div style="text-align: center">
-                <p>НАХОДКИ</p>
-                <p>{{ name }}</p>
-            </div>
+        <div class="inf-text">
+            <p style="padding: 2%; background-color: rgb{{ color1 }}">НАХОДКИ</p>
+            <p>OZON</p>
+            <p style="color: rgb{{ color2 }}">{{ category }}</p>
         </div>
     </div>
 </body>

@@ -3,6 +3,7 @@ from parser.get_product import get_product
 from parser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from card_creator.card_creator import post_creator
+from card_creator.card_creator import single_post_creator
 from flask import request
 
 app = Flask(__name__, template_folder='../card_creator/templates')
@@ -56,8 +57,17 @@ def create_post():
         post_creator(json.loads(request.json))
         return 'Создаю пост'
     if request.method == 'GET':
-        card_creator('ghbdtn')
+        post_creator('ghbdtn')
         return 'Создаю пост'
+
+@app.route('/create_single_post', methods=['GET', 'POST'])
+def create_single_post():
+    if request.method == 'POST':
+        single_post_creator(json.loads(request.json))
+        return 'Создаю одиночный пост'
+    if request.method == 'GET':
+        single_post_creator('ghbdtn')
+        return 'Создаю одиночный пост'
 
 if __name__ == "__main__":
     app.run(host="195.133.32.87", port=5001, debug=True)

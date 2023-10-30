@@ -16,39 +16,54 @@
 }
 
 .container {
-     display: flex;
+    display: flex;
     width: 1024px;
     height: 1280px;
-    padding: 5% 2% 5% 0;
+    /*padding: 5% 2% 5% 0;*/
     box-sizing: border-box;
+}
+.img1, .img2 {
+    width: 100%;
+    height: 100%;
+    background-position: center !important;
 }
 
 .inf-text {
+    display: flex;
+    text-align: center;
     width: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 2%;
+    box-sizing: border-box;
+}
+
+.inf-text div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center
+    align-items: center;
+    justify-content: space-between;
 }
 
-.inf-text  p {
-    font-size: 60px;
-    letter-spacing: 10px;
-    font-family: Roboto-Bold;
-    margin: 0 0 30px 0 ;
+.inf-text p{
+    font-family: 'Roboto-Regular';
+    font-size: 24px;
+    margin: 0;
     padding: 0;
 }
-.img{
-    width: 95%;
-    height: 95%;
+
+.inf-text span{
+    font-family: 'Roboto-Bold';
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
 }
 
-.img {
-    background-position: center !important;
+.img1 {
     background: url("{{ url_img }}") 100% / cover no-repeat;
 }
 
-/*.img {*/
-/*    background-position: center !important;*/
+/*.img1 {*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-o/wc750/6765693180.jpg") 100% / cover no-repeat;*/
 /*}*/

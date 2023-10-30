@@ -10,6 +10,7 @@ import get_products_from_page
 import get_product
 import verification
 import autoposting
+import create_single_post
 import time
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
@@ -27,6 +28,8 @@ def get_text_message(message):
         verification.init_bot(message, bot)
     elif message.text == "/create_post":
         create_post.init_bot(message, bot)
+    elif message.text == "/create_single_post":
+        create_single_post.init_bot(message, bot)
     elif message.text == "/get_post":
         get_post.init_bot(message, bot)
     elif message.text == "/help":
@@ -35,6 +38,7 @@ def get_text_message(message):
                                                "/get_product - распарсить товар"
                                                "/verification - проверифицирвоать товары"
                                                "/create_post - создать пост"
+                                               "/create_single_post - создать одиночный пост"
                                                "/get_post - посмотреть пост"
                                                "/help - помощь")
     else:
@@ -65,6 +69,17 @@ def call(call):
         get_post.get_date_of_publication(call.message, result)
 
 
+@bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=3))
+def call(call):
+    result, key, step = DetailedTelegramCalendar(calendar_id=3, locale='ru').process(call.data)
+    if not result and key:
+        bot.edit_message_text(f"Select {LSTEP[step]}",
+                              call.message.chat.id,
+                              call.message.message_id,
+                              reply_markup=key)
+    elif result:
+        create_single_post.get_date_of_publication(call.message, result)
+
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'verification')
 def callback_inline(call):
     bot_database.callback_verification(call.data)
@@ -76,10 +91,18 @@ def callback_inline(call):
     publication_platform = call.data.split('|')[1]
     create_post.get_publication_platform(call.message, publication_platform)
 
+@bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'create_single_post_platform')
+def callback_inline(call):
+    publication_platform = call.data.split('|')[1]
+    create_single_post.get_publication_platform(call.message, publication_platform)
 
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'choice')
 def callback_inline(call):
     create_post.record_data(call.message, call.data.split('|')[1], call.data.split('|')[2])
+
+@bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'choice_single')
+def callback_inline(call):
+    create_single_post.record_data(call.message, call.data.split('|')[1], call.data.split('|')[2])
 
 
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'get_post_platform')
