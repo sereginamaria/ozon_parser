@@ -10,6 +10,7 @@ def card_creator(product_list):
     print('Start create_card')
     rerq = create_card(product_list, 'without_title')
     card_creator_requests.send_media_group(rerq[0], rerq[1])
+    # return rerq
 
 
 def post_creator(product_list):
@@ -67,7 +68,7 @@ def create_card(product_list, mess):
 
 
                 render_title_html = title_html_render(publication_category, palette)
-                render_title_css = title_css_render(product_images)
+                render_title_css = title_css_render(product_images, palette)
                 card(render_title_html, render_title_css)
                 make_title = True
                 files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
@@ -90,8 +91,7 @@ def create_card(product_list, mess):
 
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card, palette)
-
-            render_css = css_render(product_images)
+            render_css = css_render(product_images, palette)
             card(render_html, render_css)
 
 
@@ -118,7 +118,7 @@ def card(html, css):
             '--hide-scrollbars'
         ],
     )
-
+    hti.load_file("card_creator/templates/logo1.png", "logo.png")
     hti.screenshot(
         html_str=html, css_str=css,
         save_as='card' + str(nomer) + '.png', size=(1024, 1280)
@@ -128,33 +128,47 @@ def card(html, css):
 
 def html_render(product_name, product_article, product_sizes, product_price,
                 product_price_with_ozon_card, palette):
+    product_size = product_sizes.split(' ,')
+
+    del product_size[-1]
+
+    string = ''
+    for el in product_size:
+        # Добавляем к строке элемент списка
+        string += str(el)
+        # Добавляем к строке разделитель — в данном случае пробел
+        string += ', '
+    new_string = string[:-1]
+    print(new_string)
 
     return render_template('card.html', name=product_name, article=product_article,
-                           size=product_sizes, price=product_price,
+                           size=new_string, price=product_price,
                            ozon_card_price=product_price_with_ozon_card,
-                           color=palette[0])
+                           color1=palette[0],
+                           color2=palette[2])
 
 
-def css_render(product_images):
+def css_render(product_images, palette):
 
     product_image = product_images.split(',')
 
     return render_template('card.css', url_img1=product_image[1],
                            url_img2=product_image[2],
-                           url_img3=product_image[3])
+                           url_img3=product_image[3],
+                           color=palette[2])
 
 
 def title_html_render(category, palette):
-    return render_template('title_card.html', category=category,
+    return render_template('title_card_single_photo.html', category=category,
                            color1=palette[0],
                            color2=palette[2])
 
 
-def title_css_render(product_images):
+def title_css_render(product_images, palette):
 
     product_image = product_images.split(',')
 
-    return render_template('title_card.css', url_img=product_image[0])
+    return render_template('title_card_single_photo.css', url_img=product_image[0], color=palette[2])
 
 
 def single_post_creator(product_list):
@@ -203,7 +217,7 @@ def create_single_card(product_list, mess):
                 # print(palette)
 
 
-                render_title_html = single_title_html_render(single_publication_category, palette)
+                render_title_html = single_title_html_render(single_publication_category, palette, product_name, product_image)
 
                 render_title_css = single_title_css_render(product_images, palette)
                 single_card(render_title_html, render_title_css)
@@ -227,7 +241,7 @@ def create_single_card(product_list, mess):
             # print(dominant_color)
 
             render_html = single_html_render(product_name, product_article, product_sizes, product_price,
-                                      product_price_with_ozon_card, palette)
+                                      product_price_with_ozon_card, palette, product_image)
 
 
 
@@ -249,7 +263,7 @@ def create_single_card(product_list, mess):
     return single_media_list, single_files, single_publication_category, names_list, single_urls_list
 
 def single_html_render(product_name, product_article, product_sizes, product_price,
-                       product_price_with_ozon_card, palette):
+                       product_price_with_ozon_card, palette, product_image):
     print(type(product_sizes))
     print(product_sizes)
     product_size = product_sizes.split(' ,')
@@ -265,29 +279,38 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
         # Добавляем к строке разделитель — в данном случае пробел
         string += ', '
     print(string)
+    print(type(string))
 
+    Remove_last = string[:len(string) - 2]
+    print(Remove_last)
 
-    return render_template('single_card.html', name=product_name, article=product_article,
-                           size=string, price=product_price,
-                           ozon_card_price=product_price_with_ozon_card,  color=palette[0])
+    return render_template('single_card_single_photo.html', name=product_name, article=product_article,
+                           size=Remove_last, price=product_price,
+                           ozon_card_price=product_price_with_ozon_card,  color=palette[2],
+
+                           )
 
 
 def single_css_render(product_images):
 
     product_image = product_images.split(',')
 
-    return render_template('single_card.css', url_img=product_image[1])
+    return render_template('single_card_single_photo.css',  url_img1=product_image[1],
+                           url_img2=product_image[2],
+                           url_img3=product_image[3])
 
 
-def single_title_html_render(category, palette):
-    return render_template('single_title_card_blur.html', category=category,
-                           color=palette[0])
+def single_title_html_render(category, palette, product_name, product_image):
+    return render_template('single_title_card_single_photo.html', category=category,
+                           color=palette[0],  name=product_name,
+
+                           )
 
 
 def single_title_css_render(product_images, palette):
     product_image = product_images.split(',')
 
-    return render_template('single_title_card_blur.css', url_img=product_image[0],
+    return render_template('single_title_card_single_photo.css', url_img=product_image[0],
                            color1=palette[0],
                            color2=palette[1],
                            color3=palette[2])

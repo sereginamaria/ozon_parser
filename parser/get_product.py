@@ -59,7 +59,7 @@ def get_product(url, publication_category, message_type):
             else:
                 d2[k1][k2] = v2
     # pprint(d2['webProductHeading-943795-default-1']['title'])
-    # pprint(d2)
+    # print(d2)
 
     product_name = ''
     product_price_original = ''

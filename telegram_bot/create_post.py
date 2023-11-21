@@ -52,7 +52,7 @@ def get_time_of_publication(message):
     product_list = bot_database.create_card(publication_category)
 
 
-    if len(product_list) < 9:
+    if len(product_list) < 6:
         bot.send_message(message.chat.id, 'В базе данных недостаточно товаров для данной категории')
     else:
         menu = types.InlineKeyboardMarkup()
@@ -73,10 +73,10 @@ def record_data(message, product_id, k):
         mass.append(k)
         count = count + 1
 
-    if count < 9:
+    if count < 6:
         bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
-    elif count == 9:
+    elif count == 6:
         bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
-        bot.send_message(message.chat.id, 'Вы выбрали 9 карточек, пост создан')
+        bot.send_message(message.chat.id, 'Вы выбрали 6 карточек, пост создан')
     else:
-        bot.send_message(message.chat.id, 'Вы выбрали 9 карточек, пост создан')
+        bot.send_message(message.chat.id, 'Вы выбрали 6 карточек, пост создан')
