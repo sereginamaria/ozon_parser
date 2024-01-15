@@ -1,11 +1,14 @@
 from bs4 import BeautifulSoup
 import itertools
+
+from selenium.webdriver.common.by import By
+
 from parser.get_product import get_product
 import undetected_chromedriver as uc
 from parser import parser_requests
 import time
 from selenium.webdriver.chrome.options import Options
-
+from selenium_stealth import stealth
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
@@ -28,12 +31,26 @@ def get_products_from_page(publication_category, url):
 
 def get_html(url):
     print('get_html')
+
     options = Options()
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.headless = False
-    driver = uc.Chrome(options=options, version_main=117)
+    driver = uc.Chrome(options=options)
     driver.get(url)
+    time.sleep(10)
+
+    driver.refresh()
+
+    #
+    # html = driver.page_source
+    # print(html)
+
+    # content = driver.find_element(By.ID, 'reload-button')
+    # print(content)
+    #
+    # content.click()
+
     driver.execute_script("window.scrollTo(5,4000);")
     time.sleep(10)
     html = driver.page_source
@@ -48,7 +65,7 @@ def parse_data(html):
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'u1i'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'iw7'})]))])
     return product_links
 
 

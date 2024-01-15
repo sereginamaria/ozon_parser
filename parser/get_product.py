@@ -1,3 +1,6 @@
+import time
+import random
+
 import undetected_chromedriver as uc
 from undetected_chromedriver import ChromeOptions
 
@@ -5,43 +8,101 @@ from selenium.webdriver.common.by import By
 import json
 from parser.add_to_db import add_to_db
 from parser import parser_requests
-from selenium.webdriver.chrome.options import Options
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
 def get_product(url, publication_category, message_type):
     print('Start get_product')
 
-    options1 = Options()
+    options1 = uc.ChromeOptions()
+    options1.headless = False
     options1.add_argument('--no-sandbox')
     options1.add_argument('--disable-dev-shm-usage')
-    options1.headless = False
-    driver1 = uc.Chrome(options=options1, version_main=117)
+
+    options1.add_argument("--disable-extensions")
+    options1.add_argument('--disable-application-cache')
+    options1.add_argument("--disable-setuid-sandbox")
+    options1.add_argument("--disable-gpu")
+    options1.add_argument("--remote-allow-origins=*")
+    options1.add_argument("--log-path=/home/masha/chromelogs")
+    options1.add_argument("--disable-dev-shm-usage")
+
+    driver1 = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
+                       options=options1,
+                       log_level=10)
+
     driver1.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
-    # time.sleep(3)
+    time.sleep(10)
+
+    driver1.refresh()
+
+    # html = driver1.page_source
+    # print(html)
 
     content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
     driver1.close()
     driver1.quit()
 
+        # options1 = Options()
+        # options1.add_argument('--no-sandbox')
+        # options1.add_argument('--disable-dev-shm-usage')
+        # # options1.add_argument("start-maximized")
+        # options1.add_argument("--headless=new")
+        # options1.add_argument("--disable-blink-features=AutomationControlled")
+        # # options1.add_experimental_option("excludeSwitches", ["enable-automation"])
+        # # options1.add_experimental_option('useAutomationExtension', False)
+        # # options1.headless = True
+
+        # driver1 = uc.Chrome(options=options1, version_main=117)
+
+        # driver1.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
+        # time.sleep(10)
+
+        # content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+        # # content = driver1.find_element(By.TAG_NAME, 'body')
+        # print(content)
+        # driver1.close()
+        # driver1.quit()
+
 
     parsed_json = json.loads(content)
+
     parsed_data_json = parsed_json["widgetStates"]
+    description_json = parsed_json["seo"]["script"]
+    #
+    # print(description_json)
+    # print(type(description_json))
+    #
+    # print(description_json[0])
+    # print(type(description_json[0]))
+    #
+    # print(description_json[0]['innerHTML'])
+    # print(type(description_json[0]['innerHTML']))
+
+    res_dict = json.loads(description_json[0]['innerHTML'])
+    # print(res_dict)
+
+    print(res_dict['description'])
+
+    print(type(res_dict['description']))
+
+    description = res_dict['description']
 
     keys_to_save1 = ['webCharacteristics-545750-default-1', 'webBrand-1033259-default-1',
                      'webAspects-418189-default-1',
                      'breadCrumbs-1619260-default-1', 'webGallery-1748356-default-1',
                      'webCurrentSeller-735663-default-1', 'webPrice-2111817-default-1',
-                     'webProductHeading-943795-default-1']
+                     'webProductHeading-943795-default-1', 'seo']
 
     keys_to_save2 = ['breadcrumbs', 'aspects', 'id', 'name', 'link', 'characteristics', 'mainAdvantages', 'images',
-                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'cardPrice', 'title']
+                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'cardPrice', 'title', 'script']
 
     keys_to_save3 = ['text', 'priceTextRs', 'content', 'description', 'name', 'alt', 'src', 'mainAdvantages', 'short',
-                     'variants']
+                     'variants', 'innerHTML']
 
     d1 = {k: json.loads(v) for k, v in parsed_data_json.items() if k in keys_to_save1}
     d2 = {}
+
 
     for k1, v1 in d1.items():
         d2[k1] = {}
@@ -179,7 +240,8 @@ def get_product(url, publication_category, message_type):
                 product_all_articles,
                 publication_category,
                 few_photos,
-                url
+                url,
+                description
             )
 
     with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
@@ -190,18 +252,38 @@ def get_product(url, publication_category, message_type):
 
 
 if __name__ == '__main__':
-    options = ChromeOptions()
-    options.add_argument("--no-sandbox")
+
+    options = uc.ChromeOptions()
     options.headless = False
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+
     options.add_argument("--disable-extensions")
     options.add_argument('--disable-application-cache')
     options.add_argument("--disable-setuid-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--remote-allow-origins=*")
     options.add_argument("--log-path=/home/masha/chromelogs")
     options.add_argument("--disable-dev-shm-usage")
-    driver = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False, options=options,
-                              version_main=117, log_level=10)
+
+
+    # options = ChromeOptions()
+    # options.add_argument("--no-sandbox")
+    # # options.headless = False
+    # options.add_argument("--disable-extensions")
+    # options.add_argument('--disable-application-cache')
+    # options.add_argument("--disable-setuid-sandbox")
+    # options.add_argument("--disable-dev-shm-usage")
+    # options.add_argument("--disable-gpu")
+    # options.add_argument("--remote-allow-origins=*")
+    # options.add_argument("--log-path=/home/masha/chromelogs")
+    # options.add_argument("--disable-dev-shm-usage")
+
+
+
+    driver = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
+                       options=options,
+                               log_level=10)
+
     print('created')
     driver.quit()

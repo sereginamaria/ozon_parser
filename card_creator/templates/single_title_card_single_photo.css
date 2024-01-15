@@ -74,7 +74,7 @@
 
 .img {
     background: url("{{ url_img }}") 100% / cover no-repeat;
-    height: 85%;
+    height: 100%;
 }
 /*.img1 {*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
@@ -82,7 +82,7 @@
 /*.img2 {*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
 /*}*/
-/*.img3 {*/
-/*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
-/*    height: 90%;*/
-/*}*/
+/*.img {*/
+/*    background: url("https://ir.ozone.ru/s3/multimedia-l/wc1000/6766666869.jpg") 100% / cover no-repeat;*/
+/*    height: 85%;*/
+}

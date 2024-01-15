@@ -72,6 +72,24 @@
     padding: 0;
 }
 
+.inf-text-size p{
+
+    color: rgb{{ color }};
+    font-family: 'Roboto-Regular';
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.inf-text-size span{
+
+    color: rgb{{ color }};
+    font-family: 'Roboto-Bold';
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
 .img {
     background: url("{{ url_img }}") 100% / cover no-repeat;
     height: 90%;

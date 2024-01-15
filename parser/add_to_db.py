@@ -13,7 +13,7 @@ cursor = connection.cursor()
 def add_to_db(product_name, product_price_original, product_price, product_price_with_ozon_card, product_images,
               product_brand_name, product_brand_link, product_rating, product_categories, product_color,
               product_article,
-              product_sizes, product_all_articles, publication_category, few_photos, product_url
+              product_sizes, product_all_articles, publication_category, few_photos, product_url, description
               ):
     print('Start add_to_db')
     cursor.execute("""
@@ -40,7 +40,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
             verification BOOLEAN,
             few_photos BOOLEAN,
             is_published BOOLEAN,
-            post_type TEXT
+            post_type TEXT,
+            description TEXT
         );
     """)
 
@@ -49,7 +50,7 @@ def add_to_db(product_name, product_price_original, product_price, product_price
           'product_price, product_price_with_ozon_card, product_images,' \
           'product_brand_name, product_brand_link, product_rating, ' \
           'product_categories, product_color, product_article, product_sizes,' \
-          'product_all_articles, product_url, publication_category, verification, few_photos, is_published) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE)' \
+          'product_all_articles, product_url, publication_category, verification, few_photos, is_published, description) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,%s,FALSE,%s)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
     # указываем данные для запроса
@@ -69,7 +70,8 @@ def add_to_db(product_name, product_price_original, product_price, product_price
          product_all_articles,
          product_url,
          publication_category,
-         few_photos
+         few_photos,
+         description
          )
     ]
 

@@ -67,7 +67,7 @@ def create_card(product_list, mess):
                 # print('palette1')
 
 
-                render_title_html = title_html_render(publication_category, palette)
+                render_title_html = title_html_render(product_name, publication_category, palette)
                 render_title_css = title_css_render(product_images, palette)
                 card(render_title_html, render_title_css)
                 make_title = True
@@ -158,8 +158,9 @@ def css_render(product_images, palette):
                            color=palette[2])
 
 
-def title_html_render(category, palette):
-    return render_template('title_card_single_photo.html', category=category,
+def title_html_render(product_name, category, palette):
+    card_title = product_name.partition(' ')[0]
+    return render_template('title_card_single_photo.html', category=card_title,
                            color1=palette[0],
                            color2=palette[2])
 
@@ -174,7 +175,7 @@ def title_css_render(product_images, palette):
 def single_post_creator(product_list):
     print('Start create_single_post')
     rerq = create_single_card(product_list, 'with_title')
-    card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
+    card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4], rerq[5])
 
 def create_single_card(product_list, mess):
     global single_nomer, single_files, single_media_list, single_urls_list, single_publication_category
@@ -190,7 +191,8 @@ def create_single_card(product_list, mess):
     if product_list:
         for product in product_list:
             (product_id, product_name, product_article, product_sizes, product_price,
-             product_price_with_ozon_card, product_images, single_publication_category, product_url) = product
+             product_price_with_ozon_card, product_images, single_publication_category, product_url,
+             description) = product
 
             product_image = product_images.split(',')
             fd = urlopen(product_image[0])
@@ -260,7 +262,7 @@ def create_single_card(product_list, mess):
 
             single_nomer += 1
 
-    return single_media_list, single_files, single_publication_category, names_list, single_urls_list
+    return single_media_list, single_files, single_publication_category, names_list, single_urls_list, description
 
 def single_html_render(product_name, product_article, product_sizes, product_price,
                        product_price_with_ozon_card, palette, product_image):
@@ -297,7 +299,8 @@ def single_css_render(product_images):
 
     return render_template('single_card_single_photo.css',  url_img1=product_image[1],
                            url_img2=product_image[2],
-                           url_img3=product_image[3])
+                           url_img3=product_image[3],
+                           url_img=product_image[1],)
 
 
 def single_title_html_render(category, palette, product_name, product_image):

@@ -50,7 +50,7 @@
 .inf-text div p{
     font-size: 70px;
     font-weight: bold;
-        /*color: rgb{{ color }};*/
+        color: rgb{{ color }};
     font-family: 'Roboto-Regular';
 
     letter-spacing: 5px;
@@ -61,7 +61,7 @@
 
 .img {
     background: url("{{ url_img }}") 100% / cover no-repeat;
-    height: 72%;
+    height: 100%;
 }
 /*.img {*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
