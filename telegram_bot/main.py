@@ -11,6 +11,7 @@ import get_product
 import verification
 import autoposting
 import create_single_post
+import get_all_day_posts
 import time
 
 bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
@@ -32,6 +33,8 @@ def get_text_message(message):
         create_single_post.init_bot(message, bot)
     elif message.text == "/get_post":
         get_post.init_bot(message, bot)
+    elif message.text == "/get_all_day_posts":
+        get_all_day_posts.init_bot(message, bot)
     elif message.text == "/help":
         bot.send_message(message.from_user.id, "Список команд:"
                                                "/get_products_from_page - распарсить страницу с товарами"
@@ -40,6 +43,7 @@ def get_text_message(message):
                                                "/create_post - создать пост"
                                                "/create_single_post - создать одиночный пост"
                                                "/get_post - посмотреть пост"
+                                               "/get_all_day_posts - посмотреть все посты на день"
                                                "/help - помощь")
     else:
         bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
@@ -80,6 +84,17 @@ def call(call):
     elif result:
         create_single_post.get_date_of_publication(call.message, result)
 
+@bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=4))
+def call(call):
+    result, key, step = DetailedTelegramCalendar(calendar_id=4, locale='ru').process(call.data)
+    if not result and key:
+        bot.edit_message_text(f"Select {LSTEP[step]}",
+                              call.message.chat.id,
+                              call.message.message_id,
+                              reply_markup=key)
+    elif result:
+        get_all_day_posts.get_date_of_publication(call.message, result)
+
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'verification')
 def callback_inline(call):
     bot_database.callback_verification(call.data)
@@ -110,5 +125,9 @@ def callback_inline(call):
     publication_platform = call.data.split('|')[1]
     get_post.get_publication_platform(call.message, publication_platform)
 
+@bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'get_all_day_posts_platform')
+def callback_inline(call):
+    publication_platform = call.data.split('|')[1]
+    get_all_day_posts.get_publication_platform(call.message, publication_platform)
 
 bot.polling(none_stop=True, interval=0)
