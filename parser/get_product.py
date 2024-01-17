@@ -5,6 +5,9 @@ import undetected_chromedriver as uc
 from undetected_chromedriver import ChromeOptions
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 import json
 from parser.add_to_db import add_to_db
 from parser import parser_requests
@@ -15,7 +18,9 @@ def get_product(url, publication_category, message_type):
     print('Start get_product')
 
     options1 = uc.ChromeOptions()
-    options1.headless = False
+    # options1.headless = False
+    # options1.add_argument('--headless')
+    # options1.add_argument('--headless=new')
     options1.add_argument('--no-sandbox')
     options1.add_argument('--disable-dev-shm-usage')
 
@@ -26,20 +31,60 @@ def get_product(url, publication_category, message_type):
     options1.add_argument("--remote-allow-origins=*")
     options1.add_argument("--log-path=/home/masha/chromelogs")
     options1.add_argument("--disable-dev-shm-usage")
+    options1._session = None
 
-    driver1 = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
+    # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
+    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome116/chrome-linux64/chrome'
+    # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-headless-shell-linux64/chrome-headless-shell'
+    print('before Chrome')
+
+    driver1 = uc.Chrome(
+        # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
+        patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
                        options=options1,
-                       log_level=10)
+                       log_level=10, headless=True, version_main=116)
+
+    print('get')
 
     driver1.get("https://www.ozon.ru/api/entrypoint-api.bx/page/json/v2?url=" + url)
-    time.sleep(10)
+    # time.sleep(10)
+    print('get ok')
 
-    driver1.refresh()
+    html = driver1.page_source
+    print(html)
 
+    # WebDriverWait(driver1, 20).until(EC.frame_to_be_available_and_switch_to_it(
+    #     (By.CSS_SELECTOR, "iframe[title='Widget containing a Cloudflare security challenge']")))
+    # WebDriverWait(driver1, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "label.ctp-checkbox-label"))).click()
+
+
+    # time.sleep(30)
+
+    # print('new html')
     # html = driver1.page_source
     # print(html)
 
-    content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+    print(driver1.current_url)
+
+    driver1.save_screenshot('5.png')
+
+    try:
+        print('try start')
+        driver1.save_screenshot('6.png')
+        content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+
+        print('content')
+        print(content)
+        print("Content is not empty")
+    except:
+        print('Content is empty')
+        driver1.save_screenshot('7.png')
+        driver1.refresh()
+        time.sleep(10)
+        driver1.save_screenshot('8.png')
+        content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
+
+
     driver1.close()
     driver1.quit()
 
@@ -68,37 +113,31 @@ def get_product(url, publication_category, message_type):
     parsed_json = json.loads(content)
 
     parsed_data_json = parsed_json["widgetStates"]
-    description_json = parsed_json["seo"]["script"]
-    #
-    # print(description_json)
-    # print(type(description_json))
-    #
-    # print(description_json[0])
-    # print(type(description_json[0]))
-    #
-    # print(description_json[0]['innerHTML'])
-    # print(type(description_json[0]['innerHTML']))
+    seo_json = parsed_json["seo"]["script"]
 
-    res_dict = json.loads(description_json[0]['innerHTML'])
-    # print(res_dict)
+    d0 = json.loads(seo_json[0]['innerHTML'])
 
-    print(res_dict['description'])
+    description = d0['description']
+    product_rating = d0['aggregateRating']['ratingValue']
 
-    print(type(res_dict['description']))
 
-    description = res_dict['description']
+    # OLD, does not exist
+    #'webBrand-1033259-default-1'
+    #webCurrentSeller-735663-default-1'
 
-    keys_to_save1 = ['webCharacteristics-545750-default-1', 'webBrand-1033259-default-1',
-                     'webAspects-418189-default-1',
-                     'breadCrumbs-1619260-default-1', 'webGallery-1748356-default-1',
-                     'webCurrentSeller-735663-default-1', 'webPrice-2111817-default-1',
-                     'webProductHeading-943795-default-1', 'seo']
+
+    keys_to_save1 = ['webCharacteristics-545750-default-1',
+                     'webAspects-418255-default-1',
+                     'breadCrumbs-1477770-default-1', 'webGallery-3311626-default-1',
+                     'webPrice-3121879-default-1',
+                     'webProductHeading-943796-default-1',
+                     'webStickyProducts-726428-default-1']
 
     keys_to_save2 = ['breadcrumbs', 'aspects', 'id', 'name', 'link', 'characteristics', 'mainAdvantages', 'images',
-                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'cardPrice', 'title', 'script']
+                     'marks', 'textRs', 'priceTextRs', 'originalPrice', 'price', 'cardPrice', 'title', 'seller']
 
     keys_to_save3 = ['text', 'priceTextRs', 'content', 'description', 'name', 'alt', 'src', 'mainAdvantages', 'short',
-                     'variants', 'innerHTML']
+                     'variants', 'name', 'link',]
 
     d1 = {k: json.loads(v) for k, v in parsed_data_json.items() if k in keys_to_save1}
     d2 = {}
@@ -119,30 +158,33 @@ def get_product(url, publication_category, message_type):
 
             else:
                 d2[k1][k2] = v2
-    # pprint(d2['webProductHeading-943795-default-1']['title'])
+
+    # print('d2')
     # print(d2)
+
+    print(bool(d2))
 
     product_name = ''
     product_price_original = ''
     product_price = ''
     product_price_with_ozon_card = ''
 
-    if 'webProductHeading-943795-default-1' in d2:
-        if 'title' in d2['webProductHeading-943795-default-1']:
-            product_name = d2['webProductHeading-943795-default-1']['title']
+    if 'webProductHeading-943796-default-1' in d2:
+        if 'title' in d2['webProductHeading-943796-default-1']:
+            product_name = d2['webProductHeading-943796-default-1']['title']
 
-    if 'webPrice-2111817-default-1' in d2:
-        if 'originalPrice' in d2['webPrice-2111817-default-1']:
-            product_price_original = d2['webPrice-2111817-default-1']['originalPrice']
-        if 'price' in d2['webPrice-2111817-default-1']:
-            product_price = d2['webPrice-2111817-default-1']['price']
-        if 'cardPrice' in d2['webPrice-2111817-default-1']:
-            product_price_with_ozon_card = d2['webPrice-2111817-default-1']['cardPrice']
+    if 'webPrice-3121879-default-1' in d2:
+        if 'originalPrice' in d2['webPrice-3121879-default-1']:
+            product_price_original = d2['webPrice-3121879-default-1']['originalPrice']
+        if 'price' in d2['webPrice-3121879-default-1']:
+            product_price = d2['webPrice-3121879-default-1']['price']
+        if 'cardPrice' in d2['webPrice-3121879-default-1']:
+            product_price_with_ozon_card = d2['webPrice-3121879-default-1']['cardPrice']
 
     product_images = ''
-    if 'webGallery-1748356-default-1' in d2:
-        if 'images' in d2['webGallery-1748356-default-1']:
-            for object in d2['webGallery-1748356-default-1']['images']:
+    if 'webGallery-3311626-default-1' in d2:
+        if 'images' in d2['webGallery-3311626-default-1']:
+            for object in d2['webGallery-3311626-default-1']['images']:
                 for k, v in object.items():
                     if k == 'src':
                         product_images += v + ', '
@@ -152,24 +194,26 @@ def get_product(url, publication_category, message_type):
 
     product_brand_name = ''
     product_brand_link = ''
-    if 'webCurrentSeller-735663-default-1' in d2:
-        if 'name' in d2['webCurrentSeller-735663-default-1']:
-            product_brand_name = d2['webCurrentSeller-735663-default-1']['name']
+    if 'webStickyProducts-726428-default-1' in d2:
+        print(d2['webStickyProducts-726428-default-1'])
+        print(d2['webStickyProducts-726428-default-1']['seller'])
+        if 'seller' in d2['webStickyProducts-726428-default-1']:
+            if 'name' in d2['webStickyProducts-726428-default-1']['seller']:
+                product_brand_name = d2['webStickyProducts-726428-default-1']['seller']['name']
 
-    if 'webCurrentSeller-735663-default-1' in d2:
-        if 'link' in d2['webCurrentSeller-735663-default-1']:
-            product_brand_link = d2['webCurrentSeller-735663-default-1']['link']
+    if 'webStickyProducts-726428-default-1' in d2:
+        print(d2['webStickyProducts-726428-default-1'])
+        print(d2['webStickyProducts-726428-default-1']['seller'])
 
-    product_rating = ''
-    if 'webCurrentSeller-735663-default-1' in d2:
-        if 'mainAdvantages' in d2['webCurrentSeller-735663-default-1']:
-            product_rating = d2['webCurrentSeller-735663-default-1']['mainAdvantages'][0]['content']['headRs'][0][
-                'content']
+        if 'seller' in d2['webStickyProducts-726428-default-1']:
+            if 'link' in d2['webStickyProducts-726428-default-1']['seller']:
+                product_brand_link = d2['webStickyProducts-726428-default-1']['seller']['link']
+
 
     product_categories = ''
-    if 'breadCrumbs-1619260-default-1' in d2:
-        if 'breadcrumbs' in d2['breadCrumbs-1619260-default-1']:
-            for object in d2['breadCrumbs-1619260-default-1']['breadcrumbs']:
+    if 'breadCrumbs-1477770-default-1' in d2:
+        if 'breadcrumbs' in d2['breadCrumbs-1477770-default-1']:
+            for object in d2['breadCrumbs-1477770-default-1']['breadcrumbs']:
                 for k, v in object.items():
                     product_categories += v + ', '
 
@@ -177,10 +221,10 @@ def get_product(url, publication_category, message_type):
     product_all_articles = ''
     product_color = ''
     product_sizes = ''
-    if 'webAspects-418189-default-1' in d2:
-        if 'aspects' in d2['webAspects-418189-default-1']:
-            if len(d2['webAspects-418189-default-1']['aspects']) >= 3:
-                for object in d2['webAspects-418189-default-1']['aspects'][1]['variants']:
+    if 'webAspects-418255-default-1' in d2:
+        if 'aspects' in d2['webAspects-418255-default-1']:
+            if len(d2['webAspects-418255-default-1']['aspects']) >= 3:
+                for object in d2['webAspects-418255-default-1']['aspects'][1]['variants']:
                     for k, v in object.items():
                         if k == 'sku':
                             product_all_articles += str(v) + ', '
@@ -190,12 +234,12 @@ def get_product(url, publication_category, message_type):
                                     product_article = v1
                                 if k1 == 'data':
                                     product_color = v1['searchableText']
-                for object in d2['webAspects-418189-default-1']['aspects'][2]['variants']:
+                for object in d2['webAspects-418255-default-1']['aspects'][2]['variants']:
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
-            if len(d2['webAspects-418189-default-1']['aspects']) == 2:
-                for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
+            if len(d2['webAspects-418255-default-1']['aspects']) == 2:
+                for object in d2['webAspects-418255-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'sku':
                             product_all_articles += str(v) + ', '
@@ -205,12 +249,12 @@ def get_product(url, publication_category, message_type):
                                     product_article = v1
                                 if k1 == 'data':
                                     product_color = v1['searchableText']
-                for object in d2['webAspects-418189-default-1']['aspects'][1]['variants']:
+                for object in d2['webAspects-418255-default-1']['aspects'][1]['variants']:
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
-            if len(d2['webAspects-418189-default-1']['aspects']) == 1:
-                for object in d2['webAspects-418189-default-1']['aspects'][0]['variants']:
+            if len(d2['webAspects-418255-default-1']['aspects']) == 1:
+                for object in d2['webAspects-418255-default-1']['aspects'][0]['variants']:
                     for k, v in object.items():
                         if k == 'data':
                             product_sizes += v['searchableText'] + ', '
@@ -220,7 +264,8 @@ def get_product(url, publication_category, message_type):
                                     product_article = v1
 
     # print(d2['webPrice-2136014-default-1']['originalPrice'])
-
+    print('product_rating')
+    print(product_rating)
     if product_rating != '':
         if float(product_rating.replace(',', '.')) >= float('4.4'):
             print('Go to add_to_db')
@@ -252,38 +297,34 @@ def get_product(url, publication_category, message_type):
 
 
 if __name__ == '__main__':
+    import undetected_chromedriver as uc
+    from undetected_chromedriver import ChromeOptions
 
-    options = uc.ChromeOptions()
-    options.headless = False
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support import expected_conditions as EC
+    from selenium.webdriver.support.ui import WebDriverWait
 
-    options.add_argument("--disable-extensions")
-    options.add_argument('--disable-application-cache')
-    options.add_argument("--disable-setuid-sandbox")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--remote-allow-origins=*")
-    options.add_argument("--log-path=/home/masha/chromelogs")
-    options.add_argument("--disable-dev-shm-usage")
+    options1 = uc.ChromeOptions()
+    # options1.headless = False
+    # options1.add_argument('--headless')
+    # options1.add_argument('--headless=new')
+    options1.add_argument('--no-sandbox')
+    options1.add_argument('--disable-dev-shm-usage')
 
+    options1.add_argument("--disable-extensions")
+    options1.add_argument('--disable-application-cache')
+    options1.add_argument("--disable-setuid-sandbox")
+    options1.add_argument("--disable-gpu")
+    options1.add_argument("--remote-allow-origins=*")
+    options1.add_argument("--log-path=/home/masha/chromelogs")
+    options1.add_argument("--disable-dev-shm-usage")
+    options1._session = None
+    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
 
-    # options = ChromeOptions()
-    # options.add_argument("--no-sandbox")
-    # # options.headless = False
-    # options.add_argument("--disable-extensions")
-    # options.add_argument('--disable-application-cache')
-    # options.add_argument("--disable-setuid-sandbox")
-    # options.add_argument("--disable-dev-shm-usage")
-    # options.add_argument("--disable-gpu")
-    # options.add_argument("--remote-allow-origins=*")
-    # options.add_argument("--log-path=/home/masha/chromelogs")
-    # options.add_argument("--disable-dev-shm-usage")
+    print('before Chrome')
 
-
-
-    driver = uc.Chrome(patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
-                       options=options,
-                               log_level=10)
-
-    print('created')
-    driver.quit()
+    driver1 = uc.Chrome(browser_executable_path='/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome',
+        driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
+                        patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
+                        options=options1,
+                        log_level=10, headless=False)
