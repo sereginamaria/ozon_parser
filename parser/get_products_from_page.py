@@ -32,15 +32,48 @@ def get_products_from_page(publication_category, url):
 def get_html(url):
     print('get_html')
 
-    options = Options()
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    options.headless = False
-    driver = uc.Chrome(options=options)
-    driver.get(url)
-    time.sleep(10)
+    options1 = uc.ChromeOptions()
+    # options1.headless = False
+    # options1.add_argument('--headless')
+    # options1.add_argument('--headless=new')
+    options1.add_argument('--no-sandbox')
+    options1.add_argument('--disable-dev-shm-usage')
 
-    driver.refresh()
+    options1.add_argument("--disable-extensions")
+    options1.add_argument('--disable-application-cache')
+    options1.add_argument("--disable-setuid-sandbox")
+    options1.add_argument("--disable-gpu")
+    options1.add_argument("--remote-allow-origins=*")
+    options1.add_argument("--log-path=/home/masha/chromelogs")
+    options1.add_argument("--disable-dev-shm-usage")
+    options1._session = None
+
+    # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
+    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome117/chrome-linux64/chrome'
+    # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-headless-shell-linux64/chrome-headless-shell'
+    print('before Chrome')
+
+    driver = uc.Chrome(
+        # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
+        patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
+        options=options1,
+        log_level=10, headless=True, version_main=117)
+
+    # options = Options()
+    # options.add_argument('--no-sandbox')
+    # options.add_argument('--disable-dev-shm-usage')
+    # options.headless = False
+    # driver = uc.Chrome(options=options)
+
+    print('get')
+    driver.get(url)
+    print(driver.current_url)
+    # time.sleep(10)
+
+    print('get ok')
+
+    driver.save_screenshot('10.png')
+    # driver.refresh()
 
     #
     # html = driver.page_source
@@ -52,8 +85,12 @@ def get_html(url):
     # content.click()
 
     driver.execute_script("window.scrollTo(5,4000);")
+    driver.save_screenshot('11.png')
     time.sleep(10)
+
+    print('after scroll')
     html = driver.page_source
+    # print(html)
     # time.sleep(3)
 
     driver.close()
@@ -65,7 +102,7 @@ def parse_data(html):
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'iw7'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'ix1'})]))])
     return product_links
 
 
@@ -73,6 +110,8 @@ def get_urls(html):
     print('get_urls')
     all_links = []
     links = parse_data(html)
+    print('links')
+    print(links)
     all_links = all_links + list(links)
 
     if len(all_links) == 36:

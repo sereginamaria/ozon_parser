@@ -34,7 +34,7 @@ def get_product(url, publication_category, message_type):
     options1._session = None
 
     # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
-    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome116/chrome-linux64/chrome'
+    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome117/chrome-linux64/chrome'
     # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-headless-shell-linux64/chrome-headless-shell'
     print('before Chrome')
 
@@ -42,7 +42,7 @@ def get_product(url, publication_category, message_type):
         # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
         patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
                        options=options1,
-                       log_level=10, headless=True, version_main=116)
+                       log_level=10, headless=True, version_main=117)
 
     print('get')
 
@@ -51,7 +51,7 @@ def get_product(url, publication_category, message_type):
     print('get ok')
 
     html = driver1.page_source
-    print(html)
+    # print(html)
 
     # WebDriverWait(driver1, 20).until(EC.frame_to_be_available_and_switch_to_it(
     #     (By.CSS_SELECTOR, "iframe[title='Widget containing a Cloudflare security challenge']")))
@@ -64,7 +64,7 @@ def get_product(url, publication_category, message_type):
     # html = driver1.page_source
     # print(html)
 
-    print(driver1.current_url)
+    # print(driver1.current_url)
 
     driver1.save_screenshot('5.png')
 
