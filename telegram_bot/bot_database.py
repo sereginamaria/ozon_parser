@@ -74,7 +74,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
 
     product_list = cursor.fetchall()
     if len(product_list) != 0:
-        bot_requests.create_post(product_list)
+        bot_requests.create_test_post(product_list)
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
@@ -85,7 +85,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
     product_list = cursor.fetchall()
 
     if len(product_list) != 0:
-        bot_requests.create_single_post(product_list)
+        bot_requests.create_test_single_post(product_list)
 
 def get_all_day_posts_from_db(publication_platform, date_of_publication):
     print('1111111111111111111111111111111111111111111111111111111')
@@ -100,18 +100,18 @@ def get_all_day_posts_from_db(publication_platform, date_of_publication):
 
     if len(product_list) != 0:
         print('2222222222222222222222222')
-        bot_requests.create_post(product_list)
+        bot_requests.create_test_post(product_list)
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url, description from public.ozon_products where "
-        "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
+        "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
         "true and post_type = 'single') limit 30" % (publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
 
     if len(product_list) != 0:
-        bot_requests.create_single_post(product_list)
+        bot_requests.create_test_single_post(product_list)
 
 def autoposting_date(now, time):
     print('autopost')

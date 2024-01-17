@@ -244,8 +244,8 @@ def get_product(url, publication_category, message_type):
                 description
             )
 
-    with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
-        outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
+    # with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
+    #     outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
     parser_requests.execution_completed(message_type)
     print('End get_product')

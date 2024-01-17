@@ -4,6 +4,11 @@ from parser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from card_creator.card_creator import post_creator
 from card_creator.card_creator import single_post_creator
+
+
+from card_creator.test_card_creator import post_creator as test_post_creator
+from card_creator.test_card_creator import single_post_creator as test_single_post_creator
+
 from flask import request
 
 app = Flask(__name__, template_folder='../card_creator/templates', static_folder='../card_creator/templates')
@@ -75,6 +80,25 @@ def create_single_post():
         single_post_creator('ghbdtn')
         return 'Создаю одиночный пост'
 
+
+@app.route('/create_test_post', methods=['GET', 'POST'])
+def create_test_post():
+    if request.method == 'POST':
+        test_post_creator(json.loads(request.json))
+        return 'Создаю тестовый пост (для бота)'
+    if request.method == 'GET':
+        test_post_creator('ghbdtn')
+        return 'Создаю пост'
+
+
+@app.route('/create_test_single_post', methods=['GET', 'POST'])
+def create_test_single_post():
+    if request.method == 'POST':
+        test_single_post_creator(json.loads(request.json))
+        return 'Создаю тестовый одиночный пост (для бота)'
+    if request.method == 'GET':
+        test_single_post_creator('ghbdtn')
+        return 'Создаю одиночный пост'
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5001, debug=True)

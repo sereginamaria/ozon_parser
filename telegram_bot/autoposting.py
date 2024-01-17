@@ -22,4 +22,4 @@ def autop():
         print(current_time)
         bot_database.autoposting_date(today_date, current_time)
 
-        time.sleep(120)
+        time.sleep(2400)

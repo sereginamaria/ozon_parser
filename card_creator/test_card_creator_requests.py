@@ -42,7 +42,7 @@ mass_of_stikers = ['\U0001F531', '\U000026B1', '\U0001F9FF', '\U0001FAAC',
 
 def send_media_group(media_list, files):
     requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': '@ozon_trend_plus', 'media': json.dumps(media_list)},
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
         files=files
     )
 
@@ -102,14 +102,14 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
             el['caption'] = new_caption
 
     requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': '@ozon_trend_plus',
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': '6181726421',
                                                     'media': json.dumps(media_list)},
         files=files
     ).json()
 
     requests.post(
         url=telegram_url + '/sendMessage',
-        data={'chat_id': '@ozon_trend_plus', 'text': text, "reply_markup": json.dumps(keyboard),
+        data={'chat_id': 6181726421, 'text': text, "reply_markup": json.dumps(keyboard),
               "resize_keyboard": True}
     ).json()
 
@@ -153,7 +153,7 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
             el['caption'] = new_caption
 
     requests.post(
-        url=telegram_url + '/sendMediaGroup', data={'chat_id': '@ozon_trend_plus', 'media': json.dumps(media_list)},
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': '6181726421', 'media': json.dumps(media_list)},
         files=files
     )
 
@@ -170,7 +170,7 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
     # text = '\U0001F6CD' + description.partition('.')[0] + '.'
     requests.post(
         url=telegram_url + '/sendMessage',
-        data={'chat_id': '@ozon_trend_plus', 'text': text, "reply_markup": json.dumps(keyboard),
+        data={'chat_id': 6181726421, 'text': text, "reply_markup": json.dumps(keyboard),
               "resize_keyboard": True}
     ).json()
 
