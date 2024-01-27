@@ -63,10 +63,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
         ],
     }
 
-
+    sub_category =''
     for name in names_list:
         str = str + "\n<a href=\'https://www.ozon.ru" + urls_list[i] + "\'>" + name + "</a>"
 
+        if i == 0:
+            sub_category = name.partition(' ')[0]
 
         inline = {
             "text": i+1,
@@ -86,8 +88,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
+        or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+        new_caption = ("#" + new_publication_category + ' #' + sub_category)
+    else:
+        new_caption = ("#" + new_publication_category)
 
-    new_caption = ("#" + new_publication_category)
 
     stikers = random.sample(mass_of_stikers, 4)
     text = ''
@@ -128,9 +134,12 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
             ]
         ],
     }
-
+    sub_category = ''
     for name in names_list:
         str = str + "\n<a href=\'https://www.ozon.ru" + urls_list[i] + "\'>" + name + "</a>"
+
+        if i == 0:
+            sub_category = name.partition(' ')[0]
 
         inline = {
             "text": i + 1,
@@ -146,7 +155,11 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
-    new_caption = ("#" + new_publication_category)
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
+            or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+        new_caption = ("#" + new_publication_category + ' #' + sub_category)
+    else:
+        new_caption = ("#" + new_publication_category)
 
     for el in media_list:
         if 'caption' in el:
@@ -172,6 +185,12 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
         url=telegram_url + '/sendMessage',
         data={'chat_id': 6181726421, 'text': text, "reply_markup": json.dumps(keyboard),
               "resize_keyboard": True}
+    ).json()
+
+def info(text):
+    requests.post(
+        url=telegram_url + '/sendMessage',
+        data={'chat_id': 6181726421, 'text': text}
     ).json()
 
     # @ozon_trend_plus

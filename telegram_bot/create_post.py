@@ -46,13 +46,20 @@ def get_date_of_publication(message, callback_date_of_publication):
 
 def get_time_of_publication(message):
     global time_of_publication
+    # print(message.text)
+    # bot.send_message(message.chat.id, message.text)
     time_of_publication = message.text
 
     bot.send_message(message.chat.id, 'Ожидайте...')
-    product_list = bot_database.create_card(publication_category)
+    product_list = bot_database.create_test_card(publication_category)
 
+    # print(publication_category)
+    # print(product_list)
+    # bot.send_message(message.chat.id, publication_category)
+    # bot.send_message(message.chat.id, product_list)
 
     if len(product_list) < 6:
+        print(product_list)
         bot.send_message(message.chat.id, 'В базе данных недостаточно товаров для данной категории')
     else:
         menu = types.InlineKeyboardMarkup()

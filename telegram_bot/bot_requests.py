@@ -23,6 +23,10 @@ def create_single_post(product_list):
     requests.post("http://195.133.32.87:5000/create_single_post", json=json.dumps(product_list))
 
 
+def create_test_card(product_list):
+    requests.post("http://195.133.32.87:5000/create_test_card", json=json.dumps(product_list))
+
+
 def create_test_post(product_list):
     requests.post("http://195.133.32.87:5000/create_test_post", json=json.dumps(product_list))
 

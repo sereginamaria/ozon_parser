@@ -8,6 +8,7 @@ from card_creator.card_creator import single_post_creator
 
 from card_creator.test_card_creator import post_creator as test_post_creator
 from card_creator.test_card_creator import single_post_creator as test_single_post_creator
+from card_creator.test_card_creator import card_creator as test_card_creator
 
 from flask import request
 
@@ -79,6 +80,17 @@ def create_single_post():
     if request.method == 'GET':
         single_post_creator('ghbdtn')
         return 'Создаю одиночный пост'
+
+@app.route('/create_test_card', methods=['GET', 'POST'])
+def create_test_card():
+    if request.method == 'POST':
+        test_card_creator(json.loads(request.json))
+        return 'Создаю карточку'
+    if request.method == 'GET':
+        rerq = test_card_creator([[140, 'Куртка Jan Steen', '1129369892', '42 RU, 48 RU, 50 RU, ', '6 441 ₽', '6 248 ₽',
+                      'https://cdn1.ozone.ru/s3/multimedia-7/6725982931.jpg, https://cdn1.ozone.ru/s3/multimedia-m/6725987338.jpg, https://cdn1.ozone.ru/s3/multimedia-9/6725982933.jpg, https://cdn1.ozone.ru/s3/multimedia-4/6725982928.jpg, https://cdn1.ozone.ru/s3/multimedia-5/6725982929.jpg, https://cdn1.ozone.ru/s3/multimedia-8/6725982932.jpg, https://cdn1.ozone.ru/s3/multimedia-a/6725982934.jpg, https://cdn1.ozone.ru/s3/multimedia-6/6725982930.jpg, https://cdn1.ozone.ru/s3/multimedia-7/6740495611.jpg, ',
+                      'Куртка', '/product/kurtka-jan-steen-1129369892/']])
+        return rerq or "DONE"
 
 
 @app.route('/create_test_post', methods=['GET', 'POST'])

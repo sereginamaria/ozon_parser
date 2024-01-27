@@ -8,6 +8,9 @@ from colorthief import ColorThief
 
 def card_creator(product_list):
     print('Start create_card')
+
+    print(product_list)
+
     rerq = create_card(product_list, 'without_title')
     card_creator_requests.send_media_group(rerq[0], rerq[1])
     # return rerq
@@ -113,7 +116,8 @@ def card(html, css):
     hti = Html2Image(
         output_path='card_creator/cards',
         custom_flags=[
-            '--no-sandbox'
+            '--no-sandbox',
+            '--disable-gpu',
             '--remote-allow-origins=*',
             '--hide-scrollbars'
         ],
@@ -129,6 +133,9 @@ def card(html, css):
 def html_render(product_name, product_article, product_sizes, product_price,
                 product_price_with_ozon_card, palette):
     product_size = product_sizes.split(' ,')
+
+    if len(product_name) > 30:
+        product_name = product_name.partition(' ')[0]
 
     del product_size[-1]
 
@@ -272,6 +279,9 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
     print(product_size)
     print(type(product_size))
 
+    if len(product_name) > 30:
+        product_name = product_name.partition(' ')[0]
+
     del product_size[-1]
 
     string = ''
@@ -322,7 +332,8 @@ def single_card(html, css):
     hti = Html2Image(
         output_path='card_creator/cards',
         custom_flags=[
-            '--no-sandbox'
+            '--no-sandbox',
+            '--disable-gpu',
             '--remote-allow-origins=*',
             '--hide-scrollbars'
         ],

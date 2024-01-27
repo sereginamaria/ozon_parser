@@ -8,6 +8,8 @@ from colorthief import ColorThief
 
 def card_creator(product_list):
     print('Start create_card')
+    print(product_list)
+
     rerq = create_card(product_list, 'without_title')
     test_card_creator_requests.send_media_group(rerq[0], rerq[1])
     # return rerq
@@ -15,6 +17,7 @@ def card_creator(product_list):
 
 def post_creator(product_list):
     print('Start create_post')
+    print(product_list)
     rerq = create_card(product_list, 'with_title')
     test_card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
@@ -51,8 +54,9 @@ def create_card(product_list, mess):
             color_thief = ColorThief(f)
             # dominant_color = color_thief.get_color(quality=1)
             palette = color_thief.get_palette(color_count=2, quality=2)
-
+            print(mess)
             if mess == 'with_title' and make_title == False:
+                print(mess)
                 name = f'photo{nomer}'
 
                 # product_image = product_images.split(',')
@@ -73,7 +77,10 @@ def create_card(product_list, mess):
                 make_title = True
                 files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
                 media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
+
                 nomer += 1
+
+
 
             name = f'photo{nomer}'
 
@@ -88,10 +95,12 @@ def create_card(product_list, mess):
             # # palette = color_thief.get_palette(color_count=3)
             # print('palette')
             # print(dominant_color)
+            print(mess)
 
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card, palette)
             render_css = css_render(product_images, palette)
+            print('card')
             card(render_html, render_css)
 
 
@@ -104,19 +113,26 @@ def create_card(product_list, mess):
             else:
                 media_list.append(dict(type='photo', media=f'attach://{name}'))
 
+            test_card_creator_requests.info('Создано карточек: ' + str(nomer))
             nomer += 1
+
 
     return media_list, files, publication_category, names_list, urls_list
 
 
 def card(html, css):
+
+    print('66666666666666666666')
+    # print(html)
+    # print(css)
     hti = Html2Image(
-        output_path='card_creator/cards',
         custom_flags=[
-            '--no-sandbox'
+            '--no-sandbox',
+            '--disable-gpu',
             '--remote-allow-origins=*',
             '--hide-scrollbars'
         ],
+        output_path='card_creator/cards'
     )
     hti.load_file("card_creator/templates/logo1.png", "logo.png")
     hti.screenshot(
@@ -130,6 +146,8 @@ def html_render(product_name, product_article, product_sizes, product_price,
                 product_price_with_ozon_card, palette):
     product_size = product_sizes.split(' ,')
 
+    if len(product_name) > 30:
+        product_name = product_name.partition(' ')[0]
     del product_size[-1]
 
     string = ''
@@ -272,6 +290,9 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
     print(product_size)
     print(type(product_size))
 
+    if len(product_name) > 30:
+        product_name = product_name.partition(' ')[0]
+
     del product_size[-1]
 
     string = ''
@@ -320,12 +341,14 @@ def single_title_css_render(product_images, palette):
 
 def single_card(html, css):
     hti = Html2Image(
-        output_path='card_creator/cards',
         custom_flags=[
-            '--no-sandbox'
+            '--no-sandbox',
+            '--disable-gpu',
             '--remote-allow-origins=*',
             '--hide-scrollbars'
         ],
+        output_path='card_creator/cards',
+
     )
 
     hti.screenshot(

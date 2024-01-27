@@ -19,3 +19,9 @@ def wait():
         url=telegram_url + '/sendMessage',
         data={'chat_id': 6181726421, 'text': 'Ожидайте...'}
     ).json()
+
+def info(text):
+    requests.post(
+        url=telegram_url + '/sendMessage',
+        data={'chat_id': 6181726421, 'text': text}
+    ).json()

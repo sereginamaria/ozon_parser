@@ -18,7 +18,7 @@ cursor = connection.cursor()
 
 def verification():
     cursor.execute(
-        "select product_id, product_images from public.ozon_products where (verification != true) limit 1")
+        "select product_id, product_images, sub_category from public.ozon_products where (verification = false) limit 1")
     return cursor.fetchall()
 
 
@@ -26,11 +26,13 @@ def callback_verification(data):
     if data.split('|')[1] == "yes":
         cursor.execute("update public.ozon_products set verification = true where product_id =" + str(data.split('|')[2]))
     if data.split('|')[1] == "no":
-        cursor.execute("delete from public.ozon_products where product_id  = " + str(data.split('|')[2]))
+        cursor.execute("update public.ozon_products set verification = null where product_id  = " + str(data.split('|')[2]))
     connection.commit()
 
 
 def create_post(date_of_publication, time_of_publication, publishing_platform, product_id):
+
+
     cursor.execute(
         "update public.ozon_products set date_of_publication = '%s', time_of_publication = '%s', publishing_platform = '%s', post_type = '%s' where product_id = '%s'" % (
             date_of_publication, time_of_publication, publishing_platform, 'group', product_id))
@@ -43,15 +45,46 @@ def create_single_post(date_of_publication, time_of_publication, publishing_plat
     connection.commit()
 
 
-def create_card(publication_category):
+def create_card(sub_category):
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
+        "product_price_with_ozon_card, product_images, sub_category, product_url from public.ozon_products where (sub_category = '%s' and "
         "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
-        "true) limit 30" % publication_category)
+        "true) limit 14" % sub_category)
 
     product_list = cursor.fetchall()
     bot_requests.create_card(product_list)
+    return product_list
+
+def create_test_card(category):
+
+    if (category == 'Платье' or category == 'Юбка'
+            or category == 'Топ' or category == 'Футболка'
+            or category == 'Костюм' or category == 'Нижнее Белье'
+            or category == 'Рубашка' or category == 'Брюки'
+            or category == 'Пиджак' or category == 'Джинсы'
+            or category == 'Шорты' or category == 'Домашняя Одежда'
+            or category == 'Спортивная Одежда' or category == 'Купальники'
+            or category == 'Сумка' or category == 'Дом'
+            or category == 'Косметика' or category == 'Детям'
+            or category == 'Мужчинам' or category == 'Украшения'):
+
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, sub_category, product_url from public.ozon_products where (publication_category = '%s' and "
+            "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
+            "true) limit 14" % category)
+    else:
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, sub_category, product_url from public.ozon_products where (sub_category = '%s' and "
+            "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
+            "true) limit 14" % category)
+
+    product_list = cursor.fetchall()
+
+
+    bot_requests.create_test_card(product_list)
     return product_list
 
 def create_single_card(publication_category):
@@ -70,7 +103,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
         "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'group') limit 30" % (publication_category, publication_platform, date_of_publication))
+        "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
     if len(product_list) != 0:
@@ -80,7 +113,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url, description from public.ozon_products where (publication_category = '%s' and "
         "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'single') limit 30" % (publication_category, publication_platform, date_of_publication))
+        "true and post_type = 'single') " % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
 
@@ -88,25 +121,23 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
         bot_requests.create_test_single_post(product_list)
 
 def get_all_day_posts_from_db(publication_platform, date_of_publication):
-    print('1111111111111111111111111111111111111111111111111111111')
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where "
         "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'group') limit 30" % (publication_platform, date_of_publication))
+        "true and post_type = 'group')" % (publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
     print(product_list)
 
     if len(product_list) != 0:
-        print('2222222222222222222222222')
         bot_requests.create_test_post(product_list)
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url, description from public.ozon_products where "
         "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'single') limit 30" % (publication_platform, date_of_publication))
+        "true and post_type = 'single')" % (publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
 
