@@ -27,6 +27,7 @@ def callback_verification(data):
         cursor.execute("update public.ozon_products set verification = true where product_id =" + str(data.split('|')[2]))
     if data.split('|')[1] == "no":
         cursor.execute("update public.ozon_products set verification = null where product_id  = " + str(data.split('|')[2]))
+
     connection.commit()
 
 

@@ -99,7 +99,7 @@ def create_card(product_list, mess):
 
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card, palette)
-            render_css = css_render(product_images, palette)
+            render_css = css_render(product_images, palette, nomer)
             print('card')
             card(render_html, render_css)
 
@@ -166,14 +166,20 @@ def html_render(product_name, product_article, product_sizes, product_price,
                            color2=palette[2])
 
 
-def css_render(product_images, palette):
+def css_render(product_images, palette, nomer):
 
     product_image = product_images.split(',')
 
-    return render_template('card.css', url_img1=product_image[1],
-                           url_img2=product_image[2],
-                           url_img3=product_image[3],
-                           color=palette[2])
+    if nomer == 1:
+        return render_template('card.css', url_img1=product_image[1],
+                               url_img2=product_image[2],
+                               url_img3=product_image[3],
+                               color=palette[2])
+    else:
+        return render_template('card.css', url_img1=product_image[0],
+                               url_img2=product_image[1],
+                               url_img3=product_image[2],
+                               color=palette[2])
 
 
 def title_html_render(product_name, category, palette):
@@ -265,7 +271,7 @@ def create_single_card(product_list, mess):
 
 
 
-            render_css = single_css_render(product_images)
+            render_css = single_css_render(product_images, single_nomer)
             single_card(render_html, render_css)
 
 
@@ -314,14 +320,22 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
                            )
 
 
-def single_css_render(product_images):
+def single_css_render(product_images, nomer):
 
     product_image = product_images.split(',')
 
-    return render_template('single_card_single_photo.css', url_img1=product_image[1],
-                           url_img2=product_image[2],
-                           url_img3=product_image[3],
-                           url_img=product_image[1], )
+    if nomer == 1:
+        return render_template('single_card_single_photo.css', url_img1=product_image[1],
+                               url_img2=product_image[2],
+                               url_img3=product_image[3],
+                               url_img=product_image[1], )
+    else:
+        return render_template('single_card_single_photo.css', url_img1=product_image[0],
+                               url_img2=product_image[1],
+                               url_img3=product_image[2],
+                               url_img=product_image[3], )
+
+
 
 
 def single_title_html_render(category, palette, product_name, product_image):

@@ -23,6 +23,8 @@ def verification(message):
                                               callback_data='verification' + '|' + 'yes' + '|' + str(product_id))
             key2 = types.InlineKeyboardButton(text='Нет',
                                               callback_data='verification' + '|' + 'no' + '|' + str(product_id))
+            # key2 = types.InlineKeyboardButton(text='Изменить имя',
+            #                                   callback_data='verification' + '|' + 'change_name' + '|' + str(product_id))
             main_menu.add(key1, key2)
 
             try:
