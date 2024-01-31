@@ -89,7 +89,6 @@ def add_to_db(product_name, product_price_original, product_price, product_price
     if format(cursor.rowcount) == 0:
         parser_requests.info('Товар не добавлен (скорее всего он уже есть в базе данных): ' + product_article)
     else:
-
         parser_requests.info('Добавлен товар: ' + product_name)
 
     connection.commit()

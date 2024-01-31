@@ -213,6 +213,9 @@ def get_product(url, publication_category, message_type):
         if 'title' in d2[webProductHeading]:
             product_name = d2[webProductHeading]['title']
 
+    rem_char = "'"
+    product_name.replace(rem_char, "")
+
     if webPrice in d2:
         if 'originalPrice' in d2[webPrice]:
             product_price_original = d2[webPrice]['originalPrice']

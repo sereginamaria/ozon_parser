@@ -122,7 +122,7 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
 
 
 
-def send_single_post(media_list, files, publication_category, names_list, urls_list, description):
+def send_single_post(media_list, files, publication_category, names_list, urls_list):
     new_publication_category = ''.join(publication_category.split())
     i = 0
     str = ''

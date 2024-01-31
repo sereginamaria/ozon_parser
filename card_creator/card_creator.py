@@ -94,7 +94,7 @@ def create_card(product_list, mess):
 
             render_html = html_render(product_name, product_article, product_sizes, product_price,
                                       product_price_with_ozon_card, palette)
-            render_css = css_render(product_images, palette, nomer)
+            render_css = css_render(product_images, palette, nomer, mess)
             card(render_html, render_css)
 
 
@@ -155,11 +155,11 @@ def html_render(product_name, product_article, product_sizes, product_price,
                            color2=palette[2])
 
 
-def css_render(product_images, palette, nomer):
+def css_render(product_images, palette, nomer, mess):
 
     product_image = product_images.split(',')
 
-    if nomer == 1:
+    if nomer == 2 and mess == 'with_title':
         return render_template('card.css', url_img1=product_image[1],
                                url_img2=product_image[2],
                                url_img3=product_image[3],
@@ -205,8 +205,7 @@ def create_single_card(product_list, mess):
     if product_list:
         for product in product_list:
             (product_id, product_name, product_article, product_sizes, product_price,
-             product_price_with_ozon_card, product_images, single_publication_category, product_url,
-             description) = product
+             product_price_with_ozon_card, product_images, single_publication_category, product_url) = product
 
             product_image = product_images.split(',')
             fd = urlopen(product_image[0])
@@ -261,7 +260,7 @@ def create_single_card(product_list, mess):
 
 
 
-            render_css = single_css_render(product_images, single_nomer)
+            render_css = single_css_render(product_images, single_nomer, mess)
             single_card(render_html, render_css)
 
 
@@ -276,7 +275,7 @@ def create_single_card(product_list, mess):
 
             single_nomer += 1
 
-    return single_media_list, single_files, single_publication_category, names_list, single_urls_list, description
+    return single_media_list, single_files, single_publication_category, names_list, single_urls_list
 
 def single_html_render(product_name, product_article, product_sizes, product_price,
                        product_price_with_ozon_card, palette, product_image):
@@ -310,12 +309,12 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
                            )
 
 
-def single_css_render(product_images, nomer):
+def single_css_render(product_images, nomer, mess):
 
     product_image = product_images.split(',')
 
 
-    if nomer == 1:
+    if nomer == 2 and mess == 'with_title':
         return render_template('single_card_single_photo.css', url_img1=product_image[1],
                                url_img2=product_image[2],
                                url_img3=product_image[3],

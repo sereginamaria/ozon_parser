@@ -18,7 +18,7 @@ cursor = connection.cursor()
 
 def verification():
     cursor.execute(
-        "select product_id, product_images, sub_category from public.ozon_products where (verification = false) limit 1")
+        "select product_id, product_images, publication_category, sub_category, product_name from public.ozon_products where (verification = false) limit 1")
     return cursor.fetchall()
 
 
@@ -30,9 +30,18 @@ def callback_verification(data):
 
     connection.commit()
 
+def verification_change_name(data):
+    cursor.execute(
+        "select product_name from public.ozon_products where product_id =" + str(data.split('|')[2]))
+    product_list = cursor.fetchall()
+    return product_list
+
+def verification_add_new_name(data, new_name):
+    cursor.execute("update public.ozon_products set product_name = '%s' where product_id = '%s'" % (
+        new_name, str(data.split('|')[2])))
+    connection.commit()
 
 def create_post(date_of_publication, time_of_publication, publishing_platform, product_id):
-
 
     cursor.execute(
         "update public.ozon_products set date_of_publication = '%s', time_of_publication = '%s', publishing_platform = '%s', post_type = '%s' where product_id = '%s'" % (
@@ -112,7 +121,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url, description from public.ozon_products where (publication_category = '%s' and "
+        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
         "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
         "true and post_type = 'single') " % (publication_category, publication_platform, date_of_publication))
 
@@ -136,7 +145,7 @@ def get_all_day_posts_from_db(publication_platform, date_of_publication):
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url, description from public.ozon_products where "
+        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where "
         "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
         "true and post_type = 'single')" % (publication_platform, date_of_publication))
 
@@ -149,7 +158,7 @@ def autoposting_date(now, time):
     print('autopost')
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url, description "
+        "product_price_with_ozon_card, product_images, publication_category, product_url "
         "from public.ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' "
         "and few_photos = false and verification = "
         "true and is_published = false and post_type = 'group')" % (str(now), time))
@@ -161,7 +170,7 @@ def autoposting_date(now, time):
         bot_requests.create_post(product_list)
         for product in product_list:
             (product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card,
-             product_images, publication_category, product_url, description) = product
+             product_images, publication_category, product_url) = product
             cursor.execute(
                 "update public.ozon_products set is_published = true where product_id = '%s'" % (product_id))
             connection.commit()
@@ -170,7 +179,7 @@ def autoposting_date(now, time):
 
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url, description "
+        "product_price_with_ozon_card, product_images, publication_category, product_url "
         "from public.ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' "
         "and few_photos = false and verification = "
         "true and is_published = false and post_type = 'single')" % (str(now), time))
@@ -182,7 +191,7 @@ def autoposting_date(now, time):
         bot_requests.create_single_post(product_list)
         for product in product_list:
             (product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card,
-             product_images, publication_category, product_url, description) = product
+             product_images, publication_category, product_url) = product
             cursor.execute(
                 "update public.ozon_products set is_published = true where product_id = '%s'" % (product_id))
             connection.commit()

@@ -18,7 +18,7 @@ def get_products_from_page(publication_category, url):
     parser_requests.wait()
     global category
     category = publication_category
-    MAX_PAGE = 1
+    MAX_PAGE = 4
     i = 1
     while i <= MAX_PAGE:
         if i == 1:
@@ -90,7 +90,7 @@ def get_html(url):
 
     print('after scroll')
     html = driver.page_source
-    print(html)
+    # print(html)
     # time.sleep(3)
 
     driver.close()
@@ -102,7 +102,7 @@ def parse_data(html):
     print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'iv3'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i5v'})]))])
     return product_links
 
 
