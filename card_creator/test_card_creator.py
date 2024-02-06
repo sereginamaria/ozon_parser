@@ -178,7 +178,10 @@ def css_render(product_images, palette, nomer, mess):
 
 
 def title_html_render(product_name, category, palette):
-    card_title = product_name.partition(' ')[0]
+    if category == 'Верхняя Одежда' or category == 'Обувь' or category == 'Кофта' or category == 'Аксессуары':
+        card_title = product_name.partition(' ')[0]
+    else:
+        card_title = category
     return render_template('title_card_single_photo.html', category=card_title,
                            color1=palette[0],
                            color2=palette[2])
@@ -194,7 +197,7 @@ def title_css_render(product_images, palette):
 def single_post_creator(product_list):
     print('Start create_single_post')
     rerq = create_single_card(product_list, 'with_title')
-    test_card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4], rerq[5])
+    test_card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 def create_single_card(product_list, mess):
     global single_nomer, single_files, single_media_list, single_urls_list, single_publication_category
@@ -362,4 +365,46 @@ def single_card(html, css):
     hti.screenshot(
         html_str=html, css_str=css,
         save_as='card' + str(single_nomer) + '.png', size=(1024, 1280)
+    )
+
+
+def only_title_card_creator(product_list):
+    nom = '_title'
+    name_t = f'photo{nom}'
+
+    if product_list:
+        for product in product_list:
+            (product_name_t, product_images_t, publication_category_t) = product
+
+            product_image_t = product_images_t.split(',')
+            fd = urlopen(product_image_t[0])
+            f = io.BytesIO(fd.read())
+            fd.close()
+            color_thief_t = ColorThief(f)
+            palette_t = color_thief_t.get_palette(color_count=2, quality=2)
+
+            render_title_html_t = title_html_render(product_name_t, publication_category_t, palette_t)
+            render_title_css_t = title_css_render(product_images_t, palette_t)
+            card_t(render_title_html_t, render_title_css_t, nom)
+
+
+            print('card_created')
+            # files.update({name_t: open("card_creator/cards/card" + nom + ".png", "rb")})
+            # media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name_t}'))
+
+
+def card_t(html, css, nom):
+    hti = Html2Image(
+        custom_flags=[
+            '--no-sandbox',
+            '--disable-gpu',
+            '--remote-allow-origins=*',
+            '--hide-scrollbars'
+        ],
+        output_path='card_creator/cards'
+    )
+    hti.load_file("card_creator/templates/logo1.png", "logo.png")
+    hti.screenshot(
+        html_str=html, css_str=css,
+        save_as='card' + nom + '.png', size=(1024, 1280)
     )

@@ -1,6 +1,7 @@
 from telebot import types
 from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 import bot_database
+import bot_requests
 
 
 def init_bot(message, telegram_bot):
@@ -12,6 +13,12 @@ def init_bot(message, telegram_bot):
 
 
 def create_post(message):
+    # mass = ['1', '2', '3', '4', '5', '6', '7']
+    # bot_requests.create_video(mass)
+    #
+    # video = open('/home/masha/ozon_parser/video_maker/video.mp4', 'rb')
+    # bot.send_video(message.chat.id, video, timeout=10)
+
     bot.send_message(message.chat.id, 'Введите категорию для публикации:')
     bot.register_next_step_handler(message, get_publication_category)
 
@@ -85,5 +92,19 @@ def record_data(message, product_id, k):
     elif count == 6:
         bot_database.create_post(date_of_publication, time_of_publication, publication_platform, product_id)
         bot.send_message(message.chat.id, 'Вы выбрали 6 карточек, пост создан')
+
+        bot_database.product_for_only_title_card(product_id)
+
+        mass.insert(0,'_title')
+
+        # bot.send_message(message.chat.id, mass)
+
+        bot_requests.create_video(mass)
+
+        # video_maker.generate_video()
+
+        video = open('/home/masha/ozon_parser/video_maker/output1.mp4', 'rb')
+        bot.send_video(message.chat.id, video, timeout=10)
     else:
         bot.send_message(message.chat.id, 'Вы выбрали 6 карточек, пост создан')
+

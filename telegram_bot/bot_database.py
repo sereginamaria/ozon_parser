@@ -109,21 +109,55 @@ def create_single_card(publication_category):
     return product_list
 
 def get_post_from_db(publication_category, publication_platform, date_of_publication):
-    cursor.execute(
-        "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
-        "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
+    if (publication_category == 'Платье' or publication_category == 'Юбка'
+            or publication_category == 'Топ' or publication_category == 'Футболка'
+            or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
+            or publication_category == 'Рубашка' or publication_category == 'Брюки'
+            or publication_category == 'Пиджак' or publication_category == 'Джинсы'
+            or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
+            or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
+            or publication_category == 'Сумка' or publication_category == 'Дом'
+            or publication_category == 'Косметика' or publication_category == 'Детям'
+            or publication_category == 'Мужчинам' or publication_category == 'Украшения'):
+
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
+            "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
+            "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
+    else:
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (sub_category = '%s' and "
+            "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
+            "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
     if len(product_list) != 0:
         bot_requests.create_test_post(product_list)
 
-    cursor.execute(
-        "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
-        "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'single') " % (publication_category, publication_platform, date_of_publication))
+    if (publication_category == 'Платье' or publication_category == 'Юбка'
+            or publication_category == 'Топ' or publication_category == 'Футболка'
+            or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
+            or publication_category == 'Рубашка' or publication_category == 'Брюки'
+            or publication_category == 'Пиджак' or publication_category == 'Джинсы'
+            or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
+            or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
+            or publication_category == 'Сумка' or publication_category == 'Дом'
+            or publication_category == 'Косметика' or publication_category == 'Детям'
+            or publication_category == 'Мужчинам' or publication_category == 'Украшения'):
+
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
+            "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
+            "true and post_type = 'single') " % (publication_category, publication_platform, date_of_publication))
+    else:
+        cursor.execute(
+            "select product_id, product_name, product_article, product_sizes, product_price, "
+            "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (sub_category = '%s' and "
+            "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
+            "true and post_type = 'single') " % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
 
@@ -195,3 +229,11 @@ def autoposting_date(now, time):
             cursor.execute(
                 "update public.ozon_products set is_published = true where product_id = '%s'" % (product_id))
             connection.commit()
+
+
+
+def product_for_only_title_card(id):
+    cursor.execute(
+        "select product_name, product_images, publication_category from public.ozon_products where (product_id = '%s')" % id)
+    product_list = cursor.fetchall()
+    bot_requests.create_only_title_card(product_list)

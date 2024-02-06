@@ -10,6 +10,9 @@ from card_creator.test_card_creator import post_creator as test_post_creator
 from card_creator.test_card_creator import single_post_creator as test_single_post_creator
 from card_creator.test_card_creator import card_creator as test_card_creator
 
+from card_creator.test_card_creator import only_title_card_creator
+
+from video_maker.video_maker import generate_video
 from flask import request
 
 app = Flask(__name__, template_folder='../card_creator/templates', static_folder='../card_creator/templates')
@@ -110,6 +113,24 @@ def create_test_single_post():
         return 'Создаю тестовый одиночный пост (для бота)'
     if request.method == 'GET':
         test_single_post_creator('ghbdtn')
+        return 'Создаю одиночный пост'
+
+@app.route('/create_video', methods=['GET', 'POST'])
+def create_video():
+    if request.method == 'POST':
+        generate_video(json.loads(request.json))
+        return 'Создаю тестовый одиночный пост (для бота)'
+    if request.method == 'GET':
+        generate_video('ghbdtn')
+        return 'Создаю одиночный пост'
+
+@app.route('/create_only_title_card', methods=['GET', 'POST'])
+def create_only_title_card():
+    if request.method == 'POST':
+        only_title_card_creator(json.loads(request.json))
+        return 'Создаю тестовый одиночный пост (для бота)'
+    if request.method == 'GET':
+        only_title_card_creator('ghbdtn')
         return 'Создаю одиночный пост'
 
 if __name__ == "__main__":

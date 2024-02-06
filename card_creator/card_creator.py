@@ -173,7 +173,10 @@ def css_render(product_images, palette, nomer, mess):
 
 
 def title_html_render(product_name, category, palette):
-    card_title = product_name.partition(' ')[0]
+    if category == 'Верхняя Одежда' or category == 'Обувь' or category == 'Кофта' or category == 'Аксессуары':
+        card_title = product_name.partition(' ')[0]
+    else:
+        card_title = category
     return render_template('title_card_single_photo.html', category=card_title,
                            color1=palette[0],
                            color2=palette[2])
@@ -189,7 +192,7 @@ def title_css_render(product_images, palette):
 def single_post_creator(product_list):
     print('Start create_single_post')
     rerq = create_single_card(product_list, 'with_title')
-    card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4], rerq[5])
+    card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 def create_single_card(product_list, mess):
     global single_nomer, single_files, single_media_list, single_urls_list, single_publication_category
