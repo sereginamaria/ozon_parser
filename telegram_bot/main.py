@@ -111,7 +111,11 @@ def callback_inline(call):
     if call.data.split('|')[1] == "yes" or call.data.split('|')[1] == "no":
         bot_database.callback_verification(call.data)
         verification.init_bot(call.message, bot, 'verification')
-    else:
+    if call.data.split('|')[1] == 'delete_photo':
+        product_list, del_num = bot_database.verification_delete_photo(call.data)
+        verification.delete_photo(call.message, product_list, del_num, call.data.split('|')[2])
+
+    if call.data.split('|')[1] == 'change_name':
         verification.init_change_name(call.message, bot, call.data)
 
 

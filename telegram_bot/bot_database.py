@@ -18,7 +18,7 @@ cursor = connection.cursor()
 
 def verification():
     cursor.execute(
-        "select product_id, product_images, publication_category, sub_category, product_name from public.ozon_products where (verification = false) limit 1")
+        "select product_id, product_images, publication_category, sub_category, product_name from public.ozon_products  where (verification = false) order by product_id limit 1")
     return cursor.fetchall()
 
 
@@ -39,6 +39,17 @@ def verification_change_name(data):
 def verification_add_new_name(data, new_name):
     cursor.execute("update public.ozon_products set product_name = '%s' where product_id = '%s'" % (
         new_name, str(data.split('|')[2])))
+    connection.commit()
+
+def verification_delete_photo(data):
+    cursor.execute(
+        "select product_images from public.ozon_products where product_id =" + str(data.split('|')[2]))
+    product_list = cursor.fetchall()
+    return product_list, str(data.split('|')[3])
+
+def post_verification_delete_photo(product_id, new_product_images_list):
+    cursor.execute("update public.ozon_products set product_images = '%s' where product_id = '%s'" % (
+        new_product_images_list, product_id))
     connection.commit()
 
 def create_post(date_of_publication, time_of_publication, publishing_platform, product_id):

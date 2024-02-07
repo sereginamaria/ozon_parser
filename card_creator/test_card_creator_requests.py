@@ -138,12 +138,22 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
 
     print(post_response)
 
-    while post_response.status_code != 200:
-        print('Фотографии не отправлены, response !== 200')
-        post_response = requests.post(
-            url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
-            files=files
-        )
+    if hasattr(post_response, 'status_code'):
+        while post_response.status_code != 200:
+            print('Фотографии не отправлены, response !== 200')
+            post_response = requests.post(
+                url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
+                files=files
+            )
+    else:
+        if post_response != 'ok':
+            print('Фотографии не отправлены, response !== ok')
+            requests.post(
+                url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
+                files=files
+            )
+        else:
+            print('Фотографии отправлены, response == ok')
 
     print('new resp')
     print(post_response)
