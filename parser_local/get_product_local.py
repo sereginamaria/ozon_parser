@@ -10,8 +10,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 import re
 import json
-from parser.add_to_db import add_to_db
-from parser import parser_requests
+from parser_local.add_to_db_local import add_to_db
+
+# from parser import parser_requests
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
@@ -21,7 +22,7 @@ def get_product(url, publication_category, message_type):
     print('Start get_product')
 
     options1 = uc.ChromeOptions()
-    # options1.headless = False
+    options1.headless = False
     # options1.add_argument('--headless')
     # options1.add_argument('--headless=new')
     options1.add_argument('--no-sandbox')
@@ -32,12 +33,12 @@ def get_product(url, publication_category, message_type):
     options1.add_argument("--disable-setuid-sandbox")
     options1.add_argument("--disable-gpu")
     options1.add_argument("--remote-allow-origins=*")
-    options1.add_argument("--log-path=/home/masha/chromelogs")
+    # options1.add_argument("--log-path=/home/masha/chromelogs")
     options1.add_argument("--disable-dev-shm-usage")
     options1._session = None
 
     # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
-    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome117/chrome-linux64/chrome'
+    # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome117/chrome-linux64/chrome'
     # options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-headless-shell-linux64/chrome-headless-shell'
     print('before Chrome')
 
@@ -45,7 +46,7 @@ def get_product(url, publication_category, message_type):
         # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
         patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
         options=options1,
-        log_level=10, headless=True, version_main=117)
+        log_level=10, headless=False)
 
     print('get')
     print(url)
@@ -76,7 +77,7 @@ def get_product(url, publication_category, message_type):
         content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
 
         print('content')
-        print(content)
+        # print(content)
         print("Content is not empty")
     except:
         try:
@@ -87,7 +88,7 @@ def get_product(url, publication_category, message_type):
             driver1.save_screenshot('8.png')
             content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
         except:
-            parser_requests.error(
+            print(
                 'В процессе парсинга произошла ошибка, не удалось получить tag_name pre. Запустите парсер заново.')
 
     driver1.close()
@@ -117,13 +118,24 @@ def get_product(url, publication_category, message_type):
     parsed_json = json.loads(content)
 
     parsed_data_json = parsed_json["widgetStates"]
-    seo_json = parsed_json["seo"]["script"]
+    seo_json = ''
+    if 'script' in parsed_json["seo"]:
+        seo_json = parsed_json["seo"]["script"]
 
-    d0 = json.loads(seo_json[0]['innerHTML'])
+    d0 = ''
+    if seo_json != '':
+        d0 = json.loads(seo_json[0]['innerHTML'])
 
-    description = d0['description']
-    product_rating = d0['aggregateRating']['ratingValue']
-    product_article = d0['sku']
+    description = ''
+    product_rating = ''
+    product_article = ''
+    if d0 != '':
+        description = d0['description']
+
+        product_rating = ''
+        if 'aggregateRating' in d0:
+            product_rating = d0['aggregateRating']['ratingValue']
+        product_article = d0['sku']
 
 
     # OLD, does not exist
@@ -166,10 +178,6 @@ def get_product(url, publication_category, message_type):
     # print(re.search('webAspects[^":]*', json.dumps(parsed_data_json)) != None)
     # print('webaspects')
     # print(seo_json)
-    # parser_requests.info('оыуадоориж')
-    # # parser_requests.info(webAspects)
-    # parser_requests.info(webGallery)
-    # parser_requests.info(webStickyProducts)
 
     keys_to_save1 = [webGallery, webAspects, webCharacteristics, breadCrumbs, webPrice, webProductHeading,
                      webStickyProducts]
@@ -247,15 +255,15 @@ def get_product(url, publication_category, message_type):
     product_brand_name = ''
     product_brand_link = ''
     if webStickyProducts in d2:
-        print(d2[webStickyProducts])
-        print(d2[webStickyProducts]['seller'])
+        # print(d2[webStickyProducts])
+        # print(d2[webStickyProducts]['seller'])
         if 'seller' in d2[webStickyProducts]:
             if 'name' in d2[webStickyProducts]['seller']:
                 product_brand_name = d2[webStickyProducts]['seller']['name']
 
     if webStickyProducts in d2:
-        print(d2[webStickyProducts])
-        print(d2[webStickyProducts]['seller'])
+        # print(d2[webStickyProducts])
+        # print(d2[webStickyProducts]['seller'])
 
         if 'seller' in d2[webStickyProducts]:
             if 'link' in d2[webStickyProducts]['seller']:
@@ -336,46 +344,21 @@ def get_product(url, publication_category, message_type):
 
     else:
         if product_article == '':
-            parser_requests.info('Отсутствует поле product_article')
+            print('Отсутствует поле product_article')
         if product_rating == '':
-            parser_requests.info('Отсутствует поле product_rating')
+            print('Отсутствует поле product_rating')
 
     # with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
     #     outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
-    parser_requests.execution_completed(message_type)
     print('End get_product')
 
 
 if __name__ == '__main__':
-    import undetected_chromedriver as uc
-    from undetected_chromedriver import ChromeOptions
 
-    from selenium.webdriver.common.by import By
-    from selenium.webdriver.support import expected_conditions as EC
-    from selenium.webdriver.support.ui import WebDriverWait
 
-    options1 = uc.ChromeOptions()
-    # options1.headless = False
-    # options1.add_argument('--headless')
-    # options1.add_argument('--headless=new')
-    options1.add_argument('--no-sandbox')
-    options1.add_argument('--disable-dev-shm-usage')
 
-    options1.add_argument("--disable-extensions")
-    options1.add_argument('--disable-application-cache')
-    options1.add_argument("--disable-setuid-sandbox")
-    options1.add_argument("--disable-gpu")
-    options1.add_argument("--remote-allow-origins=*")
-    options1.add_argument("--log-path=/home/masha/chromelogs")
-    options1.add_argument("--disable-dev-shm-usage")
-    options1._session = None
-    options1.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
 
-    print('before Chrome')
+    get_product('/product/kanistra-bar-1292523882/', '23 Февраля', False)
 
-    driver1 = uc.Chrome(browser_executable_path='/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome',
-                        driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
-                        patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=False,
-                        options=options1,
-                        log_level=10, headless=False)
+

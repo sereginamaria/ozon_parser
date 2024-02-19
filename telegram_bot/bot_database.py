@@ -1,4 +1,7 @@
 # import sqlite3 as sl
+import requests
+telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
+
 import bot_requests
 
 # открываем файл с базой данных
@@ -23,8 +26,29 @@ def verification():
 
 
 def callback_verification(data):
+    global new_name
     if data.split('|')[1] == "yes":
-        cursor.execute("update public.ozon_products set verification = true where product_id =" + str(data.split('|')[2]))
+        cursor.execute(
+            "select product_name from public.ozon_products where product_id =" + str(data.split('|')[2]))
+
+        product_name = cursor.fetchall()
+        new_name = new_tt = ''.join(product_name[0])
+
+        # requests.post(
+        #     url=telegram_url + '/sendMessage',
+        #     data={'chat_id': 6181726421, 'text': new_tt}
+        # ).json()
+
+        if len(new_tt) > 30:
+            new_name = new_tt.partition(' ')[0]
+            # requests.post(
+            #     url=telegram_url + '/sendMessage',
+            #     data={'chat_id': 6181726421, 'text': new_name}
+            # ).json()
+
+        cursor.execute("update public.ozon_products set verification = true, product_name = '%s' where product_id = '%s'" % (
+            new_name, str(data.split('|')[2])))
+
     if data.split('|')[1] == "no":
         cursor.execute("update public.ozon_products set verification = null where product_id  = " + str(data.split('|')[2]))
 
@@ -88,19 +112,19 @@ def create_test_card(category):
             or category == 'Спортивная Одежда' or category == 'Купальники'
             or category == 'Сумка' or category == 'Дом'
             or category == 'Косметика' or category == 'Детям'
-            or category == 'Мужчинам' or category == 'Украшения'):
+            or category == 'Мужчинам' or category == 'Украшения' or category == '23 Февраля'):
 
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
             "product_price_with_ozon_card, product_images, sub_category, product_url from public.ozon_products where (publication_category = '%s' and "
             "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
-            "true) limit 14" % category)
+            "true) order by product_id limit 14" % category)
     else:
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
             "product_price_with_ozon_card, product_images, sub_category, product_url from public.ozon_products where (sub_category = '%s' and "
             "date_of_publication is null and publishing_platform is null and few_photos = false and verification = "
-            "true) limit 14" % category)
+            "true) order by product_id limit 14" % category)
 
     product_list = cursor.fetchall()
 
@@ -206,7 +230,7 @@ def autoposting_date(now, time):
         "product_price_with_ozon_card, product_images, publication_category, product_url "
         "from public.ozon_products where (date_of_publication = '%s' and time_of_publication <= '%s' "
         "and few_photos = false and verification = "
-        "true and is_published = false and post_type = 'group')" % (str(now), time))
+        "true and is_published = false and post_type = 'group') order by product_id" % (str(now), time))
 
     product_list = cursor.fetchall()
     print('group')

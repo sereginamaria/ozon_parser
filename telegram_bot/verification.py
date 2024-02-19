@@ -15,7 +15,8 @@ def init_bot(message, telegram_bot, info_message):
 
 
 def verification(message):
-    # bot.send_message(message.chat.id, 'start')
+    bot.send_message(message.chat.id, 'start')
+    global error_num
     products = bot_database.verification()
 
     product_list = products
@@ -58,10 +59,14 @@ def verification(message):
             if product_images[-1] == ',':
                 product_images = product_images[:-1]
 
+            if product_images[-1] == ' ':
+                product_images = product_images[:-2]
+
             new_product_images = product_images.split(', ')
 
             if len(new_product_images) < 4:
-                # bot.send_message(message.chat.id, 'В базе данных менее 4 фотографий, ')
+                # bot.send_message(message.chat.id, 'В базе данных менее 4 фотографий')
+
                 new_product_images.append(new_product_images[0])
 
                 new_product_images_list = ', '.join(new_product_images)
@@ -69,12 +74,6 @@ def verification(message):
 
 
             # bot.send_message(message.chat.id, str(new_product_images))
-
-            # media_group = []
-            # for num in range(4):
-            #     media_group.append(InputMediaPhoto('https://cdn1.ozone.ru/s3/multimedia-b/6822645599.jpg'))
-            #     # bot.send_message(message.chat.id, str(media_group))
-            # bot.send_media_group(chat_id=message.chat.id, media=media_group)
 
             # j = type(new_product_images[1])
             # bot.send_message(message.chat.id, str(j))
@@ -101,10 +100,9 @@ def verification(message):
                 # bot.send_message(message.chat.id, len('https://cdn1.ozone.ru/s3/multimedia-l/6822645671.jpg'))
                 media_group.append(InputMediaPhoto(new_product_images[num]))
 
-
             try:
 
-                # bot.send_message(message.chat.id, str(media_group))
+
                 bot.send_media_group(chat_id=message.chat.id, media=media_group)
 
                 bot.send_message(message.chat.id, 'Оставляем?\nID: ' + str(product_id) +
@@ -132,9 +130,27 @@ def verification(message):
 
             except:
                 bot.send_message(message.chat.id, "Ошибка")
-                # bot_database.callback_verification('verification' + '|' + 'no' + '|' + str(product_id))
                 bot.send_message(message.chat.id, str(product_id))
-                continue
+
+                try:
+                    for error_num in range(4):
+                        # bot.send_message(message.chat.id, len(new_product_images[error_num]))
+                        bot.send_photo(chat_id=message.chat.id, photo=new_product_images[error_num])
+                        # bot.send_message(message.chat.id, 'error_num')
+                        # bot.send_message(message.chat.id, error_num)
+                except:
+                    bot.send_message(message.chat.id, 'Ошибка в этом фото')
+                    bot.send_message(message.chat.id, str(new_product_images[error_num]))
+                    # bot.send_message(message.chat.id, len(new_product_images[error_num]))
+
+                    del new_product_images[error_num]
+
+                    new_product_images.append(new_product_images[0])
+
+                    new_product_images_list = ', '.join(new_product_images)
+
+                    bot_database.post_verification_delete_photo(product_id, new_product_images_list)
+                    continue
 
     else:
         bot.send_message(message.chat.id, "Все товары проверифицированы")
@@ -191,6 +207,9 @@ def delete_photo(message, product_list, del_num, product_id):
 
     if product_images_del[-1] == ',':
         product_images_del = product_images_del[:-1]
+
+    if product_images_del[-1] == ' ':
+        product_images_del = product_images_del[:-2]
 
     new_product_images_del = product_images_del.split(', ')
 

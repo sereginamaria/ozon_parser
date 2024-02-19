@@ -52,12 +52,20 @@ def send_media_group(media_list, files):
 
     print(images_response)
 
-    while images_response.status_code != 200:
+    i = 1
+    while images_response.status_code != 200 and i <= 5:
         print('Фотографии не отправлены, response !== 200')
         images_response = requests.post(
             url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
             files=files
         )
+        i += 1
+
+    if i > 5:
+        requests.post(
+            url=telegram_url + '/sendMessage',
+            data={'chat_id': 6181726421, 'text': 'Ошибка при отпарвке фотографий'}
+        ).json()
 
     print('new resp')
     print(images_response)
@@ -138,8 +146,9 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
 
     print(post_response)
 
+    i = 1
     if hasattr(post_response, 'status_code'):
-        while post_response.status_code != 200:
+        while post_response.status_code != 200 and i <= 5:
             print('Фотографии не отправлены, response !== 200')
             post_response = requests.post(
                 url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
@@ -154,6 +163,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
             )
         else:
             print('Фотографии отправлены, response == ok')
+
+    if i > 5:
+        requests.post(
+            url=telegram_url + '/sendMessage',
+            data={'chat_id': 6181726421, 'text': 'Ошибка при отпарвке фотографий'}
+        ).json()
 
     print('new resp')
     print(post_response)
