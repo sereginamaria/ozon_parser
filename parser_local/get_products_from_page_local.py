@@ -101,7 +101,7 @@ def parse_data(html):
     # print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'wi8'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'vi1'})]))])
     return product_links
 
 
@@ -113,20 +113,20 @@ def get_urls(html):
     print(links)
     all_links = all_links + list(links)
 
-    numLines = 0
-    if len(all_links) == 36:
-        for link in all_links:
-            message_type = False
-            get_product(link, category, message_type)
-            numLines += 1
-            if numLines >= 12:
-                break
-    else:
-        print('Ошибка! Со страницы определилось ' + str(len(all_links)) +
-                ' ссылок. Повторите попытку.')
+    # numLines = 0
+    # if len(all_links) == 36:
+    for link in all_links:
+        message_type = False
+        get_product(link, category, message_type)
+        # numLines += 1
+        # if numLines >= 12:
+        #     break
+    # else:
+    #     print('Ошибка! Со страницы определилось ' + str(len(all_links)) +
+    #             ' ссылок. Повторите попытку.')
 
     print('End get_products_from_page')
 
 
 if __name__ == "__main__":
-    get_products_from_page('8 Марта','https://www.ozon.ru/category/dom-i-sad-14500/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=подарок+на+8+марта')
+    get_products_from_page('Обувь','https://www.ozon.ru/category/zhenskaya-obuv-7640/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=season&season=64979%2C33889&text=Женская+обувь')

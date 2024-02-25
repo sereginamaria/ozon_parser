@@ -112,7 +112,8 @@ def create_test_card(category):
             or category == 'Спортивная Одежда' or category == 'Купальники'
             or category == 'Сумка' or category == 'Дом'
             or category == 'Косметика' or category == 'Детям'
-            or category == 'Мужчинам' or category == 'Украшения' or category == '23 Февраля'):
+            or category == 'Мужчинам' or category == 'Украшения' or category == '23 Февраля'
+            or category == '8 Марта'):
 
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
@@ -147,7 +148,8 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
     if (publication_category == 'Платье' or publication_category == 'Юбка'
             or publication_category == 'Топ' or publication_category == 'Футболка'
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
-            or publication_category == 'Рубашка' or publication_category == 'Брюки'
+            or publication_category == 'Рубашка'  or publication_category == 'Блузка'
+            or publication_category == 'Брюки' or publication_category == 'Обувь'
             or publication_category == 'Пиджак' or publication_category == 'Джинсы'
             or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
             or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
@@ -174,7 +176,8 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
     if (publication_category == 'Платье' or publication_category == 'Юбка'
             or publication_category == 'Топ' or publication_category == 'Футболка'
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
-            or publication_category == 'Рубашка' or publication_category == 'Брюки'
+            or publication_category == 'Рубашка' or publication_category == 'Блузка'
+            or publication_category == 'Брюки' or publication_category == 'Обувь'
             or publication_category == 'Пиджак' or publication_category == 'Джинсы'
             or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
             or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
