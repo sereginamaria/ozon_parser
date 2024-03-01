@@ -129,4 +129,4 @@ def get_urls(html):
 
 
 if __name__ == "__main__":
-    get_products_from_page('Обувь','https://www.ozon.ru/category/zhenskaya-obuv-7640/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=season&season=64979%2C33889&text=Женская+обувь')
+    get_products_from_page('Детям','https://www.ozon.ru/category/igrushki-i-igry-7108/?from_global=true&text=Детсике+товары')
