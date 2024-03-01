@@ -12,7 +12,7 @@ from selenium_stealth import stealth
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
-def get_products_from_page(publication_category, url):
+def get_products_from_page(publication_category, url`:
     # Ограничим парсинг первыми n страницами
     print('Start get_products_from_page')
     global category
