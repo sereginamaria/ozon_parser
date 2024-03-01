@@ -1,5 +1,5 @@
 import psycopg2 as pg
-from parser import parser_requests
+from parser import telegram_notifier
 
 connection = pg.connect(
     host='195.133.32.87',
@@ -87,9 +87,9 @@ def add_to_db(product_name, product_price_original, product_price, product_price
     # parser_requests.info("affected rows = {}".format(cursor.rowcount))
 
     if format(cursor.rowcount) == 0:
-        parser_requests.info('Товар не добавлен (скорее всего он уже есть в базе данных): ' + product_article)
+        parser_requests.send_message('Товар не добавлен (скорее всего он уже есть в базе данных): ' + product_article)
     else:
-        parser_requests.info('Добавлен товар: ' + product_name)
+        parser_requests.send_message('Добавлен товар: ' + product_name)
 
     connection.commit()
     print('End add_to_db')
