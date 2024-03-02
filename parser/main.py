@@ -32,17 +32,14 @@ def get_page():
     return 'Получаем ссылки на продукты со страниц'
 
 
-@app.route('/get_product', methods=['GET', 'POST'])
+@app.route('/get_product', methods=['POST'])
 def get_ozon_product():
-    if request.method == 'POST':
-        request_data = json.loads(request.data.decode('UTF-8'))
-        publication_category = request_data.get('publication_category')
-        page_url = request_data.get('page_url')
-        message_type = True
-        parse_product(page_url, publication_category, message_type)
-        return 'Получаем информацию о товаре'
-    if request.method == 'GET':
-        return 'Получаем информацию о товаре'
+    logger.info("Got request on /get_product")
+    request_data = json.loads(request.data.decode('UTF-8'))
+    publication_category = request_data.get('publication_category')
+    page_url = request_data.get('page_url')
+    parse_product(page_url, publication_category)
+    return 'Парсим продукт'
 
 
 @app.route('/create_card', methods=['GET', 'POST'])
