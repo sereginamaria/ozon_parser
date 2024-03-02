@@ -84,3 +84,24 @@ def add_product(product: Product):
         logger.warning(f'Товар не добавлен (скорее всего он уже есть в базе данных): {product.article}')
     else:
         logger.info(f'Добавлен товар: {product.name}')
+
+
+def get_product(id: int) -> Product:
+    cursor.execute(
+        f'''select product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, product_brand_name, product_brand_link, 
+        product_rating, product_categories, product_color, product_article, product_sizes, product_all_articles, publication_category, few_photos, 
+        product_url, description, sub_category
+     from public.ozon_products where product_id = {id}''')
+
+    return Product(*cursor.fetchone())
+
+
+# def get_products(ids: list[int]) -> list[Product]:
+#     cursor.execute(
+#         f'''select product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, product_brand_name, product_brand_link,
+#         product_rating, product_categories, product_color, product_article, product_sizes, product_all_articles, publication_category, few_photos,
+#         product_url, description, sub_category
+#      from public.ozon_products where product_id in ({','.join(str(i) for i in ids)})''')
+#
+#     raw_products = cursor.fetchall()
+#     return [Product(*p) for p in raw_products]

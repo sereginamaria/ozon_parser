@@ -6,7 +6,6 @@ from html2image import Html2Image
 from card_creator import card_creator_requests
 from colorthief import ColorThief
 
-from parser.config import CardType
 from parser.schema import Product
 import os
 
@@ -23,7 +22,7 @@ def post_creator(product_list):
     card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 
-def create_titled_card(product) -> bytes:
+def create_titled_card(product: Product) -> bytes:
     images_urls = product.images.split(',')
     fd = urlopen(images_urls[0])
     f = io.BytesIO(fd.read())
@@ -36,13 +35,12 @@ def create_titled_card(product) -> bytes:
     return card(render_title_html, render_title_css)
 
 
-def create_card(product_list: Product, cardType: CardType):
-
-    match cardType:
-        case CardType.TITLE:
-            return
-        case CardType.TRIPLE:
-            return
+def create_card(product: Product, card_type: str) -> bytes:
+    match card_type:
+        case 'title':
+            return create_titled_card(product)
+        case 'triple':
+            return b''
     # Четыре типа карточек: титульная, обьчная тройная, ???, ???
     make_title = False
     files = {}
