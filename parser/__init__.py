@@ -1,5 +1,3 @@
-from multiprocessing.spawn import freeze_support
-
 from flask import Flask
 import undetected_chromedriver as uc
 import logging
@@ -19,7 +17,7 @@ ucOptions = uc.ChromeOptions()
 ucOptions.add_argument('--no-sandbox')
 ucOptions.add_argument('--disable-dev-shm-usage')
 
-ucOptions.add_argument("--disable-extensions")
+# ucOptions.add_argument("--disable-extensions")
 ucOptions.add_argument('--disable-application-cache')
 ucOptions.add_argument("--disable-setuid-sandbox")
 ucOptions.add_argument("--disable-gpu")
@@ -36,7 +34,7 @@ driver = uc.Chrome(
     # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
     patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=True,
     options=ucOptions,
-    log_level=10, headless=True)
+    log_level=10)
 
 
 def exit_handler():

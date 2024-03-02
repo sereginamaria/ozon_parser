@@ -1,4 +1,4 @@
-from parser.get_product import get_product
+from parser.get_product import parse_product
 from parser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from card_creator.card_creator import post_creator
@@ -39,7 +39,7 @@ def get_ozon_product():
         publication_category = request_data.get('publication_category')
         page_url = request_data.get('page_url')
         message_type = True
-        get_product(page_url, publication_category, message_type)
+        parse_product(page_url, publication_category, message_type)
         return 'Получаем информацию о товаре'
     if request.method == 'GET':
         return 'Получаем информацию о товаре'
