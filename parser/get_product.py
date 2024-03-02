@@ -3,10 +3,9 @@ import json
 import time
 
 from selenium.common import NoSuchElementException
-from parser import driver, config
-from parser import logger
+from parser import driver, logger, config
 from selenium.webdriver.common.by import By
-from schema import Product
+from parser.schema import Product
 
 
 def parse_product_from_json(j: dict):

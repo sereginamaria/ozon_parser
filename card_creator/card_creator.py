@@ -23,7 +23,7 @@ def post_creator(product_list):
     card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 
-def create_titled_card(product):
+def create_titled_card(product) -> bytes:
     images_urls = product.images.split(',')
     fd = urlopen(images_urls[0])
     f = io.BytesIO(fd.read())
@@ -102,7 +102,7 @@ def create_card(product_list: Product, cardType: CardType):
     return media_list, files, publication_category, names_list, urls_list
 
 
-def card(html, css):
+def card(html, css) -> bytes:
     hti = Html2Image(
         output_path='card_creator/cards',
         custom_flags=[

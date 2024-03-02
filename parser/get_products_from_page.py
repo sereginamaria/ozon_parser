@@ -1,16 +1,15 @@
 from bs4 import BeautifulSoup
 import itertools
-from get_product import parse_product
-import telegram_notifier
-from parser import logger, driver
-import config
-from db import add_product
+from parser.get_product import parse_product
+# import telegram_notifier
+from parser import logger, driver, config
+from parser.db import add_product
 
 
-def get_products_from_page(publication_category, url):
+def parse_page(publication_category, url):
     logger.info('Starting get_products_from_page')
-    if not config.DEBUG:
-        telegram_notifier.send_wait()
+    # if not config.DEBUG:
+    #     telegram_notifier.send_wait()
     logger.info('Downloading pages')
     pages = [get_html(url + '?page=' + str(i)) for i in range(1, config.MAX_PAGES+1)]
     logger.info('Parsing product links from pages')
@@ -27,7 +26,7 @@ def get_products_from_page(publication_category, url):
             add_product(p)
         else:
             logger.info("Not commiting to DB cuz of debug")
-    telegram_notifier.send_execution_completed()
+    # telegram_notifier.send_execution_completed()
     logger.info('Done get_products_from_page. Success!')
 
 
@@ -43,7 +42,7 @@ def get_html(url):
 
 def parse_urls(html):
     logger.info('Parsing URLs')
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'html.web_server')
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'iv4'})]))])
     if not product_links:

@@ -1,7 +1,6 @@
 import psycopg2 as pg
-from parser import telegram_notifier, logger
+from web_server import logger
 from parser.schema import Product
-from config import DEBUG
 
 connection = pg.connect(
     host='195.133.32.87',

@@ -1,12 +1,9 @@
-from flask import Flask
 import undetected_chromedriver as uc
 import logging
 import sys
 import atexit
 
-app = Flask(__name__, template_folder='../card_creator/templates')
-
-logger = logging.getLogger()
+logger = logging.getLogger("parser")
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler(sys.stdout))
 

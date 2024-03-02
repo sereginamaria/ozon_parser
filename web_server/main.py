@@ -1,7 +1,8 @@
+from time import strftime
+
 from parser.get_product import parse_product, parse_product_from_json
-from parser.get_products_from_page import get_products_from_page
+from parser.get_products_from_page import parse_page
 from card_creator.card_creator import post_creator, create_titled_card
-from card_creator.card_creator import create_card as cc
 from card_creator.card_creator import single_post_creator
 
 from card_creator.test_card_creator import post_creator as test_post_creator
@@ -11,9 +12,16 @@ from card_creator.test_card_creator import only_title_card_creator
 
 from video_maker.video_maker import generate_video
 from flask import request
-from parser import logger, app
+from web_server import logger, app
 
 import json
+
+
+@app.before_request
+def before_request(response):
+    timestamp = strftime('[%Y-%b-%d %H:%M]')
+    logger.info('%s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path)
+    return response
 
 
 @app.route('/')
@@ -21,19 +29,17 @@ def hello():
     return "Hello!"
 
 
-@app.route('/get_products_from_page', methods=['GET'])
+@app.route('/parse_page', methods=['GET'])
 def get_page():
-    logger.info("Got request on /get_products_from_page")
     request_data = request.json
     publication_category = request_data['publication_category']
     page_url = request_data['page_url']
-    get_products_from_page(publication_category, page_url)
+    parse_page(publication_category, page_url)
     return 'Получаем ссылки на продукты со страниц'
 
 
-@app.route('/get_product', methods=['GET'])
-def get_ozon_product():
-    logger.info("Got request on /get_product")
+@app.route('/parse_product', methods=['GET'])
+def get_product():
     request_data = json.loads(request.data.decode('UTF-8'))
     publication_category = request_data.get('publication_category')
     page_url = request_data.get('page_url')
@@ -43,7 +49,6 @@ def get_ozon_product():
 
 @app.route('/create_card', methods=['GET'])
 def create_card():
-    logger.info("Got request on /create_card")
     products = parse_product_from_json(json.loads(request.json))
     # TODO resolve signature
     # cards = cc(products[0])
@@ -124,10 +129,23 @@ def create_only_title_card():
 
 
 if __name__ == "__main__":
+    import requests
     logger.info("Starting debug")
     url = '/product/nasos-dlya-perekachki-masla-topliva-i-drugih-tehnicheskih-zhidkostey-12v-100w-1-4l-min-984149846'
     product = parse_product(url, 'somecategory')
     with app.app_context():
         card = create_titled_card(product)
-    open("sample.png", 'wb').write(card)
+    telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
+    response = requests.post(
+        url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421,
+                                                    'media': '''[{
+                                                        "type": "photo",
+                                                        "media": "attach://name1"
+                                                    }]'''
+                                                    },
+        files={
+            "name1": card
+        }
+    )
+    print(response.status_code)
     # app.run(host="0.0.0.0", port=5000, debug=True)
