@@ -20,8 +20,6 @@ def get_product(url, publication_category):
         telegram_notifier.send_message(
             'В процессе парсинга произошла ошибка, не удалось распарсить продукт. Запустите парсер заново.')
         return
-    driver.close()
-    driver.quit()
 
     parsed_json = json.loads(content)
     parsed_widget_states = parsed_json["widgetStates"]

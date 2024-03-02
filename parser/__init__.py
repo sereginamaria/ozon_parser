@@ -40,7 +40,6 @@ driver = uc.Chrome(
 
 
 def exit_handler():
-    driver.close()
     driver.quit()
 
 

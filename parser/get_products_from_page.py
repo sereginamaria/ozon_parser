@@ -8,12 +8,11 @@ import config
 
 def get_products_from_page(publication_category, url):
     logger.info('Starting get_products_from_page')
-    telegram_notifier.send_wait()
-    urls = []
-    logger.info('Starting parsing products urls')
-    for i in range(1, config.MAX_PAGES+1):
-        html = get_html(url + '?page=' + str(i))
-        urls.extend(parse_urls(html))
+    # telegram_notifier.send_wait()
+    logger.info('Downloading pages')
+    pages = [get_html(url + '?page=' + str(i)) for i in range(1, config.MAX_PAGES+1)]
+    logger.info('Parsing product links from pages')
+    urls = list(itertools.chain(*[parse_urls(p) for p in pages]))
     logger.info('Starting products parsing')
     for url in urls:
         get_product(url, publication_category)
@@ -23,14 +22,12 @@ def get_products_from_page(publication_category, url):
 
 
 def get_html(url):
-    logger.info(f'Downloading {url}')
-
-    logger.info('Viewing page')
+    logger.info(f'Viewing {url}')
     driver.get(url)
     driver.execute_script("window.scrollTo(5,4000);")
+    import time
+    time.sleep(5)
     html = driver.page_source
-    driver.close()
-    driver.quit()
     return html
 
 
