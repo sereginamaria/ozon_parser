@@ -6,14 +6,15 @@ from html2image import Html2Image
 from card_creator import card_creator_requests
 from colorthief import ColorThief
 
-def card_creator(product_list):
-    print('Start create_card')
+from parser.config import CardType
+from parser.schema import Product
+import os
 
-    print(product_list)
-
-    rerq = create_card(product_list, 'without_title')
-    card_creator_requests.send_media_group(rerq[0], rerq[1])
-    # return rerq
+#
+# def card_creator(product_list: list[Product]):
+#     rerq = create_card(product_list, 'without_title')
+#     card_creator_requests.send_media_group(rerq[0], rerq[1])
+#     # return rerq
 
 
 def post_creator(product_list):
@@ -22,92 +23,81 @@ def post_creator(product_list):
     card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 
+def create_titled_card(product):
+    images_urls = product.images.split(',')
+    fd = urlopen(images_urls[0])
+    f = io.BytesIO(fd.read())
+    fd.close()
+    color_thief = ColorThief(f)
+    palette = color_thief.get_palette(color_count=2, quality=2)
 
-def create_card(product_list, mess):
-    global nomer, files, media_list, urls_list, publication_category
-    nomer = 1
+    render_title_html = title_html_render(product.name, product.publication_category, palette)
+    render_title_css = title_css_render(product.images, palette)
+    return card(render_title_html, render_title_css)
+
+
+def create_card(product_list: Product, cardType: CardType):
+
+    match cardType:
+        case CardType.TITLE:
+            return
+        case CardType.TRIPLE:
+            return
+    # Четыре типа карточек: титульная, обьчная тройная, ???, ???
     make_title = False
     files = {}
     media_list = []
 
-    publication_category = ''
+    # publication_category = ''
 
     names_list = []
     urls_list = []
-    if product_list:
-        for product in product_list:
-            if nomer == 11 or nomer == 21:
-                card_creator_requests.send_media_group(media_list, files)
-                files = {}
-                media_list = []
-                names_list = []
-                urls_list = []
+    for nomer, product in enumerate(product_list, 1):
+        # if nomer == 11 or nomer == 21:
+        #     card_creator_requests.send_media_group(media_list, files)
+        #     files = {}
+        #     media_list = []
+        #     names_list = []
+        #     urls_list = []
+        #
+        # (product_id, product_name, product_article, product_sizes, product_price,
+        #  product_price_with_ozon_card, product_images, publication_category, product_url) = product
 
-            (product_id, product_name, product_article, product_sizes, product_price,
-             product_price_with_ozon_card, product_images, publication_category, product_url) = product
+        images_urls = product.images.split(',')
+        fd = urlopen(images_urls[0])
+        f = io.BytesIO(fd.read())
+        fd.close()
+        color_thief = ColorThief(f)
+        # dominant_color = color_thief.get_color(quality=1)
+        palette = color_thief.get_palette(color_count=2, quality=2)
 
-
-            product_image = product_images.split(',')
-            fd = urlopen(product_image[0])
-            f = io.BytesIO(fd.read())
-            fd.close()
-            color_thief = ColorThief(f)
-            # dominant_color = color_thief.get_color(quality=1)
-            palette = color_thief.get_palette(color_count=2, quality=2)
-
-            if mess == 'with_title' and make_title == False:
-                name = f'photo{nomer}'
-
-                # product_image = product_images.split(',')
-                # fd = urlopen(product_image[0])
-                # f = io.BytesIO(fd.read())
-                # fd.close()
-                # color_thief = ColorThief(f)
-                # # get the dominant color
-                # # dominant_color = color_thief.get_color(quality=2)
-                # # build a color palette
-                # dominant_color = color_thief.get_palette(color_count=2, quality=2)
-                # print('palette1')
-
-
-                render_title_html = title_html_render(product_name, publication_category, palette)
-                render_title_css = title_css_render(product_images, palette)
-                card(render_title_html, render_title_css)
-                make_title = True
-                files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
-                media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
-                nomer += 1
-
+        if mess == 'with_title' and make_title == False:
             name = f'photo{nomer}'
-
-            # product_image = product_images.split(',')
-            # fd = urlopen(product_image[0])
-            # f = io.BytesIO(fd.read())
-            # fd.close()
-            # color_thief = ColorThief(f)
-            # # get the dominant color
-            # dominant_color = color_thief.get_color(quality=1)
-            # # build a color palette
-            # # palette = color_thief.get_palette(color_count=3)
-            # print('palette')
-            # print(dominant_color)
-
-            render_html = html_render(product_name, product_article, product_sizes, product_price,
-                                      product_price_with_ozon_card, palette)
-            render_css = css_render(product_images, palette, nomer, mess)
-            card(render_html, render_css)
-
-
-            urls_list.append(product_url)
-            names_list.append(product_name)
+            render_title_html = title_html_render(product_name, publication_category, palette)
+            render_title_css = title_css_render(product_images, palette)
+            card(render_title_html, render_title_css)
+            make_title = True
             files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
-
-            if nomer == 1:
-                media_list.append(dict(type='photo', caption='', parse_mode = 'HTML', media=f'attach://{name}'))
-            else:
-                media_list.append(dict(type='photo', media=f'attach://{name}'))
-
+            media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
             nomer += 1
+
+        name = f'photo{nomer}'
+
+        render_html = html_render(product_name, product_article, product_sizes, product_price,
+                                  product_price_with_ozon_card, palette)
+        render_css = css_render(product_images, palette, nomer, mess)
+        card(render_html, render_css)
+
+        urls_list.append(product_url)
+        names_list.append(product_name)
+        files.update({name: open("card_creator/cards/card" + str(nomer) + ".png", "rb")})
+
+        if nomer == 1:
+            media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
+        else:
+            media_list.append(dict(type='photo', media=f'attach://{name}'))
+
+        nomer += 1
 
     return media_list, files, publication_category, names_list, urls_list
 
@@ -123,11 +113,13 @@ def card(html, css):
         ],
     )
     hti.load_file("card_creator/templates/logo1.png", "logo.png")
-    hti.screenshot(
-        html_str=html, css_str=css,
-        save_as='card' + str(nomer) + '.png', size=(1024, 1280)
-    )
+    path = hti.screenshot(
+        html_str=html, css_str=css, size=(1024, 1280)
+    )[0]
 
+    image_b = open(path, 'rb').read()
+    os.remove(path)
+    return image_b
 
 
 def html_render(product_name, product_article, product_sizes, product_price,
@@ -146,7 +138,6 @@ def html_render(product_name, product_article, product_sizes, product_price,
         # Добавляем к строке разделитель — в данном случае пробел
         string += ', '
     new_string = string[:-1]
-    print(new_string)
 
     return render_template('card.html', name=product_name, article=product_article,
                            size=new_string, price=product_price,
@@ -156,7 +147,6 @@ def html_render(product_name, product_article, product_sizes, product_price,
 
 
 def css_render(product_images, palette, nomer, mess):
-
     product_image = product_images.split(',')
 
     if nomer == 2 and mess == 'with_title':
@@ -171,7 +161,6 @@ def css_render(product_images, palette, nomer, mess):
                                color=palette[2])
 
 
-
 def title_html_render(product_name, category, palette):
     if category == 'Верхняя Одежда' or category == 'Обувь' or category == 'Кофта' or category == 'Аксессуары':
         card_title = product_name.partition(' ')[0]
@@ -183,7 +172,6 @@ def title_html_render(product_name, category, palette):
 
 
 def title_css_render(product_images, palette):
-
     product_image = product_images.split(',')
 
     return render_template('title_card_single_photo.css', url_img=product_image[0], color=palette[2])
@@ -193,6 +181,7 @@ def single_post_creator(product_list):
     print('Start create_single_post')
     rerq = create_single_card(product_list, 'with_title')
     card_creator_requests.send_single_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
+
 
 def create_single_card(product_list, mess):
     global single_nomer, single_files, single_media_list, single_urls_list, single_publication_category
@@ -234,8 +223,8 @@ def create_single_card(product_list, mess):
                 # print('palette')
                 # print(palette)
 
-
-                render_title_html = single_title_html_render(single_publication_category, palette, product_name, product_image)
+                render_title_html = single_title_html_render(single_publication_category, palette, product_name,
+                                                             product_image)
 
                 render_title_css = single_title_css_render(product_images, palette)
                 single_card(render_title_html, render_title_css)
@@ -259,26 +248,24 @@ def create_single_card(product_list, mess):
             # print(dominant_color)
 
             render_html = single_html_render(product_name, product_article, product_sizes, product_price,
-                                      product_price_with_ozon_card, palette, product_image)
-
-
+                                             product_price_with_ozon_card, palette, product_image)
 
             render_css = single_css_render(product_images, single_nomer, mess)
             single_card(render_html, render_css)
-
 
             single_urls_list.append(product_url)
             names_list.append(product_name)
             single_files.update({name: open("card_creator/cards/card" + str(single_nomer) + ".png", "rb")})
 
             if single_nomer == 1:
-                single_media_list.append(dict(type='photo', caption='', parse_mode = 'HTML', media=f'attach://{name}'))
+                single_media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name}'))
             else:
                 single_media_list.append(dict(type='photo', media=f'attach://{name}'))
 
             single_nomer += 1
 
     return single_media_list, single_files, single_publication_category, names_list, single_urls_list
+
 
 def single_html_render(product_name, product_article, product_sizes, product_price,
                        product_price_with_ozon_card, palette, product_image):
@@ -307,15 +294,13 @@ def single_html_render(product_name, product_article, product_sizes, product_pri
 
     return render_template('single_card_single_photo.html', name=product_name, article=product_article,
                            size=Remove_last, price=product_price,
-                           ozon_card_price=product_price_with_ozon_card,  color=palette[2],
+                           ozon_card_price=product_price_with_ozon_card, color=palette[2],
 
                            )
 
 
 def single_css_render(product_images, nomer, mess):
-
     product_image = product_images.split(',')
-
 
     if nomer == 2 and mess == 'with_title':
         return render_template('single_card_single_photo.css', url_img1=product_image[1],
@@ -329,11 +314,9 @@ def single_css_render(product_images, nomer, mess):
                                url_img=product_image[3], )
 
 
-
-
 def single_title_html_render(category, palette, product_name, product_image):
     return render_template('single_title_card_single_photo.html', category=category,
-                           color=palette[0],  name=product_name,
+                           color=palette[0], name=product_name,
 
                            )
 
@@ -345,6 +328,7 @@ def single_title_css_render(product_images, palette):
                            color1=palette[0],
                            color2=palette[1],
                            color3=palette[2])
+
 
 def single_card(html, css):
     hti = Html2Image(

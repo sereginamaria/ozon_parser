@@ -1,10 +1,35 @@
 import re
 import json
+import time
+
 from selenium.common import NoSuchElementException
 from parser import driver, config
 from parser import logger
 from selenium.webdriver.common.by import By
 from schema import Product
+
+
+def parse_product_from_json(j: dict):
+    return Product(
+        j['name'],
+        j['price_original'],
+        j['price'],
+        j['price_with_ozon_card'],
+        j['images'],
+        j['brand_name'],
+        j['brand_link'],
+        j['rating'],
+        j['categories'],
+        j['color'],
+        j['article'],
+        j['sizes'],
+        j['all_articles'],
+        j['publication_category'],
+        j['few_photos'],
+        j['url'],
+        j['description'],
+        j['subcategory']
+    )
 
 
 def clear_widgets(raw_widgets):
@@ -193,7 +218,7 @@ def try_parse_web_aspects(web_aspects, clean_widgets, url):
 def parse_product(url, publication_category):
     logger.info(f'Parsing product {url}')
     driver.get(config.PRODUCT_PAGE_ENTRYPOINT + url)
-
+    time.sleep(5)  # TODO
     try:
         content = driver.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
     except NoSuchElementException:
@@ -206,7 +231,7 @@ def parse_product(url, publication_category):
     seo_html, description, product_rating, product_article = try_parse_seo(parsed_json)
 
     widgets_for_search = ['webGallery', 'webCharacteristics', 'webAspects', 'breadCrumbs', 'webPrice',
-                        'webProductHeading', 'webStickyProducts']
+                          'webProductHeading', 'webStickyProducts']
     webGallery, webCharacteristics, webAspects, breadCrumbs, webPrice, webProductHeading, webStickyProducts = \
         [find_nonempty_widget(raw_widget_states, w) for w in widgets_for_search]
 
