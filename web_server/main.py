@@ -49,8 +49,8 @@ def get_product():
     return 'Парсим продукт'
 
 
-@app.route('/create_titled_card', methods=['GET'])
-def create_titled():
+@app.route('/get_titled_card', methods=['GET'])
+def get_titled():
     payload = json.loads(request.json)
     product_id = payload['id']
     product = gp(product_id)
@@ -62,8 +62,8 @@ def create_titled():
     )
 
 
-@app.route('/create_triple_card', methods=['GET'])
-def create_triple():
+@app.route('/get_triple_card', methods=['GET'])
+def get_triple():
     payload = json.loads(request.json)
     product_id = payload['id']
     is_front = True if payload['type'] == 'front' else False
