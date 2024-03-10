@@ -13,38 +13,6 @@ connection = pg.connect(
 cursor = connection.cursor()
 
 def add_product(product: Product):
-    # cursor.execute("""
-    #     CREATE TABLE IF NOT EXISTS public.ozon_products (
-    #         product_id SERIAL PRIMARY KEY,
-    #         product_name TEXT,
-    #         product_price_original TEXT,
-    #         product_price TEXT,
-    #         product_price_with_ozon_card TEXT,
-    #         product_images TEXT,
-    #         product_brand_name TEXT,
-    #         product_brand_link TEXT,
-    #         product_rating TEXT,
-    #         product_categories TEXT,
-    #         product_sizes TEXT,
-    #         product_color TEXT,
-    #         product_article TEXT unique,
-    #         product_all_articles TEXT,
-    #         product_url TEXT,
-    #         date_of_publication DATE,
-    #         time_of_publication TIME,
-    #         publication_category TEXT,
-    #         publishing_platform TEXT,
-    #         verification BOOLEAN,
-    #         few_photos BOOLEAN,
-    #         is_published BOOLEAN,
-    #         post_type TEXT,
-    #         description TEXT,
-    #         sub_category TEXT
-    #     );
-    # """)
-
-
-    # подготавливаем множественный запрос
     sql = 'INSERT INTO public.ozon_products (product_name, product_price_original, ' \
           'product_price, product_price_with_ozon_card, product_images,' \
           'product_brand_name, product_brand_link, product_rating, ' \
