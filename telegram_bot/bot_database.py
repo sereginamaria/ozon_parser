@@ -106,8 +106,8 @@ def create_test_card(category):
     if (category == 'Платье' or category == 'Юбка'
             or category == 'Топ' or category == 'Футболка'
             or category == 'Костюм' or category == 'Нижнее Белье'
-            or category == 'Рубашка' or category == 'Брюки'
-            or category == 'Пиджак' or category == 'Джинсы'
+            or category == 'Рубашка' or category == 'Брюки' or category == 'Обувь'
+            or category == 'Пиджак' or category == 'Джинсы' or category == 'Аксессуары'
             or category == 'Шорты' or category == 'Домашняя Одежда'
             or category == 'Спортивная Одежда' or category == 'Купальники'
             or category == 'Сумка' or category == 'Дом'
@@ -133,6 +133,79 @@ def create_test_card(category):
     bot_requests.create_test_card(product_list)
     return product_list
 
+def create_verification_test_card(product_id):
+    cursor.execute(
+        "select product_id, product_name, product_article, product_sizes, product_price, "
+        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (product_id = '%s')" % product_id)
+    product_list = cursor.fetchall()
+
+
+    bot_requests.create_test_card(product_list)
+    bot_requests.create_test_post(product_list)
+    return product_list
+
+
+def get_product_by_id(product_id):
+    cursor.execute(
+        "select product_id, product_name, product_article, product_images, publication_category, sub_category, product_url, few_photos from public.ozon_products where (product_id = '%s')" % product_id)
+    product_list = cursor.fetchall()
+    return product_list
+
+
+def get_check_list(publication_category, date_of_publication, time_of_publication):
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': publication_category}
+    # ).json()
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': date_of_publication}
+    # ).json()
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': time_of_publication}
+    # ).json()
+    cursor.execute(
+        "select product_id, product_name, product_article, product_images, product_url, sub_category from public.ozon_products "
+        "where (publication_category = '%s' and date_of_publication = '%s' and time_of_publication = '%s')"
+        % (publication_category, date_of_publication, time_of_publication))
+
+    product_list = cursor.fetchall()
+    return product_list
+
+
+
+def plane_to_db(product_id, date_of_publication, time_of_publication, publishing_platform, post_type):
+    cursor.execute(
+        "select product_name from public.ozon_products where (product_id = '%s')" % product_id)
+
+    product_name = cursor.fetchall()
+    new_name = new_tt = ''.join(product_name[0])
+
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': new_tt}
+    # ).json()
+
+    if len(new_tt) > 30:
+        new_name = new_tt.partition(' ')[0]
+        # requests.post(
+        #     url=telegram_url + '/sendMessage',
+        #     data={'chat_id': 6181726421, 'text': new_name}
+        # ).json()
+
+    cursor.execute(
+        "update public.ozon_products set verification = true, product_name = '%s', date_of_publication = '%s', "
+        "time_of_publication = '%s', publishing_platform = '%s', post_type = '%s' where product_id = '%s'" % (
+            new_name, date_of_publication, time_of_publication, publishing_platform, post_type, product_id))
+
+    connection.commit()
+
+def plane_if_few_photos(product_id):
+    cursor.execute("update public.ozon_products set verification = true where product_id = '%s'" % product_id)
+
+    connection.commit()
+
 def create_single_card(publication_category):
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
@@ -150,40 +223,43 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
             or publication_category == 'Рубашка'  or publication_category == 'Блузка'
             or publication_category == 'Брюки' or publication_category == 'Обувь'
-            or publication_category == 'Пиджак' or publication_category == 'Джинсы'
+            or publication_category == 'Пиджак' or publication_category == 'Джинсы' or publication_category == 'Аксессуары'
             or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
             or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
             or publication_category == 'Сумка' or publication_category == 'Дом'
             or publication_category == 'Косметика' or publication_category == 'Детям'
-            or publication_category == 'Мужчинам' or publication_category == 'Украшения'):
+            or publication_category == 'Мужчинам' or publication_category == 'Украшения'
+            or publication_category == '8 Марта'):
 
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
             "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (publication_category = '%s' and "
             "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-            "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
+            "true and post_type = 'group') order by product_id" % (publication_category, publication_platform, date_of_publication))
     else:
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
             "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where (sub_category = '%s' and "
             "publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-            "true and post_type = 'group') " % (publication_category, publication_platform, date_of_publication))
+            "true and post_type = 'group') order by product_id" % (publication_category, publication_platform, date_of_publication))
 
     product_list = cursor.fetchall()
     if len(product_list) != 0:
         bot_requests.create_test_post(product_list)
+        # bot_requests.create_test_post_for_other_networks(product_list)
 
     if (publication_category == 'Платье' or publication_category == 'Юбка'
             or publication_category == 'Топ' or publication_category == 'Футболка'
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
             or publication_category == 'Рубашка' or publication_category == 'Блузка'
             or publication_category == 'Брюки' or publication_category == 'Обувь'
-            or publication_category == 'Пиджак' or publication_category == 'Джинсы'
+            or publication_category == 'Пиджак' or publication_category == 'Джинсы' or publication_category == 'Аксессуары'
             or publication_category == 'Шорты' or publication_category == 'Домашняя Одежда'
             or publication_category == 'Спортивная Одежда' or publication_category == 'Купальники'
             or publication_category == 'Сумка' or publication_category == 'Дом'
             or publication_category == 'Косметика' or publication_category == 'Детям'
-            or publication_category == 'Мужчинам' or publication_category == 'Украшения'):
+            or publication_category == 'Мужчинам' or publication_category == 'Украшения'
+            or publication_category == '8 Марта'    ):
 
         cursor.execute(
             "select product_id, product_name, product_article, product_sizes, product_price, "
@@ -201,33 +277,43 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
 
     if len(product_list) != 0:
         bot_requests.create_test_single_post(product_list)
+        # bot_requests.create_test_post_for_other_networks(product_list)
+    return True
 
-def get_all_day_posts_from_db(publication_platform, date_of_publication):
+def get_timesheet(date_of_publication, time_of_publication):
+    cursor.execute(
+        "select publication_category, sub_category from public.ozon_products where (date_of_publication = '%s' and "
+        "time_of_publication = '%s') order by product_id" % (date_of_publication, time_of_publication))
+
+    product_list = cursor.fetchall()
+    return product_list
+
+def get_all_day_posts_from_db(publication_platform, date_of_publication, time_of_publication):
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where "
         "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'group')" % (publication_platform, date_of_publication))
+        "true and post_type = 'group' and time_of_publication = '%s') order by product_id" % (publication_platform, date_of_publication, time_of_publication))
 
     product_list = cursor.fetchall()
     print(product_list)
 
     if len(product_list) != 0:
-        bot_requests.create_test_post(product_list)
-
-    cursor.execute(
-        "select product_id, product_name, product_article, product_sizes, product_price, "
-        "product_price_with_ozon_card, product_images, publication_category, product_url from public.ozon_products where "
-        "(publishing_platform = '%s' and date_of_publication = '%s' and few_photos = false and verification = "
-        "true and post_type = 'single')" % (publication_platform, date_of_publication))
-
-    product_list = cursor.fetchall()
-
-    if len(product_list) != 0:
-        bot_requests.create_test_single_post(product_list)
+        bot_requests.create_test_post_for_other_networks(product_list)
+    return product_list
 
 def autoposting_date(now, time):
     print('autopost')
+
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': now}
+    # ).json()
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': time}
+    # ).json()
+
     cursor.execute(
         "select product_id, product_name, product_article, product_sizes, product_price, "
         "product_price_with_ozon_card, product_images, publication_category, product_url "
@@ -238,7 +324,17 @@ def autoposting_date(now, time):
     product_list = cursor.fetchall()
     print('group')
     print(product_list)
-    if len(product_list) != 0:
+
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': str(len(product_list))}
+    # ).json()
+
+    if len(product_list) == 6:
+        # requests.post(
+        #     url=telegram_url + '/sendMessage',
+        #     data={'chat_id': 6181726421, 'text': '333333333333'}
+        # ).json()
         bot_requests.create_post(product_list)
         for product in product_list:
             (product_id, product_name, product_article, product_sizes, product_price, product_price_with_ozon_card,

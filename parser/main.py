@@ -11,6 +11,7 @@ from card_creator.test_card_creator import single_post_creator as test_single_po
 from card_creator.test_card_creator import card_creator as test_card_creator
 
 from card_creator.test_card_creator import only_title_card_creator
+from card_creator.test_card_creator import post_creator_for_other
 
 from video_maker.video_maker import generate_video
 from flask import request
@@ -104,6 +105,16 @@ def create_test_post():
     if request.method == 'GET':
         test_post_creator('ghbdtn')
         return 'Создаю пост'
+
+@app.route('/create_test_post_for_other_networks', methods=['GET', 'POST'])
+def create_test_post_for_other_networks():
+    if request.method == 'POST':
+        post_creator_for_other(json.loads(request.json))
+        return 'Создаю тестовый пост (для бота)'
+    if request.method == 'GET':
+        post_creator_for_other('ghbdtn')
+        return 'Создаю пост'
+
 
 
 @app.route('/create_test_single_post', methods=['GET', 'POST'])

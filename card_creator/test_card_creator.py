@@ -21,6 +21,13 @@ def post_creator(product_list):
     test_card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
 
 
+def post_creator_for_other(product_list):
+    print('Start create_post')
+    print(product_list)
+    create_card(product_list, 'with_title')
+    # test_card_creator_requests.send_post(rerq[0], rerq[1], rerq[2], rerq[3], rerq[4])
+
+
 
 def create_card(product_list, mess):
     global nomer, files, media_list, urls_list, publication_category
@@ -54,6 +61,7 @@ def create_card(product_list, mess):
             # dominant_color = color_thief.get_color(quality=1)
             palette = color_thief.get_palette(color_count=2, quality=2)
             print(mess)
+
             if mess == 'with_title' and make_title == False:
                 print(mess)
                 name = f'photo{nomer}'
@@ -68,7 +76,9 @@ def create_card(product_list, mess):
                 # # build a color palette
                 # dominant_color = color_thief.get_palette(color_count=2, quality=2)
                 # print('palette1')
-
+                render_title_html_t = inst_title_html_render(product_name, publication_category, palette)
+                render_title_css_t = inst_title_css_render(product_images, palette)
+                card_inst(render_title_html_t, render_title_css_t, '_inst')
 
                 render_title_html = title_html_render(product_name, publication_category, palette)
                 render_title_css = title_css_render(product_images, palette)
@@ -114,7 +124,6 @@ def create_card(product_list, mess):
 
             test_card_creator_requests.info('Создано карточек: ' + str(nomer))
             nomer += 1
-
 
     return media_list, files, publication_category, names_list, urls_list
 
@@ -178,7 +187,7 @@ def css_render(product_images, palette, nomer, mess):
 
 
 def title_html_render(product_name, category, palette):
-    if category == 'Верхняя Одежда' or category == 'Обувь' or category == 'Кофта' or category == 'Аксессуары':
+    if category == 'Верхняя Одежда' or category == 'Кофта':
         card_title = product_name.partition(' ')[0]
     else:
         card_title = category
@@ -389,6 +398,7 @@ def only_title_card_creator(product_list):
 
 
             print('card_created')
+            inst_title_card_creator(product_list)
             # files.update({name_t: open("card_creator/cards/card" + nom + ".png", "rb")})
             # media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name_t}'))
 
@@ -401,10 +411,70 @@ def card_t(html, css, nom):
             '--remote-allow-origins=*',
             '--hide-scrollbars'
         ],
-        output_path='card_creator/cards'
+        output_path='card_creator/cards_copyes'
     )
     hti.load_file("card_creator/templates/logo1.png", "logo.png")
     hti.screenshot(
         html_str=html, css_str=css,
         save_as='card' + nom + '.png', size=(1024, 1280)
     )
+
+def inst_title_card_creator(product_list):
+    nom = '_inst'
+    name_t = f'photo{nom}'
+
+    if product_list:
+        for product in product_list:
+            (product_name_t, product_images_t, publication_category_t) = product
+
+            product_image_t = product_images_t.split(',')
+            fd = urlopen(product_image_t[0])
+            f = io.BytesIO(fd.read())
+            fd.close()
+            color_thief_t = ColorThief(f)
+            palette_t = color_thief_t.get_palette(color_count=2, quality=2)
+
+            render_title_html_t = inst_title_html_render(product_name_t, publication_category_t, palette_t)
+            render_title_css_t = inst_title_css_render(product_images_t, palette_t)
+            card_inst(render_title_html_t, render_title_css_t, nom)
+
+
+            print('card_created')
+            # files.update({name_t: open("card_creator/cards/card" + nom + ".png", "rb")})
+            # media_list.append(dict(type='photo', caption='', parse_mode='HTML', media=f'attach://{name_t}'))
+
+
+def card_inst(html, css, nom):
+    hti = Html2Image(
+        custom_flags=[
+            '--no-sandbox',
+            '--disable-gpu',
+            '--remote-allow-origins=*',
+            '--hide-scrollbars'
+        ],
+        output_path='card_creator/cards_copyes'
+    )
+    hti.load_file("card_creator/templates/logo1.png", "logo.png")
+    hti.screenshot(
+        html_str=html, css_str=css,
+        save_as='card' + nom + '.png', size=(1024, 1280)
+    )
+
+
+def inst_title_html_render(product_name, category, palette):
+    if category == 'Верхняя Одежда' or category == 'Кофта':
+        card_title = product_name.partition(' ')[0]
+    else:
+        card_title = category
+    return render_template('inst_title_card_single_photo.html', category=card_title,
+                           color1=palette[0],
+                           color2=palette[2])
+
+
+def inst_title_css_render(product_images, palette):
+
+    product_image = product_images.split(',')
+
+    return render_template('inst_title_card_single_photo.css', url_img=product_image[0], color=palette[2])
+
+

@@ -241,7 +241,7 @@ def get_product(url, publication_category, message_type):
                         product_images += v + ', '
 
     few_photos = False
-    if len(product_images.split(',')) <= 4:
+    if len(product_images.split(',')) < 3:
         few_photos = True
 
     product_brand_name = ''

@@ -173,7 +173,7 @@ def css_render(product_images, palette, nomer, mess):
 
 
 def title_html_render(product_name, category, palette):
-    if category == 'Верхняя Одежда' or category == 'Обувь' or category == 'Кофта' or category == 'Аксессуары':
+    if category == 'Верхняя Одежда'  or category == 'Кофта':
         card_title = product_name.partition(' ')[0]
     else:
         card_title = category

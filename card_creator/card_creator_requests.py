@@ -89,11 +89,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
-    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
-        or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'):
         new_caption = ("#" + new_publication_category + ' #' + sub_category)
     else:
         new_caption = ("#" + new_publication_category)
+
+    new_caption += '\n\nЧто бы заказали?\n1-👍 2-❤️ 3-\U0001F525 4-\U0001F60D 5-\U0001F970 6-❤️‍🔥'
 
     stikers = random.sample(mass_of_stikers, 4)
     text = ''
@@ -180,11 +181,12 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
-    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
-        or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'):
         new_caption = ("#" + new_publication_category + ' #' + sub_category)
     else:
         new_caption = ("#" + new_publication_category)
+
+
 
     for el in media_list:
         if 'caption' in el:

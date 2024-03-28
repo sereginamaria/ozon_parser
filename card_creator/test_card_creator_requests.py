@@ -45,10 +45,10 @@ def send_media_group(media_list, files):
         url=telegram_url + '/sendMediaGroup', data={'chat_id': 6181726421, 'media': json.dumps(media_list)},
         files=files
     )
-    requests.post(
-        url=telegram_url + '/sendMessage',
-        data={'chat_id': 6181726421, 'text': str(images_response)}
-    ).json()
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': str(images_response)}
+    # ).json()
 
     print(images_response)
 
@@ -114,13 +114,12 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
-    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
-        or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'):
         new_caption = ("#" + new_publication_category + ' #' + sub_category)
     else:
         new_caption = ("#" + new_publication_category)
 
-
+    new_caption += '\n\nЧто бы заказали?\n1-👍 2-❤️ 3-\U0001F525 4-\U0001F60D 5-\U0001F970 6-❤️‍🔥'
     stikers = random.sample(mass_of_stikers, 4)
     text = ''
 
@@ -139,10 +138,10 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
         files=files
     ).json()
 
-    requests.post(
-        url=telegram_url + '/sendMessage',
-        data={'chat_id': 6181726421, 'text': post_response}
-    ).json()
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': post_response}
+    # ).json()
 
     print(post_response)
 
@@ -170,14 +169,14 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
             data={'chat_id': 6181726421, 'text': 'Ошибка при отпарвке фотографий'}
         ).json()
 
-    print('new resp')
-    print(post_response)
-
-    requests.post(
-        url=telegram_url + '/sendMessage',
-        data={'chat_id': 6181726421, 'text': text, "reply_markup": json.dumps(keyboard),
-              "resize_keyboard": True}
-    ).json()
+    # print('new resp')
+    # print(post_response)
+    #
+    # requests.post(
+    #     url=telegram_url + '/sendMessage',
+    #     data={'chat_id': 6181726421, 'text': text, "reply_markup": json.dumps(keyboard),
+    #           "resize_keyboard": True}
+    # ).json()
 
 
 
@@ -215,8 +214,7 @@ def send_single_post(media_list, files, publication_category, names_list, urls_l
     # new_caption = ("#" + new_publication_category + "\n<a href=\'https://www.ozon.ru" +
     #                urls_list[i] + "\'>" + name + "</a>")
 
-    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'
-            or new_publication_category == 'Обувь' or new_publication_category == 'Аксессуары'):
+    if (new_publication_category == 'ВерхняяОдежда' or new_publication_category == 'Кофта'):
         new_caption = ("#" + new_publication_category + ' #' + sub_category)
     else:
         new_caption = ("#" + new_publication_category)

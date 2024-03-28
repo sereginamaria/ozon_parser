@@ -61,9 +61,11 @@
 
 .img {
     background: url("{{ url_img }}") 100% / cover no-repeat;
+    background-position: center;
     height: 100%;
 }
 /*.img {*/
+/*    background-position: center;*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
 /*    height: 90%;*/
 /*}*/

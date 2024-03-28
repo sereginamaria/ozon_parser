@@ -30,6 +30,9 @@ def create_test_card(product_list):
 def create_test_post(product_list):
     requests.post("http://195.133.32.87:5000/create_test_post", json=json.dumps(product_list))
 
+def create_test_post_for_other_networks(product_list):
+    requests.post("http://195.133.32.87:5000/create_test_post_for_other_networks", json=json.dumps(product_list))
+
 def create_test_single_post(product_list):
     requests.post("http://195.133.32.87:5000/create_test_single_post", json=json.dumps(product_list))
 

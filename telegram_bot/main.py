@@ -11,6 +11,8 @@ import get_post
 import get_products_from_page
 import get_product
 import verification
+import get_timesheet
+import verification_new
 import autoposting
 import create_single_post
 import get_all_day_posts
@@ -29,7 +31,9 @@ def get_text_message(message):
     elif message.text == "/get_product":
         get_product.init_bot(message, bot)
     elif message.text == "/verification":
-        verification.init_bot(message, bot, 'verification')
+        verification_new.init_bot(message, bot, 'verification')
+    elif message.text == "/get_timesheet":
+        get_timesheet.init_bot(message, bot)
     elif message.text == "/create_post":
         create_post.init_bot(message, bot)
     elif message.text == "/create_single_post":
@@ -106,6 +110,18 @@ def call(call):
     elif result:
         get_all_day_posts.get_date_of_publication(call.message, result)
 
+
+@bot.callback_query_handler(func=DetailedTelegramCalendar.func(calendar_id=5))
+def call(call):
+    result, key, step = DetailedTelegramCalendar(calendar_id=5, locale='ru').process(call.data)
+    if not result and key:
+        bot.edit_message_text(f"Select {LSTEP[step]}",
+                              call.message.chat.id,
+                              call.message.message_id,
+                              reply_markup=key)
+    elif result:
+        get_timesheet.get_date_of_publication(call.message, result)
+
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'verification')
 def callback_inline(call):
     if call.data.split('|')[1] == "yes" or call.data.split('|')[1] == "no":
@@ -117,6 +133,25 @@ def callback_inline(call):
 
     if call.data.split('|')[1] == 'change_name':
         verification.init_change_name(call.message, bot, call.data)
+
+@bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'verification_new')
+def callback_inline(call):
+    if call.data.split('|')[1] == "yes":
+        verification_new.plan_publication(call.message, call.data.split('|')[2])
+
+    if call.data.split('|')[1] == "no":
+        bot_database.callback_verification(call.data)
+        verification_new.init_bot(call.message, bot, 'verification')
+
+    if call.data.split('|')[1] == 'delete_photo':
+        product_list, del_num = bot_database.verification_delete_photo(call.data)
+        verification_new.delete_photo(call.message, product_list, del_num, call.data.split('|')[2])
+
+    if call.data.split('|')[1] == 'change_name':
+        verification_new.init_change_name(call.message, bot, call.data)
+
+    if call.data.split('|')[1] == 'create_card':
+        verification_new.create_card(call.message, call.data.split('|')[2])
 
 
 @bot.callback_query_handler(func=lambda call: True and call.data.split('|')[0] == 'create_post_platform')

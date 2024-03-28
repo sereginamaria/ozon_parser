@@ -36,7 +36,7 @@ def generate_video(text):
     ).json()
 
 
-    image_folder = '/home/masha/ozon_parser/card_creator/cards/'  # make sure to use your folder
+    image_folder = '/home/masha/ozon_parser/card_creator/cards_copyes/'  # make sure to use your folder
     video_name = '/home/masha/ozon_parser/video_maker/video.mp4'
     # os.chdir("/home/masha/ozon_parser")
 
