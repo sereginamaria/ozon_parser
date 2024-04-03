@@ -374,7 +374,7 @@ def plan_publication(message, product_id):
     }
 
     current_date = date.today()
-    # current_date += datetime2.timedelta(days=1)
+    current_date += datetime2.timedelta(days=1)
     # current_date = date(2024,3,22)
     # dt_string = "2024-03-18"
     # current_date = current_date1.strptime(dt_string, "%Y-%m-%d")
@@ -463,7 +463,7 @@ def check_products(message, publication_category, current_date, publication_time
 def check_sub_category(message, product_sub_category, check_list):
     # bot.send_message(message.chat.id, 'check_sub_category')
     # bot.send_message(message.chat.id, str(check_list))
-    if len(check_list) > 1:
+    if len(check_list) > 0:
         for product in check_list:
             product_id, product_name, product_article, product_images, product_url, sub_category = product
             # bot.send_message(message.chat.id, '2')

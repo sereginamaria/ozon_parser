@@ -43,7 +43,7 @@ def get_date_of_publication(message, callback_date_of_publication):
     for time in time_array:
         product_list = bot_database.get_all_day_posts_from_db(publication_platform, date_of_publication, time)
 
-        if len(product_list) != 0:
+        if len(product_list) == 6:
             mass = ['2', '3', '4', '5', '6', '7']
 
             from PIL import Image
