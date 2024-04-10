@@ -240,6 +240,9 @@ def get_product(url, publication_category, message_type):
     else:
         sub_category = product_name.partition(' ')[0]
 
+    if sub_category == 'Толстовка':
+        sub_category = 'Худи'
+
     product_images = ''
     if webGallery in d2:
         if 'images' in d2[webGallery]:

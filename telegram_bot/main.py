@@ -186,7 +186,7 @@ def callback_inline(call):
 
 while True:
     try:
-        bot.polling(none_stop=True)
+        bot.polling(none_stop=True, timeout=123)
     except:
         print('bolt')
         logging.error('error: {}'.format(sys.exc_info()[0]))
