@@ -104,7 +104,7 @@ def create_card(sub_category):
 def create_test_card(category):
 
     if (category == 'Платье' or category == 'Юбка'
-            or category == 'Топ' or category == 'Корсет' or category == 'Футболка'
+            or category == 'Топ' or category == 'Корсет' or category == 'Футболка' or category == 'Купальник'
             or category == 'Костюм' or category == 'Нижнее Белье'
             or category == 'Рубашка' or category == 'Брюки' or category == 'Обувь'
             or category == 'Пиджак' or category == 'Джинсы' or category == 'Аксессуары'
@@ -219,7 +219,7 @@ def create_single_card(publication_category):
 
 def get_post_from_db(publication_category, publication_platform, date_of_publication):
     if (publication_category == 'Платье' or publication_category == 'Юбка'
-            or publication_category == 'Топ' or publication_category == 'Корсет' or publication_category == 'Футболка'
+            or publication_category == 'Топ' or publication_category == 'Корсет' or publication_category == 'Футболка' or publication_category == 'Купальник'
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
             or publication_category == 'Рубашка'  or publication_category == 'Блузка'
             or publication_category == 'Брюки' or publication_category == 'Обувь'
@@ -249,7 +249,7 @@ def get_post_from_db(publication_category, publication_platform, date_of_publica
         # bot_requests.create_test_post_for_other_networks(product_list)
 
     if (publication_category == 'Платье' or publication_category == 'Юбка'
-            or publication_category == 'Топ' or publication_category == 'Корсет' or publication_category == 'Футболка'
+            or publication_category == 'Топ' or publication_category == 'Корсет' or publication_category == 'Футболка' or publication_category == 'Купальник'
             or publication_category == 'Костюм' or publication_category == 'Нижнее Белье'
             or publication_category == 'Рубашка' or publication_category == 'Блузка'
             or publication_category == 'Брюки' or publication_category == 'Обувь'

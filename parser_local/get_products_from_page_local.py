@@ -101,7 +101,7 @@ def parse_data(html):
     # print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'ix'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'xi6'})]))])
     return product_links
 
 
@@ -135,42 +135,53 @@ if __name__ == "__main__":
     Tshirs = False
     Bag = False
     Dress = False
-    Shoes = False
+    Shoes = True
     Top = False
     Skirt = False
     OuterWear = False
     Kofta = False
     Corset = False
     Jewelry = False
-    Accessories = True
+    Accessories = False
+    Jacket = False
+    Shirt = False
+    Jeans = False
+    Suit = True
+    Blouse = False
+    Shorts = False
+    Swimsuit = False
 
     if OuterWear == True:
-    #ВЕРХНЯЯ ОДЕЖДА ВЕСЕННЯЯ
-        #Куртка весенняя
-        get_products_from_page('Верхняя Одежда',
-                                   'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+весенняя+куртка')
-
-        #Плащ
-        get_products_from_page('Верхняя Одежда',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+весенний+плащ')
-
-        #Пальто
-        get_products_from_page('Верхняя Одежда',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&text=женское+весеннее+пальто')
-
+        #ВЕРХНЯЯ ОДЕЖДА ВЕСЕННЯЯ
+        # #Куртка весенняя
+        # get_products_from_page('Верхняя Одежда',
+        #                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+весенняя+куртка')
+        #
+        # #Плащ
+        # get_products_from_page('Верхняя Одежда',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+весенний+плащ')
+        #
+        # #Пальто
+        # get_products_from_page('Верхняя Одежда',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&text=женское+весеннее+пальто')
+        #
+        # # Дубленка
+        # get_products_from_page('Верхняя Одежда',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женская+весенняя+дубленка')
+        #
         #Бомбер
         get_products_from_page('Верхняя Одежда',
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+бомбер')
 
-        #Дубленка
+        #Верхняя одежда летняя
         get_products_from_page('Верхняя Одежда',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женская+весенняя+дубленка')
+                               'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
 
     if Kofta  == True:
         # #Лонгслив
         # get_products_from_page('Кофта',
         #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
-
+        #
         #Джемпер
         get_products_from_page('Кофта',
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
@@ -223,7 +234,14 @@ if __name__ == "__main__":
         get_products_from_page('Домашняя Одежда',
                                'https://www.ozon.ru/category/tapochki-zhenskie-7655/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+обувь')
 
-    for i in range(2):
+
+    for i in range(4):
+        if Jewelry == True:
+            # УКРАШЕНИЯ
+            get_products_from_page('Украшения',
+                                   'https://www.ozon.ru/search/?text=%3Atycrfz+%2Cb%3Benthbz&from_global=true')
+
+    for i in range(4):
         if Tshirs == True:
         #ФУТБОЛКА
             get_products_from_page('Футболка',
@@ -234,10 +252,15 @@ if __name__ == "__main__":
             get_products_from_page('Корсет',
                                    'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=type%2Cstyleapparel&styleapparel=56425%2C79761%2C164217%2C106037&text=корсет+женский&type=311046')
 
-        if Jewelry == True:
+        if Shirt == True:
             #УКРАШЕНИЯ
-            get_products_from_page('Украшения',
-                                   'https://www.ozon.ru/search/?text=%3Atycrfz+%2Cb%3Benthbz&from_global=true')
+            get_products_from_page('Рубашка',
+                                   'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Рубашка+женская')
+
+        if Jeans == True:
+            #ДЖИНСЫ
+            get_products_from_page('Джинсы',
+                                   'https://www.ozon.ru/category/dzhinsy-zhenskie-7503/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Джинсы+женские')
 
         if Bag == True:
         #СУМКА
@@ -248,6 +271,20 @@ if __name__ == "__main__":
            #СУМКА НЕ черная
             get_products_from_page('Сумка',
                                    'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?category_was_predicted=true&color=100955529%2C100955527%2C100955542%2C100955546%2C100955534%2C100955540%2C100955530%2C100955535%2C100966307%2C100955537%2C100955532%2C100955536%2C100955547%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Chandletype%2Ctype%2Cbadfiltermaterial&text=Сумка+женская')
+
+        if Jacket == True:
+            # ПИДАЖАК
+            # ВСЕ кроме черного
+            get_products_from_page('Пиджак',
+                                   'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?category_was_predicted=true&color=100955530%2C100955527%2C100955534%2C100955528%2C100966307%2C100955546%2C100955535%2C100955529%2C100955537%2C100955532%2C100966310%2C100955536%2C100955547%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990%2C100955540&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
+
+
+    if Jacket == True:
+    #ПИДАЖАК
+        #Черный
+        get_products_from_page('Пиджак',
+                               'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
+
 
     if Dress == True:
     #ПЛАТЬЕ
@@ -375,6 +412,33 @@ if __name__ == "__main__":
         get_products_from_page('Юбка',
                                'https://www.ozon.ru/search/?text=женская+юбка+твидовая&from_global=true')
 
+    if Suit == True:
+        # ЮБКА
+        # ЮБКА, все цвета, кроме черного
+        # Бохо и восточный
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=100374527%2C277449&text=костюм+женский')
+
+        # Офис, классический, вечерний
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=костюм+женский')
+
+        # Винтаж
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=костюм+женский')
+
+        # Коктейльное, Выпускное, свадебное, праздничное
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=164217%2C79761%2C101124545%2C106037&text=костюм+женский')
+
+        # Все категории, ЧЕРНОЕ
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=костюм+женский')
+
+        # Твидовый
+        get_products_from_page('Костюм',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=костюм+твидовый+женский')
+
     if Accessories == True:
     #АКСЕССУАРЫ
         #ОЧКИ
@@ -384,9 +448,18 @@ if __name__ == "__main__":
         get_products_from_page('Аксессуары',
                                'https://www.ozon.ru/category/aksessuary-dlya-volos-zhenskie-17047/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женские+аксессуары')
 
-# get_products_from_page('Костюм',
-    #                      'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=styleapparel&styleapparel=55228%2C55225%2C148380%2C57396%2C56425%2C164217%2C100374527%2C101124545%2C106037&text=Костюм+женский')
+    if Blouse == True:
+        get_products_from_page('Блузка',
+                                 'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Блузка+женская')
 
+
+    if Shorts == True:
+        get_products_from_page('Шорты',
+                                 'https://www.ozon.ru/category/shorty-zhenskie-7514/?category_was_predicted=true&deny_category_prediction=true&text=шорты+женские')
+
+    if Swimsuit == True:
+        get_products_from_page('Купальник',
+                                 'https://www.ozon.ru/category/kupalniki-i-plyazhnaya-odezhda-zhenskie-7540/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Купальник+женский')
 #
 # get_products_from_page('Рубашка',
 #                        'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&color=100955526%2C100955530%2C100955534%2C100955546%2C100955528%2C100955547%2C100955535%2C100955537%2C100955532%2C100966307%2C100955536%2C100955529%2C100955542%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955540&deny_category_prediction=true&from_global=true&opened=color&text=Женские+рубашки')

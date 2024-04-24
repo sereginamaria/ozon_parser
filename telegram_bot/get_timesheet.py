@@ -24,7 +24,7 @@ def get_date_of_publication(message, callback_date_of_publication):
     timesheet = {
         'Monday': {
             "Украшения": '6:00',
-            "Верхняя Одежда": '8:00',
+            "Корсет": '8:00',
             "Кофта": '10:00',
             "Брюки": '12:00',
             "Топ": '14:00',
@@ -34,7 +34,7 @@ def get_date_of_publication(message, callback_date_of_publication):
         },
         'Tuesday': {
             "Аксессуары": '6:00',
-            "Верхняя Одежда": '8:00',
+            "Шорты": '8:00',
             "Футболка": '10:00',
             "Кофта": '12:00',
             "Костюм": '14:00',
@@ -54,7 +54,7 @@ def get_date_of_publication(message, callback_date_of_publication):
         },
         'Thursday': {
             "Аксессуары": '6:00',
-            "Верхняя Одежда": '8:00',
+            "Корсет": '8:00',
             "Кофта": '10:00',
             "Юбка": '12:00',
             "Блузка": '14:00',
@@ -64,7 +64,7 @@ def get_date_of_publication(message, callback_date_of_publication):
         },
         'Friday': {
             "Украшения": '6:00',
-            "Верхняя Одежда": '8:00',
+            "Купальник": '8:00',
             "Пиджак": '10:00',
             "Брюки": '12:00',
             "Обувь": '14:00',
@@ -84,7 +84,7 @@ def get_date_of_publication(message, callback_date_of_publication):
         },
         'Sunday': {
             "Украшения": '6:00',
-            "Верхняя Одежда": '8:00',
+            "Корсет": '8:00',
             "Кофта": '10:00',
             "Топ": '12:00',
             "Платье": '14:00',
