@@ -26,34 +26,38 @@ th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
-    if message.text == "/get_products_from_page":
-        get_products_from_page.init_bot(message, bot)
-    elif message.text == "/get_product":
-        get_product.init_bot(message, bot)
-    elif message.text == "/verification":
-        verification_new.init_bot(message, bot, 'verification')
-    elif message.text == "/get_timesheet":
-        get_timesheet.init_bot(message, bot)
-    elif message.text == "/create_post":
-        create_post.init_bot(message, bot)
-    elif message.text == "/create_single_post":
-        create_single_post.init_bot(message, bot)
-    elif message.text == "/get_post":
-        get_post.init_bot(message, bot)
-    elif message.text == "/get_all_day_posts":
-        get_all_day_posts.init_bot(message, bot)
-    elif message.text == "/help":
-        bot.send_message(message.from_user.id, "Список команд:"
-                                               "/get_products_from_page - распарсить страницу с товарами"
-                                               "/get_product - распарсить товар"
-                                               "/verification - проверифицирвоать товары"
-                                               "/create_post - создать пост"
-                                               "/create_single_post - создать одиночный пост"
-                                               "/get_post - посмотреть пост"
-                                               "/get_all_day_posts - посмотреть все посты на день"
-                                               "/help - помощь")
+    if message.from_user.id == 6181726421:
+        if message.text == "/get_products_from_page":
+            get_products_from_page.init_bot(message, bot)
+        elif message.text == "/get_product":
+            get_product.init_bot(message, bot)
+        elif message.text == "/verification":
+            verification_new.init_bot(message, bot, 'verification')
+        elif message.text == "/get_timesheet":
+            get_timesheet.init_bot(message, bot)
+        elif message.text == "/create_post":
+            create_post.init_bot(message, bot)
+        elif message.text == "/create_single_post":
+            create_single_post.init_bot(message, bot)
+        elif message.text == "/get_post":
+            get_post.init_bot(message, bot)
+        elif message.text == "/get_all_day_posts":
+            get_all_day_posts.init_bot(message, bot)
+        elif message.text == "/help":
+            bot.send_message(message.from_user.id, "Список команд:"
+                                                   "/get_products_from_page - распарсить страницу с товарами"
+                                                   "/get_product - распарсить товар"
+                                                   "/verification - проверифицирвоать товары"
+                                                   "/create_post - создать пост"
+                                                   "/create_single_post - создать одиночный пост"
+                                                   "/get_post - посмотреть пост"
+                                                   "/get_all_day_posts - посмотреть все посты на день"
+                                                   "/help - помощь")
+        else:
+            bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
+
     else:
-        bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
+        bot.send_message(message.from_user.id, "Ошибка доступа")
 
 token = '6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og'
 url = 'https://api.telegram.org/botf'

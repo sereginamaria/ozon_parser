@@ -69,11 +69,11 @@ def get_product(url, publication_category, message_type):
 
     # print(driver1.current_url)
 
-    driver1.save_screenshot('5.png')
+    # driver1.save_screenshot('5.png')
 
     try:
         print('try start')
-        driver1.save_screenshot('6.png')
+        # driver1.save_screenshot('6.png')
         content = driver1.find_element(By.TAG_NAME, 'pre').text.replace(u'\u2009', ' ')
 
         print('content')
@@ -122,9 +122,13 @@ def get_product(url, publication_category, message_type):
     if 'script' in parsed_json["seo"]:
         seo_json = parsed_json["seo"]["script"]
 
+
+    print(seo_json)
+    print(seo_json[0])
+    print(type(seo_json[0]))
     d0 = ''
     if seo_json != '':
-        d0 = json.loads(seo_json[0]['innerHTML'])
+        d0 = json.loads(seo_json[0]["innerHTML"])
 
     description = ''
     product_rating = ''

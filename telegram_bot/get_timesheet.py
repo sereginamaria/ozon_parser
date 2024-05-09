@@ -84,7 +84,7 @@ def get_date_of_publication(message, callback_date_of_publication):
         },
         'Sunday': {
             "Украшения": '6:00',
-            "Корсет": '8:00',
+            "Шорты": '8:00',
             "Кофта": '10:00',
             "Топ": '12:00',
             "Платье": '14:00',
@@ -100,7 +100,7 @@ def get_date_of_publication(message, callback_date_of_publication):
     time_array = ['6:00', '8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00']
 
     i = 1
-    while i <= 7:
+    while i <= 14:
         timesheet_text = str(date_of_publication)
         for time in time_array:
             product_list = bot_database.get_timesheet(date_of_publication, time)

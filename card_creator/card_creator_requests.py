@@ -94,7 +94,7 @@ def send_post(media_list, files, publication_category, names_list, urls_list):
     else:
         new_caption = ("#" + new_publication_category)
 
-    new_caption += '\n\nЧто бы заказали?\n1-👍 2-❤️ 3-\U0001F525 4-\U0001F60D 5-\U0001F970 6-❤️‍🔥'
+    # new_caption += '\n\nЧто бы заказали?\n1-👍 2-❤️ 3-\U0001F525 4-\U0001F60D 5-\U0001F970 6-❤️‍🔥'
 
     stikers = random.sample(mass_of_stikers, 4)
     text = ''
