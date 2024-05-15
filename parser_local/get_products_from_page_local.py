@@ -129,7 +129,7 @@ def get_urls(html):
 
 if __name__ == "__main__":
 
-    Trousers = True
+    Trousers = False
     HouseClothes = False
     Tshirs = False
     Bag = False
