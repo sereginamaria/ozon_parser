@@ -100,7 +100,7 @@ def parse_data(html):
     # print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'yi5'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i6y'})]))])
     return product_links
 
 
@@ -129,7 +129,7 @@ def get_urls(html):
 
 if __name__ == "__main__":
 
-    Trousers = False
+    Trousers = True
     HouseClothes = False
     Tshirs = False
     Bag = False
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     Jeans = False
     Suit = False
     Blouse = False
-    Shorts = True
+    Shorts = False
     Swimsuit = False
 
     if OuterWear == True:
@@ -177,29 +177,29 @@ if __name__ == "__main__":
                                'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
 
     if Kofta  == True:
-        # #Лонгслив
-        # get_products_from_page('Кофта',
-        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
-        #
-        # #Джемпер
-        # get_products_from_page('Кофта',
-        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
+        #Лонгслив
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
 
-        # #Свитшот
-        # get_products_from_page('Кофта',
-        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=свитошот+женский')
-        #
+        #Джемпер
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
+
+        #Свитшот
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=свитошот+женский')
+
         # #Худи
         get_products_from_page('Кофта',
                                'https://www.ozon.ru/category/tolstovki-i-olimpiyki-zhenskie-7788/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=худиженская&type=37308%2C39148')
 
-        # #Водолазка
-        # get_products_from_page('Кофта',
-        #                        'https://www.ozon.ru/category/svitery-dzhempery-i-kardigany-zhenskie-7537/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Водолазка+женская')
-        #
-        # #Боди
-        # get_products_from_page('Кофта',
-        #                        'https://www.ozon.ru/category/bodi-i-korsazhi-zhenskie-31309/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Боди+женская')
+        #Водолазка
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/svitery-dzhempery-i-kardigany-zhenskie-7537/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Водолазка+женская')
+
+        #Боди
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/bodi-i-korsazhi-zhenskie-31309/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Боди+женская')
 
     if Trousers == True:
     #БРЮКИ
