@@ -9,34 +9,24 @@
         <img :src="slotProps.item.thumbnailImageSrc" :alt="slotProps.item.alt" style="display: block; width: 110px" />
       </template>
     </Galleria>
-
-    <div>
-      <Button  @click="deleteImage()" label="Удалить"/>
-      <Button  label="Кнопка1"/>
-      <Button  label="Кнопка2"/>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
+import {defineComponent} from 'vue'
 import Galleria from 'primevue/galleria';
-import Button from 'primevue/button';
 
-export default {
+export default defineComponent ({
   name: "GalleryComponent",
   components: {
-    Galleria, Button
+    Galleria
+  },
+  props: {
+    activeIndex: Number,
   },
   data() {
     return {
       images: [],
-      activeIndex: 0
-    }
-  },
-  methods: {
-    deleteImage(): void {
-      this.images.splice(this.activeIndex, 1)
-      console.log(this.activeIndex)
     }
   },
   mounted() {
@@ -91,7 +81,7 @@ export default {
       },
     ]
   }
-}
+})
 </script>
 
 <style scoped>
