@@ -21,12 +21,10 @@ export default defineComponent ({
   components: {
     Galleria
   },
-  props: {
-    activeIndex: Number,
-  },
   data() {
     return {
       images: [],
+      activeIndex: 0
     }
   },
   mounted() {
@@ -80,6 +78,16 @@ export default defineComponent ({
         id: '8'
       },
     ]
+  },
+  watch: {
+    activeIndex: {
+      handler(val, oldVal) {
+        this.$emit('updateActiveIndex', {
+          activeIndex: this.activeIndex
+        })
+      },
+      deep: true
+    },
   }
 })
 </script>

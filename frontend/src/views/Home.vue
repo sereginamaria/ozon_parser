@@ -1,5 +1,5 @@
 <template>
-  <GalleryComponent :activeIndex="activeIndex"/>
+  <GalleryComponent @updateActiveIndex="updateActiveIndex"/>
   <ToolbarComponent :activeIndex="activeIndex"/>
 </template>
 
@@ -13,13 +13,12 @@ export default defineComponent ({
   data() {
     return {
       images: [],
-      activeIndex1: 0
+      activeIndex: 0
     }
   },
-  computed: {
-    activeIndex() {
-      console.log(this.activeIndex1)
-      return this.activeIndex1
+  methods: {
+    updateActiveIndex(someData) {
+      console.log(someData)
     }
   }
 })
