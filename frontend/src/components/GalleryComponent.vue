@@ -1,6 +1,6 @@
 <template>
   <div style="display: flex">
-    <Galleria :value="images" v-model:activeIndex="activeIndex" :numVisible="4" :circular="true" containerStyle="max-width: 800px; min-width: 600px"
+    <Galleria :value="images" v-model:activeIndex="this.gallery.activeIndex" :numVisible="4" :circular="true" containerStyle="max-width: 800px; min-width: 600px"
               :showItemNavigators="true">
       <template #item="slotProps">
         <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="display: block; width: 550px" />
@@ -14,6 +14,9 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import { mapStores } from 'pinia'
+import { useGalleryStore } from '@/stores';
+
 import Galleria from 'primevue/galleria';
 
 export default defineComponent ({
@@ -21,10 +24,12 @@ export default defineComponent ({
   components: {
     Galleria
   },
+  computed: {
+    ...mapStores(useGalleryStore),
+  },
   data() {
     return {
       images: [],
-      activeIndex: 0
     }
   },
   mounted() {
