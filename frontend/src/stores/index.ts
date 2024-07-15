@@ -9,3 +9,4 @@ declare module 'pinia' {
 setMapStoreSuffix('')
 
 export * from './gallery_store';
+export * from './product_store';
