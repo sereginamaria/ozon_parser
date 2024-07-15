@@ -1,15 +1,19 @@
 <template>
   <GalleryComponent/>
-  <ToolbarComponent/>
+  <div>
+    <ToolbarComponent/>
+    <CardComponent/>
+  </div>
 </template>
 
 <script>
 import {defineComponent} from 'vue'
 import GalleryComponent from "@/components/GalleryComponent.vue";
 import ToolbarComponent from "@/components/ToolbarComponent.vue";
+import CardComponent from "@/components/CardComponent.vue";
 export default defineComponent ({
   name: "Home",
-  components: {ToolbarComponent, GalleryComponent},
+  components: {CardComponent, ToolbarComponent, GalleryComponent},
   data() {
     return {
       images: [],
