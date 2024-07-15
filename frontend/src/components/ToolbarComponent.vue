@@ -12,14 +12,13 @@
       <Button  @click="deleteImage()" label="Удалить"/>
     </div>
     <div>
-      <p>Оставляем товар?</p>
-      <Button  label="Да"/>
+      <h3>Оставляем товар?</h3>
+      <Button  label="Да" style="margin-right: 5%"/>
       <Button  label="Нет"/>
     </div>
     <div>
-      <p>Изменить имя</p>
-      <Button  label="Да"/>
-      <Button  label="Нет"/>
+      <h3>Изменить имя</h3>
+      <InputText type="text" v-model="this.product.name" />
     </div>
   </div>
 </template>
@@ -31,16 +30,18 @@ import { useGalleryStore } from '@/stores';
 import { useProductStore } from '@/stores';
 
 import Button from 'primevue/button';
+import InputText from 'primevue/inputtext';
 
 export default defineComponent({
   name: "ToolbarComponent",
-  components: {Button},
+  components: {Button, InputText},
   computed: {
     ...mapStores(useGalleryStore, useProductStore),
   },
   methods: {
     deleteImage(): void {
       console.log(this.gallery.activeIndex)
+      this.product.images.splice(this.gallery.activeIndex, 1)
     }
   }
 })

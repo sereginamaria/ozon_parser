@@ -1,109 +1,49 @@
 <template>
-<!--  <div>-->
-<!--    <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between">-->
-<!--        <div class="img1">-->
+  <div class="container" :class="this.class">
+    <div class="column left-column">
+      <div class="img1" :style="{'background': 'url(' + this.product.images[0].itemImageSrc + ') 100% / cover no-repeat'}">
 
-<!--        </div>-->
-<!--        <div class="img2">-->
+      </div>
+      <div class="img2" :style="{'background': 'url(' + this.product.images[1].itemImageSrc + ') 100% / cover no-repeat'}">
 
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between">-->
-<!--        <div class="img3">-->
+      </div>
+    </div>
 
-<!--        </div>-->
-<!--        <div class="inf-text" style="text-align: center; height: 30%;   ">-->
-<!--    &lt;!&ndash;                <p style="font-size: 50px; padding: 2%; background-color: rgb{{ color1 }};&ndash;&gt;-->
-<!--    &lt;!&ndash;                color: rgb{{ color2 }}">{{ name }}</p>&ndash;&gt;-->
-<!--            <p style="font-size: 50px">Арт.: <span style="font-size: 40px">Fhnbrek</span></p>-->
-<!--            <p style="font-size: 50px">Цена: <span style="font-size: 40px">Wtyf</span></p>-->
+    <div class="column right-column">
+      <div class="img3" :style="{'background': 'url(' + this.product.images[2].itemImageSrc + ') 100% / cover no-repeat'}">
 
-<!--        </div>-->
-<!--        <div class="img4">-->
+      </div>
+      <div class="inf-text">
+        <p style="padding: 2%">{{ this.product.name }}</p>
+        <p>Арт.: <span>{{ this.product.article }}</span></p>
+        <p>Цена: <span>{{ this.product.price }}</span></p>
+      </div>
+      <div class="img4">
 
-<!--        </div>-->
-<!--    &lt;!&ndash;            <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;&ndash;&gt;-->
-<!--        <img src="./logo.png" alt="" style="opacity: 0.1;-->
-<!--    /*z-index: -1;*/-->
-<!--    /* height: 100%; */-->
-<!--    width: 25%;-->
-<!--    position: absolute;-->
-<!--    bottom: 0;-->
-<!--    right: 0;">-->
-<!--    &lt;!&ndash;                    <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;&ndash;&gt;-->
-<!--    &lt;!&ndash;    z-index: -1;&ndash;&gt;-->
-<!--    &lt;!&ndash;    /* height: 100%; */&ndash;&gt;-->
-<!--    &lt;!&ndash;    width: 35%;&ndash;&gt;-->
-<!--    &lt;!&ndash;    position: absolute;&ndash;&gt;-->
-<!--    &lt;!&ndash;    bottom: 0;&ndash;&gt;-->
-<!--    &lt;!&ndash;    right: 0;">&ndash;&gt;-->
-<!--    &lt;!&ndash;            <img src="https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg" alt="" width="100%">&ndash;&gt;-->
-<!--    </div>-->
-<!--  </div>-->
-
-  <Button label="Посмотреть карточку" @click="visible = true" />
-
-<Dialog v-model:visible="visible" modal :style="{ width: '25rem' }">
-    <div class="container" style="position: relative">
-        <div style="width: 45%; display: flex; flex-direction: column; justify-content: space-between">
-            <div class="img1">
-
-            </div>
-            <div class="img2">
-
-            </div>
-        </div>
-        <div style="width: 55%; display: flex; flex-direction: column; justify-content: space-between">
-            <div class="img3">
-
-            </div>
-            <div class="inf-text" style="text-align: center; height: 30%;   ">
-<!--                <p style="font-size: 50px; padding: 2%; background-color: rgb{{ color1 }};-->
-<!--                color: rgb{{ color2 }}">{{ name }}</p>-->
-<!--                <p style="font-size: 50px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>-->
-<!--                <p style="font-size: 50px">Цена: <span style="font-size: 40px">{{ price }}</span></p>-->
-<!--                <p style="font-size: 40px">Размеры: <span style="font-size: 30px">{{ size }}</span></p>-->
-<!--                <p>Цена по карте OZON: <span>{{ ozon_card_price }}</span></p>-->
-
-            </div>
-            <div class="img4">
-
-            </div>
-<!--            <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;-->
-            <img src="./logo.png" alt="" style="opacity: 0.1;
+      </div>
+      <img src="./logo.png" alt="" style="opacity: 0.1;
     /*z-index: -1;*/
     /* height: 100%; */
     width: 25%;
     position: absolute;
     bottom: 0;
     right: 0;">
-<!--                    <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;-->
-<!--    z-index: -1;-->
-<!--    /* height: 100%; */-->
-<!--    width: 35%;-->
-<!--    position: absolute;-->
-<!--    bottom: 0;-->
-<!--    right: 0;">-->
-<!--            <img src="https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg" alt="" width="100%">-->
-        </div>
     </div>
-</Dialog>
-
-
+  </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import Dialog from 'primevue/dialog';
-import Button from 'primevue/button';
+import { mapStores } from 'pinia'
+import {useProductStore} from "@/stores";
 
 export default defineComponent({
   name: "CardComponent",
-  components: {Button, Dialog},
-  data() {
-    return {
-        visible: false
-    };
+  props: {
+    class: String
+  },
+  computed: {
+    ...mapStores(useProductStore)
   }
 })
 </script>
@@ -126,19 +66,44 @@ export default defineComponent({
    font-style: normal;
 }
 
-
 .container {
-    display: flex;
-    width: 1024px;
-    height: 1280px;
-    padding: 5% 2%;
-     /*Хорошо для телефона, но не очень для компа*/
-    /*padding: 5% 15%;*/
-    box-sizing: border-box;
+  display: flex;
+  padding: 5% 2%;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
+
+.container_05 {
+  width: 512px;
+  height: 640px;
+}
+
+.container_025 {
+  width: 256px;
+  height: 320px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+.left-column {
+  width: 45%;
+}
+
+.right-column {
+  width: 55%;
+}
+
 .img1, .img2 {
-    width: 95%;
-    height: 49%;
+  width: 95%;
+  height: 49%;
+}
+
+.img3 {
+  height: 70%;
 }
 
 .inf-text {
@@ -148,36 +113,31 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    /*padding: 30px 0 0 0;*/
     padding: 30px 30% 0 0;
     box-sizing: border-box;
 }
 
 .inf-text p{
     font-family: 'Roboto-Regular';
-    font-size: 30px;
     margin: 0;
     padding: 0;
 }
 
 .inf-text span{
     font-family: 'Roboto-Bold';
-    font-size: 30px;
     margin: 0;
     padding: 0;
 }
 
-
-
-
-.img1 {
-    background: url("https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg") 100% / cover no-repeat;
+.container_025 .inf-text {
+  padding: 7.5px 30% 0 0;
 }
-.img2 {
-    background: url("https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg") 100% / cover no-repeat;
+
+.container_05 .inf-text p{
+  font-size: 25px;
 }
-.img3 {
-    background: url("https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg") 100% / cover no-repeat;
-    height: 70%;
+
+.container_025 .inf-text span{
+  font-size: 12.5px;
 }
 </style>
