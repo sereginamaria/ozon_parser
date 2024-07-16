@@ -1,26 +1,24 @@
 <template>
   <div class="container" :class="this.class">
-    <div class="column left-column">
-      <div class="img1" :style="{'background': 'url(' + this.product.images[this.startImageIndex].itemImageSrc + ') 100% / cover no-repeat'}">
-
-      </div>
-      <div class="img2" :style="{'background': 'url(' + this.product.images[this.startImageIndex+1].itemImageSrc + ') 100% / cover no-repeat'}">
-
-      </div>
+    <div class="header">
+        <p>{{ this.product.category }}</p>
     </div>
 
-    <div class="column right-column">
-      <div class="img3" :style="{'background': 'url(' + this.product.images[this.startImageIndex+2].itemImageSrc + ') 100% / cover no-repeat'}">
-
-      </div>
-      <div class="inf-text">
-        <p style="padding: 2%">{{ this.product.name }}</p>
-        <p>Арт.: <span>{{ this.product.article }}</span></p>
-        <p>Цена: <span>{{ this.product.price }}</span></p>
-      </div>
-      <img class="logo" src="./logo.png" alt="logo">
+    <div class="body">
+        <div class="img" :style="{'background': 'url(' + this.product.images[this.startImageIndex].itemImageSrc + ') 100% / cover no-repeat'}">
+        </div>
     </div>
-  </div>
+
+    <div class="footer">
+        <div style="margin-right: 2%">
+             <p>ПОДБОРКА</p>
+        </div>
+        <div>
+             <p>OZON </p>
+        </div>
+    </div>
+
+    </div>
 </template>
 
 <script lang="ts">
@@ -29,7 +27,7 @@ import { mapStores } from 'pinia'
 import {useProductStore} from "@/stores";
 
 export default defineComponent({
-  name: "CardComponent",
+  name: "TitleCardComponent",
   props: {
     class: String,
     startImageIndex: Number
@@ -63,6 +61,9 @@ export default defineComponent({
   padding: 5% 2%;
   box-sizing: border-box;
   border: 1px solid black;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container_05 {
@@ -75,69 +76,78 @@ export default defineComponent({
   height: 320px;
 }
 
-.column {
+.header {
+  height: 14%;
+  font-size: 30px;
+  background-color: white;
+  align-items: center;
+  padding: 0 15%;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between
 }
 
-.left-column {
-  width: 45%;
+.header p {
+  font-weight: bold;
+  font-family: 'Roboto-Regular';
+  padding: 1% 2%;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0;
+  text-align: center
 }
 
-.right-column {
-  width: 55%;
+.body {
+  padding: 0 15%;
+  height: 100%
 }
 
-.img1, .img2 {
-  width: 95%;
-  height: 49%;
+.footer {
+  display: flex;
+  text-align: center;
+  height: 14%;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 0 15%
 }
 
-.img3 {
-  height: 70%;
+.footer div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.inf-text {
-    display: flex;
-    text-align: center;
-    height: 30%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 30% 0 0;
-    box-sizing: border-box;
+.footer div p{
+  font-weight: bold;
+  font-family: 'Roboto-Regular';
+  letter-spacing: 5px;
+  margin: 0;
+  padding: 0;
 }
 
-.inf-text p{
-    font-family: 'Roboto-Regular';
-    margin: 0;
-    padding: 0;
+.img {
+    background-position: center;
+    height: 100%;
 }
 
-.inf-text span{
-    font-family: 'Roboto-Bold';
-    margin: 0;
-    padding: 0;
+.container_025 .footer {
+  padding: 0 7.5%
 }
 
-.container_025 .inf-text {
-  padding: 7.5px 30% 0 0;
+.container_05 .footer div p{
+  font-size: 35px;
 }
 
-.container_05 .inf-text p{
-  font-size: 25px;
+.container_025 .footer div p{
+  font-size: 17.5px;
 }
 
-.container_025 .inf-text span{
-  font-size: 12.5px;
+.container_05 .header p{
+  font-size: 40px;
 }
 
-.logo {
-  opacity: 0.1;
-  width: 25%;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.container_025 .header p{
+  font-size: 20px;
 }
 </style>

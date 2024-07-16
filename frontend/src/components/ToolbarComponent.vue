@@ -18,7 +18,16 @@
     </div>
     <div>
       <h3>Изменить имя</h3>
+      <p>Полное название: {{this.product.name}}</p>
       <InputText type="text" v-model="this.product.name" />
+    </div>
+    <div>
+      <h3>Работа с данными</h3>
+      <div>
+        <Button  label="Отложить текущую категорию товаров" style="margin-right: 5%"/>
+        <Button  label="Вернуть все отложенные товары"/>
+      </div>
+      <Button  label="Показать расписание" style="margin-top: 1%"/>
     </div>
   </div>
 </template>
