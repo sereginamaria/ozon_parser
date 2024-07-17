@@ -3,9 +3,9 @@ import axios from "axios";
 
 export const useProductStore = defineStore('product', {
     state: () => ({
-        id: Number,
-        category: String,
-        subCategory: String,
+        id: null,
+        category: null,
+        subCategory: null,
         images: [
             {
                 itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg',
@@ -56,9 +56,9 @@ export const useProductStore = defineStore('product', {
                 id: '8'
             },
         ],
-        name: String,
-        article: String,
-        price: String,
+        name: null,
+        article: null,
+        price: null,
 
     }),
     actions: {
