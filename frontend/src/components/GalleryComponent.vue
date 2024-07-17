@@ -26,6 +26,9 @@ export default defineComponent ({
   },
   computed: {
     ...mapStores(useGalleryStore, useProductStore),
+  },
+  mounted() {
+    this.product.get_verification_information()
   }
 })
 </script>

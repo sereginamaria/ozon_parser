@@ -1,13 +1,11 @@
 import { defineStore } from 'pinia'
+import axios from "axios";
 
 export const useProductStore = defineStore('product', {
     state: () => ({
-        id: 0,
-        category: 'Категория',
-        subCategory: 'Подкатегория',
-        name: 'Название',
-        article: 'Артикул',
-        price: 'Цена',
+        id: Number,
+        category: String,
+        subCategory: String,
         images: [
             {
                 itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg',
@@ -57,12 +55,23 @@ export const useProductStore = defineStore('product', {
                 alt: 'Description for Image 1',
                 id: '8'
             },
-        ]
+        ],
+        name: String,
+        article: String,
+        price: String,
+
     }),
-    getters: {
-
-    },
     actions: {
+        async get_verification_information() {
+          try {
+              const data = await axios.get('http://127.0.0.1:5000/get_verification_information');
+              [this.id, this.category, this.subCategory, this.name, this.article, this.price] = data.data;
 
+              console.log(this.id)
+              console.log(this.category)
+          } catch (error) {
+              console.log(error);
+          }
+        },
     },
 })
