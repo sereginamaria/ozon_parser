@@ -1,24 +1,23 @@
 <template>
   <div class="container" :class="this.class">
     <div class="column left-column">
-      <div class="img1" :style="{'background': 'url(' + this.product.images[this.startImageIndex].itemImageSrc + ') 100% / cover no-repeat'}">
+      <div class="img1" :style="{'background': 'url(' + this.product.images[this.startImageIndex] + ') 100% / cover no-repeat'}">
 
       </div>
-      <div class="img2" :style="{'background': 'url(' + this.product.images[this.startImageIndex+1].itemImageSrc + ') 100% / cover no-repeat'}">
+      <div class="img2" :style="{'background': 'url(' + this.product.images[this.startImageIndex+1] + ') 100% / cover no-repeat'}">
 
       </div>
     </div>
 
     <div class="column right-column">
-      <div class="img3" :style="{'background': 'url(' + this.product.images[this.startImageIndex+2].itemImageSrc + ') 100% / cover no-repeat'}">
+      <div class="img3" :style="{'background': 'url(' + this.product.images[this.startImageIndex+2] + ') 100% / cover no-repeat'}">
 
       </div>
       <div class="inf-text">
         <p style="padding: 2%">{{ this.product.name }}</p>
         <p>Арт.: <span>{{ this.product.article }}</span></p>
-        <p>Цена: <span>{{ this.product.price }}</span></p>
       </div>
-      <img class="logo" src="./logo.png" alt="logo">
+<!--      <img class="logo" src="./logo.png" alt="logo">-->
     </div>
   </div>
 </template>

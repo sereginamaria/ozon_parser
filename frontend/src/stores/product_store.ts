@@ -1,77 +1,49 @@
 import { defineStore } from 'pinia'
 import axios from "axios";
+import { useGalleryStore } from './gallery_store'
 
 export const useProductStore = defineStore('product', {
     state: () => ({
-        id: null,
-        category: null,
-        subCategory: null,
-        images: [
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-o/7036605492.jpg',
-                alt: 'Description for Image 1',
-                id: '1'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-l/7048289145.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-l/7048289145.jpg',
-                alt: 'Description for Image 1',
-                id: '2'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-1/7048289161.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-1/7048289161.jpg',
-                alt: 'Description for Image 1',
-                id: '3'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-x/7048289121.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-x/7048289121.jpg',
-                alt: 'Description for Image 1',
-                id: '4'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-h/7048289141.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-h/7048289141.jpg',
-                alt: 'Description for Image 1',
-                id: '5'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-i/7048289142.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-i/7048289142.jpg',
-                alt: 'Description for Image 1',
-                id: '6'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-w/7048289048.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-w/7048289048.jpg',
-                alt: 'Description for Image 1',
-                tid: '7'
-            },
-            {
-                itemImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-8/7048289168.jpg',
-                thumbnailImageSrc: 'https://cdn1.ozone.ru/s3/multimedia-1-8/7048289168.jpg',
-                alt: 'Description for Image 1',
-                id: '8'
-            },
-        ],
-        name: null,
-        article: null,
-        price: null,
-
+        id: null as number | null,
+        category: null as string | null,
+        subCategory: null as string | null,
+        name: null as string | null,
+        article: null as string | null,
+        price: null as string | null,
+        images: null as string[] | null
     }),
     actions: {
-        async get_verification_information() {
-          try {
-              const data = await axios.get('http://127.0.0.1:5000/get_verification_information');
-              [this.id, this.category, this.subCategory, this.name, this.article, this.price] = data.data;
+        get_verification_information() {
+            const galleryStore = useGalleryStore()
+            axios.get('http://127.0.0.1:5000/get_verification_information')
+                .then ( (response) => {
+                    let imagesURL: string
+                    [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data;
 
-              console.log(this.id)
-              console.log(this.category)
-          } catch (error) {
-              console.log(error);
-          }
+                    this.images = imagesURL.split(',')
+
+                    galleryStore.images = []
+                    this.images.forEach( (image: string): void => {
+                        let i: number = 0
+                        galleryStore.images.push(
+                            {
+                                itemImageSrc: image,
+                                thumbnailImageSrc: image,
+                                alt: 'gallery image',
+                                id: i
+                            }
+                        )
+                    })
+
+                    galleryStore.contentReady = true
+                })
         },
+        deleteImage(activeIndex: number): void {
+            const galleryStore = useGalleryStore()
+            if (this.images !== null) {
+                this.images.splice(activeIndex, 1)
+            }
+            galleryStore.images.splice(activeIndex, 1)
+        }
     },
 })

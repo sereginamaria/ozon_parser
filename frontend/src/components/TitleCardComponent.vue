@@ -5,7 +5,7 @@
     </div>
 
     <div class="body">
-        <div class="img" :style="{'background': 'url(' + this.product.images[this.startImageIndex].itemImageSrc + ') 100% / cover no-repeat'}">
+        <div class="img" :style="{'background': 'url(' + this.product.images[this.startImageIndex] + ') 100% / cover no-repeat'}">
         </div>
     </div>
 
@@ -34,7 +34,7 @@ export default defineComponent({
   },
   computed: {
     ...mapStores(useProductStore)
-  }
+  },
 })
 </script>
 

@@ -42,7 +42,7 @@ export default defineComponent({
   methods: {
     deleteImage(): void {
       console.log(this.gallery.activeIndex)
-      this.product.images.splice(this.gallery.activeIndex, 1)
+      this.product.deleteImage(this.gallery.activeIndex)
     }
   }
 })
