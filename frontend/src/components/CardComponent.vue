@@ -16,6 +16,7 @@
       <div class="inf-text">
         <p style="padding: 2%">{{ this.product.name }}</p>
         <p>Арт.: <span>{{ this.product.article }}</span></p>
+        <p>Цена: <span>{{ this.product.price }}</span></p>
       </div>
 <!--      <img class="logo" src="./logo.png" alt="logo">-->
     </div>

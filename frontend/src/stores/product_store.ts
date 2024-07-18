@@ -2,16 +2,15 @@ import { defineStore } from 'pinia'
 import axios from "axios";
 import { useGalleryStore } from './gallery_store'
 
+interface State {
+    id?: number,
+}
 export const useProductStore = defineStore('product', {
-    state: () => ({
-        id: null as number | null,
-        category: null as string | null,
-        subCategory: null as string | null,
-        name: null as string | null,
-        article: null as string | null,
-        price: null as string | null,
-        images: null as string[] | null
-    }),
+    state: (): State  => {
+        return  {
+            id:  0
+        }
+    },
     actions: {
         get_verification_information() {
             const galleryStore = useGalleryStore()
@@ -44,6 +43,9 @@ export const useProductStore = defineStore('product', {
                 this.images.splice(activeIndex, 1)
             }
             galleryStore.images.splice(activeIndex, 1)
+        },
+        saveNewName(newName: string): void {
+            this.name = newName
         }
     },
 })
