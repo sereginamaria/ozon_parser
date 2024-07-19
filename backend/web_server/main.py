@@ -1,13 +1,13 @@
-from __init__ import logger, app
-from ozon
-
+from backend.web_server import logger, app
+from backend.db import db
 @app.route('/')
 def hello():
     return 'Hello!'
 
-@app.route('get_verification_information', methods=['GET'])
+@app.route('/get_verification_information', methods=['GET'])
 def get_verification_information():
-    return 'q'
+    logger.info('Получаем информацию о товаре для верификации')
+    return list(db.get_verification_information())
 
 
 if __name__ == "__main__":
