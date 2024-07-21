@@ -1,5 +1,7 @@
 from backend.web_server import logger, app
 from backend.db import db
+from backend.parser import get_products
+
 @app.route('/')
 def hello():
     return 'Hello!'
@@ -8,6 +10,10 @@ def hello():
 def get_verification_information():
     logger.info('Получаем информацию о товаре для верификации')
     return list(db.get_verification_information())
+
+@app.route('/parse_page', methods=['GET'])
+def parse_page():
+    return get_products.parse_page('Категория', 'https://www.ozon.ru/category/shorty-zhenskie-7514/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=шорты+женские')
 
 
 if __name__ == "__main__":
