@@ -34,7 +34,7 @@ def add_product(product: Product):
     )]
 
     cursor.executemany(sql, data)
-    connection.commit()
+    # connection.commit()
 
     if format(cursor.rowcount) == 0:
         logger.warning(f'Товар не добавлен (скорее всего он уже есть в базе данных): {product.article}')
@@ -46,11 +46,25 @@ def add_product(product: Product):
 def get_verification_information():
     cursor.execute(
         "select product_id, publication_category, sub_category,  product_name, product_article, product_price, product_images "
-        "from public.test_ozon_products where (verification = false) order by product_id limit 1")
+        "from public.test_ozon_products where (verification = false) order by product_id")
+    # connection.commit()
     return cursor.fetchone()
 
-def save_product():
-    return 'save'
+def save_product(json):
+    images = ''
+    for image in json['images']:
+        images += image + ', '
+    cursor.execute(
+        "update public.test_ozon_products set product_name = '%s', product_images = '%s', verification = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['id']
+        )
+    )
+    # connection.commit()
 
-def delete_product():
-    return 'del'
+def delete_product(json):
+    cursor.execute(
+        "update public.test_ozon_products set verification = null where product_id = '%s'" % (
+            json['id']
+        )
+    )
+    # connection.commit()

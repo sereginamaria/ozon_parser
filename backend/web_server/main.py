@@ -22,11 +22,13 @@ def get_verification_information():
 
 @app.route('/save_product', methods=['POST'])
 def save_product():
-    return 'save_product'
+    db.save_product(request.json)
+    return 'save'
 
 @app.route('/delete_product', methods=['POST'])
 def delete_product():
-    return 'Получаем ссылки на продукты со страниц'
+    db.delete_product(request.json)
+    return 'delete'
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
