@@ -1,4 +1,5 @@
 import psycopg2 as pg
+import logging
 
 connection = pg.connect(
     host='195.133.32.87',
@@ -9,3 +10,6 @@ connection = pg.connect(
 )
 
 cursor = connection.cursor()
+
+logger = logging.getLogger("db")
+logger.setLevel(logging.INFO)

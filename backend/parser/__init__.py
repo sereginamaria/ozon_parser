@@ -1,11 +1,9 @@
 import undetected_chromedriver as uc
 import logging
-import sys
 import atexit
 
 logger = logging.getLogger("parser")
 logger.setLevel(logging.INFO)
-logger.addHandler(logging.StreamHandler(sys.stdout))
 
 ucOptions = uc.ChromeOptions()
 # ucOptions.headless = False
