@@ -11,12 +11,11 @@ class Product:
     brand_link: str
     rating: str
     categories: str
+    sizes: str
     color: str
     article: str
-    sizes: str
     all_articles: str
-    publication_category: str
-    few_photos: bool
     url: str
+    publication_category: str
     description: str
-    subcategory: str
+    sub_category: str
