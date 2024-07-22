@@ -4,18 +4,30 @@ import { useGalleryStore } from './gallery_store'
 
 interface State {
     id?: number,
+    category: string,
+    subCategory: string,
+    name: string,
+    article: string,
+    price: string,
+    images: string[]
 }
 export const useProductStore = defineStore('product', {
     state: (): State  => {
         return  {
-            id:  0
+            id:  0,
+            category: '',
+            subCategory: '',
+            name: '',
+            article: '',
+            price: '',
+            images: []
         }
     },
     actions: {
         get_verification_information() {
             const galleryStore = useGalleryStore()
             axios.get('http://127.0.0.1:5000/get_verification_information')
-                .then ( (response) => {
+                .then ((response) => {
                     let imagesURL: string
                     [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data;
 
@@ -46,6 +58,26 @@ export const useProductStore = defineStore('product', {
         },
         saveNewName(newName: string): void {
             this.name = newName
+        },
+        saveProduct(): void {
+            axios.post('http://127.0.0.1:5000/save_product', {
+                id: this.id,
+                name: this.name,
+                images: this.images
+            })
+                .then ((response) => {
+                   console.log(response)
+                })
+            this.get_verification_information()
+        },
+        deleteProduct(): void {
+            axios.post('http://127.0.0.1:5000/delete_product', {
+                id: this.id
+            })
+                .then ((response) => {
+                    console.log(response)
+                })
+            this.get_verification_information()
         }
     },
 })
