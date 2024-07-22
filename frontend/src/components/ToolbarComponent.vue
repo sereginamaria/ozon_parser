@@ -15,8 +15,8 @@
     </div>
     <div>
       <h3>Оставляем товар?</h3>
-      <Button  label="Да" style="margin-right: 5%"/>
-      <Button  label="Нет"/>
+      <Button label="Да" style="margin-right: 5%" @click="saveProduct()"/>
+      <Button label="Нет" @click="deleteProduct()"/>
     </div>
     <Dialog v-model:visible="visible" modal dismissableMask :draggable="false" style="min-width: 30%">
       <div>
@@ -59,6 +59,15 @@ export default defineComponent({
     },
     saveNewName(): void {
       this.product.saveNewName(this.newName)
+      this.visible = false
+    },
+    saveProduct(): void {
+      this.product.saveProduct()
+      // this.product.get_verification_information()
+    },
+    deleteProduct(): void {
+      this.product.deleteProduct()
+      // this.product.get_verification_information()
     }
   }
 })
