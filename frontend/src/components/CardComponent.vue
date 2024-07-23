@@ -105,7 +105,7 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 30% 0 0;
+    padding: 15px 15% 0 0;
     box-sizing: border-box;
 }
 
@@ -122,14 +122,14 @@ export default defineComponent({
 }
 
 .container_025 .inf-text {
-  padding: 7.5px 30% 0 0;
+  padding: 7.5px 7.5% 0 0;
 }
 
-.container_05 .inf-text p{
+.container_05 .inf-text{
   font-size: 25px;
 }
 
-.container_025 .inf-text span{
+.container_025 .inf-text {
   font-size: 12.5px;
 }
 
