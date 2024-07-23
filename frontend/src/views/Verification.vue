@@ -1,16 +1,10 @@
 <template>
-  <div v-if="this.gallery.contentReady">
-    <Toolbar style="padding: 1rem 1rem 1rem 1.5rem">
-      <template #start>
-        <div class="flex items-center gap-2">
-          <Button label="Панель администратора" text plain @click="goToAdminPanel()"/>
-        </div>
-      </template>
-    </Toolbar>
+  <div v-if="this.gallery.contentReady" class="verification">
+    <NavbarComponent :label="'Панель Администратора'" :goToUrl="'/admin-panel'"/>
 
-    <div style="display: flex">
+    <div class="gallery" :style="'height: calc(100% - ' + this.height + 'px'">
       <GalleryComponent/>
-      <div style="margin-left: 5%">
+      <div style="padding: 2%; max-width: 800px">
         <ToolbarComponent/>
         <div>
           <h3>Пример карточки</h3>
@@ -45,12 +39,17 @@ import Toolbar from 'primevue/toolbar';
 import TitleCardComponent from "@/components/TitleCardComponent.vue";
 import {mapStores} from "pinia";
 import {useGalleryStore, useProductStore} from "@/stores";
+import NavbarComponent from "@/components/NavbarComponent.vue";
+
 export default defineComponent ({
   name: "Verification",
-  components: {TitleCardComponent, CardComponent, ToolbarComponent, GalleryComponent, Button, Dialog, Toolbar},
+  components: {
+    NavbarComponent,
+    TitleCardComponent, CardComponent, ToolbarComponent, GalleryComponent, Button, Dialog, Toolbar},
   data() {
     return {
       visible: false,
+      height: 0
     }
   },
   computed: {
@@ -61,9 +60,19 @@ export default defineComponent ({
           this.$router.push('/admin-panel')
       }
   },
+  mounted() {
+    if (document.getElementById('toolbar') != null) {
+      this.height = document.getElementById('toolbar').offsetHeight
+    }
+  },
+  updated() {
+    this.$nextTick(function () {
+      this.height = document.getElementById('toolbar').offsetHeight
+    })
+  },
   created() {
     window.addEventListener('beforeunload', () => {
-      this.$router.push('/verification')
+      this.$router.push('/')
     });
 
     this.product.get_verification_information()
@@ -73,5 +82,14 @@ export default defineComponent ({
 </script>
 
 <style scoped>
+  .verification {
+    width: 100%;
+    height: 100%;
+  }
 
+  .gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 </style>
