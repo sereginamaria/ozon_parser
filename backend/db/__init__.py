@@ -1,3 +1,5 @@
+import sys
+
 import psycopg2 as pg
 import logging
 
@@ -13,3 +15,6 @@ cursor = connection.cursor()
 
 logger = logging.getLogger("db")
 logger.setLevel(logging.INFO)
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.DEBUG)
+logger.addHandler(handler)

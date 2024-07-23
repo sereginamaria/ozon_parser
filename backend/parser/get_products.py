@@ -31,6 +31,7 @@ def parse_page(publication_category, url):
             logger.info("Not commiting to DB cuz of debug")
     # telegram_notifier.send_execution_completed()
     logger.info('Done get_products_from_page. Success!')
+    return 'End'
 
 
 def get_html(url):
@@ -48,7 +49,7 @@ def parse_urls(html):
     logger.info('Start parse_urls')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j0j_23'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'l2j_23'})]))])
     logger.info('End parse_urls')
     return product_links
 
@@ -106,7 +107,9 @@ def try_parse_images(webGallery, parsed_widget_states):
                 for item in json.loads(parsed_widget_states[webGallery])['images']:
                     for k, v in item.items():
                         if k == 'src':
+                            print(v)
                             product_images += v + ', '
+                            print(product_images)
     except KeyError:
         logger.warning("Cannot get product images")
     return product_images
