@@ -31,8 +31,9 @@ export const useProductStore = defineStore('product', {
                     let imagesURL: string
                     [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data;
 
-                    this.images = imagesURL.split(',')
+                    this.images = imagesURL.split(', ')
 
+                    console.log(this.images)
                     galleryStore.images = []
                     this.images.forEach( (image: string): void => {
                         let i: number = 0
@@ -51,10 +52,13 @@ export const useProductStore = defineStore('product', {
         },
         deleteImage(activeIndex: number): void {
             const galleryStore = useGalleryStore()
+            console.log(this.images)
             if (this.images !== null) {
                 this.images.splice(activeIndex, 1)
             }
             galleryStore.images.splice(activeIndex, 1)
+
+            console.log(this.images)
         },
         saveNewName(newName: string): void {
             this.name = newName
