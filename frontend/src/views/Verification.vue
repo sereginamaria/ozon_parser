@@ -1,14 +1,13 @@
 <template>
   <div v-if="this.gallery.contentReady">
-    <Toolbar style="border-radius: 3rem; padding: 1rem 1rem 1rem 1.5rem">
+    <Toolbar style="padding: 1rem 1rem 1rem 1.5rem">
       <template #start>
         <div class="flex items-center gap-2">
-          <Button label="Files" text plain />
-          <Button label="Edit" text plain />
-          <Button label="View" text plain />
+          <Button label="Панель администратора" text plain @click="goToAdminPanel()"/>
         </div>
       </template>
     </Toolbar>
+
     <div style="display: flex">
       <GalleryComponent/>
       <div style="margin-left: 5%">
@@ -56,6 +55,11 @@ export default defineComponent ({
   },
   computed: {
     ...mapStores(useGalleryStore, useProductStore),
+  },
+  methods: {
+      goToAdminPanel(){
+          this.$router.push('/admin-panel')
+      }
   },
   created() {
     window.addEventListener('beforeunload', () => {

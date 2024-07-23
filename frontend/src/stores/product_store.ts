@@ -66,18 +66,20 @@ export const useProductStore = defineStore('product', {
                 images: this.images
             })
                 .then ((response) => {
-                   console.log(response)
+                    if (response.status == 200){
+                        this.get_verification_information()
+                    }
                 })
-            this.get_verification_information()
         },
         deleteProduct(): void {
             axios.post('http://127.0.0.1:5000/delete_product', {
                 id: this.id
             })
                 .then ((response) => {
-                    console.log(response)
+                    if (response.status == 200){
+                        this.get_verification_information()
+                    }
                 })
-            this.get_verification_information()
         }
     },
 })
