@@ -26,8 +26,13 @@ def create_triple_card(product: Product, front: bool) -> bytes:
                                url_img3=images_urls[2],
                                color=palette[2])
 
+    print(product)
+    print(product.images)
     images_urls = product.images.split(',')
+    print(images_urls)
+    print(images_urls[0])
     palette = get_palette(images_urls)
+    print(palette)
 
     html = get_html(product.name, product.article, product.price, palette)
     css = get_css(images_urls, palette)
@@ -64,7 +69,7 @@ def screenshot_html(html, css) -> bytes:
             '--hide-scrollbars'
         ],
     )
-    hti.load_file("card_creator/templates/logo1.png", "logo.png")
+    # hti.load_file("card_creator/templates/logo1.png", "logo.png")
     path = hti.screenshot(
         html_str=html, css_str=css, size=(1024, 1280)
     )[0]

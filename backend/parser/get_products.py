@@ -209,6 +209,9 @@ def validate_product(product: Product):
     if float(product.rating.replace(',', '.')) < config.PRODUCT_RATING_THRESHOLD:
         logger.warning(f'Рейтинг ниже порога {product.rating} < {config.PRODUCT_RATING_THRESHOLD}')
         return
+    if len(product.images.split(', ')) < 3:
+        logger.warning('Изображений меньше 3 штук')
+        return
     return product
 
 def parse_product(url, publication_category):

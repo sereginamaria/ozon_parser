@@ -9,8 +9,8 @@ def add_product(product: Product):
           'product_brand_name, product_brand_link, product_rating, ' \
           'product_categories, product_color, product_article, product_sizes,' \
           'product_all_articles, product_url, publication_category, ' \
-          'verification, is_published, description, sub_category) ' \
-          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,%s,%s)' \
+          'verification, is_published, description, sub_category, stored) ' \
+          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,%s,%s,FALSE)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
     data = [(
@@ -46,14 +46,17 @@ def add_product(product: Product):
 def get_verification_information():
     cursor.execute(
         "select product_id, publication_category, sub_category,  product_name, product_article, product_price, product_images "
-        "from public.test_ozon_products where (verification = false) order by product_id")
+        "from public.test_ozon_products where (verification = false and stored = false) order by product_id")
     connection.commit()
     return cursor.fetchone()
 
 def save_product(json):
     images = ''
     for image in json['images']:
-        images += image + ', '
+        if json['images'][-1] == image:
+            images += image
+        else:
+            images += image + ', '
     cursor.execute(
         "update public.test_ozon_products set product_name = '%s', product_images = '%s', verification = '%s' where product_id = '%s'" % (
             json['name'], images, True, json['id']
@@ -66,5 +69,19 @@ def delete_product(json):
         "update public.test_ozon_products set verification = null where product_id = '%s'" % (
             json['id']
         )
+    )
+    connection.commit()
+
+def store_category(json):
+    cursor.execute(
+        "update public.test_ozon_products set stored = true where publication_category = '%s'" % (
+            json['category']
+        )
+    )
+    connection.commit()
+
+def return_all_categories():
+    cursor.execute(
+        "update public.test_ozon_products set stored = false where stored = true"
     )
     connection.commit()
