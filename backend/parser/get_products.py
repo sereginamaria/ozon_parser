@@ -107,8 +107,9 @@ def try_parse_images(webGallery, parsed_widget_states):
                 for item in json.loads(parsed_widget_states[webGallery])['images']:
                     for k, v in item.items():
                         if k == 'src':
-                            print(v)
-                            product_images += v + ', '
+                            if json.loads(parsed_widget_states[webGallery])['images'][-1]['src'] == v:
+                                product_images += v
+                            else: product_images += v + ', '
                             print(product_images)
     except KeyError:
         logger.warning("Cannot get product images")
