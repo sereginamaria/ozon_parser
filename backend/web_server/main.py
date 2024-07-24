@@ -14,7 +14,6 @@ def parse_page():
                             'https://www.ozon.ru/category/shorty-zhenskie-7514/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=шорты+женские')
     return 'parse_page'
 
-
 @app.route('/get_verification_information', methods=['GET'])
 def get_verification_information():
     logger.info('Получаем информацию о товаре для верификации')

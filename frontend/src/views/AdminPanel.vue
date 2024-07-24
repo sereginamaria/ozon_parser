@@ -1,4 +1,5 @@
 <template>
+  <NavbarComponent :label="'Верификация'" :goToUrl="'/'"/>
   <div>
       <h3>Работа с данными</h3>
       <div>
@@ -10,10 +11,13 @@
 </template>
 
 <script lang="ts">
+import Button from 'primevue/button';
 import {defineComponent} from 'vue'
+import NavbarComponent from "@/components/NavbarComponent.vue";
 
 export default defineComponent({
-  name: "AdminPanel"
+  name: "AdminPanel",
+  components: {NavbarComponent, Button},
 })
 </script>
 

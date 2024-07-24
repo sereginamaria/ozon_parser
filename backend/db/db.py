@@ -34,7 +34,7 @@ def add_product(product: Product):
     )]
 
     cursor.executemany(sql, data)
-    # connection.commit()
+    connection.commit()
 
     if format(cursor.rowcount) == 0:
         logger.warning(f'Товар не добавлен (скорее всего он уже есть в базе данных): {product.article}')
