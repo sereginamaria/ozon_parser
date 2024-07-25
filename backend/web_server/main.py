@@ -3,7 +3,7 @@ from backend.db import db
 from backend.parser import get_products, schema
 import json
 from flask import request, send_file, Response
-from backend.telegram import telegram_connector
+from backend.telegram import telegram_connector, telegram_notifier
 from backend.card_creator import card_creator
 
 @app.route('/')
@@ -41,12 +41,23 @@ def return_all_categories():
     db.return_all_categories()
     return 'return_all_categories'
 
-@app.route('/send_media_group', methods=['GET'])
-def send_media_group():
-    newProduct = schema.Product('f', 'f', 'f', 'f', 'https://cdn1.ozone.ru/s3/multimedia-1-3/7049856459.jpg, https://cdn1.ozone.ru/s3/multimedia-1-8/7049856464.jpg, https://cdn1.ozone.ru/s3/multimedia-1-i/7049856690.jpg, https://cdn1.ozone.ru/s3/multimedia-1-n/7049856623.jpg, https://cdn1.ozone.ru/s3/multimedia-1-e/7049856614.jpg', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f', 'f')
-    a = card_creator.create_triple_card(newProduct, False)
-    print(a)
-    # telegram_connector.send_media_group()
+# Передаем параметры category и sub_category
+@app.route('/send_post', methods=['POST'])
+def send_post():
+    products_list = db.get_products_for_post(request.json)
+    cards_list = []
+    if len(products_list) == 6:
+        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
+        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+        for product in products_list[1:]:
+            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+    else:
+        telegram_notifier.not_enough_products_in_db(request.json)
+
+    products_links = [schema.Product(*product).url for product in products_list]
+
+    telegram_connector.send_post(cards_list, request.json, products_links)
+
 
 
 if __name__ == "__main__":

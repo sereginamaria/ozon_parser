@@ -85,3 +85,22 @@ def return_all_categories():
         "update public.test_ozon_products set stored = false where stored = true"
     )
     connection.commit()
+
+def get_products_for_post(json):
+    if json['category'] != 'Кофта' and json['category'] != 'Верхняя одежда':
+        cursor.execute(
+            "select product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
+            "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
+            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.test_ozon_products where (verification = true and is_published = false and "
+            "publication_category = '%s') order by product_id limit 6" % (json['category']))
+    else:
+        cursor.execute(
+            "select product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
+            "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
+            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.test_ozon_products where (verification = true and is_published = false and "
+            "publication_category = '%s' and sub_category = '%s') "
+            "order by product_id limit 6" % (json['category'], json['sub_category']))
+    connection.commit()
+    return cursor.fetchall()

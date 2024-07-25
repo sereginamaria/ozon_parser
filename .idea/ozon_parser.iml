@@ -8,23 +8,8 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/backend/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (ozon_parser)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (ozon_parser) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="TemplatesService">
-    <option name="templateFileTypes">
-      <list>
-        <option value="CSS" />
-        <option value="HTML" />
-        <option value="XHTML" />
-        <option value="XML" />
-      </list>
-    </option>
-    <option name="TEMPLATE_FOLDERS">
-      <list>
-        <option value="$MODULE_DIR$/backend/card_creator/templates" />
-      </list>
-    </option>
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
@@ -34,7 +19,7 @@
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/card_creator/templates" />
+        <option value="$MODULE_DIR$/backend/card_creator/templates" />
       </list>
     </option>
   </component>

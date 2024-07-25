@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from backend.parser.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from backend.parser import logger, driver, config
+# from backend.parser import logger, driver, config
 from backend.db.db import add_product
 
 def parse_page(publication_category, url):
