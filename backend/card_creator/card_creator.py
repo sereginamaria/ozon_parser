@@ -26,13 +26,8 @@ def create_triple_card(product: Product, front: bool) -> bytes:
                                url_img3=images_urls[2],
                                color=palette[2])
 
-    print(product)
-    print(product.images)
     images_urls = product.images.split(',')
-    print(images_urls)
-    print(images_urls[0])
     palette = get_palette(images_urls)
-    print(palette)
 
     html = get_html(product.name, product.article, product.price, palette)
     css = get_css(images_urls, palette)
@@ -55,7 +50,7 @@ def create_title_card(product: Product) -> bytes:
     images_urls = product.images.split(',')
     palette = get_palette(images_urls)
 
-    html = get_html(product.name, product.article, palette)
+    html = get_html(product.name, product.publication_category, palette)
     css = get_css(images_urls, palette)
     return screenshot_html(html, css)
 

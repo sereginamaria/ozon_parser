@@ -1,4 +1,4 @@
-from backend.web_server import logger, app
+from backend.web_server import logger, app, parsing_categories
 from backend.db import db
 from backend.parser import get_products, schema
 import json
@@ -12,8 +12,9 @@ def hello():
 
 @app.route('/parse_page', methods=['GET'])
 def parse_page():
-    get_products.parse_page('Категория',
-                            'https://www.ozon.ru/category/shorty-zhenskie-7514/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=шорты+женские')
+    # get_products.parse_page('Категория',
+    #                         'https://www.ozon.ru/category/shorty-zhenskie-7514/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=шорты+женские')
+    parsing_categories.parse_trousers()
     return 'parse_page'
 
 @app.route('/get_verification_information', methods=['GET'])

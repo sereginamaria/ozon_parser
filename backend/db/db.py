@@ -52,11 +52,13 @@ def get_verification_information():
 
 def save_product(json):
     images = ''
+    i = 1
     for image in json['images']:
-        if json['images'][-1] == image:
+        if i == len(json['images']):
             images += image
         else:
             images += image + ', '
+        i += 1
     cursor.execute(
         "update public.test_ozon_products set product_name = '%s', product_images = '%s', verification = '%s' where product_id = '%s'" % (
             json['name'], images, True, json['id']

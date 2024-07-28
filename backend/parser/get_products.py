@@ -7,30 +7,38 @@ from selenium.webdriver.common.by import By
 from backend.parser.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-# from backend.parser import logger, driver, config
+from backend.parser import logger, driver, config
 from backend.db.db import add_product
 
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
     logger.info('Downloading pages')
-    pages = [get_html(url + '?page=' + str(i)) for i in range(1, config.MAX_PAGES + 1)]
+    pages = [get_html(url + '?page=' + str(i)) for i in range(config.START_PAGE, config.MAX_PAGES + 1)]
     logger.info('Parsing product links from pages')
     urls = list(itertools.chain(*[parse_urls(p) for p in pages]))
     logger.info('Starting products parsing')
     products = []
-    for url in urls:
-        product = parse_product(url, publication_category)
-        if product is not None:
-            products.append(product)
+    if len(urls) == 0:
+        logger.warning('Со страницы не распарсилось ни одной ссылки!')
+    else:
+        for url in urls:
+            print(urls.index(url))
+            print(urls.index(url) == config.MAX_PARSED_PRODUCTS)
+            if urls.index(url) == config.MAX_PARSED_PRODUCTS:
+                break
+            else:
+                product = parse_product(url, publication_category)
+                if product is not None:
+                    products.append(product)
 
-    logger.info('Adding products to DB')
-    for p in products:
-        if not config.DEBUG:
-            add_product(p)
-        else:
-            logger.info("Not commiting to DB cuz of debug")
-    # telegram_notifier.send_execution_completed()
-    logger.info('Done get_products_from_page. Success!')
+        logger.info('Adding products to DB')
+        for p in products:
+            if not config.DEBUG:
+                add_product(p)
+            else:
+                logger.info("Not commiting to DB cuz of debug")
+        # telegram_notifier.send_execution_completed()
+        logger.info('Done get_products_from_page. Success!')
     return 'End'
 
 
@@ -49,7 +57,7 @@ def parse_urls(html):
     logger.info('Start parse_urls')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'l2j_23'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'jk9_23'})]))])
     logger.info('End parse_urls')
     return product_links
 
@@ -110,7 +118,6 @@ def try_parse_images(webGallery, parsed_widget_states):
                             if json.loads(parsed_widget_states[webGallery])['images'][-1]['src'] == v:
                                 product_images += v
                             else: product_images += v + ', '
-                            print(product_images)
     except KeyError:
         logger.warning("Cannot get product images")
     return product_images
