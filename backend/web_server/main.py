@@ -1,8 +1,7 @@
-from backend.web_server import logger, app, parsing_categories
+from backend.web_server import logger, app
 from backend.db import db
-from backend.parser import get_products, schema
-import json
-from flask import request, send_file, Response
+from backend.parser import schema, parsing_categories
+from flask import request
 from backend.telegram import telegram_connector, telegram_notifier
 from backend.card_creator import card_creator
 
