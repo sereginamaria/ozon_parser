@@ -100,7 +100,7 @@ def parse_data(html):
     # print('parse_data')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'i6y'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j5m_23'})]))])
     return product_links
 
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     Trousers = False
     HouseClothes = False
-    Tshirs = False
+    Tshirs = True
     Bag = False
     Dress = False
     Shoes = False
@@ -139,14 +139,14 @@ if __name__ == "__main__":
     Skirt = False
     OuterWear = False
     Kofta = False
-    Corset = False
+    Corset = True
     Jewelry = False
-    Accessories = False
-    Jacket = False
+    Accessories = True
+    Jacket = True
     Shirt = False
     Jeans = False
     Suit = False
-    Blouse = False
+    Blouse = True
     Shorts = False
     Swimsuit = False
 
@@ -480,7 +480,7 @@ if __name__ == "__main__":
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=56425&text=Женский+корсет')
 
         # Коктейльное, Выпускное, свадебное, праздничное
-        get_products_from_page('Костюм',
+        get_products_from_page('Корсет',
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=Женский+корсет')
 
         # Все категории, ЧЕРНОЕ
