@@ -24,5 +24,5 @@ PythonOperator(
     task_id="send_jewelry",
     python_callable=send_post,
     dag=send_jewelry_dag,
-    op_kwargs={'category': 'Украшения', 'sub_category': ''}
+    op_kwargs={'category': 'Украшения'}
 )

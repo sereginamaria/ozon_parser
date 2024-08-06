@@ -22,8 +22,6 @@ def parse_page(publication_category, url):
         logger.warning('Со страницы не распарсилось ни одной ссылки!')
     else:
         for url in urls:
-            print(urls.index(url))
-            print(urls.index(url) == config.MAX_PARSED_PRODUCTS)
             if urls.index(url) == config.MAX_PARSED_PRODUCTS:
                 break
             else:
@@ -37,7 +35,6 @@ def parse_page(publication_category, url):
                 add_product(p)
             else:
                 logger.info("Not commiting to DB cuz of debug")
-        # telegram_notifier.send_execution_completed()
         logger.info('Done get_products_from_page. Success!')
     return 'End'
 
@@ -69,6 +66,7 @@ def find_nonempty_widget(parsed_widget_states, widget):
         return None
 
 def try_parse_seo(parsed_json):
+    logger.info('Start try_parse_seo')
     product_name = ''
     product_rating = ''
     product_article = ''
@@ -79,11 +77,13 @@ def try_parse_seo(parsed_json):
         product_rating = seo_html['aggregateRating']['ratingValue']
         product_article = seo_html['sku']
         description = seo_html['description']
+        logger.info('End try_parse_seo')
     except KeyError as e:
         logger.warning(f'Не удалост найти поле {e} у товара')
     return product_name, product_rating, product_article, description
 
 def try_parse_price(webPrice, parsed_json):
+    logger.info('Start try_parse_price')
     product_price_original = ''
     product_price = ''
     product_price_with_ozon_card = ''
@@ -101,12 +101,14 @@ def try_parse_price(webPrice, parsed_json):
             if product_price == '':
                 seo_html = json.loads(parsed_json["seo"]["script"][0]['innerHTML'])
                 product_price = seo_html['offers']['price'] + ' ₽'
+        logger.info('End try_parse_price')
     except KeyError:
         logger.warning("Cannot get product price")
     return product_price_original, product_price, product_price_with_ozon_card
 
 
 def try_parse_images(webGallery, parsed_widget_states):
+    logger.info('Start try_parse_images')
     product_images = ''
 
     try:
@@ -118,11 +120,13 @@ def try_parse_images(webGallery, parsed_widget_states):
                             if json.loads(parsed_widget_states[webGallery])['images'][-1]['src'] == v:
                                 product_images += v
                             else: product_images += v + ', '
+        logger.info('End try_parse_images')
     except KeyError:
         logger.warning("Cannot get product images")
     return product_images
 
 def try_parse_brand(webStickyProducts, parsed_widget_states):
+    logger.info('Start try_parse_brand')
     product_brand_name = ''
     product_brand_link = ''
 
@@ -133,11 +137,13 @@ def try_parse_brand(webStickyProducts, parsed_widget_states):
                     product_brand_name = json.loads(parsed_widget_states[webStickyProducts])['seller']['name']
                 if 'link' in json.loads(parsed_widget_states[webStickyProducts])['seller']:
                     product_brand_link = json.loads(parsed_widget_states[webStickyProducts])['seller']['link']
+        logger.info('End try_parse_brand')
     except KeyError:
         logger.warning("Cannot get product brand")
     return product_brand_name, product_brand_link
 
 def try_parse_categories(breadCrumbs, parsed_widget_states):
+    logger.info('Start try_parse_categories')
     product_categories = ''
 
     try:
@@ -147,11 +153,13 @@ def try_parse_categories(breadCrumbs, parsed_widget_states):
                     for k, v in item.items():
                         if k == 'text':
                             product_categories += v + ', '
+        logger.info('End try_parse_categories')
     except KeyError:
         logger.warning("Cannot get product categories")
     return product_categories
 
 def try_parse_web_aspects(webAspects, parsed_widget_states, product_article):
+    logger.info('Start try_parse_web_aspects')
     product_all_articles = ''
     product_color = ''
     product_sizes = ''
@@ -193,6 +201,7 @@ def try_parse_web_aspects(webAspects, parsed_widget_states, product_article):
                         for k, v in item.items():
                             if k == 'data':
                                 product_sizes += v['searchableText'] + ', '
+        logger.info('End try_parse_web_aspects')
     except KeyError:
         logger.warning("Cannot get product web aspects")
     return product_all_articles, product_color, product_sizes
@@ -222,6 +231,7 @@ def validate_product(product: Product):
     return product
 
 def parse_product(url, publication_category):
+    logger.info('Start parse_product')
     logger.info(f'Parsing product with url: {url}')
     driver.get(config.PRODUCT_PAGE_ENTRYPOINT + url)
     time.sleep(5)  # TODO
@@ -301,4 +311,5 @@ def parse_product(url, publication_category):
         logger.info(f'Product validation failed')
     else:
         logger.info(f'Done parsing product')
+    logger.info('End parse_product')
     return product

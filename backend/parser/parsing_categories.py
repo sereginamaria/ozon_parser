@@ -22,7 +22,6 @@ def parse_trousers():
     get_products.parse_page('Брюки',
                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женские+брюки')
 
-
 def parse_home_clothes():
     # ДОМАШНЯЯ ОДЕЖДА
     # пижамы
@@ -111,7 +110,6 @@ def parse_jacket():
     # Черный
     get_products.parse_page('Пиджак',
                             'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
-
 
 def parse_dress():
     # ПЛАТЬЕ
@@ -297,11 +295,9 @@ def parse_accessories():
     get_products.parse_page('Аксессуары',
                             'https://www.ozon.ru/category/aksessuary-dlya-volos-zhenskie-17047/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женские+аксессуары')
 
-
 def parse_blouse():
     get_products.parse_page('Блузка',
                             'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Блузка+женская')
-
 
 def parse_shorts():
     # Деним
@@ -326,7 +322,6 @@ def parse_shorts():
 def parse_swimsuit():
     get_products.parse_page('Купальник',
                             'https://www.ozon.ru/category/kupalniki-i-plyazhnaya-odezhda-zhenskie-7540/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Купальник+женский')
-
 
 def parse_kofta():
     # Лонгслив
@@ -378,3 +373,26 @@ def parse_outer_wear():
     # Верхняя одежда летняя
     get_products.parse_page('Верхняя Одежда',
                             'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
+
+
+if __name__ == "__main__":
+    parse_trousers()
+    parse_home_clothes()
+    parse_jewelry()
+    parse_bag()
+    parse_tshirts()
+    parse_shirts()
+    parse_jeans()
+    parse_jacket()
+    parse_dress()
+    parse_shoes()
+    parse_top()
+    parse_skirt()
+    parse_suit()
+    parse_corset()
+    parse_accessories()
+    parse_blouse()
+    parse_shorts()
+    parse_swimsuit()
+    parse_kofta()
+    parse_outer_wear()

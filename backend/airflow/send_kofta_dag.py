@@ -18,12 +18,12 @@ from backend.airflow import send_post
 send_kofta_dag = DAG(
     dag_id="send_kofta_dag",
     start_date=datetime.datetime(2024, 8, 1),
-    timetable=MultiCronTimetable(['0 8 * * mon'], timezone='Europe/Moscow', period_length=10, period_unit='minutes'),
+    timetable=MultiCronTimetable(['0 10 * * mon', '0 12 * * tue', '0 10 * * thu', '0 10 * * sun'], timezone='Europe/Moscow', period_length=10, period_unit='minutes'),
 )
 
 PythonOperator(
     task_id="send_kofta",
     python_callable=send_post,
     dag=send_kofta_dag,
-    op_kwargs={'category': 'Кофта', 'sub_category': ''}
+    op_kwargs={'category': 'Кофта'}
 )

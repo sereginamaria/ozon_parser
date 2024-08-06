@@ -18,12 +18,12 @@ from backend.airflow import send_post
 send_corset_dag = DAG(
     dag_id="send_corset_dag",
     start_date=datetime.datetime(2024, 8, 1),
-    timetable=MultiCronTimetable(['0 8 * * mon'], timezone='Europe/Moscow', period_length=10, period_unit='minutes'),
+    timetable=MultiCronTimetable(['0 8 * * mon', '0 8 * * thu'], timezone='Europe/Moscow', period_length=10, period_unit='minutes'),
 )
 
 PythonOperator(
     task_id="send_corset",
     python_callable=send_post,
     dag=send_corset_dag,
-    op_kwargs={'category': 'Корсет', 'sub_category': ''}
+    op_kwargs={'category': 'Корсет'}
 )

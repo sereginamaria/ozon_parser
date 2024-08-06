@@ -25,5 +25,5 @@ PythonOperator(
     task_id="send_trousers",
     python_callable=send_post,
     dag=send_trousers_dag,
-    op_kwargs={'category': 'Брюки', 'sub_category': ''}
+    op_kwargs={'category': 'Брюки'}
 )
