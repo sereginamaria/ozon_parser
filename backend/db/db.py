@@ -47,8 +47,14 @@ def get_verification_information():
     cursor.execute(
         "select product_id, publication_category, sub_category,  product_name, product_article, product_price, product_images "
         "from public.test_ozon_products where (verification = false and stored = false) order by product_id")
+    product_information = cursor.fetchone()
+    cursor.execute(
+        "select "
+        "(select publication_category from public.test_ozon_products "
+        "where (verification = false and stored = false) order by product_id limit 1), count(*) "
+        "from public.test_ozon_products where (verification = true and is_published = false)")
     connection.commit()
-    return cursor.fetchone()
+    return product_information, cursor.fetchone()
 
 def save_product(json):
     images = ''

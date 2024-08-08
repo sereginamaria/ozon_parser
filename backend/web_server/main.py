@@ -56,6 +56,10 @@ def send_post():
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
 
+@app.route('/get_count_of_categories', methods=['GET'])
+def get_count_of_category():
+    return db.count_of_categories()
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
