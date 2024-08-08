@@ -24,6 +24,7 @@ ucOptions.add_argument("--disable-gpu")
 ucOptions.add_argument("--remote-allow-origins=*")
 # ucOptions.add_argument("--log-path=/home/masha/chromelogs")
 ucOptions.add_argument("--disable-dev-shm-usage")
+ucOptions.add_argument("--lang=ru-ru")
 ucOptions._session = None
 
 # ucOptions.binary_location = '/home/masha/ozon_parser/chromedriver/chrome-linux64/chrome'
@@ -32,13 +33,13 @@ ucOptions._session = None
 
 driver = uc.Chrome(
     # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
-    patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=True,
+    patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=True, headless=True,
     options=ucOptions,
-    log_level=10)
+    log_level=0)
 
 
 def exit_handler():
     driver.quit()
 
 
-# atexit.register(exit_handler)
+atexit.register(exit_handler)
