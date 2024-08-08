@@ -1,7 +1,7 @@
 import logging
 import sys
 import time
-from backend.telegram import bot
+from telegram import bot
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):

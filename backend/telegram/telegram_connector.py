@@ -1,10 +1,10 @@
 from telebot.types import InputMediaPhoto
 from telebot import types
 from telebot import apihelper
-from backend.telegram import bot, config, mass_of_stikers
+from telegram import bot, config, mass_of_stikers
 import random
 import io
-from backend.telegram import logger
+from telegram import logger
 
 def send_post(cards_list, json, product_links, sub_category):
     logger.info('Start send_post')

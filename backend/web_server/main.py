@@ -1,9 +1,9 @@
-from backend.web_server import logger, app
-from backend.db import db
-from backend.parser import schema, parsing_categories
+from web_server import logger, app
+from db import db
+from product_parser import schema, parsing_categories
 from flask import request
-from backend.telegram import telegram_connector, telegram_notifier
-from backend.card_creator import card_creator
+from telegram import telegram_connector, telegram_notifier
+from card_creator import card_creator
 
 @app.route('/')
 def hello():
@@ -62,4 +62,5 @@ def get_count_of_category():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    # app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="195.133.32.87", port=5001, debug=True)

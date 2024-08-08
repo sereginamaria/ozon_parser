@@ -12,7 +12,7 @@ from airflow.timetables.base import DagRunInfo, DataInterval, TimeRestriction, T
 from airflow.timetables.events import EventsTimetable
 from multiple_crons_timetable import MultiCronTimetable
 
-from backend.airflow import send_post
+from airflow import send_post
 
 
 send_outer_wear_dag = DAG(

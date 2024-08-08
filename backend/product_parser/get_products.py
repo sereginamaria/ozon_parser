@@ -4,11 +4,11 @@ import time
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from backend.parser.schema import Product
+from product_parser.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from backend.parser import logger, driver, config
-from backend.db.db import add_product
+from product_parser import logger, driver, config
+from db.db import add_product
 
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
@@ -52,7 +52,7 @@ def get_html(url):
 
 def parse_urls(html):
     logger.info('Start parse_urls')
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'html.product_parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'jk9_23'})]))])
     logger.info('End parse_urls')

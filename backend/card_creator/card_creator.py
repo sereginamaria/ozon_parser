@@ -5,8 +5,8 @@ from flask import render_template
 from html2image import Html2Image
 from colorthief import ColorThief
 
-from backend.parser.schema import Product
-from backend.card_creator import logger
+from product_parser.schema import Product
+from card_creator import logger
 import os
 
 def create_triple_card(product: Product, front: bool) -> bytes:

@@ -1,7 +1,7 @@
-from backend.db import cursor, connection, logger
-from backend.parser.schema import Product
+from db import cursor, connection, logger
+from product_parser import schema
 
-def add_product(product: Product):
+def add_product(product: schema.Product):
     logger.info('Start add_product')
 
     sql = 'INSERT INTO public.test_ozon_products (product_name, product_price_original, ' \

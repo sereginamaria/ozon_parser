@@ -11,9 +11,9 @@ from airflow.plugins_manager import AirflowPlugin
 from airflow.timetables.base import DagRunInfo, DataInterval, TimeRestriction, Timetable
 from airflow.timetables.events import EventsTimetable
 from multiple_crons_timetable import MultiCronTimetable
-from backend.db import db
-from backend.parser import schema
-from backend.telegram import telegram_notifier
+from db import db
+from product_parser import schema
+from telegram import telegram_notifier
 
 def check_availability_of_products():
     list = db.count_of_categories()

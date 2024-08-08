@@ -1,4 +1,4 @@
-from backend.parser import get_products
+from product_parser import get_products
 
 def parse_trousers():
     # БРЮКИ

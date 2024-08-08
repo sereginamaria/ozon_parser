@@ -2,11 +2,20 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/backend" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/airflow" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/card_creator" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/db" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/product_parser" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/telegram" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/video_maker" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/web_server" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/backend/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/backend" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (ozon_parser)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

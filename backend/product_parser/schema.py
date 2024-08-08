@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+
 @dataclass(frozen=False)
 class Product:
     name: str
