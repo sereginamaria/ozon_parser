@@ -1,22 +1,22 @@
 <template>
-  <div class="container" :class="this.class">
+  <div class="container" :class="cardClass">
     <div class="column left-column">
-      <div class="img1" :style="{'background': 'url(' + this.product.images[this.startImageIndex] + ') 100% / cover no-repeat'}">
+      <div class="img1" :style="{'background': 'url(' + product.images[ startImageIndex ] + ') 100% / cover no-repeat'}">
 
       </div>
-      <div class="img2" :style="{'background': 'url(' + this.product.images[this.startImageIndex+1] + ') 100% / cover no-repeat'}">
+      <div class="img2" :style="{'background': 'url(' + product.images[ startImageIndex+1] + ') 100% / cover no-repeat'}">
 
       </div>
     </div>
 
     <div class="column right-column">
-      <div class="img3" :style="{'background': 'url(' + this.product.images[this.startImageIndex+2] + ') 100% / cover no-repeat'}">
+      <div class="img3" :style="{'background': 'url(' + product.images[ startImageIndex+2] + ') 100% / cover no-repeat'}">
 
       </div>
       <div class="inf-text">
-        <p style="padding: 2%">{{ this.product.name }}</p>
-        <p>Арт.: <span>{{ this.product.article }}</span></p>
-        <p>Цена: <span>{{ this.product.price }}</span></p>
+        <p style="padding: 2%">{{ product.name }}</p>
+        <p>Арт.: <span>{{ product.article }}</span></p>
+        <p>Цена: <span>{{ product.price }}</span></p>
       </div>
 <!--      <img class="logo" src="./logo.png" alt="logo">-->
     </div>
@@ -31,8 +31,11 @@ import {useProductStore} from "@/stores";
 export default defineComponent({
   name: "CardComponent",
   props: {
-    class: String,
-    startImageIndex: Number
+    cardClass: String,
+    startImageIndex: {
+      type: Number,
+      default: 0
+    }
   },
   computed: {
     ...mapStores(useProductStore)

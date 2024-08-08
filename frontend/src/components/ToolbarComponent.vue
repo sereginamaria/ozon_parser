@@ -2,16 +2,17 @@
   <div>
     <div>
       <h3>Информация о товаре</h3>
-      <p>ID: {{ this.product.id }}</p>
-      <p>Категория: {{ this.product.category }}</p>
-      <p>Подкатегория: {{ this.product.subCategory }}</p>
-      <p>Название: {{this.product.name}}</p>
-      <p v-if="this.product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
+      <p>Проверефицированных товаров данной категории: {{ product.countOfCategoryProducts }}</p>
+      <p>ID: {{ product.id }}</p>
+      <p>Категория: {{ product.category }}</p>
+      <p>Подкатегория: {{ product.subCategory }}</p>
+      <p>Название: {{product.name}}</p>
+      <p v-if="product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
     </div>
     <div>
       <h3>Работа с изображениями</h3>
       <Button  @click="deleteImage()" label="Удалить" style="margin-right: 1rem"/>
-      <Button  @click="this.visible = true" label="Изменить название"/>
+      <Button  @click="visible = true" label="Изменить название"/>
     </div>
     <div>
       <h3>Оставляем товар?</h3>
@@ -21,10 +22,10 @@
     <Dialog v-model:visible="visible" modal :draggable="false" style="min-width: 30%">
       <div>
         <h3>Изменение названия</h3>
-        <p>Полное название: {{this.product.name}}</p>
-        <p>Длина названия: {{ this.product.name.length }}</p>
-        <p v-if="this.product.name.length > 30">Первые 30 символов названия: {{ this.product.name.slice(0,30) }}</p>
-        <InputText type="text" v-model="this.newName" style="min-width: 300px; margin-right: 1rem"/>
+        <p>Полное название: {{product.name}}</p>
+        <p>Длина названия: {{ product.name.length }}</p>
+        <p v-if="product.name.length > 30">Первые 30 символов названия: {{ product.name.slice(0,30) }}</p>
+        <InputText type="text" v-model="newName" style="min-width: 300px; margin-right: 1rem"/>
         <Button  label="Сохранить" @click="saveNewName()"/>
       </div>
     </Dialog>

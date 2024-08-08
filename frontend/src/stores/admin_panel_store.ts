@@ -3,7 +3,7 @@ import { useProductStore } from './product_store'
 import axios from 'axios'
 export const useAdminPanelStore = defineStore('adminPanel', {
     state: () => ({
-
+        list: []
     }),
     actions: {
         storeCategory(): void {
@@ -19,11 +19,17 @@ export const useAdminPanelStore = defineStore('adminPanel', {
         },
         returnAllCategories(): void {
             const productStore = useProductStore()
-            axios.get('http://127.0.0.1:5000/return_all_categories')
+            axios.post('http://127.0.0.1:5000/return_all_categories')
                 .then((response) => {
                     if (response.status == 200){
                         productStore.get_verification_information()
                     }
+                })
+        },
+        getCountOfCategories(): void {
+            axios.get('http://127.0.0.1:5000/get_count_of_categories')
+                .then((response) => {
+                    this.list = response.data
                 })
         }
     }

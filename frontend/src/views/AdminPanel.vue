@@ -6,7 +6,12 @@
         <Button  label="Отложить текущую категорию товаров" style="margin-right: 5%" @click="storeCategory()"/>
         <Button  label="Вернуть все отложенные товары" @click="returnAllCategories()"/>
       </div>
-      <Button  label="Показать расписание" style="margin-top: 1%"/>
+      <Button  label="Показать количество проверефецированных товаров" style="margin-top: 1%" @click="getCountOfCategories()"/>
+      <div v-for="el in adminPanel.list">
+          <p>
+            {{ el }}
+          </p>
+      </div>
   </div>
 </template>
 
@@ -30,6 +35,9 @@ export default defineComponent({
       returnAllCategories() {
           this.adminPanel.returnAllCategories()
           this.$router.push('/')
+      },
+      getCountOfCategories() {
+          this.adminPanel.getCountOfCategories()
       }
   }
 })

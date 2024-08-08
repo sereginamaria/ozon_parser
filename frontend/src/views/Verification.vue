@@ -1,8 +1,8 @@
 <template>
-  <div v-if="this.gallery.contentReady" class="verification">
+  <div class="verification">
     <NavbarComponent :label="'Панель Администратора'" :goToUrl="'/admin-panel'"/>
 
-    <div class="gallery" :style="'height: calc(100% - ' + this.height + 'px'">
+    <div v-if="gallery.contentReady" class="gallery" :style="'height: calc(100% - ' + height + 'px'">
       <GalleryComponent/>
       <div style="padding: 2%; max-width: 800px">
         <ToolbarComponent/>
@@ -11,24 +11,25 @@
           <p>Нажмите на карточку для увеличения</p>
         </div>
         <div style="display: flex">
-          <TitleCardComponent @click="visible = true" :class="'container_025'" :startImageIndex="0"/>
-          <CardComponent @click="visible = true" :class="'container_025'" :startImageIndex="1"/>
-          <CardComponent @click="visible = true" :class="'container_025'" :startImageIndex="0"/>
+          <TitleCardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
+          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="1"/>
+          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
         </div>
         <Dialog v-model:visible="visible" modal dismissableMask :draggable="false">
           <div style="display: flex">
-            <TitleCardComponent @click="visible = true" :class="'container_05'" :startImageIndex="0"/>
-            <CardComponent @click="visible = true" :class="'container_05'" :startImageIndex="1"/>
-            <CardComponent @click="visible = true" :class="'container_05'" :startImageIndex="0"/>
+            <TitleCardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
+            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="1"/>
+            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
           </div>
         </Dialog>
       </div>
     </div>
+    <div v-if="gallery.contentEmpty">Все товары проверифицированы!</div>
+    <div v-if="!gallery.contentReady && !gallery.contentEmpty">Загрузка... Пожалуйста, подождите!</div>
   </div>
-  <div v-else>Загрузка... Пожалуйста, подождите!</div>
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 import GalleryComponent from "@/components/GalleryComponent.vue";
 import ToolbarComponent from "@/components/ToolbarComponent.vue";
@@ -61,13 +62,19 @@ export default defineComponent ({
       }
   },
   mounted() {
-    if (document.getElementById('toolbar') != null) {
-      this.height = document.getElementById('toolbar').offsetHeight
+    const toolBarElement = document.getElementById('toolbar')
+
+    if (toolBarElement !== null) {
+      this.height = document.getElementById('toolbar')!.offsetHeight
     }
   },
   updated() {
     this.$nextTick(function () {
-      this.height = document.getElementById('toolbar').offsetHeight
+      const toolBarElement = document.getElementById('toolbar')
+
+      if (toolBarElement !== null) {
+        this.height = document.getElementById('toolbar')!.offsetHeight
+      }
     })
   },
   created() {
