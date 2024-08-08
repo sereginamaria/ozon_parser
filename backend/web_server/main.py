@@ -1,3 +1,5 @@
+import flask
+
 from web_server import logger, app
 from db import db
 from product_parser import schema, parsing_categories
@@ -8,6 +10,10 @@ from card_creator import card_creator
 @app.route('/')
 def hello():
     return 'Hello!'
+
+@app.route('/parse_page', methods=['GET'])
+def parse_page():
+    parsing_categories.parse_bag()
 
 @app.route('/get_verification_information', methods=['GET'])
 def get_verification_information():
@@ -62,5 +68,5 @@ def get_count_of_category():
 
 
 if __name__ == "__main__":
-    # app.run(host="127.0.0.1", port=5000, debug=True)
-    app.run(host="195.133.32.87", port=5001, debug=True)
+    app.run(host="127.0.0.1", port=5001, debug=True)
+    # app.run(host="195.133.32.87", port=5001, debug=True)
