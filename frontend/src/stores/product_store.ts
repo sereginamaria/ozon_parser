@@ -9,7 +9,8 @@ interface State {
     name: string,
     article: string,
     price: string,
-    images: string[]
+    images: string[],
+    countOfCategoryProducts: number
 }
 export const useProductStore = defineStore('product', {
     state: (): State  => {
@@ -20,7 +21,8 @@ export const useProductStore = defineStore('product', {
             name: '',
             article: '',
             price: '',
-            images: []
+            images: [],
+            countOfCategoryProducts: 0
         }
     },
     actions: {
@@ -29,25 +31,35 @@ export const useProductStore = defineStore('product', {
             axios.get('http://127.0.0.1:5000/get_verification_information')
                 .then ((response) => {
                     let imagesURL: string
-                    [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data;
 
-                    this.images = imagesURL.split(', ')
+                    if (response.data[0] === null) {
+                        galleryStore.contentEmpty = true
+                        galleryStore.contentReady = false
+                    }
+                    else {
+                        [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data[0];
+                        this.countOfCategoryProducts = response.data[1][1]
 
-                    galleryStore.images = []
-                    let i: number = 0
-                    this.images.forEach( (image: string): void => {
-                        galleryStore.images.push(
-                            {
-                                itemImageSrc: image,
-                                thumbnailImageSrc: image,
-                                alt: 'gallery image',
-                                id: i
-                            }
-                        )
-                        i++
-                    })
+                        this.images = imagesURL.split(', ')
 
-                    galleryStore.contentReady = true
+                        galleryStore.images = []
+                        let i: number = 0
+                        this.images.forEach( (image: string): void => {
+                            galleryStore.images.push(
+                                {
+                                    itemImageSrc: image,
+                                    thumbnailImageSrc: image,
+                                    alt: 'gallery image',
+                                    id: i
+                                }
+                            )
+                            i++
+                        })
+
+                        galleryStore.contentReady = true
+                        galleryStore.contentEmpty = false
+                    }
+
                 })
         },
         deleteImage(activeIndex: number): void {

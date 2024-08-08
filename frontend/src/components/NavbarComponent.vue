@@ -2,21 +2,25 @@
   <Toolbar id="toolbar" ref="toolbar" style="padding: 1rem 1rem 1rem 1rem; margin-bottom: 1rem">
     <template #start>
       <div class="flex items-center gap-2">
-        <Button :label="this.label" text plain @click="goTo()"/>
+        <Button :label="label" text plain @click="goTo()"/>
       </div>
     </template>
   </Toolbar>
 </template>
 
-<script>
+<script lang="ts">
 import Toolbar from 'primevue/toolbar';
 import Button from 'primevue/button';
+import {defineComponent} from "vue";
 
-export default {
+export default defineComponent( {
   name: "NavbarComponent",
   props: {
     label: String,
-    goToUrl: String
+    goToUrl: {
+      type: String,
+      default: '/'
+    }
   },
   components: { Toolbar, Button},
   methods: {
@@ -24,7 +28,7 @@ export default {
       this.$router.push(this.goToUrl)
     }
   }
-}
+})
 </script>
 
 <style scoped>

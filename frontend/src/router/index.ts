@@ -1,13 +1,13 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 
-import VerificationView from '../views/Verification.vue'
+import Verification from '@/views/Verification.vue'
 import AdminPanel from "@/views/AdminPanel.vue";
 
 const routes = [
 	{
 		path: "/",
 		name: "verification",
-		component: VerificationView
+		component: Verification
 	},
 	{
 		path: "/admin-panel",

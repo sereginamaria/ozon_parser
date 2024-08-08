@@ -1,11 +1,11 @@
 <template>
-  <div class="container" :class="this.class">
+  <div class="container" :class="cardClass">
     <div class="header">
-        <p>{{ this.product.category }}</p>
+        <p>{{ product.category }}</p>
     </div>
 
     <div class="body">
-        <div class="img" :style="{'background': 'url(' + this.product.images[this.startImageIndex] + ') 100% / cover no-repeat'}">
+        <div class="img" :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat'}">
         </div>
     </div>
 
@@ -29,8 +29,11 @@ import {useProductStore} from "@/stores";
 export default defineComponent({
   name: "TitleCardComponent",
   props: {
-    class: String,
-    startImageIndex: Number
+    cardClass: String,
+    startImageIndex: {
+      type: Number,
+      default: 0
+    }
   },
   computed: {
     ...mapStores(useProductStore)
