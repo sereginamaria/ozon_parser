@@ -12,6 +12,9 @@ interface State {
     images: string[],
     countOfCategoryProducts: number
 }
+
+const base_url = import.meta.env.VITE_BASE_URL
+
 export const useProductStore = defineStore('product', {
     state: (): State  => {
         return  {
@@ -28,7 +31,7 @@ export const useProductStore = defineStore('product', {
     actions: {
         get_verification_information() {
             const galleryStore = useGalleryStore()
-            axios.get('http://127.0.0.1:5000/get_verification_information')
+            axios.get(base_url + '/get_verification_information')
                 .then ((response) => {
                     let imagesURL: string
 
@@ -79,7 +82,7 @@ export const useProductStore = defineStore('product', {
             this.name = newName
         },
         saveProduct(): void {
-            axios.post('http://127.0.0.1:5000/save_product', {
+            axios.post(base_url + '/save_product', {
                 id: this.id,
                 name: this.name,
                 images: this.images
@@ -91,7 +94,7 @@ export const useProductStore = defineStore('product', {
                 })
         },
         deleteProduct(): void {
-            axios.post('http://127.0.0.1:5000/delete_product', {
+            axios.post(base_url + '/delete_product', {
                 id: this.id
             })
                 .then ((response) => {

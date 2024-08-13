@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia'
 import { useProductStore } from './product_store'
 import axios from 'axios'
+
+const base_url = import.meta.env.VITE_BASE_URL
 export const useAdminPanelStore = defineStore('adminPanel', {
     state: () => ({
         list: []
@@ -8,7 +10,7 @@ export const useAdminPanelStore = defineStore('adminPanel', {
     actions: {
         storeCategory(): void {
             const productStore = useProductStore()
-            axios.post('http://127.0.0.1:5000/store_category', {
+            axios.post(base_url + '/store_category', {
                 category: productStore.category
             })
                 .then((response) => {
@@ -19,7 +21,7 @@ export const useAdminPanelStore = defineStore('adminPanel', {
         },
         returnAllCategories(): void {
             const productStore = useProductStore()
-            axios.post('http://127.0.0.1:5000/return_all_categories')
+            axios.post(base_url + '/return_all_categories')
                 .then((response) => {
                     if (response.status == 200){
                         productStore.get_verification_information()
@@ -27,7 +29,7 @@ export const useAdminPanelStore = defineStore('adminPanel', {
                 })
         },
         getCountOfCategories(): void {
-            axios.get('http://127.0.0.1:5000/get_count_of_categories')
+            axios.get(base_url + '/get_count_of_categories')
                 .then((response) => {
                     this.list = response.data
                 })
