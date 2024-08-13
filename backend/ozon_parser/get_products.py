@@ -4,11 +4,12 @@ import time
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from product_parser.schema import Product
+from ozon_parser.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from product_parser import logger, driver, config
+from ozon_parser import logger, driver, config
 from db.db import add_product
+from text_recognizer.main import recognize_text
 
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
@@ -54,7 +55,7 @@ def parse_urls(html):
     logger.info('Start parse_urls')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'jk9_23'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j5m_23'})]))])
     logger.info('End parse_urls')
     return product_links
 
@@ -261,6 +262,11 @@ def parse_product(url, publication_category):
 
     logger.info('Parse images')
     product_images = try_parse_images(webGallery, parsed_widget_states)
+    product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
+                       if recognize_text(image_url) != None])
+
+    print('priduct_images')
+    print(product_images)
 
     logger.info('Parse brand')
     product_brand_name, product_brand_link = try_parse_brand(webStickyProducts, parsed_widget_states)

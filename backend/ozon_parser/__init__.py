@@ -3,7 +3,7 @@ import logging
 import atexit
 import sys
 
-logger = logging.getLogger("product_parser")
+logger = logging.getLogger("ozon_parser")
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler(sys.stdout)
 handler.setLevel(logging.DEBUG)
@@ -33,7 +33,7 @@ ucOptions._session = None
 
 driver = uc.Chrome(
     # driver_executable_path='/home/masha/ozon_parser/chromedriver/chromedriver-linux64/chromedriver',
-    patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=True, headless=True,
+    patcher_force_close=True, no_sandbox=True, suppress_welcome=True, use_subprocess=True,
     options=ucOptions,
     log_level=0)
 

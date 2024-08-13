@@ -5,9 +5,10 @@ from flask import render_template
 from html2image import Html2Image
 from colorthief import ColorThief
 
-from product_parser.schema import Product
+from ozon_parser.schema import Product
 from card_creator import logger
 import os
+from text_recognizer.main import recognize_text
 
 def create_triple_card(product: Product, front: bool) -> bytes:
     def get_html(product_name, product_article, product_price, palette):
@@ -29,6 +30,10 @@ def create_triple_card(product: Product, front: bool) -> bytes:
 
     logger.info('Start create_triple_card')
     images_urls = product.images.split(',')
+
+    print('create_card')
+    print(images_urls[0])
+    recognize_text(images_urls[0])
     palette = get_palette(images_urls)
 
     html = get_html(product.name, product.article, product.price, palette)
