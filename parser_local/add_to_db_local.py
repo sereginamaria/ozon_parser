@@ -3,7 +3,7 @@ import psycopg2 as pg
 from parser_local import parser_requests_local
 
 connection = pg.connect(
-    host='195.133.32.87',
+    host='195.133.46.183',
     database='masha',
     port=5433,
     user='masha',

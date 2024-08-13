@@ -1,6 +1,6 @@
 from flask import Flask
-from parser.get_product import get_product
-from parser.get_products_from_page import get_products_from_page
+from myparser.get_product import get_product
+from myparser.get_products_from_page import get_products_from_page
 from card_creator.card_creator import card_creator
 from card_creator.card_creator import post_creator
 from card_creator.card_creator import single_post_creator
@@ -145,5 +145,6 @@ def create_only_title_card():
         return 'Создаю одиночный пост'
 
 if __name__ == "__main__":
-    app.run(host="195.133.32.87", port=5000, debug=True)
-    #app.run(host="195.133.32.87", port=5001, debug=True)
+    app.run(host="195.133.46.183", port=5000, debug=True)
+    #app.run(host="195.133.46.183", port=5001, debug=True)
+    # app.run(host="127.0.0.1", port=5000, debug=True)

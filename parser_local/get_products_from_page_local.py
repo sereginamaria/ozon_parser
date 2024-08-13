@@ -4,7 +4,7 @@ import itertools
 from selenium.webdriver.common.by import By
 
 from parser_local.get_product_local import get_product
-# from parser.get_product import get_product
+# from myparser.get_product import get_product
 import undetected_chromedriver as uc
 import time
 from selenium.webdriver.chrome.options import Options
@@ -98,7 +98,7 @@ def get_html(url):
 
 def parse_data(html):
     # print('parse_data')
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'html.myparser')
     product_links = set([a.get('href').split('?')[0] for a in list(
         itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j5m_23'})]))])
     return product_links

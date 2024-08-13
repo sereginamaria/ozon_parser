@@ -10,8 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 import re
 import json
-from parser.add_to_db import add_to_db
-from parser import parser_requests
+from myparser.add_to_db import add_to_db
+from myparser import parser_requests
 
 telegram_url = "https://api.telegram.org/bot6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og"
 
@@ -340,7 +340,7 @@ def get_product(url, publication_category, message_type):
         if product_rating == '':
             parser_requests.info('Отсутствует поле product_rating')
 
-    # with open('parser/product_json.json', 'w', encoding="utf-8") as outfile:
+    # with open('myparser/product_json.json', 'w', encoding="utf-8") as outfile:
     #     outfile.write(json.dumps(d2, indent=4, sort_keys=True, ensure_ascii=False, separators=(',', ': ')))
 
     parser_requests.execution_completed(message_type)
