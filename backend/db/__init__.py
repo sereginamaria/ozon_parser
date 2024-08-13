@@ -4,7 +4,7 @@ import psycopg2 as pg
 import logging
 
 connection = pg.connect(
-    host='195.133.32.87',
+    host='195.133.46.183',
     database='masha',
     port=5433,
     user='masha',
