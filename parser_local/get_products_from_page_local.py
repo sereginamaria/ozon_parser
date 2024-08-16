@@ -98,9 +98,9 @@ def get_html(url):
 
 def parse_data(html):
     # print('parse_data')
-    soup = BeautifulSoup(html, 'html.myparser')
+    soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j5m_23'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'mj5_23'})]))])
     return product_links
 
 
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     Trousers = False
     HouseClothes = False
-    Tshirs = True
+    Tshirs = False
     Bag = False
     Dress = False
     Shoes = False
@@ -142,11 +142,11 @@ if __name__ == "__main__":
     Corset = True
     Jewelry = False
     Accessories = True
-    Jacket = True
+    Jacket = False
     Shirt = False
     Jeans = False
     Suit = False
-    Blouse = True
+    Blouse = False
     Shorts = False
     Swimsuit = False
 
@@ -168,28 +168,64 @@ if __name__ == "__main__":
         # get_products_from_page('Верхняя Одежда',
         #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женская+весенняя+дубленка')
         #
-        #Бомбер
-        get_products_from_page('Верхняя Одежда',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+бомбер')
 
-        #Верхняя одежда летняя
+        # # Верхняя одежда летняя
+        # #Бомбер
+        # get_products_from_page('Верхняя Одежда',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+бомбер')
+        #
+        # #Верхняя одежда летняя
+        # get_products_from_page('Верхняя Одежда',
+        #                        'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
+
+        #ВЕРХНЯЯ ОДЕЖДА ОСЕННЯЯ
+        #Дубленки
         get_products_from_page('Верхняя Одежда',
-                               'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
+                               'https://www.ozon.ru/category/dublenki-i-shuby-zhenskie-7534/')
+
+        #Жилеты
+        get_products_from_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/zhilety-zhenskie-7529/')
+
+        #Куртки и пуховики
+        get_products_from_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/kurtki-zhenskie-7530/')
+
+        #Пальто
+        get_products_from_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/palto-zhenskie-7531/')
+
+        #Плащи
+        get_products_from_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/plashchi-zhenskie-7532/')
+
+        # Джинсовая куртка
+        get_products_from_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=джинсовая+куртка+женская')
+
 
     if Kofta  == True:
-        #Лонгслив
-        get_products_from_page('Кофта',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
+        # # Свитер
+        # get_products_from_page('Кофта',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женский+свитер')
+        #
+        # #Лонгслив
+        # get_products_from_page('Кофта',
+        #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
 
         #Джемпер
         get_products_from_page('Кофта',
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
 
+        #Кардиган
+        get_products_from_page('Кофта',
+                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женский+кардиган')
+
         #Свитшот
         get_products_from_page('Кофта',
                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=свитошот+женский')
 
-        # #Худи
+        #Худи
         get_products_from_page('Кофта',
                                'https://www.ozon.ru/category/tolstovki-i-olimpiyki-zhenskie-7788/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=худиженская&type=37308%2C39148')
 
@@ -337,13 +373,13 @@ if __name__ == "__main__":
 
     if Shoes == True:
     #ОБУВЬ
-        #Босоножки и сандалии ЧЕРНЫЕ
-        get_products_from_page('Обувь',
-                               'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
-
-        #Босоножки и сандалии ВСЕ ЦВЕТА
-        get_products_from_page('Обувь',
-                               'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955527%2C100955546%2C100955529%2C100955534%2C100955530%2C100955535%2C100955540%2C100955528%2C100955537%2C100955544%2C100966307%2C100955536%2C100955542%2C100955532%2C100955547%2C100966310%2C100955541%2C101097990%2C100955545&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
+        # #Босоножки и сандалии ЧЕРНЫЕ
+        # get_products_from_page('Обувь',
+        #                        'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
+        #
+        # #Босоножки и сандалии ВСЕ ЦВЕТА
+        # get_products_from_page('Обувь',
+        #                        'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955527%2C100955546%2C100955529%2C100955534%2C100955530%2C100955535%2C100955540%2C100955528%2C100955537%2C100955544%2C100966307%2C100955536%2C100955542%2C100955532%2C100955547%2C100966310%2C100955541%2C101097990%2C100955545&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
 
         #Кроссовки
         get_products_from_page('Обувь',
