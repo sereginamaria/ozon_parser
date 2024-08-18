@@ -11,22 +11,22 @@ import os
 from text_recognizer.main import recognize_text
 
 def create_triple_card(product: Product, front: bool) -> bytes:
-    def get_html(product_name, product_article, product_price, palette):
+    def get_html(product_name, product_article, product_price, palette_colors):
         return render_template('triple_card.html', name=product_name, article=product_article,
                                price=product_price,
-                               color1=palette[0],
-                               color2=palette[2])
-    def get_css(images_urls, palette):
+                               color1=palette_colors[0],
+                               color2=palette_colors[2])
+    def get_css(images_urls, palette_colors):
         if front:
             return render_template('triple_card.css', url_img1=images_urls[1],
                                url_img2=images_urls[2],
                                url_img3=images_urls[3],
-                               color=palette[2])
+                               color=palette_colors[2])
         else:
             return render_template('triple_card.css', url_img1=images_urls[0],
                                url_img2=images_urls[1],
                                url_img3=images_urls[2],
-                               color=palette[2])
+                               color=palette_colors[2])
 
     logger.info('Start create_triple_card')
     images_urls = product.images.split(',')
@@ -43,22 +43,19 @@ def create_triple_card(product: Product, front: bool) -> bytes:
 
 
 def create_title_card(product: Product) -> bytes:
-    def get_html(product_category, sub_category, palette):
-        if product_category == 'Верхняя Одежда' or product_category == 'Кофта':
-            card_title = sub_category
-        else:
-            card_title = product_category
+    def get_html(product_category, palette_colors):
+        card_title = product_category
         return render_template('title_card.html', category=card_title,
-                               color1=palette[0],
-                               color2=palette[2])
-    def get_css(images_urls, palette):
-        return render_template('title_card.css', url_img=images_urls[0], color=palette[2])
+                               color1=palette_colors[0],
+                               color2=palette_colors[2])
+    def get_css(images_urls, palette_colors):
+        return render_template('title_card.css', url_img=images_urls[0], color=palette_colors[2])
 
     logger.info('Start create_title_card')
     images_urls = product.images.split(',')
     palette = get_palette(images_urls)
 
-    html = get_html(product.publication_category, product.sub_category, palette)
+    html = get_html(product.publication_category, palette)
     css = get_css(images_urls, palette)
     logger.info('End create_title_card')
     return screenshot_html(html, css)

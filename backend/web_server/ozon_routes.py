@@ -60,14 +60,15 @@ def send_post():
     products_list = db.get_products_for_post(request.json)
     cards_list = []
     if len(products_list) == 6:
-        cards_list.ozonend(card_creator.create_title_card(schema.Product(*products_list[0])))
-        cards_list.ozonend(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+        unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
+        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
+        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
         for product in products_list[1:]:
-            cards_list.ozonend(card_creator.create_triple_card(schema.Product(*product), False))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
 
         products_links = [schema.Product(*product).url for product in products_list]
 
-        telegram_connector.send_post(cards_list, request.json, products_links, schema.Product(*products_list[0]).sub_category)
+        telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'

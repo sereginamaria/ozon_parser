@@ -6,13 +6,13 @@ import random
 import io
 from telegram import logger
 
-def send_post(cards_list, json, product_links, sub_category):
+def send_post(cards_list, json, product_links, unique_sub_categories):
     logger.info('Start send_post')
     publication_category = ''.join(json['category'].split())
-    if (publication_category == 'ВерхняяОдежда' or publication_category == 'Кофта'):
-        caption = ("#" + publication_category + ' #' + sub_category)
-    else:
-        caption = ("#" + publication_category)
+    caption = ("#" + publication_category)
+
+    for unique_sub_category in unique_sub_categories:
+        caption += " #" + unique_sub_category
 
     media_group = [(InputMediaPhoto(io.BytesIO(card), caption = caption if cards_list.index(card) == 0 else ''))
                    for card in cards_list]
