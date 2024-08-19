@@ -1,5 +1,5 @@
 from db import cursor, connection, logger
-from ozon_parser import schema
+from parser_ozon import schema
 
 def add_product(product: schema.Product):
     logger.info('Start add_product')

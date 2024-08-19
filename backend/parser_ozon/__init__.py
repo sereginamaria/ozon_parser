@@ -3,7 +3,7 @@ import logging
 import atexit
 import sys
 
-logger = logging.getLogger("ozon_parser")
+logger = logging.getLogger("parser_ozon")
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler(sys.stdout)
 handler.setLevel(logging.DEBUG)

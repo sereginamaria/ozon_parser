@@ -4,10 +4,10 @@ import time
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from ozon_parser.schema import Product
+from parser_ozon.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from ozon_parser import logger, driver, config
+from parser_ozon import logger, driver, config
 from db.db import add_product
 from text_recognizer.main import recognize_text
 from fake_useragent import UserAgent

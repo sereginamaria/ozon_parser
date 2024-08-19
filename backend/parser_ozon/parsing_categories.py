@@ -1,4 +1,4 @@
-from ozon_parser import get_products
+from parser_ozon import get_products
 
 def parse_trousers():
     # БРЮКИ

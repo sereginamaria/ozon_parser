@@ -12,7 +12,7 @@
 # from airflow.timetables.events import EventsTimetable
 # from multiple_crons_timetable import MultiCronTimetable
 # from db import db
-# from ozon_parser import schema
+# from parser_ozon import schema
 # from telegram import telegram_notifier
 #
 # def check_availability_of_products():

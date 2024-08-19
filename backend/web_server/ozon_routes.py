@@ -2,7 +2,7 @@ import flask
 
 from web_server import logger
 from db import db
-from ozon_parser import schema, parsing_categories
+from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
 from telegram import telegram_connector, telegram_notifier
 from card_creator import card_creator
