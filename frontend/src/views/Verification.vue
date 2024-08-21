@@ -1,22 +1,22 @@
 <template>
-  <div class="verification">
+  <div class="verification-block">
     <NavbarComponent :label="'Панель Администратора'" :goToUrl="'/admin-panel'"/>
 
-    <div v-if="gallery.contentReady" class="gallery" :style="'height: calc(100% - ' + height + 'px'">
+    <div v-if="gallery.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
       <GalleryComponent/>
-      <div style="padding: 2%; max-width: 800px">
+      <div class="toolbar">
         <ToolbarComponent/>
         <div>
           <h3>Пример карточки</h3>
           <p>Нажмите на карточку для увеличения</p>
         </div>
-        <div style="display: flex">
+        <div style="display: flex; flex-wrap: wrap">
           <TitleCardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
           <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="1"/>
           <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
         </div>
         <Dialog v-model:visible="visible" modal dismissableMask :draggable="false">
-          <div style="display: flex">
+          <div style="display: flex; flex-wrap: wrap">
             <TitleCardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
             <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="1"/>
             <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
@@ -79,7 +79,7 @@ export default defineComponent ({
   },
   created() {
     window.addEventListener('beforeunload', () => {
-      this.$router.push('/')
+      this.$router.push('/verification')
     });
 
     this.product.get_verification_information()
@@ -89,14 +89,28 @@ export default defineComponent ({
 </script>
 
 <style scoped>
-  .verification {
+  .verification-block {
     width: 100%;
     height: 100%;
   }
 
-  .gallery {
+  .verification-block-body {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .toolbar {
+    padding: 0 1rem 1rem 2rem;
+    max-width: 50%
+  }
+
+  @media screen and (max-width: 480px) {
+    .toolbar {
+      max-width: 100%;
+    }
+    .verification-block-body {
+      flex-wrap: wrap;
+    }
   }
 </style>

@@ -81,11 +81,15 @@ export const useProductStore = defineStore('product', {
         saveNewName(newName: string): void {
             this.name = newName
         },
+         saveNewSubCategory(NewSubCategory: string): void {
+            this.subCategory = NewSubCategory
+        },
         saveProduct(): void {
             axios.post(base_url + '/save_product', {
                 id: this.id,
                 name: this.name,
-                images: this.images
+                images: this.images,
+                sub_category: this.subCategory
             })
                 .then ((response) => {
                     if (response.status == 200){

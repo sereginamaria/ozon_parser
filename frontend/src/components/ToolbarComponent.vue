@@ -1,6 +1,17 @@
 <template>
   <div>
     <div>
+      <div>
+        <h3>Работа с изображениями</h3>
+        <Button  @click="deleteImage()" label="Удалить" class="toolbar-block__button"/>
+        <Button  @click="visibleChangeName = true" label="Изменить название" class="toolbar-block__button"/>
+        <Button  @click="visibleChangeSubCategory = true" label="Изменить подкатегорию"/>
+      </div>
+      <div>
+        <h3>Оставляем товар?</h3>
+        <Button label="Да" style="margin-right: 1rem" @click="saveProduct()"/>
+        <Button label="Нет" @click="deleteProduct()"/>
+      </div>
       <h3>Информация о товаре</h3>
       <p>Проверефицированных товаров данной категории: {{ product.countOfCategoryProducts }}</p>
       <p>ID: {{ product.id }}</p>
@@ -9,17 +20,8 @@
       <p>Название: {{product.name}}</p>
       <p v-if="product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
     </div>
-    <div>
-      <h3>Работа с изображениями</h3>
-      <Button  @click="deleteImage()" label="Удалить" style="margin-right: 1rem"/>
-      <Button  @click="visible = true" label="Изменить название"/>
-    </div>
-    <div>
-      <h3>Оставляем товар?</h3>
-      <Button label="Да" style="margin-right: 1rem" @click="saveProduct()"/>
-      <Button label="Нет" @click="deleteProduct()"/>
-    </div>
-    <Dialog v-model:visible="visible" modal :draggable="false" style="min-width: 30%">
+
+    <Dialog v-model:visible="visibleChangeName" modal :draggable="false" style="min-width: 30%">
       <div>
         <h3>Изменение названия</h3>
         <p>Полное название: {{product.name}}</p>
@@ -27,6 +29,15 @@
         <p v-if="product.name.length > 30">Первые 30 символов названия: {{ product.name.slice(0,30) }}</p>
         <InputText type="text" v-model="newName" style="min-width: 300px; margin-right: 1rem"/>
         <Button  label="Сохранить" @click="saveNewName()"/>
+      </div>
+    </Dialog>
+
+    <Dialog v-model:visible="visibleChangeSubCategory" modal :draggable="false" style="min-width: 30%">
+      <div>
+        <h3>Изменение подкатегории</h3>
+        <p>Текущая подкатегория: {{product.subCategory}}</p>
+        <InputText type="text" v-model="newSubCategory" style="min-width: 300px; margin-right: 1rem"/>
+        <Button  label="Сохранить" @click="saveNewSubCategory()"/>
       </div>
     </Dialog>
   </div>
@@ -47,8 +58,10 @@ export default defineComponent({
   components: {Button, InputText, Dialog},
   data() {
     return {
-      visible: false,
-      newName: ''
+      visibleChangeName: false,
+      visibleChangeSubCategory: false,
+      newName: '',
+      newSubCategory: ''
     }
   },
   computed: {
@@ -60,7 +73,11 @@ export default defineComponent({
     },
     saveNewName(): void {
       this.product.saveNewName(this.newName)
-      this.visible = false
+      this.visibleChangeName = false
+    },
+    saveNewSubCategory(): void {
+      this.product.saveNewSubCategory(this.newSubCategory)
+      this.visibleChangeSubCategory = false
     },
     saveProduct(): void {
       this.product.saveProduct()
@@ -74,6 +91,8 @@ export default defineComponent({
       this.newName = this.product.name.slice(0,30)
     }
     else this.newName = this.product.name
+
+    this.newSubCategory = this.product.subCategory
   }
 })
 </script>
@@ -81,5 +100,16 @@ export default defineComponent({
 <style scoped>
   .p-dialog-header {
     padding: 0 !important;
+  }
+
+  .toolbar-block__button {
+    margin-right: 1rem;
+    margin-bottom: 1rem
+  }
+
+  @media screen and (max-width: 480px) {
+    .toolbar-block__button {
+      margin-bottom: 0.5rem
+    }
   }
 </style>

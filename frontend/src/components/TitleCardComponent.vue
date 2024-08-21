@@ -72,11 +72,15 @@ export default defineComponent({
 .container_05 {
   width: 512px;
   height: 640px;
+  box-sizing: border-box;
+  margin: 1rem;
 }
 
 .container_025 {
   width: 256px;
   height: 320px;
+  box-sizing: border-box;
+  margin: 0.5rem;
 }
 
 .header {
