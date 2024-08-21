@@ -324,29 +324,38 @@ def parse_swimsuit():
                             'https://www.ozon.ru/category/kupalniki-i-plyazhnaya-odezhda-zhenskie-7540/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Купальник+женский')
 
 def parse_kofta():
-    # Лонгслив
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
+    # Свитер
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женский+свитер')
+
+    #Лонгслив
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Лонгслив+женский')
 
     # Джемпер
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женский+джемпер')
+
+    # Кардиган
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женский+кардиган')
 
     # Свитшот
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=свитошот+женский')
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=свитошот+женский')
 
-    # #Худи
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/tolstovki-i-olimpiyki-zhenskie-7788/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=худиженская&type=37308%2C39148')
+    # Худи
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/tolstovki-i-olimpiyki-zhenskie-7788/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=худиженская&type=37308%2C39148')
 
     # Водолазка
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/svitery-dzhempery-i-kardigany-zhenskie-7537/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Водолазка+женская')
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/svitery-dzhempery-i-kardigany-zhenskie-7537/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Водолазка+женская')
 
     # Боди
-    get_products.parse_page('Кофта',
-                            'https://www.ozon.ru/category/bodi-i-korsazhi-zhenskie-31309/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Боди+женская')
+     get_products.parse_page('Кофта',
+                           'https://www.ozon.ru/category/bodi-i-korsazhi-zhenskie-31309/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Боди+женская')
+
 
 def parse_outer_wear():
     # ВЕРХНЯЯ ОДЕЖДА ВЕСЕННЯЯ

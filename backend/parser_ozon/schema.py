@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 @dataclass(frozen=False)
 class Product:
+    id: int
     name: str
     price_original: str
     price: str

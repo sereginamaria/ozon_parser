@@ -35,6 +35,8 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
         bot.send_media_group(config.CHAT_ID, media=media_group, timeout=120)
         bot.send_message(config.CHAT_ID, text, reply_markup=markup)
         logger.info('End send_post')
+        return True
     except apihelper.ApiTelegramException as e:
         logger.warning(f'Произошла ошибка при отправке сообщения: {str(e)}')
         bot.send_message(config.CHAT_ID, 'Произошла ошибка при отправке сообщения в канал')
+        return False

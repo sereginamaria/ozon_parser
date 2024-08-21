@@ -64,8 +64,12 @@ def screenshot_html(html, css) -> bytes:
             '--hide-scrollbars'
         ],
     )
+    logger.info('screen')
+    import os
+    print(os.getcwd())
+    logger.info(os.getcwd())
 
-    hti.load_file('../card_creator/templates/logo.png', "logo.png")
+    hti.load_file('./card_creator/templates/logo.png', "logo.png")
     path = hti.screenshot(
         html_str=html, css_str=css, size=(1024, 1280)
     )[0]

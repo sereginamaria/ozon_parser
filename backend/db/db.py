@@ -66,8 +66,8 @@ def save_product(json):
             images += image + ', '
         i += 1
     cursor.execute(
-        "update public.test_ozon_products set product_name = '%s', product_images = '%s', verification = '%s' where product_id = '%s'" % (
-            json['name'], images, True, json['id']
+        "update public.test_ozon_products set product_name = '%s', product_images = '%s', verification = '%s', sub_category = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['sub_category'], json['id']
         )
     )
     connection.commit()
@@ -96,7 +96,7 @@ def return_all_categories():
 
 def get_products_for_post(json):
     cursor.execute(
-        "select product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
+        "select product_id, product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
         "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
         "product_article, product_all_articles, product_url, publication_category, description, sub_category "
         "from public.test_ozon_products where (verification = true and is_published = false and "
@@ -112,3 +112,11 @@ def count_of_categories():
         " from public.test_ozon_products where (verification = true and is_published = false) group by publication_category")
     connection.commit()
     return cursor.fetchall()
+
+def publish_product(id):
+    cursor.execute(
+        "update public.test_ozon_products set is_published = true where product_id = '%s'" % (
+            id
+        )
+    )
+    connection.commit()

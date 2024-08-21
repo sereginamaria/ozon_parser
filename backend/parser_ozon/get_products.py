@@ -55,7 +55,7 @@ def parse_urls(html):
     logger.info('Start parse_urls')
     soup = BeautifulSoup(html, 'html.parser')
     product_links = set([a.get('href').split('?')[0] for a in list(
-        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'j5m_23'})]))])
+        itertools.chain(*[div.find_all('a') for div in soup.find('div').find_all(attrs={'class', 'm7j_23'})]))])
     logger.info('End parse_urls')
     return product_links
 

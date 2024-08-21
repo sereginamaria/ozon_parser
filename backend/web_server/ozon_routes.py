@@ -23,7 +23,7 @@ def hello():
 
 @ozon.route('/parse_page', methods=['GET'])
 def parse_page():
-    parsing_categories.parse_trousers()
+    parsing_categories.parse_kofta()
 
 @ozon.route('/get_verification_information', methods=['GET'])
 def get_verification_information():
@@ -68,7 +68,10 @@ def send_post():
 
         products_links = [schema.Product(*product).url for product in products_list]
 
-        telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
+        resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
+        if resp:
+            for product in products_list:
+                db.publish_product(schema.Product(*product).id)
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'

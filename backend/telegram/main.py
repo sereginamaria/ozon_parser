@@ -2,6 +2,11 @@ import logging
 import sys
 import time
 from telegram import bot
+from threading import Thread
+from telegram import autoposting
+
+th_1 = Thread(target=autoposting.autop)
+th_1.start()
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
