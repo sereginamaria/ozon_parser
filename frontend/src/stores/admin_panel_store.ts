@@ -28,8 +28,8 @@ export const useAdminPanelStore = defineStore('adminPanel', {
                     }
                 })
         },
-        getCountOfCategories(): void {
-            axios.get(base_url + '/get_count_of_categories')
+        getTimeSheet(): void {
+            axios.get(base_url + '/get_timesheet')
                 .then((response) => {
                     this.list = response.data
                 })

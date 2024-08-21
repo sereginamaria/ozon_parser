@@ -37,7 +37,7 @@ export default defineComponent({
           this.$router.push('/verification')
       },
       getCountOfCategories() {
-          this.adminPanel.getCountOfCategories()
+          this.adminPanel.getTimeSheet()
 
           console.log(this.adminPanel.list)
           console.log(typeof this.adminPanel.list)
@@ -123,6 +123,12 @@ export default defineComponent({
               "Сумка": '20:00',
           }
       }
+
+        const date = new Date();
+        const options = { weekday: 'long' };
+        const dayOfWeek = date.toLocaleString('en-US', options);
+
+        console.log(dayOfWeek);
 
         let time_array = ['6:00', '8:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00']
 
