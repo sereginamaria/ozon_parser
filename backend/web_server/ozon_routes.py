@@ -75,6 +75,9 @@ def send_post():
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
 
-@ozon.route('/get_count_of_categories', methods=['GET'])
-def get_count_of_category():
-    return db.count_of_categories()
+@ozon.route('/get_timesheet', methods=['GET'])
+def get_timesheet():
+    count_of_categories = db.count_of_categories()
+    print(count_of_categories)
+
+    return 'end'
