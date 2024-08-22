@@ -52,7 +52,7 @@ def get_verification_information():
         "select "
         "(select publication_category from public.test_ozon_products "
         "where (verification = false and stored = false) order by product_id limit 1), count(*) "
-        "from public.test_ozon_products where (verification = true and is_published = false)")
+        "from public.test_ozon_products where (verification = true and is_published = false) group by publication_category")
     connection.commit()
     return product_information, cursor.fetchone()
 
@@ -106,7 +106,7 @@ def get_products_for_post(json):
     return cursor.fetchall()
 
 
-def count_of_categories():
+def count_of_products_in_category():
     cursor.execute(
         "select publication_category, count(*) "
         " from public.test_ozon_products where (verification = true and is_published = false) group by publication_category")

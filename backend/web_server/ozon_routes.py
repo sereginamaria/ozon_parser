@@ -1,11 +1,13 @@
 import flask
 
-from web_server import logger
+from web_server import logger, timesheet
 from db import db
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
 from telegram import telegram_connector, telegram_notifier
 from card_creator import card_creator
+from datetime import date
+import datetime as datetime2
 
 ozon = Blueprint('ozon', __name__)
 
@@ -77,7 +79,39 @@ def send_post():
 
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():
-    count_of_categories = db.count_of_categories()
-    print(count_of_categories)
+    list_with_timesheet = []
+    count_of_products_in_category = db.count_of_products_in_category()
+    def are_there_products_in_db(category, time):
+        for count_of_product in count_of_products_in_category:
+            count_of_product = list(count_of_product)
+            if category in count_of_product:
+                if count_of_product[1] >= 6:
+                    count_of_product[1] = count_of_product[1] - 6
+                    return '\n' + time + ' ' + category + '  ✅️'
+                else:
+                    return ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще '
+                                       + str(6 - count_of_product[1]))
 
-    return 'end'
+        return '\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще 6'
+
+    date_of_publication = date.today()
+    i = 1
+    while i <= 2:
+        timesheet_text = str(date_of_publication)
+
+        date_name = date_of_publication.strftime("%A")
+        for category, time in timesheet[date_name].items():
+
+            resp = are_there_products_in_db(category, time)
+            timesheet_text += resp
+
+        i += 1
+        date_of_publication += datetime2.timedelta(days=1)
+        list_with_timesheet.append(timesheet_text)
+
+    return list_with_timesheet
+@ozon.route('/count_of_products_in_category', methods=['GET'])
+def count_of_products_in_category():
+    l = db.count_of_products_in_category()
+    print(l)
+    return l
