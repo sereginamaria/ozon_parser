@@ -12,7 +12,8 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
     caption = ("#" + publication_category)
 
     for unique_sub_category in unique_sub_categories:
-        caption += " #" + unique_sub_category
+        if unique_sub_category != publication_category:
+            caption += " #" + unique_sub_category
 
     media_group = [(InputMediaPhoto(io.BytesIO(card), caption = caption if cards_list.index(card) == 0 else ''))
                    for card in cards_list]
@@ -32,11 +33,14 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
     markup.add(*buttons)
 
     try:
-        bot.send_media_group(config.CHAT_ID, media=media_group, timeout=120)
-        bot.send_message(config.CHAT_ID, text, reply_markup=markup)
+        bot.send_media_group(config.CHANNEL_ID, media=media_group, timeout=120)
+        bot.send_message(config.CHANNEL_ID, text, reply_markup=markup)
         logger.info('End send_post')
         return True
     except apihelper.ApiTelegramException as e:
         logger.warning(f'Произошла ошибка при отправке сообщения: {str(e)}')
         bot.send_message(config.CHAT_ID, 'Произошла ошибка при отправке сообщения в канал')
         return False
+
+def send_video(video):
+    bot.send_video(config.CHAT_ID, video, timeout=60)

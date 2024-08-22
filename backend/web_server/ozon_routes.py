@@ -1,6 +1,8 @@
+import itertools
+
 import flask
 
-from web_server import logger, timesheet
+from web_server import logger
 from db import db
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
@@ -8,6 +10,8 @@ from telegram import telegram_connector, telegram_notifier
 from card_creator import card_creator
 from datetime import date
 import datetime as datetime2
+from main_config import TIMESHEET
+from video_maker import video_maker
 
 ozon = Blueprint('ozon', __name__)
 
@@ -100,7 +104,7 @@ def get_timesheet():
         timesheet_text = str(date_of_publication)
 
         date_name = date_of_publication.strftime("%A")
-        for category, time in timesheet[date_name].items():
+        for category, time in TIMESHEET[date_name].items():
 
             resp = are_there_products_in_db(category, time)
             timesheet_text += resp
@@ -112,6 +116,24 @@ def get_timesheet():
     return list_with_timesheet
 @ozon.route('/count_of_products_in_category', methods=['GET'])
 def count_of_products_in_category():
-    l = db.count_of_products_in_category()
-    print(l)
-    return l
+    return db.count_of_products_in_category()
+
+@ozon.route('/create_videos', methods=['GET'])
+def create_videos():
+    categories = ["Украшения", "Верхняя Одежда", "Кофта", "Брюки", "Джинсы", "Платье", "Пиджак", "Сумка", "Костюм",
+                 "Юбка", "Блузка", "Обувь", "Футболка", "Топ", "Домашняя Одежда", "Рубашка"]
+    for category in categories:
+        new_product = {
+            "category": category,
+        }
+        products_list = db.get_products_for_post(new_product)
+        cards_list = []
+        if len(products_list) == 6:
+            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+            for product in products_list[1:]:
+                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+
+            video_b = video_maker.generate_video(cards_list)
+            telegram_connector.send_video(video_b)
+    return 'end'

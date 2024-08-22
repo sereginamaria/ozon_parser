@@ -8,7 +8,9 @@ handler = logging.StreamHandler(sys.stdout)
 handler.setLevel(logging.DEBUG)
 logger.addHandler(handler)
 
-bot = telebot.TeleBot('7075281827:AAFFGJ-vPc0DDQ-VmMakxFqYjafNUjxxynI')
+# bot = telebot.TeleBot('7075281827:AAFFGJ-vPc0DDQ-VmMakxFqYjafNUjxxynI') new
+# OLD
+bot = telebot.TeleBot('6508472057:AAHdRDqUbaVjn7sstEtnHPMmKAXXAPp6_og')
 
 mass_of_stikers = ['\U0001F531', '\U000026B1', '\U0001F9FF', '\U0001FAAC',
                    '\U0001F5FF', '\U0001FAA7', '\U0001F9EF', '\U0001FAE7', '\U0001F9EC',

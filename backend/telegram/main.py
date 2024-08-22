@@ -1,6 +1,10 @@
 import logging
 import sys
 import time
+
+import requests
+
+from main_config import BASE_URL
 from telegram import bot
 from threading import Thread
 from telegram import autoposting
@@ -12,6 +16,8 @@ th_1.start()
 def get_text_message(message):
     if message.text == "/help":
         bot.send_message(message.from_user.id, 'Привет')
+    elif message.text == "/get_videos":
+        requests.get("http://" + BASE_URL + ":5001/create_videos")
     else:
         bot.send_message(message.from_user.id, 'Не понимаю')
 while True:
