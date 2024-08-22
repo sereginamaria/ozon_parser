@@ -32,14 +32,24 @@ export const useAdminPanelStore = defineStore('adminPanel', {
         getTimeSheet(): void {
             axios.get(base_url + '/get_timesheet')
                 .then((response) => {
-                    this.timesheet = response.data
-                    this.getCountOfProductsInCategory()
+                    if (response.status == 200){
+                        this.timesheet = response.data
+                        this.getCountOfProductsInCategory()
+                    }
                 })
         },
         getCountOfProductsInCategory(): void {
             axios.get(base_url + '/count_of_products_in_category')
                 .then((response) => {
-                    this.countOfProductsInCategory = response.data
+                    if (response.status == 200){
+                        this.countOfProductsInCategory = response.data
+                    }
+                })
+        },
+        getVideos(): void {
+             axios.get(base_url + '/create_videos')
+                .then((response) => {
+
                 })
         }
     }

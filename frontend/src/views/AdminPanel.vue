@@ -5,6 +5,7 @@
       <div>
         <Button label="Отложить текущую категорию товаров" class="admin-panel__button" @click="storeCategory()"/>
         <Button label="Вернуть все отложенные товары" class="admin-panel__button" @click="returnAllCategories()"/>
+        <Button label="Создать видео" class="admin-panel__button" @click="getVideos()"/>
       </div>
       <div class="timesheet-and-count-of-products-block">
         <div>
@@ -47,6 +48,9 @@ export default defineComponent({
       returnAllCategories() {
           this.adminPanel.returnAllCategories()
           this.$router.push('/verification')
+      },
+      getVideos(){
+        this.adminPanel.getVideos()
       }
   },
   created() {
