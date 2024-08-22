@@ -5,7 +5,8 @@ import axios from 'axios'
 const base_url = import.meta.env.VITE_BASE_URL
 export const useAdminPanelStore = defineStore('adminPanel', {
     state: () => ({
-        list: []
+        timesheet: [],
+        countOfProductsInCategory: []
     }),
     actions: {
         storeCategory(): void {
@@ -31,7 +32,14 @@ export const useAdminPanelStore = defineStore('adminPanel', {
         getTimeSheet(): void {
             axios.get(base_url + '/get_timesheet')
                 .then((response) => {
-                    this.list = response.data
+                    this.timesheet = response.data
+                    this.getCountOfProductsInCategory()
+                })
+        },
+        getCountOfProductsInCategory(): void {
+            axios.get(base_url + '/count_of_products_in_category')
+                .then((response) => {
+                    this.countOfProductsInCategory = response.data
                 })
         }
     }

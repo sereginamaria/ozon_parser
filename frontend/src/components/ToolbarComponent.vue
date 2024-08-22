@@ -5,7 +5,6 @@
         <h3>Работа с изображениями</h3>
         <Button  @click="deleteImage()" label="Удалить" class="toolbar-block__button"/>
         <Button  @click="visibleChangeName = true" label="Изменить название" class="toolbar-block__button"/>
-        <Button  @click="visibleChangeSubCategory = true" label="Изменить подкатегорию"/>
       </div>
       <div>
         <h3>Оставляем товар?</h3>
@@ -13,14 +12,17 @@
         <Button label="Нет" @click="deleteProduct()"/>
       </div>
       <h3>Информация о товаре</h3>
-      <p>Проверефицированных товаров данной категории: {{ product.countOfCategoryProducts }}</p>
-      <p>ID: {{ product.id }}</p>
       <p>Категория: {{ product.category }}</p>
       <p>Подкатегория: {{ product.subCategory }}</p>
       <p>Название: {{product.name}}</p>
       <p v-if="product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
+      <p>Проверефицированных товаров данной категории: {{ product.countOfCategoryProducts }}</p>
+      <p>ID: {{ product.id }}</p>
     </div>
-
+    <div>
+      <h3>Работа с информацией</h3>
+      <Button  @click="visibleChangeSubCategory = true" label="Изменить подкатегорию"/>
+    </div>
     <Dialog v-model:visible="visibleChangeName" modal :draggable="false" style="min-width: 30%">
       <div>
         <h3>Изменение названия</h3>
@@ -104,12 +106,5 @@ export default defineComponent({
 
   .toolbar-block__button {
     margin-right: 1rem;
-    margin-bottom: 1rem
-  }
-
-  @media screen and (max-width: 480px) {
-    .toolbar-block__button {
-      margin-bottom: 0.5rem
-    }
   }
 </style>

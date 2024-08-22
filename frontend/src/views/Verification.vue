@@ -78,9 +78,9 @@ export default defineComponent ({
     })
   },
   created() {
-    window.addEventListener('beforeunload', () => {
-      this.$router.push('/verification')
-    });
+    // window.addEventListener('beforeunload', () => {
+    //   this.$router.push('/verification')
+    // });
 
     this.product.get_verification_information()
   }
@@ -108,6 +108,7 @@ export default defineComponent ({
   @media screen and (max-width: 480px) {
     .toolbar {
       max-width: 100%;
+      padding: 0 0.5rem 0.5rem 0.5rem;
     }
     .verification-block-body {
       flex-wrap: wrap;
