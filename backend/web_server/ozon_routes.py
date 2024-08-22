@@ -100,7 +100,7 @@ def get_timesheet():
 
     date_of_publication = date.today()
     i = 1
-    while i <= 2:
+    while i <= 14:
         timesheet_text = str(date_of_publication)
 
         date_name = date_of_publication.strftime("%A")
