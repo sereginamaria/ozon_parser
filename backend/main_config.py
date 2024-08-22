@@ -1,5 +1,5 @@
-# BASE_URL = '127.0.0.1'
-BASE_URL = '195.133.46.183'
+BASE_URL = '127.0.0.1'
+# BASE_URL = '195.133.46.183'
 
 TIMESHEET = {
         'Monday': {
