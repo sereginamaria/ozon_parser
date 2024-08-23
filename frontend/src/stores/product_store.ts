@@ -41,7 +41,7 @@ export const useProductStore = defineStore('product', {
                     }
                     else {
                         [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data[0];
-                        this.countOfCategoryProducts = response.data[1][1]
+                        this.countOfCategoryProducts = response.data[1][0]
 
                         this.images = imagesURL.split(', ')
 
