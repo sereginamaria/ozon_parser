@@ -111,7 +111,7 @@ def autop():
 
         if ((current_day_of_week == 'Monday' and in_time('6:00', current_time, '6:59')) or
                 (current_day_of_week == 'Wednesday' and in_time('6:00', current_time, '6:59')) or
-                (current_day_of_week == 'Friday' and in_time('6:00', current_time, '164:59')) or
+                (current_day_of_week == 'Friday' and in_time('6:00', current_time, '6:59')) or
                 (current_day_of_week == 'Sunday' and in_time('6:00', current_time, '6:59'))):
             send_post('Украшения')
 
