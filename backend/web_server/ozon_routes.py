@@ -84,22 +84,23 @@ def send_post():
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():
     list_with_timesheet = []
-    count_of_products_in_category = db.count_of_products_in_category()
+    count_of_products = db.count_of_products_in_category()
+    count_of_products_list = []
+    for count_of_product in count_of_products:
+        count_of_products_list.append(list(count_of_product))
 
     def are_there_products_in_db(category, time):
-        count_of_product = 0
-        for count_of_product_in_category in count_of_products_in_category:
-            count_of_product = list(count_of_product_in_category)
-            if category in count_of_product:
-                if count_of_product[1] >= 6:
-                    print(count_of_product[0])
-                    print(count_of_product[1])
-                    count_of_product[1] = count_of_product[1] - 6
-                    print(count_of_product[1])
+        for count_of_product_list in count_of_products_list:
+            if category in count_of_product_list:
+                if count_of_product_list[1] >= 6:
+                    # print(count_of_product_list[0])
+                    # print(count_of_product_list[1])
+                    count_of_product_list[1] = count_of_product_list[1] - 6
+                    # print(count_of_product_list[1])
                     return '\n' + time + ' ' + category + '  ✅️'
                 else:
                     return ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще '
-                                       + str(6 - count_of_product[1]))
+                                       + str(6 - count_of_product_list[1]))
             # print(count_of_product[0])
             # print(count_of_product[1])
 
@@ -107,7 +108,7 @@ def get_timesheet():
 
     date_of_publication = date.today()
     i = 1
-    while i <= 2:
+    while i <= 14:
         timesheet_text = str(date_of_publication)
 
         date_name = date_of_publication.strftime("%A")
