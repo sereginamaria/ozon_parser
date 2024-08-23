@@ -48,11 +48,11 @@ def get_verification_information():
         "select product_id, publication_category, sub_category,  product_name, product_article, product_price, product_images "
         "from public.ozon_products where (verification = false and stored = false) order by product_id")
     product_information = cursor.fetchone()
+
     cursor.execute(
-        "select "
-        "(select publication_category from public.ozon_products "
-        "where (verification = false and stored = false) order by product_id limit 1), count(*) "
-        "from public.ozon_products where (verification = true and is_published = false) group by publication_category")
+        "select count(*) "
+        " from public.ozon_products where (publication_category = (select publication_category from public.ozon_products "
+         "where (verification = false and stored = false) order by product_id limit 1) and verification = true and is_published = false)")
     connection.commit()
     return product_information, cursor.fetchone()
 

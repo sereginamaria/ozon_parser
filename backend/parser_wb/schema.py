@@ -6,10 +6,8 @@ class Product:
     name: str
     price_original: str
     price: str
-    price_with_ozon_card: str
     images: str
     brand_name: str
-    brand_link: str
     rating: str
     categories: str
     sizes: str

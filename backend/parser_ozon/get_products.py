@@ -295,6 +295,7 @@ def parse_product(url, publication_category):
     sub_category = product_name.partition(' ')[0]
 
     product = validate_product(Product(
+        0,
         product_name,
         product_price_original,
         product_price,

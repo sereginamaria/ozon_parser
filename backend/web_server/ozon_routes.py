@@ -93,16 +93,11 @@ def get_timesheet():
         for count_of_product_list in count_of_products_list:
             if category in count_of_product_list:
                 if count_of_product_list[1] >= 6:
-                    # print(count_of_product_list[0])
-                    # print(count_of_product_list[1])
                     count_of_product_list[1] = count_of_product_list[1] - 6
-                    # print(count_of_product_list[1])
                     return '\n' + time + ' ' + category + '  ✅️'
                 else:
                     return ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще '
                                        + str(6 - count_of_product_list[1]))
-            # print(count_of_product[0])
-            # print(count_of_product[1])
 
         return '\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще 6'
 
