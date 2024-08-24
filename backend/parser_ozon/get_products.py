@@ -8,7 +8,7 @@ from parser_ozon.schema import Product
 from bs4 import BeautifulSoup
 import itertools
 from parser_ozon import logger, driver, config
-from db.db import add_product
+from db.db_ozon import add_product
 from text_recognizer.main import recognize_text
 
 def parse_page(publication_category, url):

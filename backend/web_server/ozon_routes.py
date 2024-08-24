@@ -3,7 +3,7 @@ import itertools
 import flask
 
 from web_server import logger
-from db import db
+from db import db_ozon
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
 from telegram import telegram_connector, telegram_notifier
@@ -33,36 +33,36 @@ def parse_page():
 @ozon.route('/get_verification_information', methods=['GET'])
 def get_verification_information():
     logger.info('get_verification_information')
-    return list(db.get_verification_information())
+    return list(db_ozon.get_verification_information())
 
 @ozon.route('/save_product', methods=['POST'])
 def save_product():
     logger.info('save_product')
-    db.save_product(request.json)
+    db_ozon.save_product(request.json)
     return 'save_product'
 
 @ozon.route('/delete_product', methods=['POST'])
 def delete_product():
     logger.info('delete_product')
-    db.delete_product(request.json)
+    db_ozon.delete_product(request.json)
     return 'delete_product'
 
 @ozon.route('/store_category', methods=['POST'])
 def store_category():
     logger.info('store_category')
-    db.store_category(request.json)
+    db_ozon.store_category(request.json)
     return 'store_category'
 
 @ozon.route('/return_all_categories', methods=['POST'])
 def return_all_categories():
     logger.info('return_all_categories')
-    db.return_all_categories()
+    db_ozon.return_all_categories()
     return 'return_all_categories'
 
 @ozon.route('/send_post', methods=['POST'])
 def send_post():
     logger.info('send_post')
-    products_list = db.get_products_for_post(request.json)
+    products_list = db_ozon.get_products_for_post(request.json)
     cards_list = []
     if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
@@ -76,20 +76,20 @@ def send_post():
         resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
         if resp:
             for product in products_list:
-                db.publish_product(schema.Product(*product).id)
+                db_ozon.publish_product(schema.Product(*product).id)
     else:
-        telegram_notifier.not_enough_products_in_db(request.json)
+        telegram_notifier.not_enough_products_in_db_ozon(request.json)
     return 'send_post'
 
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():
     list_with_timesheet = []
-    count_of_products = db.count_of_products_in_category()
+    count_of_products = db_ozon.count_of_products_in_category()
     count_of_products_list = []
     for count_of_product in count_of_products:
         count_of_products_list.append(list(count_of_product))
 
-    def are_there_products_in_db(category, time):
+    def are_there_products_in_db_ozon(category, time):
         for count_of_product_list in count_of_products_list:
             if category in count_of_product_list:
                 if count_of_product_list[1] >= 6:
@@ -109,7 +109,7 @@ def get_timesheet():
         date_name = date_of_publication.strftime("%A")
         for category, time in TIMESHEET[date_name].items():
 
-            resp = are_there_products_in_db(category, time)
+            resp = are_there_products_in_db_ozon(category, time)
             timesheet_text += resp
 
         i += 1
@@ -119,7 +119,7 @@ def get_timesheet():
     return list_with_timesheet
 @ozon.route('/count_of_products_in_category', methods=['GET'])
 def count_of_products_in_category():
-    return db.count_of_products_in_category()
+    return db_ozon.count_of_products_in_category()
 
 @ozon.route('/create_videos', methods=['GET'])
 def create_videos():
@@ -129,7 +129,7 @@ def create_videos():
         new_product = {
             "category": category,
         }
-        products_list = db.get_products_for_post(new_product)
+        products_list = db_ozon.get_products_for_post(new_product)
         cards_list = []
         if len(products_list) == 6:
             cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
