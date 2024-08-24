@@ -1,7 +1,7 @@
 from telebot.types import InputMediaPhoto
 from telebot import types
 from telebot import apihelper
-from telegram.wb import bot, mass_of_stikers, config, logger
+from telegram.ozon_bot import bot, mass_of_stikers, logger, config
 import random
 import io
 

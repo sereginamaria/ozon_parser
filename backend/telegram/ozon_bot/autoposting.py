@@ -3,6 +3,7 @@ from datetime import datetime
 import time
 import requests
 from main_config import BASE_URL
+
 def send_post(category):
     new_product = {
         "category": category,

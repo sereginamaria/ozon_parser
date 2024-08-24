@@ -1,11 +1,9 @@
 from telebot.types import InputMediaPhoto
 from telebot import types
 from telebot import apihelper
-from telegram import bot, mass_of_stikers
-import config
+from telegram.wb_bot import bot, mass_of_stikers, config, logger
 import random
 import io
-from telegram import logger
 
 def send_post(cards_list, json, product_links, unique_sub_categories):
     logger.info('Start send_post')
@@ -34,8 +32,8 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
     markup.add(*buttons)
 
     try:
-        bot.send_media_group(config.CHANNEL_ID, media=media_group, timeout=120)
-        bot.send_message(config.CHANNEL_ID, text, reply_markup=markup)
+        bot.send_media_group(config.CHAT_ID, media=media_group, timeout=120)
+        bot.send_message(config.CHAT_ID, text, reply_markup=markup)
         logger.info('End send_post')
         return True
     except apihelper.ApiTelegramException as e:

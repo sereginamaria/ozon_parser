@@ -7,7 +7,7 @@ from datetime import date
 import datetime as datetime2
 from main_config import TIMESHEET
 from video_module import video_maker
-from telegram.wb import telegram_connector, telegram_notifier
+from telegram.wb_bot import telegram_notifier, telegram_connector
 
 wb = Blueprint('wb', __name__)
 

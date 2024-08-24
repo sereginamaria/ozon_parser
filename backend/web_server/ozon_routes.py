@@ -2,13 +2,13 @@ from web_server import logger
 from db import db_ozon
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
-import telegram_notifier
-import telegram_connector
 from cards_module import card_creator
 from datetime import date
 import datetime as datetime2
 from main_config import TIMESHEET
 from video_module import video_maker
+
+from telegram.ozon_bot import telegram_notifier, telegram_connector
 
 ozon = Blueprint('ozon', __name__)
 
