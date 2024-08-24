@@ -7,11 +7,11 @@ from db import db_ozon
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
 from telegram import telegram_connector, telegram_notifier
-from card_creator import card_creator
+from cards_module import card_creator
 from datetime import date
 import datetime as datetime2
 from main_config import TIMESHEET
-from video_maker import video_maker
+from video_module import video_maker
 
 ozon = Blueprint('ozon', __name__)
 

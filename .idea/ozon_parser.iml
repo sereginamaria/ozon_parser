@@ -28,7 +28,7 @@
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/backend/card_creator/templates" />
+        <option value="$MODULE_DIR$/backend/cards_module/templates" />
       </list>
     </option>
   </component>

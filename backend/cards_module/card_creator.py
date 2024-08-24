@@ -6,7 +6,7 @@ from html2image import Html2Image
 from colorthief import ColorThief
 
 from parser_ozon.schema import Product
-from card_creator import logger
+from cards_module import logger
 import os
 
 def create_triple_card(product: Product, front: bool) -> bytes:
@@ -69,7 +69,7 @@ def screenshot_html(html, css) -> bytes:
     print(os.getcwd())
     logger.info(os.getcwd())
 
-    hti.load_file('./card_creator/templates/logo.png', "logo.png")
+    hti.load_file('./cards_module/templates/logo.png', "logo.png")
     path = hti.screenshot(
         html_str=html, css_str=css, size=(1024, 1280)
     )[0]

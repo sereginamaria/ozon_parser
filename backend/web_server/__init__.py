@@ -4,7 +4,7 @@ from flask import Flask
 import logging
 from flask_cors import CORS
 
-app = Flask(__name__, template_folder='../card_creator/templates')
+app = Flask(__name__, template_folder='../cards_module/templates')
 CORS(app)
 
 logger = logging.getLogger('web-server')
