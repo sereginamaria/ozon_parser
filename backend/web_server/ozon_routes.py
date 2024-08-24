@@ -1,12 +1,9 @@
-import itertools
-
-import flask
-
 from web_server import logger
 from db import db_ozon
 from parser_ozon import schema, parsing_categories
 from flask import request, Blueprint
-from telegram import telegram_connector, telegram_notifier
+import telegram_notifier
+import telegram_connector
 from cards_module import card_creator
 from datetime import date
 import datetime as datetime2
@@ -78,7 +75,7 @@ def send_post():
             for product in products_list:
                 db_ozon.publish_product(schema.Product(*product).id)
     else:
-        telegram_notifier.not_enough_products_in_db_ozon(request.json)
+        telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
 
 @ozon.route('/get_timesheet', methods=['GET'])

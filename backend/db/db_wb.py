@@ -39,3 +39,81 @@ def add_product(product: schema.Product):
     else:
         logger.info(f'Добавлен товар: {product.name}, {product.article}')
     logger.info('End add_product')
+
+def get_verification_information():
+    cursor.execute(
+        "select product_id, publication_category, sub_category,  product_name, product_article, product_price, product_images "
+        "from public.wb_products where (verification = false and stored = false) order by product_id")
+    product_information = cursor.fetchone()
+
+    cursor.execute(
+        "select count(*) "
+        " from public.wb_products where (publication_category = (select publication_category from public.wb_products "
+         "where (verification = false and stored = false) order by product_id limit 1) and verification = true and is_published = false)")
+    connection.commit()
+    return product_information, cursor.fetchone()
+
+def save_product(json):
+    images = ''
+    i = 1
+    for image in json['images']:
+        if i == len(json['images']):
+            images += image
+        else:
+            images += image + ', '
+        i += 1
+    cursor.execute(
+        "update public.wb_products set product_name = '%s', product_images = '%s', verification = '%s', sub_category = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['sub_category'], json['id']
+        )
+    )
+    connection.commit()
+
+def delete_product(json):
+    cursor.execute(
+        "update public.wb_products set verification = null where product_id = '%s'" % (
+            json['id']
+        )
+    )
+    connection.commit()
+
+def store_category(json):
+    cursor.execute(
+        "update public.wb_products set stored = true where publication_category = '%s'" % (
+            json['category']
+        )
+    )
+    connection.commit()
+
+def return_all_categories():
+    cursor.execute(
+        "update public.wb_products set stored = false where stored = true"
+    )
+    connection.commit()
+
+def get_products_for_post(json):
+    cursor.execute(
+        "select product_id, product_name, product_price_original, product_price, product_images, "
+        "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+        "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+        "from public.wb_products where (verification = true and is_published = false and "
+        "publication_category = '%s') order by product_id limit 2" % (json['category']))
+
+    connection.commit()
+    return cursor.fetchall()
+
+
+def count_of_products_in_category():
+    cursor.execute(
+        "select publication_category, count(*) "
+        " from public.wb_products where (verification = true and is_published = false) group by publication_category")
+    connection.commit()
+    return cursor.fetchall()
+
+def publish_product(id):
+    cursor.execute(
+        "update public.wb_products set is_published = true where product_id = '%s'" % (
+            id
+        )
+    )
+    connection.commit()

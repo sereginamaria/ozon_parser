@@ -7,7 +7,8 @@ from selenium.webdriver.common.by import By
 from parser_ozon.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from parser_ozon import logger, driver, config
+from parser_ozon import logger, config
+from chrome_driver import driver
 from db.db_ozon import add_product
 from text_recognizer.main import recognize_text
 
@@ -28,14 +29,19 @@ def parse_page(publication_category, url):
             else:
                 product = parse_product(url, publication_category)
                 if product is not None:
-                    products.append(product)
+                    # products.append(product)
+                    logger.info('Adding product to DB')
+                    if not config.DEBUG:
+                        add_product(product)
+                    else:
+                        logger.info("Not commiting to DB cuz of debug")
 
-        logger.info('Adding products to DB')
-        for p in products:
-            if not config.DEBUG:
-                add_product(p)
-            else:
-                logger.info("Not commiting to DB cuz of debug")
+        # logger.info('Adding products to DB')
+        # for p in products:
+        #     if not config.DEBUG:
+        #         add_product(p)
+        #     else:
+        #         logger.info("Not commiting to DB cuz of debug")
         logger.info('Done get_products_from_page. Success!')
     return 'End'
 

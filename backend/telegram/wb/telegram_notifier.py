@@ -1,5 +1,4 @@
-from telegram import bot
-import config
+from telegram.wb import bot, config
 
 
 def not_enough_products_in_db(json):

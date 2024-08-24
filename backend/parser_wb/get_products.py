@@ -2,10 +2,11 @@ import re
 from parser_wb.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from parser_wb import logger, driver, config
+from parser_wb import logger, config
 from db.db_wb import add_product
 from text_recognizer.main import recognize_text
 import requests
+from chrome_driver import driver
 
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
@@ -14,7 +15,6 @@ def parse_page(publication_category, url):
     logger.info('Parsing product links from pages')
     urls = list(itertools.chain(*[parse_urls(p) for p in pages]))
     logger.info('Starting products parsing')
-    products = []
     if len(urls) == 0:
         logger.warning('Со страницы не распарсилось ни одной ссылки!')
     else:
@@ -24,14 +24,12 @@ def parse_page(publication_category, url):
             else:
                 product = parse_product(url, publication_category)
                 if product is not None:
-                    products.append(product)
+                    logger.info('Adding product to DB')
+                    if not config.DEBUG:
+                        add_product(product)
+                    else:
+                        logger.info("Not commiting to DB cuz of debug")
 
-        logger.info('Adding products to DB')
-        for p in products:
-            if not config.DEBUG:
-                add_product(p)
-            else:
-                logger.info("Not commiting to DB cuz of debug")
         logger.info('Done get_products_from_page. Success!')
     return 'End'
 
