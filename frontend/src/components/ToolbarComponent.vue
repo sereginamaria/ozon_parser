@@ -47,9 +47,6 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import { mapStores } from 'pinia'
-import { useGalleryStore } from '@/stores';
-import { useProductStore } from '@/stores';
 
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
@@ -58,6 +55,16 @@ import Dialog from "primevue/dialog";
 export default defineComponent({
   name: "ToolbarComponent",
   components: {Button, InputText, Dialog},
+  props: {
+    verification: {
+      type: Object,
+      default: {}
+    },
+    product: {
+      type: Object,
+      default: {}
+    },
+  },
   data() {
     return {
       visibleChangeName: false,
@@ -66,12 +73,9 @@ export default defineComponent({
       newSubCategory: ''
     }
   },
-  computed: {
-    ...mapStores(useGalleryStore, useProductStore),
-  },
   methods: {
     deleteImage(): void {
-      this.product.deleteImage(this.gallery.activeIndex)
+      this.product.deleteImage(this.verification.activeIndex)
     },
     saveNewName(): void {
       this.product.saveNewName(this.newName)

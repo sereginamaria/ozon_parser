@@ -1,31 +1,31 @@
 <template>
   <div class="verification-block">
-    <NavbarComponent :label="'Панель Администратора'" :goToUrl="'/admin-panel'"/>
+    <NavbarComponent :label="'Панель Администратора'" :goToUrl="goToUrl"/>
 
-    <div v-if="gallery.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
-      <GalleryComponent/>
+    <div v-if="verification.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
+      <GalleryComponent :verification="verification"/>
       <div class="toolbar">
-        <ToolbarComponent/>
+        <ToolbarComponent :product="product" :verification="verification"/>
         <div>
           <h3>Пример карточки</h3>
           <p>Нажмите на карточку для увеличения</p>
         </div>
         <div style="display: flex; flex-wrap: wrap">
-          <TitleCardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
-          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="1"/>
-          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0"/>
+          <TitleCardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0" :product="product"/>
+          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="1" :product="product"/>
+          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0" :product="product"/>
         </div>
         <Dialog v-model:visible="visible" modal dismissableMask :draggable="false">
           <div style="display: flex; flex-wrap: wrap">
-            <TitleCardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
-            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="1"/>
-            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0"/>
+            <TitleCardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0" :product="product"/>
+            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="1" :product="product"/>
+            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0" :product="product"/>
           </div>
         </Dialog>
       </div>
     </div>
-    <div v-if="gallery.contentEmpty">Все товары проверифицированы!</div>
-    <div v-if="!gallery.contentReady && !gallery.contentEmpty">Загрузка... Пожалуйста, подождите!</div>
+    <div v-if="verification.contentEmpty">Все товары проверифицированы!</div>
+    <div v-if="!verification.contentReady && !verification.contentEmpty">Загрузка... Пожалуйста, подождите!</div>
   </div>
 </template>
 
@@ -34,32 +34,36 @@ import {defineComponent} from 'vue'
 import GalleryComponent from "@/components/GalleryComponent.vue";
 import ToolbarComponent from "@/components/ToolbarComponent.vue";
 import CardComponent from "@/components/CardComponent.vue";
-import Dialog from 'primevue/dialog';
-import Button from 'primevue/button';
+import Dialog from 'primevue/dialog'
 import Toolbar from 'primevue/toolbar';
 import TitleCardComponent from "@/components/TitleCardComponent.vue";
-import {mapStores} from "pinia";
-import {useGalleryStore, useProductStore} from "@/stores";
 import NavbarComponent from "@/components/NavbarComponent.vue";
 
 export default defineComponent ({
   name: "Verification",
   components: {
     NavbarComponent,
-    TitleCardComponent, CardComponent, ToolbarComponent, GalleryComponent, Button, Dialog, Toolbar},
+    TitleCardComponent, CardComponent, ToolbarComponent, GalleryComponent, Dialog, Toolbar
+  },
+  props: {
+    verification: {
+      type: Object,
+      default: {}
+    },
+    product: {
+      type: Object,
+      default: {}
+    },
+    goToUrl: {
+      type: String,
+      default: '/'
+    }
+  },
   data() {
     return {
       visible: false,
       height: 0
     }
-  },
-  computed: {
-    ...mapStores(useGalleryStore, useProductStore),
-  },
-  methods: {
-      goToAdminPanel(){
-          this.$router.push('/admin-panel')
-      }
   },
   mounted() {
     const toolBarElement = document.getElementById('toolbar')
@@ -78,10 +82,6 @@ export default defineComponent ({
     })
   },
   created() {
-    // window.addEventListener('beforeunload', () => {
-    //   this.$router.push('/verification')
-    // });
-
     this.product.get_verification_information()
   }
 

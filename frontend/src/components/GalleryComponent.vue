@@ -1,5 +1,5 @@
 <template>
-  <Galleria :value="gallery.images" v-model:activeIndex="gallery.activeIndex" :numVisible="4" :circular="true"
+  <Galleria :value="verification.images" v-model:activeIndex="verification.activeIndex" :numVisible="4" :circular="true"
             :showItemNavigators="true">
     <template #item="slotProps">
       <img :src="slotProps.item.itemImageSrc" :alt="slotProps.item.alt" style="display: block; height: 100%" />
@@ -12,18 +12,18 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import { mapStores } from 'pinia'
-import {useGalleryStore, useProductStore} from '@/stores';
-
 import Galleria from 'primevue/galleria';
 
 export default defineComponent ({
   name: "GalleryComponent",
+  props: {
+    verification: {
+      type: Object,
+      default: {}
+    }
+  },
   components: {
     Galleria
-  },
-  computed: {
-    ...mapStores(useGalleryStore, useProductStore),
   }
 })
 </script>

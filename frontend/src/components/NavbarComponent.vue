@@ -2,6 +2,7 @@
   <Toolbar id="toolbar" ref="toolbar" class="toolbar-block">
     <template #start>
       <div class="flex items-center gap-2">
+        <Button label="H" text plain @click="goToHome()"/>
         <Button :label="label" text plain @click="goTo()"/>
       </div>
     </template>
@@ -31,6 +32,9 @@ export default defineComponent( {
   methods: {
     goTo() {
       this.$router.push(this.goToUrl)
+    },
+    goToHome() {
+      this.$router.push('/home')
     },
     exit() {
       localStorage.setItem('isAuth', 'false');

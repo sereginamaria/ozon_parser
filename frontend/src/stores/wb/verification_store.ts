@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useGalleryStore = defineStore('gallery', {
+export const useVerificationStore = defineStore('verification_wb', {
     state: () => ({
         activeIndex: 0 as number,
         contentReady: false as boolean,

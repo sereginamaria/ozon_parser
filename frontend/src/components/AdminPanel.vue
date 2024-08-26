@@ -1,5 +1,5 @@
 <template>
-  <NavbarComponent :label="'Верификация'" :goToUrl="'/verification'"/>
+  <NavbarComponent :label="'Верификация'" :goToUrl="goToUrl"/>
   <div class="admin-panel-block">
       <h3>Работа с данными</h3>
       <div>
@@ -32,22 +32,29 @@
 import Button from 'primevue/button';
 import {defineComponent} from 'vue'
 import NavbarComponent from "@/components/NavbarComponent.vue";
-import {useAdminPanelStore} from "@/stores";
+import {useAdminPanelStore} from "@/stores/ozon";
 import {mapStores} from "pinia";
 export default defineComponent({
   name: "AdminPanel",
-  components: {NavbarComponent, Button},
-  computed: {
-      ...mapStores(useAdminPanelStore),
+  props: {
+    adminPanel: {
+      type: Object,
+      default: {}
+    },
+    goToUrl: {
+      type: String,
+      default: '/'
+    }
   },
+  components: {NavbarComponent, Button},
   methods: {
       storeCategory() {
           this.adminPanel.storeCategory()
-          this.$router.push('/verification')
+          this.$router.push(this.goToUrl)
       },
       returnAllCategories() {
           this.adminPanel.returnAllCategories()
-          this.$router.push('/verification')
+          this.$router.push(this.goToUrl)
       },
       getVideos(){
         this.adminPanel.getVideos()

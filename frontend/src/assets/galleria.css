@@ -14,9 +14,14 @@
 .p-galleria-thumbnails {
     height: 30% !important;
 }
+
+
 @media screen and (max-width: 480px) {
     .p-galleria {
         max-width: 100%;
         max-height: 40%;
+    }
+    .p-button {
+        padding: 0.5rem 0.2rem !important;
     }
 }

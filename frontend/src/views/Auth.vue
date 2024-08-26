@@ -48,7 +48,7 @@ export default defineComponent({
       let response = this.auth.auth(this.login, this.password)
       console.log(response)
       if (response) {
-        this.$router.push('/verification')
+        this.$router.push('/home')
       }
       else this.visibleAuthError = true
     }

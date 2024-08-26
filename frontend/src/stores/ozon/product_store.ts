@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from "axios";
-import { useGalleryStore } from './gallery_store'
+import { useVerificationStore } from './verification_store'
 
 interface State {
     id?: number,
@@ -15,7 +15,7 @@ interface State {
 
 const base_url = import.meta.env.VITE_BASE_URL
 
-export const useProductStore = defineStore('product', {
+export const useProductStore = defineStore('product_ozon', {
     state: (): State  => {
         return  {
             id:  0,
@@ -30,14 +30,14 @@ export const useProductStore = defineStore('product', {
     },
     actions: {
         get_verification_information() {
-            const galleryStore = useGalleryStore()
+            const verificationStore = useVerificationStore()
             axios.get(base_url + '/get_verification_information')
                 .then ((response) => {
                     let imagesURL: string
 
                     if (response.data[0] === null) {
-                        galleryStore.contentEmpty = true
-                        galleryStore.contentReady = false
+                        verificationStore.contentEmpty = true
+                        verificationStore.contentReady = false
                     }
                     else {
                         [this.id, this.category, this.subCategory, this.name, this.article, this.price, imagesURL] = response.data[0];
@@ -45,10 +45,10 @@ export const useProductStore = defineStore('product', {
 
                         this.images = imagesURL.split(', ')
 
-                        galleryStore.images = []
+                        verificationStore.images = []
                         let i: number = 0
                         this.images.forEach( (image: string): void => {
-                            galleryStore.images.push(
+                            verificationStore.images.push(
                                 {
                                     itemImageSrc: image,
                                     thumbnailImageSrc: image,
@@ -59,22 +59,22 @@ export const useProductStore = defineStore('product', {
                             i++
                         })
 
-                        galleryStore.contentReady = true
-                        galleryStore.contentEmpty = false
+                        verificationStore.contentReady = true
+                        verificationStore.contentEmpty = false
                     }
 
                 })
         },
         deleteImage(activeIndex: number): void {
-            const galleryStore = useGalleryStore()
+            const verificationStore = useVerificationStore()
             if (this.images !== null) {
                 this.images.splice(activeIndex, 1)
             }
-            galleryStore.images.splice(activeIndex, 1)
+            verificationStore.images.splice(activeIndex, 1)
 
             if (this.images.length == 3){
                 this.images.push(this.images[0])
-                galleryStore.images.push(galleryStore.images[0])
+                verificationStore.images.push(verificationStore.images[0])
 
             }
         },

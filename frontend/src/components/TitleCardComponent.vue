@@ -23,21 +23,20 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
-import { mapStores } from 'pinia'
-import {useProductStore} from "@/stores";
 
 export default defineComponent({
   name: "TitleCardComponent",
   props: {
     cardClass: String,
+    product: {
+      type: Object,
+      default: {}
+    },
     startImageIndex: {
       type: Number,
       default: 0
     }
-  },
-  computed: {
-    ...mapStores(useProductStore)
-  },
+  }
 })
 </script>
 
