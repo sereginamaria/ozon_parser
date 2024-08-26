@@ -81,7 +81,7 @@ def send_post():
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():
     list_with_timesheet = []
-    count_of_products = db_ozon.count_of_products_in_category()
+    count_of_products = db_ozon.count_of_verified_products()
     count_of_products_list = []
     for count_of_product in count_of_products:
         count_of_products_list.append(list(count_of_product))
@@ -114,9 +114,13 @@ def get_timesheet():
         list_with_timesheet.append(timesheet_text)
 
     return list_with_timesheet
-@ozon.route('/count_of_products_in_category', methods=['GET'])
-def count_of_products_in_category():
-    return db_ozon.count_of_products_in_category()
+@ozon.route('/count_of_verified_products', methods=['GET'])
+def count_of_verified_products():
+    return db_ozon.count_of_verified_products()
+
+@ozon.route('/count_of_not_verified_products', methods=['GET'])
+def count_of_not_verified_products():
+    return db_ozon.count_of_not_verified_products()
 
 @ozon.route('/create_videos', methods=['GET'])
 def create_videos():

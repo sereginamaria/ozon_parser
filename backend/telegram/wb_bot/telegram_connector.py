@@ -1,7 +1,8 @@
 from telebot.types import InputMediaPhoto
 from telebot import types
 from telebot import apihelper
-from telegram.wb_bot import bot, mass_of_stikers, config, logger
+from telegram import bot, mass_of_stikers, logger
+from telegram.wb_bot import config
 import random
 import io
 
@@ -26,7 +27,7 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
     buttons = []
     i = 0
     for product_link in product_links:
-        buttons.append(types.InlineKeyboardButton(str(i + 1), url='https://www.ozon.ru' + product_link))
+        buttons.append(types.InlineKeyboardButton(str(i + 1), url=product_link))
         i += 1
 
     markup.add(*buttons)

@@ -106,10 +106,17 @@ def get_products_for_post(json):
     return cursor.fetchall()
 
 
-def count_of_products_in_category():
+def count_of_verified_products():
     cursor.execute(
         "select publication_category, count(*) "
         " from public.ozon_products where (verification = true and is_published = false) group by publication_category")
+    connection.commit()
+    return cursor.fetchall()
+
+def count_of_not_verified_products():
+    cursor.execute(
+        "select publication_category, count(*) "
+        " from public.ozon_products where (verification = false and is_published = false) group by publication_category")
     connection.commit()
     return cursor.fetchall()
 
