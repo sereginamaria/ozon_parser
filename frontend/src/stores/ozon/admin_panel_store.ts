@@ -6,7 +6,8 @@ const base_url = import.meta.env.VITE_BASE_URL
 export const useAdminPanelStore = defineStore('adminPanel_ozon', {
     state: () => ({
         timesheet: [],
-        countOfProductsInCategory: []
+        countOfVerifiedProducts: [],
+        countOfNotVerifiedProducts: []
     }),
     actions: {
         storeCategory(): void {
@@ -34,15 +35,24 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 .then((response) => {
                     if (response.status == 200){
                         this.timesheet = response.data
-                        this.getCountOfProductsInCategory()
+                        this.getCountOfVerifiedProducts()
+                        this.getCountOfNotVerifiedProducts()
                     }
                 })
         },
-        getCountOfProductsInCategory(): void {
-            axios.get(base_url + '/count_of_products_in_category')
+        getCountOfVerifiedProducts(): void {
+            axios.get(base_url + '/count_of_verified_products')
                 .then((response) => {
                     if (response.status == 200){
-                        this.countOfProductsInCategory = response.data
+                        this.countOfVerifiedProducts = response.data
+                    }
+                })
+        },
+        getCountOfNotVerifiedProducts(): void {
+            axios.get(base_url + '/count_of_not_verified_products')
+                .then((response) => {
+                    if (response.status == 200){
+                        this.countOfNotVerifiedProducts = response.data
                     }
                 })
         },

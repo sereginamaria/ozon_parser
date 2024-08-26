@@ -17,8 +17,16 @@
           </div>
         </div>
         <div>
-          <h3>Кол-во товаров по категориям:</h3>
-          <div v-for="el in adminPanel.countOfProductsInCategory" style="margin: 1rem">
+          <h3>Кол-во проверифицированных товаров:</h3>
+          <div v-for="el in adminPanel.countOfVerifiedProducts" style="margin: 1rem">
+            <p>
+              {{ el }}
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3>Кол-во непроверифицированных товаров:</h3>
+          <div v-for="el in adminPanel.countOfNotVerifiedProducts" style="margin: 1rem">
             <p>
               {{ el }}
             </p>
@@ -79,6 +87,10 @@ export default defineComponent({
   .timesheet-and-count-of-products-block{
     display: flex
   }
+  .timesheet-and-count-of-products-block div{
+    padding: 0 1rem;
+  }
+
 
   @media screen and (max-width: 480px) {
     .admin-panel__button {
@@ -86,6 +98,9 @@ export default defineComponent({
     }
     .timesheet-and-count-of-products-block{
       display: block;
+    }
+    .timesheet-and-count-of-products-block div{
+      padding: 0;
     }
     .admin-panel-block {
       padding: 0 0.5rem 0.5rem 0.5rem;
