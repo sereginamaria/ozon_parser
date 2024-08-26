@@ -7,32 +7,71 @@
         <Button label="Вернуть все отложенные товары" class="admin-panel__button" @click="returnAllCategories()"/>
         <Button label="Создать видео" class="admin-panel__button" @click="getVideos()"/>
       </div>
-      <div class="timesheet-and-count-of-products-block">
-        <div>
-          <h3>Расписание:</h3>
-          <div v-for="el in adminPanel.timesheet" style="margin: 1rem">
-            <p style="white-space: pre-line">
-              {{ el }}
-            </p>
-          </div>
-        </div>
-        <div>
-          <h3>Кол-во проверифицированных товаров:</h3>
-          <div v-for="el in adminPanel.countOfVerifiedProducts" style="margin: 1rem">
-            <p>
-              {{ el }}
-            </p>
-          </div>
-        </div>
-        <div>
-          <h3>Кол-во непроверифицированных товаров:</h3>
-          <div v-for="el in adminPanel.countOfNotVerifiedProducts" style="margin: 1rem">
-            <p>
-              {{ el }}
-            </p>
-          </div>
-        </div>
-      </div>
+<!--      <div class="timesheet-and-count-of-products-block">-->
+         <Accordion :value="['0','1', '2']" multiple class="timesheet-and-count-of-products-block">
+            <AccordionPanel value="0">
+              <AccordionHeader>
+                <h3 style="margin-right: 1rem;">Расписание:</h3>
+              </AccordionHeader>
+              <AccordionContent>
+                <div v-for="el in adminPanel.timesheet" style="margin: 1rem">
+                  <p style="white-space: pre-line">
+                    {{ el }}
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="1">
+              <AccordionHeader>
+                <h3 style="margin-right: 1rem;">Кол-во проверифицированных товаров:</h3>
+              </AccordionHeader>
+              <AccordionContent>
+                <div v-for="el in adminPanel.countOfVerifiedProducts" style="margin: 1rem">
+                  <p>
+                    {{ el }}
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionPanel>
+            <AccordionPanel value="2">
+              <AccordionHeader>
+                <h3 style="margin-right: 1rem;">Кол-во непроверифицированных товаров:</h3>
+              </AccordionHeader>
+              <AccordionContent>
+                <div v-for="el in adminPanel.countOfNotVerifiedProducts" style="margin: 1rem">
+                  <p>
+                    {{ el }}
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionPanel>
+         </Accordion>
+
+<!--        <div>-->
+<!--          <h3>Расписание:</h3>-->
+<!--          <div v-for="el in adminPanel.timesheet" style="margin: 1rem">-->
+<!--            <p style="white-space: pre-line">-->
+<!--              {{ el }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h3>Кол-во проверифицированных товаров:</h3>-->
+<!--          <div v-for="el in adminPanel.countOfVerifiedProducts" style="margin: 1rem">-->
+<!--            <p>-->
+<!--              {{ el }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <h3>Кол-во непроверифицированных товаров:</h3>-->
+<!--          <div v-for="el in adminPanel.countOfNotVerifiedProducts" style="margin: 1rem">-->
+<!--            <p>-->
+<!--              {{ el }}-->
+<!--            </p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
   </div>
 </template>
 
@@ -40,8 +79,11 @@
 import Button from 'primevue/button';
 import {defineComponent} from 'vue'
 import NavbarComponent from "@/components/NavbarComponent.vue";
-import {useAdminPanelStore} from "@/stores/ozon";
-import {mapStores} from "pinia";
+import Accordion from 'primevue/accordion';
+import AccordionPanel from 'primevue/accordionpanel';
+import AccordionHeader from 'primevue/accordionheader';
+import AccordionContent from 'primevue/accordioncontent';
+
 export default defineComponent({
   name: "AdminPanel",
   props: {
@@ -54,7 +96,7 @@ export default defineComponent({
       default: '/'
     }
   },
-  components: {NavbarComponent, Button},
+  components: {NavbarComponent, Button, Accordion, AccordionPanel, AccordionHeader, AccordionContent},
   methods: {
       storeCategory() {
           this.adminPanel.storeCategory()
