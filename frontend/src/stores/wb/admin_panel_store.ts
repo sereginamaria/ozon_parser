@@ -36,7 +36,6 @@ export const useAdminPanelStore = defineStore('adminPanel_wb', {
                     if (response.status == 200){
                         this.timesheet = response.data
                         this.getCountOfVerifiedProducts()
-                        this.getCountOfNotVerifiedProducts()
                     }
                 })
         },
@@ -45,6 +44,7 @@ export const useAdminPanelStore = defineStore('adminPanel_wb', {
                 .then((response) => {
                     if (response.status == 200){
                         this.countOfVerifiedProducts = response.data
+                        this.getCountOfNotVerifiedProducts()
                     }
                 })
         },

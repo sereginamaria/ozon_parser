@@ -81,15 +81,19 @@ export const useProductStore = defineStore('product_ozon', {
         saveNewName(newName: string): void {
             this.name = newName
         },
-         saveNewSubCategory(NewSubCategory: string): void {
+        saveNewSubCategory(NewSubCategory: string): void {
             this.subCategory = NewSubCategory
+        },
+        saveNewCategory(newCategory: string): void {
+            this.category = newCategory
         },
         saveProduct(): void {
             axios.post(base_url + '/save_product', {
                 id: this.id,
                 name: this.name,
                 images: this.images,
-                sub_category: this.subCategory
+                sub_category: this.subCategory,
+                category: this.category
             })
                 .then ((response) => {
                     if (response.status == 200){
