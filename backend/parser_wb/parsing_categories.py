@@ -1,36 +1,35 @@
-from parser_ozon import get_products
+from parser_wb import get_products
 
 def parse_trousers():
     # БРЮКИ
     # БРЮКИ, все цвета, кроме черного
-    # Бохо и восточный
+    # Вечернаяя мода
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=100374527%2C277449&text=Женские+брюки&tf_state=9H8UUG4QKyRe7uTKIAciSe-vUnLHCRFa6VKLVDrsSRcS1Tg%3D')
-    
-    # Офис, классический, вечерний
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
+
+    # Выпускной, новый год, свадьба
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=55225%2C148380%2C57396&text=Женские+брюки&tf_state=9H8UUG4QKyRe7uTKIAciSe-vUnLHCRFa6VKLVDrsSRcS1Tg%3D')
-    # Винтаж
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31137%3B31138%3B31136')
+
+    # Офис
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel%2Cmodelclothing&page=4&styleapparel=56425&text=Женские+брюки&tf_state=LRgNOk4dr0qZLzNyXUSCCMtn_bdpR8leFe0UadQ1fR9UNofj')
-    
-    # Коктейльное, свадебное и праздничное
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+
+    # Повседневное
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=164217%2C79761%2C106037&text=Женские+брюки&tf_state=LRgNOk4dr0qZLzNyXUSCCMtn_bdpR8leFe0UadQ1fR9UNofj')
-    
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+
     # ВСЕ категории, ЧЕРНЫЕ
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женские+брюки')
-
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=0')
 def parse_home_clothes():
     # ДОМАШНЯЯ ОДЕЖДА
-    # пижамы
+    # Пижамы
     get_products.parse_page('Домашняя Одежда',
-                           'https://www.ozon.ru/category/domashnyaya-odezhda-zhenskaya-7541/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женская+домашняя+одежда')
-
-    # тапочки
+                           'https://www.wildberries.ru/catalog/0/search.aspx?search=Одежда%20для%20дома&page=1')
+    # Тапочки
     get_products.parse_page('Домашняя Одежда',
-                           'https://www.ozon.ru/category/tapochki-zhenskie-7655/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+обувь')
+                           'https://www.wildberries.ru/catalog/0/search.aspx?search=домашние%20тапочки%20женские&page=1')
 
 def parse_jewelry():
     # УКРАШЕНИЯ
@@ -82,57 +81,88 @@ def parse_bag():
                                'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?category_was_predicted=true&color=100955529%2C100955527%2C100955542%2C100955546%2C100955534%2C100955540%2C100955530%2C100955535%2C100966307%2C100955537%2C100955532%2C100955536%2C100955547%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Chandletype%2Ctype%2Cbadfiltermaterial&text=Сумка+женская')
 
 def parse_tshirts():
-    for i in range(4):
-        # ФУТБОЛКА
-        get_products.parse_page('Футболка',
-                               'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=sleevelength%2Ctypesport%2Cmodelclothing&page=3&text=Женская+футболка&tf_state=FspgpzCmZzTUmLtK2ZGzfLwP_EZYOErq0XKm4xAspaMXFc4j&type=37283')
+    # ФУТБОЛКА
+    # Все цвета кроме белого и черного
+    # Вечернее, праздничное
+    get_products.parse_page('Футболка',
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31138%3B67470%3B31136')
+
+    # Офис
+    get_products.parse_page('Футболка',
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+
+    # Повседневное
+    get_products.parse_page('Футболка',
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+
+    # БЕЛОЕ И ЧЕРНОЕ
+    get_products.parse_page('Футболка',
+                           'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16777215%3B0')
 
 def parse_shirts():
     for i in range(4):
         # РУБАШКА
         get_products.parse_page('Рубашка',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Рубашка+женская')
+                               'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bluzki-i-rubashki?sort=popular&page=1&xsubject=184')
+
+def parse_blouse():
+    for i in range(4):
+        # БЛУЗКИ
+        get_products.parse_page('Блузка',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bluzki-i-rubashki?sort=popular&page=1&xsubject=1429%3B41')
 
 def parse_jeans():
     for i in range(4):
         # ДЖИНСЫ
         get_products.parse_page('Джинсы',
-                               'https://www.ozon.ru/category/dzhinsy-zhenskie-7503/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Джинсы+женские')
+                               'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/dzhinsy-dzhegginsy')
 
 def parse_jacket():
-    for i in range(4):
-        # ПИДАЖАК
-        # ВСЕ кроме черного
-        get_products.parse_page('Пиджак',
-                                'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?category_was_predicted=true&color=100955530%2C100955527%2C100955534%2C100955528%2C100966307%2C100955546%2C100955535%2C100955529%2C100955537%2C100955532%2C100966310%2C100955536%2C100955547%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990%2C100955540&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
+    # ПИДАЖАК
+    # ВСЕ кроме черного
+    # Вечерние
+    get_products.parse_page('Пиджак',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31494%3B31136%3B67470')
+
+    # Офис
+    get_products.parse_page('Пиджак',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+
+    # Повседневное
+    get_products.parse_page('Пиджак',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
     # ПИДАЖАК
     # Черный
     get_products.parse_page('Пиджак',
-                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=0')
 
 def parse_dress():
     # ПЛАТЬЕ
     # ПЛАТЬЕ, все цвета, кроме черного
-    # Бохо и восточный
+    # Вечерняя мода
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=100374527%2C277449&text=женское+платье')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
 
-    # Офис, классический, вечерний
+    # Выпускной, новый год, символ года
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=modelclothing%2Cstyleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=женское+платье')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31137%3B31138%3B67470')
 
-    # Винтаж
+    # Офис
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=56425&text=женское+платье')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
 
-    # Коктейльное, Выпускное, свадебное, праздничное
+    # Повседневное
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor%2Cmodelclothing&styleapparel=106037%2C79761%2C101124545%2C164217&text=женское+платье')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+
+    # Свадьба
+    get_products.parse_page('Платье',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31136')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женское+платье')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=0')
 
 def parse_shoes():
     # ОБУВЬ
@@ -189,53 +219,49 @@ def parse_shoes():
 
 def parse_top():
     # ТОП
-    # ТОП, все цвета, кроме черного
-    # Бохо и восточный
+    # ТОП, все цвета, кроме черного и белого
+    # Вечерняя мода
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=100374527%2C277449&text=женский+топ')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
 
-    # Офис, классический, вечерний
+    # Выпускной, свадьба, символ года, новый год
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=женский+топ')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31137%3B31138%3B31136%3B67470')
 
-    # Винтаж
+    # Повседневное
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=женский+топ')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
-    # Коктейльное, Выпускное, свадебное, праздничное
+    # Офис
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=164217%2C79761%2C101124545%2C106037&text=женский+топ')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
 
-    # Все категории, ЧЕРНОЕ
+    # Все категории, ЧЕРНОЕ И БЕЛОЕ
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женский+топ')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16777215%3B0&f23796=31136%3B31137%3B31138%3B31140%3B31141%3B31142%3B67470')
 
 def parse_skirt():
     # ЮБКА
     # ЮБКА, все цвета, кроме черного
-    # Бохо и восточный
+    # Вечернее
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=100374527%2C277449&text=женская+юбка')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31138%3B31136%3B67470')
 
-    # Офис, классический, вечерний
+    # Офис
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=57396%2C148380%2C55225&text=женская+юбка')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
 
-    # Винтаж
+    # Повседневное
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=женская+юбка')
-
-    # Коктейльное, Выпускное, свадебное, праздничное
-    get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=женская+юбка')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женская+юбка')
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=0')
 
     # Твидовая
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/search/?text=женская+юбка+твидовая&from_global=true')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?search=Юбка%20женская%20твидовая')
 
 def parse_suit():
     # КОСТЮМ
@@ -294,10 +320,6 @@ def parse_accessories():
     # ДЛЯ ВОЛОС
     get_products.parse_page('Аксессуары',
                             'https://www.ozon.ru/category/aksessuary-dlya-volos-zhenskie-17047/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женские+аксессуары')
-
-def parse_blouse():
-    get_products.parse_page('Блузка',
-                            'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Блузка+женская')
 
 def parse_shorts():
     # Деним
@@ -363,11 +385,11 @@ def parse_outer_wear():
     # get_products.parse_page('Верхняя Одежда',
     #                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+весенняя+куртка')
     #
-    # #Плащ
+    # # Плащ
     # get_products.parse_page('Верхняя Одежда',
     #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+весенний+плащ')
     #
-    # #Пальто
+    # # Пальто
     # get_products.parse_page('Верхняя Одежда',
     #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&text=женское+весеннее+пальто')
     #
@@ -375,13 +397,18 @@ def parse_outer_wear():
     # get_products.parse_page('Верхняя Одежда',
     #                        'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?text=Женская+весенняя+дубленка')
     #
-    # Бомбер
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+бомбер')
+    # # Бомбер
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женский+бомбер')
+    #
+    # # Верхняя одежда летняя
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
 
-    # Верхняя одежда летняя
+    # ВЕРХНЯЯ ОДЕЖДА ВЕСЕННЯЯ
     get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/search/?text=Верхняя+одежда+летняя+женская&from_global=true')
+                                'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+весенняя+куртка')
+
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ wb = Blueprint('wb', __name__)
 
 @wb.route('/wb')
 def hello():
-    get_products.parse_page('Футболка', 'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=футболка+женская')
+    get_products.parse_page('Домашняя Одежда', 'https://www.wildberries.ru/catalog/0/search.aspx?search=Одежда%20для%20дома&page=1')
     return 'wb'
 
 @wb.route('/wb/get_verification_information', methods=['GET'])

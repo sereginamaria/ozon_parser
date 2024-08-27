@@ -11,7 +11,21 @@ from chrome_driver import driver
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
     logger.info('Downloading pages')
-    pages = [get_html(url.split('?')[0] + '?page=' + str(i) + '&' + url.split('?')[1].split('&', 1)[1]) for i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+    if 'page' in url:
+        print(url.split('page')[0])
+        print(url.split('page')[1])
+        if '&' in url.split('page')[1]:
+            print(url.split('page')[1].split('&', 1)[1])
+            pages = [get_html(url.split('page')[0] + 'page=' + str(i) + '&' + url.split('page')[1].split('&', 1)[1]) for
+                     i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+        else:
+            pages = [get_html(url.split('page')[0] + 'page=' + str(i)) for
+                     i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+    else:
+        pages = [get_html(url)]
+
+    # pages = [get_html(url.split('page')[0] + 'page=' + str(i) + '&' + url.split('page')[1].split('&', 1)[1]) for i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+    # pages = [get_html(url)]
     logger.info('Parsing product links from pages')
     urls = list(itertools.chain(*[parse_urls(p) for p in pages]))
     logger.info('Starting products parsing')

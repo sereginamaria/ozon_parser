@@ -268,6 +268,8 @@ def parse_product(url, publication_category):
 
     logger.info('Parse images')
     product_images = try_parse_images(webGallery, parsed_widget_states)
+    if len(product_images.split(', ')) == 3:
+        product_images.split(', ').append(product_images.split(', ')[0])
     product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
                        if recognize_text(image_url) != None])
 
