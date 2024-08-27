@@ -92,7 +92,7 @@ export default defineComponent({
       this.product.deleteProduct()
     }
   },
-  mounted() {
+  updated() {
     if (this.product.name.length > 30) {
       this.newName = this.product.name.slice(0,30)
     }

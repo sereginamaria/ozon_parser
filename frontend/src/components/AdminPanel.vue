@@ -7,21 +7,8 @@
         <Button label="Вернуть все отложенные товары" class="admin-panel__button" @click="returnAllCategories()"/>
         <Button label="Создать видео" class="admin-panel__button" @click="getVideos()"/>
       </div>
-<!--      <div class="timesheet-and-count-of-products-block">-->
-         <Accordion :value="['0','1', '2']" multiple class="timesheet-and-count-of-products-block">
-            <AccordionPanel value="0">
-              <AccordionHeader>
-                <h3 style="margin-right: 1rem;">Расписание:</h3>
-              </AccordionHeader>
-              <AccordionContent>
-                <div v-for="el in adminPanel.timesheet" style="margin: 1rem">
-                  <p style="white-space: pre-line">
-                    {{ el }}
-                  </p>
-                </div>
-              </AccordionContent>
-            </AccordionPanel>
-            <AccordionPanel value="1">
+         <Accordion :value="['0', '1']" multiple class="timesheet-and-count-of-products-block">
+            <AccordionPanel value="0" class="admin-panel-block__accordion-panel">
               <AccordionHeader>
                 <h3 style="margin-right: 1rem;">Кол-во проверифицированных товаров:</h3>
               </AccordionHeader>
@@ -33,7 +20,7 @@
                 </div>
               </AccordionContent>
             </AccordionPanel>
-            <AccordionPanel value="2">
+            <AccordionPanel value="1" class="admin-panel-block__accordion-panel">
               <AccordionHeader>
                 <h3 style="margin-right: 1rem;">Кол-во непроверифицированных товаров:</h3>
               </AccordionHeader>
@@ -45,33 +32,19 @@
                 </div>
               </AccordionContent>
             </AccordionPanel>
+                <AccordionPanel value="2" class="admin-panel-block__accordion-panel">
+              <AccordionHeader>
+                <h3 style="margin-right: 1rem;">Расписание:</h3>
+              </AccordionHeader>
+              <AccordionContent>
+                <div v-for="el in adminPanel.timesheet" style="margin: 1rem">
+                  <p style="white-space: pre-line">
+                    {{ el }}
+                  </p>
+                </div>
+              </AccordionContent>
+            </AccordionPanel>
          </Accordion>
-
-<!--        <div>-->
-<!--          <h3>Расписание:</h3>-->
-<!--          <div v-for="el in adminPanel.timesheet" style="margin: 1rem">-->
-<!--            <p style="white-space: pre-line">-->
-<!--              {{ el }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <h3>Кол-во проверифицированных товаров:</h3>-->
-<!--          <div v-for="el in adminPanel.countOfVerifiedProducts" style="margin: 1rem">-->
-<!--            <p>-->
-<!--              {{ el }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <h3>Кол-во непроверифицированных товаров:</h3>-->
-<!--          <div v-for="el in adminPanel.countOfNotVerifiedProducts" style="margin: 1rem">-->
-<!--            <p>-->
-<!--              {{ el }}-->
-<!--            </p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
   </div>
 </template>
 
@@ -129,10 +102,10 @@ export default defineComponent({
   .timesheet-and-count-of-products-block{
     display: flex
   }
-  .timesheet-and-count-of-products-block div{
-    padding: 0 1rem;
-  }
 
+  .admin-panel-block__accordion-panel {
+    width: 33%;
+  }
 
   @media screen and (max-width: 480px) {
     .admin-panel__button {
@@ -141,11 +114,11 @@ export default defineComponent({
     .timesheet-and-count-of-products-block{
       display: block;
     }
-    .timesheet-and-count-of-products-block div{
-      padding: 0;
-    }
     .admin-panel-block {
       padding: 0 0.5rem 0.5rem 0.5rem;
     }
+    .admin-panel-block__accordion-panel {
+    width: 100%;
+  }
   }
 </style>
