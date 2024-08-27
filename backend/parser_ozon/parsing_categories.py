@@ -34,41 +34,41 @@ def parse_home_clothes():
 
 def parse_jewelry():
     # УКРАШЕНИЯ
+    # Ювелирные
+    get_products.parse_page('Украшения',
+                            'https://www.ozon.ru/category/yuvelirnye-ukrasheniya-50001/?category_was_predicted=true&currency_price=139.000%3B4000.000&deny_category_prediction=true&from_global=true&text=ювелирные+украшения')
+
     # Браслеты
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/braslety-bizhuternye-zhenskie-17031/?from_global=true&text=erhfitybz')
-
-    # #Брелки
-    # get_products.parse_page('Украшения',
-    #                        'https://www.ozon.ru/category/breloki-zhenskie-17033/?from_global=true&text=erhfitybz')
+                           'https://www.ozon.ru/category/braslety-bizhuternye-zhenskie-17031/')
 
     # Броши и значки
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/broshi-bizhuternye-zhenskie-17034/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/broshi-bizhuternye-zhenskie-17034/')
 
     # Колье и бусы
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/kole-i-ozherelya-bizhuternye-zhenskie-17027/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/kole-i-ozherelya-bizhuternye-zhenskie-17027/')
 
     # Кольца
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/koltsa-bizhuternye-zhenskie-17023/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/koltsa-bizhuternye-zhenskie-17023/')
 
     # Комплекты
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/komplekty-bizhuternyh-ukrasheniy-zhenskie-17032/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/komplekty-bizhuternyh-ukrasheniy-zhenskie-17032/')
 
     # Подвески и кулоны
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/podveski-i-kulony-bizhuternye-zhenskie-17029/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/podveski-i-kulony-bizhuternye-zhenskie-17029/')
 
     # Серьги
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/sergi-bizhuternye-17024/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/sergi-bizhuternye-17024/')
 
     # Цепочки
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/tsepochki-bizhuternye-zhenskie-17030/?from_global=true&text=erhfitybz')
+                            'https://www.ozon.ru/category/tsepochki-bizhuternye-zhenskie-17030/')
 
 def parse_bag():
     for i in range(4):
@@ -386,20 +386,20 @@ def parse_outer_wear():
 
 if __name__ == "__main__":
     # parse_trousers()
-    parse_home_clothes()
-    # parse_jewelry()
+    # parse_home_clothes()
+    parse_jewelry()
     # parse_bag()
     # parse_tshirts()
     # parse_shirts()
     # parse_jeans()
-    # parse_jacket()
+    parse_jacket()
     # parse_dress()
     # parse_shoes()
     # parse_top()
     # parse_skirt()
     # parse_suit()
     # parse_corset()
-    # parse_accessories()
+    parse_accessories()
     # parse_blouse()
     # parse_shorts()
     # parse_swimsuit()

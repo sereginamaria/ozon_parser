@@ -89,16 +89,18 @@ def get_timesheet():
     def are_there_products_in_db_ozon(category, time):
         for count_of_product_list in count_of_products_list:
             if category in count_of_product_list:
-                if count_of_product_list[1] >= 6:
+                if count_of_product_list[1] >= 6 and count_of_product_list[1] != 0:
                     count_of_product_list[1] = count_of_product_list[1] - 6
                     return '\n' + time + ' ' + category + '  ✅️'
                 else:
-                    return ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще '
-                                       + str(6 - count_of_product_list[1]))
+                    text = ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще ' + str(6 - count_of_product_list[1]))
+                    count_of_product_list[1] = 0
+                    return text
 
         return '\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще 6'
 
     date_of_publication = date.today()
+    date_of_publication += datetime2.timedelta(days=1)
     i = 1
     while i <= 14:
         timesheet_text = str(date_of_publication)
@@ -116,7 +118,56 @@ def get_timesheet():
     return list_with_timesheet
 @ozon.route('/count_of_verified_products', methods=['GET'])
 def count_of_verified_products():
-    return db_ozon.count_of_verified_products()
+    list_with_count_of_verified_products = []
+    count_of_products = db_ozon.count_of_verified_products()
+    count_of_products_list = []
+    for count_of_product in count_of_products:
+        count_of_products_list.append(list(count_of_product))
+
+
+    for count_of_product_list in count_of_products_list:
+        if count_of_product_list[0] == 'Верхняя Одежда' or count_of_product_list[0] == 'Кофта':
+            if count_of_product_list[1] >= 60:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                                           ' ❌ ' + 'Нужно еще ' + str(60 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Платье' or count_of_product_list[0] == 'Юбка' \
+                or count_of_product_list[0] == 'Футболка' or count_of_product_list[0] == 'Костюм'\
+                or count_of_product_list[0] == 'Джинсы':
+            if count_of_product_list[1] >= 36:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                                           ' ❌ ' + 'Нужно еще ' + str(36 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Брюки' or count_of_product_list[0] == 'Пиджак' \
+                or count_of_product_list[0] == 'Обувь' or count_of_product_list[0] == 'Сумка'\
+                or count_of_product_list[0] == 'Украшения':
+            if count_of_product_list[1] >= 48:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                                           ' ❌ ' + 'Нужно еще ' + str(48 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Топ' or count_of_product_list[0] == 'Рубашка' \
+                or count_of_product_list[0] == 'Блузка' or count_of_product_list[0] == 'Аксессуары':
+            if count_of_product_list[1] >= 24:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                                           ' ❌ ' + 'Нужно еще ' + str(24 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Домашняя Одежда' or count_of_product_list[0] == 'Шорты' \
+                or count_of_product_list[0] == 'Корсет':
+            if count_of_product_list[1] >= 12:
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                                           ' ❌ ' + 'Нужно еще ' + str(12 - count_of_product_list[1]))
+    return list_with_count_of_verified_products
 
 @ozon.route('/count_of_not_verified_products', methods=['GET'])
 def count_of_not_verified_products():
