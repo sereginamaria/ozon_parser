@@ -63,7 +63,7 @@ def save_product(json):
             images += image + ', '
         i += 1
     cursor.execute(
-        "update public.ozon_products set product_name = '%s', product_images = '%s', verification = '%s', "
+        "update public.wb_products set product_name = '%s', product_images = '%s', verification = '%s', "
         "sub_category = '%s', publication_category = '%s' where product_id = '%s'" % (
             json['name'], images, True, json['sub_category'], json['category'], json['id']
         )

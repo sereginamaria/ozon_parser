@@ -91,7 +91,7 @@ def parse_shirts():
     for i in range(4):
         # РУБАШКА
         get_products.parse_page('Рубашка',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Рубашка+женская')
+                               'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0&type=37307')
 
 def parse_jeans():
     for i in range(4):
@@ -292,12 +292,53 @@ def parse_accessories():
     get_products.parse_page('Аксессуары',
                             'https://www.ozon.ru/category/ochki-solntsezashchitnye-zhenskie-17019/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женские+аксессуары')
     # ДЛЯ ВОЛОС
+    # Заколки
     get_products.parse_page('Аксессуары',
-                            'https://www.ozon.ru/category/aksessuary-dlya-volos-zhenskie-17047/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женские+аксессуары')
+                            'https://www.ozon.ru/category/zakolki-i-grebni-zhenskie-17048/?opened=type&type=105928%2C169002%2C105927')
+
+    # Ободки
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/obodki-zhenskie-36096/?opened=type&type=326426%2C105926%2C163671%2C100261338%2C100371056%2C69351%2C100503714')
+
+    # Резинки
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/rezinki-zhenskie-17050/')
+
+    # Галстуки и бабочки
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/galstuki-i-babochki-zhenskie-35308/')
+
+    # Бандана косынка
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/bandany-i-kosynki-zhenskie-17012/?type=40542%2C40550')
+
+    # Кепка
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?opened=type&type=40548')
+    # Берет
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/shlyapy-zhenskie-36514/?type=40543')
+
+    # Платки
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/platki-i-palantiny-17055/')
+
+    # Шарфы
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/sharfy-zhenskie-17057/?type=40556%2C272969')
+
+    # Ремень, пояс
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/remni-poyasa-i-portupei-zhenskie-31983/?type=40559%2C40558')
+
+    # Часы
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/chasy-zhenskie-17037/?opened=type&type=32931%2C309840%2C38178')
 
 def parse_blouse():
-    get_products.parse_page('Блузка',
-                            'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Блузка+женская')
+    for i in range(4):
+        get_products.parse_page('Блузка',
+                                'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%B1%D0%BB%D1%83%D0%B7%D0%BA%D0%B0&type=101121374%2C39030')
 
 def parse_shorts():
     # Деним
@@ -385,23 +426,23 @@ def parse_outer_wear():
 
 
 if __name__ == "__main__":
-    parse_trousers()
+    # parse_trousers()
     # parse_home_clothes()
     # parse_jewelry()
     # parse_bag()
     # parse_tshirts()
-    parse_shirts()
+    # parse_shirts()
     # parse_jeans()
-    parse_jacket()
+    # parse_jacket()
     # parse_dress()
     # parse_shoes()
     # parse_top()
     # parse_skirt()
     # parse_suit()
     # parse_corset()
-    parse_accessories()
+    # parse_accessories()
     # parse_blouse()
-    # parse_shorts()
+    parse_shorts()
     # parse_swimsuit()
     # parse_kofta()
     # parse_outer_wear()

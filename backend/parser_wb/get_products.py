@@ -147,33 +147,45 @@ def try_parse_product_info(json_product, json_card):
     count_of_images = ''
 
     try:
-        product_article = json_product["id"]
+        if "id" in json_product:
+            product_article = json_product["id"]
 
-        product_brand_name = json_product["brand"]
+        if "brand" in json_product:
+            product_brand_name = json_product["brand"]
 
-        product_color = json_product["colors"][0]["name"]
+        if "colors" in json_product:
+            if len(json_product["colors"]) > 0:
+                if "name" in json_product["colors"][0]:
+                    product_color = json_product["colors"][0]["name"]
 
-        product_name = json_product["name"]
+        if "name" in json_product:
+            product_name = json_product["name"]
 
-        product_rating = json_product["reviewRating"]
+        if "reviewRating" in json_product:
+            product_rating = json_product["reviewRating"]
 
-        for size in json_product["sizes"]:
-            product_sizes += size['name'] + ', '
+        if "sizes" in json_product:
+            for size in json_product["sizes"]:
+                product_sizes += size['name'] + ', '
 
-        for size in json_product["sizes"]:
-            if 'price' in size:
-                product_price_original = str(size['price']['basic'] // 100) + ' ₽'
-                product_price = str(size['price']['product'] // 100) + ' ₽'
-                break
+            for size in json_product["sizes"]:
+                if 'price' in size:
+                    product_price_original = str(size['price']['basic'] // 100) + ' ₽'
+                    product_price = str(size['price']['product'] // 100) + ' ₽'
+                    break
 
-        count_of_images = json_product['pics']
+        if "pics" in json_product:
+            count_of_images = json_product['pics']
 
-        description = json_card['description']
+        if "description" in json_product:
+            description = json_card['description']
 
-        for article in json_card['full_colors']:
-            product_all_articles += str(article['nm_id']) + ', '
+        if "full_colors" in json_product:
+            for article in json_card['full_colors']:
+                product_all_articles += str(article['nm_id']) + ', '
 
-        product_categories = json_card['subj_name'] + ' ' + json_card['subj_root_name']
+        if ("subj_name" in json_product) and ("subj_root_name" in json_product):
+            product_categories = json_card['subj_name'] + ' ' + json_card['subj_root_name']
 
         return product_article, product_brand_name, product_color, product_name, product_rating, product_sizes, \
                 product_price_original, product_price, count_of_images, description, product_all_articles, product_categories

@@ -33,41 +33,51 @@ def parse_home_clothes():
 
 def parse_jewelry():
     # УКРАШЕНИЯ
-    # Ювелирные
-    get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/yuvelirnye-ukrasheniya-50001/?category_was_predicted=true&currency_price=139.000%3B4000.000&deny_category_prediction=true&from_global=true&text=ювелирные+украшения')
-
+    # Бижутерия
     # Браслеты
     get_products.parse_page('Украшения',
-                           'https://www.ozon.ru/category/braslety-bizhuternye-zhenskie-17031/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/braslety?sort=popular&page=1&fkind=2')
 
-    # Броши и значки
+    # Броши
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/broshi-bizhuternye-zhenskie-17034/')
+                           'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/broshi?sort=popular&page=1&fkind=2')
 
-    # Колье и бусы
+    # Бусы
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/kole-i-ozherelya-bizhuternye-zhenskie-17027/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/busy?sort=popular&page=1&fkind=2')
+
+    # Колье
+    get_products.parse_page('Украшения',
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/kole?sort=popular&page=1&fkind=2')
 
     # Кольца
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/koltsa-bizhuternye-zhenskie-17023/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/koltsa?sort=popular&page=1&fkind=2')
 
     # Комплекты
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/komplekty-bizhuternyh-ukrasheniy-zhenskie-17032/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/komplekty?sort=popular&page=1&fkind=2')
 
-    # Подвески и кулоны
+    # Подвески
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/podveski-i-kulony-bizhuternye-zhenskie-17029/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/podveski?sort=popular&page=1&fkind=2')
 
     # Серьги
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/sergi-bizhuternye-17024/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/sergi?sort=popular&page=1&fkind=2')
 
     # Цепочки
     get_products.parse_page('Украшения',
-                            'https://www.ozon.ru/category/tsepochki-bizhuternye-zhenskie-17030/')
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/tsepochki')
+
+    # Чокеры
+    get_products.parse_page('Украшения',
+                            'https://www.wildberries.ru/catalog/aksessuary/bizhuteriya/chokery?sort=popular&page=1&fkind=2')
+
+    # Ювелирные украшения
+    get_products.parse_page('Украшения',
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=ювелирные+украшения&xsubject=202%3B24%3B203%3B452%3B299%3B300%3B206%3B54%3B207%3B205%3B2035%3B2679&priceU=6300%3B500000&fkind=2')
+
 
 def parse_bag():
     for i in range(4):
@@ -170,56 +180,62 @@ def parse_dress():
 
 def parse_shoes():
     # ОБУВЬ
-    # Босоножки и сандалии ЧЕРНЫЕ
+    # Ботильоны не ЧЕРНЫЕ
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=343&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
 
-    # Босоножки и сандалии ВСЕ ЦВЕТА
+    # Ботильоны черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955527%2C100955546%2C100955529%2C100955534%2C100955530%2C100955535%2C100955540%2C100955528%2C100955537%2C100955544%2C100966307%2C100955536%2C100955542%2C100955532%2C100955547%2C100966310%2C100955541%2C101097990%2C100955545&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=343&fcolor=0')
 
-    # Кроссовки
+    # Полуботинки
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/obuv-17777/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+кроссовки')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=2956')
 
-    # Кеды
+    # Ботинки не черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/zhenskaya-obuv-7640/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женские+кеды')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=94&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16761035%3B16753920%3B8421504%3B255%3B15631086')
 
-    # Ботинки
+    # Ботинки черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/botinki-zhenskie-7651/?category_was_predicted=true&deny_category_prediction=true&from_global=true&season=64979&text=Женская+обувь')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=94&fcolor=0')
 
-    # Сапоги
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/sapogi-i-polusapogi-zhenskie-7652/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женская+обувь')
 
-    # Туфли
+    # Кеды не белые и не черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/obuv-17777/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женские+туфли')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=104&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B255%3B15631086%3B8421504')
 
-    # Туфли ЧЕРНЫЕ
+    # Кроссовки не белые и не черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/zhenskaya-obuv-7640/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женские+туфли&type=31864')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=105&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B255%3B15631086%3B8421504')
 
-    # Туфли НЕ черные
+    # Слипоны
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/zhenskaya-obuv-7640/?category_was_predicted=true&color=100955527%2C100955546%2C100955529%2C100955535%2C100955534%2C100955542%2C100955530%2C100955544%2C100955540%2C100955528%2C100955545%2C100966307%2C100955537%2C100966310%2C100955536%2C100955532%2C100955547%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color&text=Женские+туфли&type=31864')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=396')
 
-    # Лоферы НЕ черные
+    # Кроссовки черные и белые
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/tufli-zhenskie-7644/?category_was_predicted=true&color=100955546%2C100955529%2C100955527%2C100955530%2C100955528%2C100955535%2C100955534%2C100966307%2C100955540%2C100955537%2C100955536%2C100955547%2C100966310%2C100955544%2C100955545%2C100955532%2C100955542%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color&text=Женские+лоферы')
-    # Лоферы ЧЕРНЫЕ
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/tufli-zhenskie-7644/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женские+лоферы')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=105&fcolor=16777215%3B0')
 
-    # Туфли
+    # Кеды белые и черные
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/obuv-17777/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женские+туфли')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=104&fcolor=16777215%3B0')
 
-    # Туфли
+    # Лоферы не ЧЕРНЫЕ
     get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/obuv-17777/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женские+туфли')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+
+    # Туфли не черные
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=100&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+
+    # Лоферы черные
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=0')
+
+    # Туфли черные
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=100&fcolor=0')
 
 def parse_top():
     # ТОП
@@ -477,22 +493,22 @@ def parse_outer_wear():
 
 
 if __name__ == "__main__":
-    parse_trousers()
-    parse_home_clothes()
+    # parse_trousers()
+    # parse_home_clothes()
     # parse_jewelry()
-    parse_bag()
-    parse_tshirts()
-    parse_shirts()
-    parse_jeans()
-    parse_jacket()
-    parse_dress()
+    # parse_bag()
+    # parse_tshirts()
+    # parse_shirts()
+    # parse_jeans()
+    # parse_jacket()
+    # parse_dress()
     # parse_shoes()
-    parse_top()
-    parse_skirt()
-    parse_suit()
-    parse_corset()
-    parse_accessories()
-    parse_blouse()
+    # parse_top()
+    # parse_skirt()
+    # parse_suit()
+    # parse_corset()
+    # parse_accessories()
+    # parse_blouse()
     parse_shorts()
-    parse_kofta()
-    parse_outer_wear()
+    # parse_kofta()
+    # parse_outer_wear()
