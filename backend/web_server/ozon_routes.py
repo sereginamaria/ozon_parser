@@ -141,7 +141,7 @@ def count_of_verified_products():
 
         if count_of_product_list[0] == 'Платье' or count_of_product_list[0] == 'Юбка' \
                 or count_of_product_list[0] == 'Футболка' or count_of_product_list[0] == 'Костюм'\
-                or count_of_product_list[0] == 'Джинсы':
+                or count_of_product_list[0] == 'Джинсы' or count_of_product_list[0] == 'Аксессуары':
             if count_of_product_list[1] >= 36:
                 list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
             else:
@@ -158,7 +158,7 @@ def count_of_verified_products():
                                            ' ❌ ' + 'Нужно еще ' + str(48 - count_of_product_list[1]))
 
         if count_of_product_list[0] == 'Топ' or count_of_product_list[0] == 'Рубашка' \
-                or count_of_product_list[0] == 'Блузка' or count_of_product_list[0] == 'Аксессуары':
+                or count_of_product_list[0] == 'Блузка':
             if count_of_product_list[1] >= 24:
                 list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
             else:
