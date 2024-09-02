@@ -23,6 +23,7 @@
       <h3>Работа с информацией</h3>
       <Button  @click="visibleChangeCategory = true" label="Изменить категорию" style="margin-bottom: 0.5rem;"/>
       <Button  @click="visibleChangeSubCategory = true" label="Изменить подкатегорию"/>
+        <Button  @click="deleteFromDB()" label="Удалить из бд"/>
     </div>
     <Dialog v-model:visible="visibleChangeName" modal :draggable="false" style="min-width: 30%">
       <div>
@@ -106,6 +107,9 @@ export default defineComponent({
     },
     deleteProduct(): void {
       this.product.deleteProduct()
+    },
+    deleteFromDB(): void {
+        this.product.deleteFromDB()
     }
   },
   updated() {

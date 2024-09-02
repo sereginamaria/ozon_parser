@@ -110,6 +110,16 @@ export const useProductStore = defineStore('product_ozon', {
                         this.get_verification_information()
                     }
                 })
+        },
+        deleteFromDB(): void {
+            axios.post(base_url + '/delete_product_from_db', {
+                id: this.id
+            })
+                .then ((response) => {
+                    if (response.status == 200){
+                        this.get_verification_information()
+                    }
+                })
         }
     },
 })
