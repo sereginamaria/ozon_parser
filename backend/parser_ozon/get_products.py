@@ -15,7 +15,8 @@ from text_recognizer.main import recognize_text
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
     logger.info('Downloading pages')
-    pages = [get_html(url + '?page=' + str(i)) for i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+    # pages = [get_html(url + '?page=' + str(i)) for i in range(config.START_PAGE, config.MAX_PAGES + 1)]
+    pages = [get_html(url)]
     logger.info('Parsing product links from pages')
     urls = list(itertools.chain(*[parse_urls(p) for p in pages]))
     logger.info('Starting products parsing')
@@ -272,10 +273,13 @@ def parse_product(url, publication_category):
                        if recognize_text(image_url) != None])
 
     if len(product_images.split(', ')) == 3:
-        product_images.split(', ').append(product_images.split(', ')[0])
+        p = product_images.split(', ')
+        p.append(product_images.split(', ')[0])
+        product_images = ', '.join(p)
 
     print('priduct_images')
     print(product_images)
+    print(type(product_images))
 
     logger.info('Parse brand')
     product_brand_name, product_brand_link = try_parse_brand(webStickyProducts, parsed_widget_states)

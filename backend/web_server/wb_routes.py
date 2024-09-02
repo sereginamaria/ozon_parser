@@ -33,6 +33,12 @@ def delete_product():
     db_wb.delete_product(request.json)
     return 'delete_product'
 
+@wb.route('/wb/delete_product_from_db', methods=['POST'])
+def delete_product_from_db():
+    logger.info('delete_product_from_db')
+    db_wb.delete_product_from_db(request.json)
+    return 'delete_product_from_db'
+
 @wb.route('/wb/store_category', methods=['POST'])
 def store_category():
     logger.info('store_category')

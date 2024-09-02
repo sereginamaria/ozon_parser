@@ -44,6 +44,12 @@ def delete_product():
     db_ozon.delete_product(request.json)
     return 'delete_product'
 
+@ozon.route('/delete_product_from_db', methods=['POST'])
+def delete_product_from_db():
+    logger.info('delete_product_from_db')
+    db_ozon.delete_product_from_db(request.json)
+    return 'delete_product_from_db'
+
 @ozon.route('/store_category', methods=['POST'])
 def store_category():
     logger.info('store_category')

@@ -85,11 +85,8 @@ def autop():
                 (current_day_of_week == 'Saturday' and in_time('12:00', current_time, '12:59'))):
             send_post('Джинсы')
 
-        if current_day_of_week == 'Saturday' and in_time('6:00', current_time, '6:59'):
-            send_post('Домашняя Одежда')
-
         if current_day_of_week == 'Tuesday' and in_time('8:00', current_time, '8:59'):
-            send_post('Шорты')
+            send_post('Домашняя Одежда')
 
         if current_day_of_week == 'Thursday' and in_time('8:00', current_time, '8:59'):
             send_post('Корсет')
@@ -107,7 +104,8 @@ def autop():
             send_post('Сумка')
 
         if ((current_day_of_week == 'Tuesday' and in_time('6:00', current_time, '6:59')) or
-                (current_day_of_week == 'Thursday' and in_time('6:00', current_time, '6:59'))):
+                (current_day_of_week == 'Thursday' and in_time('6:00', current_time, '6:59')) or
+                (current_day_of_week == 'Saturday' and in_time('6:00', current_time, '6:59'))):
             send_post('Аксессуары')
 
         if ((current_day_of_week == 'Monday' and in_time('6:00', current_time, '6:59')) or

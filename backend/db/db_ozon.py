@@ -128,3 +128,12 @@ def publish_product(id):
         )
     )
     connection.commit()
+
+
+def delete_product_from_db(json):
+    cursor.execute(
+        "delete from public.ozon_products where product_id = '%s'" % (
+            json['id']
+        )
+    )
+    connection.commit()

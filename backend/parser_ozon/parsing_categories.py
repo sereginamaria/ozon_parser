@@ -91,7 +91,8 @@ def parse_shirts():
     for i in range(4):
         # РУБАШКА
         get_products.parse_page('Рубашка',
-                               'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D1%80%D1%83%D0%B1%D0%B0%D1%88%D0%BA%D0%B0&type=37307')
+                               'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?type=37307')
+
 
 def parse_jeans():
     for i in range(4):
@@ -431,7 +432,7 @@ if __name__ == "__main__":
     # parse_jewelry()
     # parse_bag()
     # parse_tshirts()
-    # parse_shirts()
+    parse_shirts()
     # parse_jeans()
     # parse_jacket()
     # parse_dress()
@@ -442,7 +443,7 @@ if __name__ == "__main__":
     # parse_corset()
     # parse_accessories()
     # parse_blouse()
-    parse_shorts()
+    # parse_shorts()
     # parse_swimsuit()
     # parse_kofta()
     # parse_outer_wear()
