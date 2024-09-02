@@ -9,7 +9,7 @@ from parser_ozon.schema import Product
 from cards_module import logger
 import os
 
-def create_triple_card(product: Product, front: bool) -> bytes:
+def create_triple_card(product: Product, front: bool, card_type: str) -> bytes:
     def get_html(product_name, product_article, product_price, palette_colors):
         return render_template('triple_card.html', name=product_name, article=product_article,
                                price=product_price,
@@ -34,10 +34,10 @@ def create_triple_card(product: Product, front: bool) -> bytes:
     html = get_html(product.name, product.article, product.price, palette)
     css = get_css(images_urls, palette)
     logger.info('End create_triple_card')
-    return screenshot_html(html, css)
+    return screenshot_html(html, css, card_type)
 
 
-def create_title_card(product: Product) -> bytes:
+def create_title_card(product: Product, card_type: str) -> bytes:
     def get_html(product_category, palette_colors):
         card_title = product_category
         return render_template('title_card.html', category=card_title,
@@ -53,9 +53,9 @@ def create_title_card(product: Product) -> bytes:
     html = get_html(product.publication_category, palette)
     css = get_css(images_urls, palette)
     logger.info('End create_title_card')
-    return screenshot_html(html, css)
+    return screenshot_html(html, css, card_type)
 
-def screenshot_html(html, css) -> bytes:
+def screenshot_html(html, css, card_type) -> bytes:
     hti = Html2Image(
         custom_flags=[
             '--no-sandbox',
@@ -69,13 +69,23 @@ def screenshot_html(html, css) -> bytes:
     print(os.getcwd())
     logger.info(os.getcwd())
 
-    hti.load_file('./cards_module/templates/logo.png', "logo.png")
-    path = hti.screenshot(
-        html_str=html, css_str=css, size=(1024, 1280)
-    )[0]
+    if card_type == 'ozon':
+        hti.load_file('./cards_module/templates/logo_ozon.png', "logo.png")
+        path = hti.screenshot(
+            html_str=html, css_str=css, size=(1024, 1280), save_as='ozon.png'
+        )[0]
+
+    if card_type == 'wb':
+        hti.load_file('./cards_module/templates/logo_wb.png', "logo.png")
+        path = hti.screenshot(
+            html_str=html, css_str=css, size=(1024, 1280), save_as='wb.png'
+        )[0]
+
+
 
     image_b = open(path, 'rb').read()
     os.remove(path)
+
     return image_b
 
 def get_palette(images_urls):

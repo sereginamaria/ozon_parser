@@ -255,6 +255,16 @@ def parse_product(url, publication_category):
             product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
                                         if recognize_text(image_url) != None])
 
+            if len(product_images.split(', ')) == 3:
+                p = product_images.split(', ')
+                p.append(product_images.split(', ')[0])
+                product_images = ', '.join(p)
+
+            print('priduct_images')
+            print(product_images)
+            print(type(product_images))
+
+
             print(f'product_name: {product_name}, \n'
                   f'product_rating: {product_rating}, \n'
                   f'product_article: {product_article}, \n'

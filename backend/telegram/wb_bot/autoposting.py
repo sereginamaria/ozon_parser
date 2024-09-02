@@ -8,7 +8,8 @@ def send_post(category):
         "category": category,
     }
 
-    requests.post("http://" + BASE_URL + ":5001/wb/send_post", json=new_product)
+    r = requests.post("http://" + BASE_URL + ":5001/wb/send_post", json=new_product)
+    print(r)
 
 def get_publishing_time(time_str):
     return datetime.strptime(time_str, '%H:%M').time()

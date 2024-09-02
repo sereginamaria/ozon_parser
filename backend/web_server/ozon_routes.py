@@ -69,10 +69,10 @@ def send_post():
     cards_list = []
     if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
-        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
-        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'ozon'))
+        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'ozon'))
         for product in products_list[1:]:
-            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'ozon'))
 
         products_links = [schema.Product(*product).url for product in products_list]
 
@@ -82,7 +82,7 @@ def send_post():
                 db_ozon.publish_product(schema.Product(*product).id)
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
-    return 'send_post'
+    return True
 
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():

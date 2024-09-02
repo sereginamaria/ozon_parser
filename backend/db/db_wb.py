@@ -98,7 +98,7 @@ def get_products_for_post(json):
         "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
         "product_article, product_all_articles, product_url, publication_category, description, sub_category "
         "from public.wb_products where (verification = true and is_published = false and "
-        "publication_category = '%s') order by product_id limit 2" % (json['category']))
+        "publication_category = '%s') order by product_id limit 6" % (json['category']))
 
     connection.commit()
     return cursor.fetchall()

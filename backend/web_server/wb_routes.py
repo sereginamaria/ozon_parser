@@ -57,12 +57,12 @@ def send_post():
     products_list = db_wb.get_products_for_post(request.json)
     cards_list = []
     print(products_list)
-    if len(products_list) == 2:
+    if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
-        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
-        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
+        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'wb'))
         for product in products_list[1:]:
-            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
 
         products_links = [schema.Product(*product).url for product in products_list]
 
