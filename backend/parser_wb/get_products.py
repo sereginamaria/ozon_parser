@@ -122,6 +122,7 @@ def try_get_jsons(article):
             url=f'https://card.wb.ru/cards/v2/detail?appType=1&curr=rub&dest=-1255987&spp=30&ab_testid=reranking_1&nm={article}')
 
         json_product = response_product.json().get('data')['products'][0]
+        logger.info('Response card url:' + f"https://basket-{basket}.wbbasket.ru/vol{int(article) // 100000}/part{int(article) // 1000}/{article}/info/ru/card.json")
         response_card = requests.get(
             url=f"https://basket-{basket}.wbbasket.ru/vol{int(article) // 100000}/part{int(article) // 1000}/{article}/info/ru/card.json")
 
@@ -177,14 +178,14 @@ def try_parse_product_info(json_product, json_card):
         if "pics" in json_product:
             count_of_images = json_product['pics']
 
-        if "description" in json_product:
+        if "description" in json_card:
             description = json_card['description']
 
-        if "full_colors" in json_product:
+        if "full_colors" in json_card:
             for article in json_card['full_colors']:
                 product_all_articles += str(article['nm_id']) + ', '
 
-        if ("subj_name" in json_product) and ("subj_root_name" in json_product):
+        if ("subj_name" in json_card) and ("subj_root_name" in json_card):
             product_categories = json_card['subj_name'] + ' ' + json_card['subj_root_name']
 
         return product_article, product_brand_name, product_color, product_name, product_rating, product_sizes, \

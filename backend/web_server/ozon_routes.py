@@ -14,13 +14,6 @@ ozon = Blueprint('ozon', __name__)
 
 @ozon.route('/')
 def hello():
-    # img_urls = 'https://cdn1.ozone.ru/s3/multimedia-1-2/7067465246.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-5/7001510045.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-9/7001510049.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-6/7001510046.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-d/7001510053.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-k/7001566076.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-4/7001510044.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-q/7001510030.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-b/7001510051.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-s/7001510032.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-c/7001510052.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-m/7001510062.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-l/7001510061.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-c/7060435032.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-y/7060435054.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-l/7060435041.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-p/7001510029.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-u/7060435050.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-9/7060435065.jpg,  https://cdn1.ozone.ru/s3/multimedia-1-h/7060435037.jpg'
-    # product_images = ', '.join([recognize_text(image_url) for image_url in img_urls.split(',')
-    #                             if recognize_text(image_url) != None])
-
-    print('priduct_images')
-    # print(product_images)
-
     return 'Hello!'
 
 @ozon.route('/parse_page', methods=['GET'])
@@ -66,6 +59,7 @@ def return_all_categories():
 def send_post():
     logger.info('send_post')
     products_list = db_ozon.get_products_for_post(request.json)
+    logger.info(products_list)
     cards_list = []
     if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
@@ -82,7 +76,7 @@ def send_post():
                 db_ozon.publish_product(schema.Product(*product).id)
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
-    return True
+    return 'send_post'
 
 @ozon.route('/get_timesheet', methods=['GET'])
 def get_timesheet():

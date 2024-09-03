@@ -441,7 +441,7 @@ if __name__ == "__main__":
     # parse_skirt()
     # parse_suit()
     # parse_corset()
-    parse_accessories()
+    # parse_accessories()
     # parse_blouse()
     # parse_shorts()
     # parse_swimsuit()
