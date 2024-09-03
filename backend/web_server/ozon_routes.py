@@ -61,6 +61,12 @@ def send_post():
     products_list = db_ozon.get_products_for_post(request.json)
     logger.info(products_list)
     cards_list = []
+
+    if len(products_list != 6):
+        products_list = db_ozon.get_products_for_post(request.json)
+        logger.info(products_list)
+
+
     if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
         cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'ozon'))
