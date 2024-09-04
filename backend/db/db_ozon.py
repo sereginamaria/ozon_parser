@@ -83,7 +83,7 @@ def delete_product(json):
 
 def store_category(json):
     cursor.execute(
-        "update public.ozon_products set stored = true where publication_category = '%s'" % (
+        "update public.ozon_products set stored = true where (verification = false and publication_category = '%s')" % (
             json['category']
         )
     )
