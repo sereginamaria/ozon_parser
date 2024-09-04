@@ -186,10 +186,10 @@ def create_videos():
         products_list = db_wb.get_products_for_post(new_product)
         cards_list = []
         if len(products_list) == 6:
-            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
-            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'wb'))
             for product in products_list[1:]:
-                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
 
             video_b = video_maker.generate_video(cards_list)
             telegram_connector.send_video(video_b)

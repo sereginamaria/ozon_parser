@@ -190,10 +190,10 @@ def create_videos():
         products_list = db_ozon.get_products_for_post(new_product)
         cards_list = []
         if len(products_list) == 6:
-            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0])))
-            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True))
+            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'ozon'))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'ozon'))
             for product in products_list[1:]:
-                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False))
+                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'ozon'))
 
             video_b = video_maker.generate_video(cards_list)
             telegram_connector.send_video(video_b)

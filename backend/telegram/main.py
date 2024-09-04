@@ -26,8 +26,10 @@ th_wb.start()
 def get_text_message(message):
     if message.text == "/help":
         bot.send_message(message.from_user.id, 'Привет')
-    elif message.text == "/get_videos":
+    elif message.text == "/get_ozon_videos":
         requests.get("http://" + BASE_URL + ":5001/create_videos")
+    elif message.text == "/get_wb_videos":
+        requests.get("http://" + BASE_URL + ":5001/wb/create_videos")
     else:
         bot.send_message(message.from_user.id, 'Не понимаю')
 while True:
