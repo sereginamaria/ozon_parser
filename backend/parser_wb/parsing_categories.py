@@ -2,7 +2,7 @@ from parser_wb import get_products
 
 def parse_trousers():
     # БРЮКИ
-    # БРЮКИ, все цвета, кроме черного
+    # Все цвета, кроме черного
     # Вечернаяя мода
     get_products.parse_page('Брюки',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
@@ -19,7 +19,7 @@ def parse_trousers():
     get_products.parse_page('Брюки',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
-    # ВСЕ категории, ЧЕРНЫЕ
+    # ВСЕ категории, ЧЕРНЫЙ
     get_products.parse_page('Брюки',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=0')
 def parse_home_clothes():
@@ -109,13 +109,13 @@ def parse_tshirts():
     get_products.parse_page('Футболка',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
-    # БЕЛОЕ И ЧЕРНОЕ
+    # ВСЕ категории, БЕЛОЕ И ЧЕРНОЕ
     get_products.parse_page('Футболка',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=192%3B219&fcolor=16777215%3B0')
 
 def parse_shirts():
     for i in range(4):
-        # РУБАШКА
+        # РУБАШКИ
         get_products.parse_page('Рубашка',
                                'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bluzki-i-rubashki?sort=popular&page=1&xsubject=184')
 
@@ -133,7 +133,7 @@ def parse_jeans():
 
 def parse_jacket():
     # ПИДАЖАК
-    # ВСЕ кроме черного
+    # Все цвета кроме черного
     # Вечерние
     get_products.parse_page('Пиджак',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31494%3B31136%3B67470')
@@ -147,36 +147,65 @@ def parse_jacket():
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
 
     # ПИДАЖАК
-    # Черный
+    # ВСЕ категории, ЧЕРНЫЙ
     get_products.parse_page('Пиджак',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/pidzhaki-i-zhakety?sort=popular&page=1&fcolor=0')
 
 def parse_dress():
+    #ЛЕТО (НУЖНО БУДЕТ ИЗМЕНИТЬ ССЫЛКИ)
+    # # ПЛАТЬЕ
+    # # Все цвета, кроме черного
+    # # Вечерняя мода
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
+    #
+    # # Выпускной, новый год, символ года
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31137%3B31138%3B67470')
+    #
+    # # Офис
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+    #
+    # # Повседневное
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+    #
+    # # Свадьба
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31136')
+    #
+    # # Все категории, ЧЕРНОЕ
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=0')
+
+
+    #ОСЕНЬ
     # ПЛАТЬЕ
-    # ПЛАТЬЕ, все цвета, кроме черного
+    # Все цвета, кроме черного
     # Вечерняя мода
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31142')
 
     # Выпускной, новый год, символ года
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31137%3B31138%3B67470')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31137%3B31138%3B67470')
 
     # Офис
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31140')
 
     # Повседневное
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31141')
 
     # Свадьба
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31136')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31136')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=0')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=0&fkind=2')
 
 def parse_shoes():
     # ОБУВЬ
@@ -239,7 +268,7 @@ def parse_shoes():
 
 def parse_top():
     # ТОП
-    # ТОП, все цвета, кроме черного и белого
+    # Все цвета, кроме черного и белого
     # Вечерняя мода
     get_products.parse_page('Топ',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142')
@@ -261,25 +290,48 @@ def parse_top():
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16777215%3B0&f23796=31136%3B31137%3B31138%3B31140%3B31141%3B31142%3B67470')
 
 def parse_skirt():
+    # ЛЕТО
+    # # ЮБКА
+    # # Все цвета, кроме черного
+    # # Вечернее
+    # get_products.parse_page('Юбка',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31138%3B31136%3B67470')
+    #
+    # # Офис
+    # get_products.parse_page('Юбка',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+    #
+    # # Повседневное
+    # get_products.parse_page('Юбка',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+    #
+    # # Все категории, ЧЕРНОЕ
+    # get_products.parse_page('Юбка',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=0')
+
+
+    # ОСЕНЬ
     # ЮБКА
-    # ЮБКА, все цвета, кроме черного
+    # Все цвета, кроме черного
     # Вечернее
     get_products.parse_page('Юбка',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31142%3B31137%3B31138%3B31136%3B67470')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Юбка+женская+осень&xsubject=38&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31137%3B31142%3B31138%3B31136%3B67470')
 
     # Офис
     get_products.parse_page('Юбка',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31140')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Юбка+женская+осень&xsubject=38&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31140')
 
     # Повседневное
     get_products.parse_page('Юбка',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&f23796=31141')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Юбка+женская+осень&xsubject=38&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31141')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Юбка',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=0')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Юбка+женская+осень&xsubject=38&fcolor=0&fkind=2')
 
-    # Твидовая
+
+
+    # ТВИДОВАЯ
     get_products.parse_page('Юбка',
                             'https://www.wildberries.ru/catalog/0/search.aspx?search=Юбка%20женская%20твидовая')
 
@@ -314,7 +366,7 @@ def parse_suit():
 
 def parse_corset():
         # КОРСЕТ
-        # Не черный
+        # НЕ черный
         get_products.parse_page('Корсет',
                                'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260')
 
@@ -435,7 +487,8 @@ def parse_kofta():
                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5+%D0%B1%D0%BE%D0%B4%D0%B8&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260')
 
 def parse_outer_wear():
-    # ВЕРХНЯЯ ОДЕЖДА ОСЕНЬ
+    # ОСЕНЬ
+    # ВЕРХНЯЯ ОДЕЖДА
     # Бомберы Не черные
     get_products.parse_page('Верхняя Одежда',
                                 'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1635&fcolor=16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086%3B16119260')
