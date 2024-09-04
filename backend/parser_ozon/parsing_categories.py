@@ -2,35 +2,36 @@ from parser_ozon import get_products
 
 def parse_trousers():
     # БРЮКИ
-    # БРЮКИ, все цвета, кроме черного
-    # Бохо и восточный
+    # Все цвета, кроме черного
+    # Повседневный
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=100374527%2C277449&text=Женские+брюки&tf_state=9H8UUG4QKyRe7uTKIAciSe-vUnLHCRFa6VKLVDrsSRcS1Tg%3D')
-    
-    # Офис, классический, вечерний
+                           'https://www.ozon.ru/category/bryuki-zhenskie-7512/?color=100955528%2C100955546%2C100955530%2C100955529%2C100955540%2C100955527%2C100966307%2C100955534%2C100955532%2C100955535%2C100966310%2C100955536%2C100955537%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=styleapparel%2Ccolor%2Ctype&styleapparel=55228&type=37300')
+
+    # Офис
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=55225%2C148380%2C57396&text=Женские+брюки&tf_state=9H8UUG4QKyRe7uTKIAciSe-vUnLHCRFa6VKLVDrsSRcS1Tg%3D')
-    # Винтаж
+                           'https://www.ozon.ru/category/bryuki-zhenskie-7512/?color=100955528%2C100955546%2C100955530%2C100955529%2C100955540%2C100955527%2C100966307%2C100955534%2C100955532%2C100955535%2C100966310%2C100955536%2C100955537%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=type%2Cstyleapparel%2Ccolor&styleapparel=58692&type=37300')
+
+    # Вечерний
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel%2Cmodelclothing&page=4&styleapparel=56425&text=Женские+брюки&tf_state=LRgNOk4dr0qZLzNyXUSCCMtn_bdpR8leFe0UadQ1fR9UNofj')
-    
-    # Коктейльное, свадебное и праздничное
+                           'https://www.ozon.ru/category/bryuki-zhenskie-7512/?color=100955528%2C100955546%2C100955530%2C100955529%2C100955540%2C100955527%2C100966307%2C100955534%2C100955532%2C100955535%2C100966310%2C100955536%2C100955537%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=type%2Cstyleapparel%2Ccolor&styleapparel=57396&type=37300')
+
+    # Спортивный
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100966307%2C100955532%2C100955535%2C100955542%2C100955537%2C100955536%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Cmodelclothing%2Ccolor&styleapparel=164217%2C79761%2C106037&text=Женские+брюки&tf_state=LRgNOk4dr0qZLzNyXUSCCMtn_bdpR8leFe0UadQ1fR9UNofj')
-    
+                           'https://www.ozon.ru/category/bryuki-zhenskie-7512/?color=100955528%2C100955546%2C100955530%2C100955529%2C100955540%2C100955527%2C100966307%2C100955534%2C100955532%2C100955535%2C100966310%2C100955536%2C100955537%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=color%2Ctype%2Cstyleapparel&styleapparel=55224&type=37300')
+
     # ВСЕ категории, ЧЕРНЫЕ
     get_products.parse_page('Брюки',
-                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женские+брюки')
+                           'https://www.ozon.ru/category/bryuki-zhenskie-7512/?color=100955526&opened=styleapparel%2Ccolor%2Ctype&type=37300')
 
 def parse_home_clothes():
     # ДОМАШНЯЯ ОДЕЖДА
-    # пижамы
+    # Пижамы
     get_products.parse_page('Домашняя Одежда',
-                           'https://www.ozon.ru/category/domashnyaya-odezhda-zhenskaya-7541/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=женская+домашняя+одежда')
+                           'https://www.ozon.ru/category/domashnyaya-odezhda-zhenskaya-7541/')
 
-    # тапочки
+    # Тапочки
     get_products.parse_page('Домашняя Одежда',
-                           'https://www.ozon.ru/category/tapochki-zhenskie-7655/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Женская+обувь')
+                           'https://www.ozon.ru/category/tapochki-zhenskie-7655/')
 
 def parse_jewelry():
     # УКРАШЕНИЯ
@@ -73,19 +74,41 @@ def parse_jewelry():
 def parse_bag():
     for i in range(4):
         # СУМКА
+        # Клатчи
+        get_products.parse_page('Сумка',
+                               'https://www.ozon.ru/category/klatchi-zhenskie-17007/')
+
         # СУМКА ЧЕРНАЯ
         get_products.parse_page('Сумка',
-                               'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&opened=badfiltermaterial%2Chandletype%2Ctype&text=Сумка+женская')
+                               'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?color=100955526')
 
         # СУМКА НЕ черная
         get_products.parse_page('Сумка',
-                               'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?category_was_predicted=true&color=100955529%2C100955527%2C100955542%2C100955546%2C100955534%2C100955540%2C100955530%2C100955535%2C100966307%2C100955537%2C100955532%2C100955536%2C100955547%2C100966310%2C100955545%2C100955544%2C100955541%2C101097990%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Chandletype%2Ctype%2Cbadfiltermaterial&text=Сумка+женская')
+                               'https://www.ozon.ru/category/sumki-na-plecho-zhenskie-17002/?color=100955546%2C100955529%2C100955527%2C100955528%2C100955540%2C100955534%2C100955530%2C100955547%2C100955535%2C100955542%2C100955532%2C100966310%2C100955537%2C100955536%2C100966307%2C100955544%2C100955545%2C100955541%2C101097990&opened=color')
 
 def parse_tshirts():
-    for i in range(4):
-        # ФУТБОЛКА
-        get_products.parse_page('Футболка',
-                               'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?category_was_predicted=true&deny_category_prediction=true&from_global=true&opened=sleevelength%2Ctypesport%2Cmodelclothing&page=3&text=Женская+футболка&tf_state=FspgpzCmZzTUmLtK2ZGzfLwP_EZYOErq0XKm4xAspaMXFc4j&type=37283')
+    # ФУТБОЛКА
+    # Все цвета, кроме черного
+    # Повседневный
+    get_products.parse_page('Футболка',
+                           'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=styleapparel%2Ccolor%2Ctype&styleapparel=55228&type=37283%2C55242')
+
+    # Спортивный
+    get_products.parse_page('Футболка',
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=styleapparel%2Ccolor%2Ctype&styleapparel=55224&type=37283%2C55242')
+
+    # Офисный
+    get_products.parse_page('Футболка',
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=color%2Ctype%2Cstyleapparel&styleapparel=58692&type=37283%2C55242')
+
+    # Вечернийб свадебный
+    get_products.parse_page('Футболка',
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=styleapparel%2Ccolor%2Ctype&styleapparel=79761%2C57396&type=37283%2C55242')
+
+    # ВСЕ категории, ЧЕРНЫЙ
+    get_products.parse_page('Футболка',
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955526&opened=type%2Cstyleapparel%2Ccolor&type=37283%2C55242')
+
 
 def parse_shirts():
     for i in range(4):
@@ -93,47 +116,89 @@ def parse_shirts():
         get_products.parse_page('Рубашка',
                                'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?type=37307')
 
+def parse_blouse():
+    for i in range(4):
+        get_products.parse_page('Блузка',
+                                'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?type=101121374%2C39030')
 
 def parse_jeans():
     for i in range(4):
         # ДЖИНСЫ
         get_products.parse_page('Джинсы',
-                               'https://www.ozon.ru/category/dzhinsy-zhenskie-7503/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Джинсы+женские')
+                               'https://www.ozon.ru/category/dzhinsy-zhenskie-7503/')
 
 def parse_jacket():
-    for i in range(4):
-        # ПИДАЖАК
-        # ВСЕ кроме черного
-        get_products.parse_page('Пиджак',
-                                'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?category_was_predicted=true&color=100955530%2C100955527%2C100955534%2C100955528%2C100966307%2C100955546%2C100955535%2C100955529%2C100955537%2C100955532%2C100966310%2C100955536%2C100955547%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990%2C100955540&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
-
     # ПИДАЖАК
-    # Черный
+    # ВСЕ категории, кроме черного
+    # Повседневный
     get_products.parse_page('Пиджак',
-                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955526&deny_category_prediction=true&from_global=true&opened=color&text=Женский+пиджак')
+                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955546%2C100955530%2C100955528%2C100955540%2C100955529%2C100955534%2C100955547%2C100966307%2C100955535%2C100955532%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955527&opened=color%2Cstyleapparel&styleapparel=55228')
+
+    # Офис
+    get_products.parse_page('Пиджак',
+                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955546%2C100955530%2C100955528%2C100955540%2C100955529%2C100955534%2C100955547%2C100966307%2C100955535%2C100955532%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955527&opened=color%2Cstyleapparel&styleapparel=58692')
+
+    # Вечерний
+    get_products.parse_page('Пиджак',
+                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955546%2C100955530%2C100955528%2C100955540%2C100955529%2C100955534%2C100955547%2C100966307%2C100955535%2C100955532%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955527&opened=color%2Cstyleapparel&styleapparel=57396')
+
+    # Все категории, ЧЕРНЫЙ
+    get_products.parse_page('Пиджак',
+                            'https://www.ozon.ru/category/zhakety-i-zhilety-zhenskie-7535/?color=100955526')
 
 def parse_dress():
+    # ЛЕТО (НУЖНО МЕНЯТЬ)
+    # # ПЛАТЬЕ
+    # # Все цвета, кроме черного
+    # # Бохо и восточный
+    # get_products.parse_page('Платье',
+    #                         'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=100374527%2C277449&text=женское+платье')
+    #
+    # # Офис, классический, вечерний
+    # get_products.parse_page('Платье',
+    #                         'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=modelclothing%2Cstyleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=женское+платье')
+    #
+    # # Винтаж
+    # get_products.parse_page('Платье',
+    #                         'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=56425&text=женское+платье')
+    #
+    # # Коктейльное, Выпускное, свадебное, праздничное
+    # get_products.parse_page('Платье',
+    #                         'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor%2Cmodelclothing&styleapparel=106037%2C79761%2C101124545%2C164217&text=женское+платье')
+    #
+    # # Все категории, ЧЕРНОЕ
+    # get_products.parse_page('Платье',
+    #                         'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женское+платье')
+    #
+
+
+    # ОСЕНЬ
     # ПЛАТЬЕ
-    # ПЛАТЬЕ, все цвета, кроме черного
-    # Бохо и восточный
+    # Все цвета, кроме черного, все кроме лета
+    # Вечернее, праздничный, свадебный, выпускной
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=100374527%2C277449&text=женское+платье')
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955530%2C100955546%2C100955540%2C100955527%2C100955528%2C100955534%2C100955529%2C100955535%2C100955532%2C100966310%2C100966307%2C100955537%2C100955536%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=styleapparel%2Ccolor&season=33889%2C31827%2C82950%2C33890&styleapparel=57396%2C106037%2C101124545%2C79761')
 
-    # Офис, классический, вечерний
+    # Офис, классический
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=modelclothing%2Cstyleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=женское+платье')
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955530%2C100955546%2C100955540%2C100955527%2C100955528%2C100955534%2C100955529%2C100955535%2C100955532%2C100966310%2C100966307%2C100955537%2C100955536%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=color%2Cstyleapparel&season=33889%2C31827%2C82950%2C33890&styleapparel=148380%2C58692')
 
-    # Винтаж
+    # Повседневное
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Cmodelclothing%2Cstyleapparel&styleapparel=56425&text=женское+платье')
-
-    # Коктейльное, Выпускное, свадебное, праздничное
-    get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955530%2C100955540%2C100955527%2C100955534%2C100955535%2C100955528%2C100955546%2C100955532%2C100955547%2C100955537%2C100955536%2C100955529%2C100966307%2C100966310%2C100955542%2C100955545%2C100955544%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor%2Cmodelclothing&styleapparel=106037%2C79761%2C101124545%2C164217&text=женское+платье')
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955530%2C100955546%2C100955540%2C100955527%2C100955528%2C100955534%2C100955529%2C100955535%2C100955532%2C100966310%2C100966307%2C100955537%2C100955536%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&opened=styleapparel%2Ccolor&season=33889%2C31827%2C82950%2C33890&styleapparel=55228')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Платье',
-                            'https://www.ozon.ru/category/platya-zhenskie-7502/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женское+платье')
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955526&opened=styleapparel%2Ccolor&season=33889%2C31827%2C82950%2C33890')
+
+    # Все цвета, кроме черного, зима, демисезон
+    get_products.parse_page('Платье',
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955530%2C100955546%2C100955540%2C100955528%2C100955527%2C100955529%2C100955534%2C100955547%2C100955535%2C100955532%2C100966307%2C100966310%2C100955537%2C100955536%2C100955542%2C100955545%2C100955544%2C101097990&opened=color%2Cstyleapparel&season=31827%2C33889')
+
+    # Все категории, ЧЕРНЫЙ, зима, демисезон
+    get_products.parse_page('Платье',
+                            'https://www.ozon.ru/category/platya-zhenskie-7502/?color=100955526&opened=styleapparel%2Ccolor&season=31827%2C33889')
+
 
 def parse_shoes():
     # ОБУВЬ
@@ -190,102 +255,123 @@ def parse_shoes():
 
 def parse_top():
     # ТОП
-    # ТОП, все цвета, кроме черного
-    # Бохо и восточный
+    # Все цвета, кроме черного
+    # Повседневный
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=100374527%2C277449&text=женский+топ')
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=styleapparel%2Ccolor%2Ctype&styleapparel=55228&type=38835%2C38833%2C178570%2C71937')
 
-    # Офис, классический, вечерний
+    # Вечерний
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=женский+топ')
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=type%2Cstyleapparel%2Ccolor&styleapparel=57396&type=38835%2C38833%2C178570%2C71937')
 
-    # Винтаж
+    # Офис
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=женский+топ')
-
-    # Коктейльное, Выпускное, свадебное, праздничное
-    get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955527%2C100955534%2C100955528%2C100955546%2C100955530%2C100955540%2C100955535%2C100955529%2C100955532%2C100955537%2C100966307%2C100955536%2C100966310%2C100955542%2C100955544%2C100955545%2C101097990%2C100955541%2C100955547&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=164217%2C79761%2C101124545%2C106037&text=женский+топ')
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955527%2C100955528%2C100955530%2C100955534%2C100955540%2C100955546%2C100966310%2C100955544%2C100955532%2C100955529%2C100955535%2C100955537%2C100955536%2C100955542%2C100955545%2C100966307%2C100955541%2C101097990%2C100955547&opened=type%2Cstyleapparel%2Ccolor&styleapparel=58692&type=38835%2C38833%2C178570%2C71937')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Топ',
-                            'https://www.ozon.ru/category/mayki-i-topy-zhenskie-7506/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женский+топ')
+                            'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955526&opened=color%2Ctype%2Cstyleapparel&type=38835%2C38833%2C178570%2C71937')
 
 def parse_skirt():
+    # ЛЕТО (НАДО МЕНЯТЬ)
+    # # ЮБКА
+    # # ЮБКА, все цвета, кроме черного
+    # # Бохо и восточный
+    # get_products.parse_page('Юбка',
+    #                         'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=100374527%2C277449&text=женская+юбка')
+    #
+    # # Офис, классический, вечерний
+    # get_products.parse_page('Юбка',
+    #                         'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=57396%2C148380%2C55225&text=женская+юбка')
+    #
+    # # Винтаж
+    # get_products.parse_page('Юбка',
+    #                         'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=женская+юбка')
+    #
+    # # Коктейльное, Выпускное, свадебное, праздничное
+    # get_products.parse_page('Юбка',
+    #                         'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=женская+юбка')
+    #
+    # # Все категории, ЧЕРНОЕ
+    # get_products.parse_page('Юбка',
+    #                         'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женская+юбка')
+
+
+    # ОСЕНЬ
     # ЮБКА
-    # ЮБКА, все цвета, кроме черного
-    # Бохо и восточный
+    # Все цвета, кроме черногоб все кроме лета
+    # Повседневный
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=100374527%2C277449&text=женская+юбка')
+                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?color=100955530%2C100955528%2C100955546%2C100955527%2C100955529%2C100955540%2C100955547%2C100955534%2C100955535%2C100966307%2C100955532%2C100955542%2C100966310%2C100955537%2C100955544%2C100955545%2C101097990%2C100955541%2C100955536&opened=styleapparel%2Ccolor&season=33890%2C33889%2C31827%2C82950&styleapparel=55228&type=336542%2C38829')
 
-    # Офис, классический, вечерний
+    # Офисный
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=57396%2C148380%2C55225&text=женская+юбка')
+                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?color=100955530%2C100955528%2C100955546%2C100955527%2C100955529%2C100955540%2C100955547%2C100955534%2C100955535%2C100966307%2C100955532%2C100955542%2C100966310%2C100955537%2C100955544%2C100955545%2C101097990%2C100955541%2C100955536&opened=color%2Cstyleapparel&season=33890%2C33889%2C31827%2C82950&styleapparel=58692&type=336542%2C38829')
 
-    # Винтаж
+    # Вечерний
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=женская+юбка')
+                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?color=100955530%2C100955528%2C100955546%2C100955527%2C100955529%2C100955540%2C100955547%2C100955534%2C100955535%2C100966307%2C100955532%2C100955542%2C100966310%2C100955537%2C100955544%2C100955545%2C101097990%2C100955541%2C100955536&opened=color%2Cstyleapparel&season=33890%2C33889%2C31827%2C82950&styleapparel=57396&type=336542%2C38829')
 
-    # Коктейльное, Выпускное, свадебное, праздничное
+    # Все категории, ЧЕРНОЕ, все кроме лета
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955530%2C100955527%2C100955528%2C100955540%2C100955546%2C100955529%2C100955534%2C100955535%2C100966307%2C100955547%2C100955532%2C100955536%2C100955542%2C100955537%2C100955544%2C100955545%2C100955541%2C101097990%2C100966310&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=женская+юбка')
+                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?color=100955526&season=33890%2C33889%2C31827%2C82950&type=336542%2C38829')
 
-    # Все категории, ЧЕРНОЕ
+    # Все категории, ЧЕРНОЕ, зима, демисезон
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=женская+юбка')
+                            'https://www.ozon.ru/category/yubki-zhenskie-7504/?color=100955526&season=33889%2C31827&type=336542%2C38829')
 
-    # Твидовая
+    # ТВИДОВАЯ
     get_products.parse_page('Юбка',
-                            'https://www.ozon.ru/search/?text=женская+юбка+твидовая&from_global=true')
+                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Юбка+женская+твидовая')
 
 def parse_suit():
     # КОСТЮМ
-    # КОСТЮМ, все цвета, кроме черного
-    # Бохо и восточный
+    # Все категории, ЧЕРНЫЙ, все кроме лета
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=100374527%2C277449&text=костюм+женский')
+                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?color=100955526&opened=setapparel%2Cstyleapparel&season=33890%2C33889%2C82950%2C31827&styleapparel=55228%2C58692%2C57396%2C55224%2C164217%2C79761')
 
-    # Офис, классический, вечерний
+    # Все категории, ЧЕРНЫЙ, зима, демисезон
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=костюм+женский')
+                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?color=100955526&opened=setapparel%2Cstyleapparel&season=33889%2C31827&styleapparel=55228%2C58692%2C57396%2C55224%2C164217%2C79761')
 
-    # Винтаж
+    # Все категории, кроме ЧЕРНОГО, все крмое лета
+    # Повседневный
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=56425&text=костюм+женский')
+                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?color=100955528%2C100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100955535%2C100966307%2C100955536%2C100955532%2C100966310%2C100955542%2C100955545%2C100955544%2C101097990%2C100955541%2C100955537&opened=color%2Csetapparel%2Cstyleapparel&season=33890%2C33889%2C31827%2C82950&styleapparel=55228')
 
-    # Коктейльное, Выпускное, свадебное, праздничное
+    # Офисный
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955527%2C100955530%2C100955540%2C100955534%2C100955546%2C100955535%2C100966307%2C100955547%2C100955537%2C100955529%2C100955532%2C100955536%2C100966310%2C100955542%2C100955544%2C101097990%2C100955545%2C100955541%2C100955528&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=164217%2C79761%2C101124545%2C106037&text=костюм+женский')
+                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?color=100955528%2C100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100955535%2C100966307%2C100955536%2C100955532%2C100966310%2C100955542%2C100955545%2C100955544%2C101097990%2C100955541%2C100955537&opened=setapparel%2Cstyleapparel%2Ccolor&season=33890%2C33889%2C31827%2C82950&styleapparel=58692')
 
-    # Все категории, ЧЕРНОЕ
+    # Коктейльное, свадебное, вечернее
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=костюм+женский')
+                            'https://www.ozon.ru/category/kostyumy-i-komplekty-odezhdy-zhenskie-7536/?color=100955528%2C100955530%2C100955527%2C100955540%2C100955546%2C100955534%2C100955547%2C100955529%2C100955535%2C100966307%2C100955536%2C100955532%2C100966310%2C100955542%2C100955545%2C100955544%2C101097990%2C100955541%2C100955537&opened=setapparel%2Cstyleapparel%2Ccolor&season=33890%2C33889%2C31827%2C82950&styleapparel=57396%2C164217%2C79761')
 
     # Твидовый
     get_products.parse_page('Костюм',
-                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=костюм+твидовый+женский')
+                            'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=костюм+женский+твидовый')
 
 def parse_corset():
-        # КОРСЕТ
-        # Бохо и восточный
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=100374527%2C277449&text=Женский+корсет')
+    # КОРСЕТ
+    # Бохо и восточный
+    get_products.parse_page('Корсет',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955546%2C100955534%2C100955535%2C100955529%2C100955540%2C100955530%2C100955532%2C100955528%2C100955536%2C100955547%2C100966310%2C100955537%2C100955544%2C100966307%2C100955542%2C100955545%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=category%2Ccolor%2Ctype%2Cstyleapparel%2Cmodelclothing&styleapparel=57396&text=корсет+женский&type=311046%2C38835%2C178570%2C149826%2C71937%2C39164%2C101117199%2C38833')
 
-        # Офис, классический, вечерний
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=55225%2C148380%2C57396&text=Женский+корсет')
+    # Офис, классический, вечерний
+    get_products.parse_page('Корсет',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955546%2C100955534%2C100955535%2C100955529%2C100955540%2C100955530%2C100955532%2C100955528%2C100955536%2C100955547%2C100966310%2C100955537%2C100955544%2C100966307%2C100955542%2C100955545%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=color%2Ctype%2Cstyleapparel%2Cmodelclothing%2Ccategory&styleapparel=55228&text=корсет+женский&type=311046%2C38835%2C178570%2C149826%2C71937%2C39164%2C101117199%2C38833')
 
-        # Винтаж
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=color%2Cstyleapparel&styleapparel=56425&text=Женский+корсет')
+    # Винтаж
+    get_products.parse_page('Корсет',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955546%2C100955534%2C100955535%2C100955529%2C100955540%2C100955530%2C100955532%2C100955528%2C100955536%2C100955547%2C100966310%2C100955537%2C100955544%2C100966307%2C100955542%2C100955545%2C100955541%2C101097990&deny_category_prediction=true&from_global=true&opened=type%2Cstyleapparel%2Cmodelclothing%2Ccategory%2Ccolor&styleapparel=58692&text=корсет+женский&type=311046%2C38835%2C178570%2C149826%2C71937%2C39164%2C101117199%2C38833')
 
-        # Коктейльное, Выпускное, свадебное, праздничное
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=Женский+корсет')
+    # Коктейльное, Выпускное, свадебное, праздничное
+    get_products.parse_page('Корсет',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955527%2C100955536%2C100955534%2C100955535%2C100955529%2C100955546%2C100955530%2C100955532%2C100955547%2C100966307%2C100955542%2C100955544%2C100955545%2C100955528%2C100955541%2C100955540&deny_category_prediction=true&from_global=true&opened=styleapparel%2Ccolor&styleapparel=164217%2C79761%2C101124545%2C106037&text=Женский+корсет')
 
-        # Все категории, ЧЕРНОЕ
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&text=Женский+корсет')
+    # Все категории, ЧЕРНОЕ
+    get_products.parse_page('Корсет',
+                           'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&color=100955526&deny_category_prediction=true&from_global=true&opened=modelclothing%2Ccategory%2Ctype%2Cstyleapparel&text=корсет+женский&type=311046%2C38835%2C178570%2C149826%2C71937%2C39164%2C101117199%2C38833')
 
 def parse_accessories():
     # АКСЕССУАРЫ
@@ -335,11 +421,6 @@ def parse_accessories():
     # Часы
     get_products.parse_page('Аксессуары',
                             'https://www.ozon.ru/category/chasy-zhenskie-17037/?opened=type&type=32931%2C309840%2C38178')
-
-def parse_blouse():
-    for i in range(4):
-        get_products.parse_page('Блузка',
-                                'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%B1%D0%BB%D1%83%D0%B7%D0%BA%D0%B0&type=101121374%2C39030')
 
 def parse_shorts():
     # Деним
