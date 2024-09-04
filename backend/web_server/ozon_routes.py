@@ -62,9 +62,9 @@ def send_post():
     logger.info(products_list)
     cards_list = []
 
-    if len(products_list != 6):
-        products_list = db_ozon.get_products_for_post(request.json)
-        logger.info(products_list)
+    # if len(products_list != 6):
+    #     products_list = db_ozon.get_products_for_post(request.json)
+    #     logger.info(products_list)
 
 
     if len(products_list) == 6:

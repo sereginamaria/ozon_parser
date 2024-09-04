@@ -13,6 +13,11 @@ from telegram.wb_bot import autoposting as autoposting_wb
 th_ozon = Thread(target=autoposting_ozon.autop)
 th_ozon.start()
 
+import time
+
+time.sleep(5)
+
+
 th_wb = Thread(target=autoposting_wb.autop)
 th_wb.start()
 

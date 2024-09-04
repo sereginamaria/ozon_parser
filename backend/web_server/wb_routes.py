@@ -58,9 +58,9 @@ def send_post():
     cards_list = []
     logger.info(products_list)
 
-    if len(products_list != 6):
-        products_list = db_wb.get_products_for_post(request.json)
-        logger.info(products_list)
+    # if len(products_list != 6):
+    #     products_list = db_wb.get_products_for_post(request.json)
+    #     logger.info(products_list)
 
     if len(products_list) == 6:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
