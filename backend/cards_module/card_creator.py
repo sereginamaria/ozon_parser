@@ -42,7 +42,7 @@ def create_title_card(product: Product, card_type: str) -> bytes:
         card_title = product_category
         return render_template('title_card.html', category=card_title,
                                color1=palette_colors[0],
-                               color2=palette_colors[2])
+                               color2=palette_colors[2], card_type=card_type)
     def get_css(images_urls, palette_colors):
         return render_template('title_card.css', url_img=images_urls[0], color=palette_colors[2])
 
