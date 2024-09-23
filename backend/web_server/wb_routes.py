@@ -1,3 +1,5 @@
+import requests
+
 from parser_wb import get_products, schema
 from web_server import logger
 from db import db_wb
@@ -5,9 +7,11 @@ from flask import request, Blueprint
 from cards_module import card_creator
 from datetime import date
 import datetime as datetime2
-from main_config import TIMESHEET
+from main_config import TIMESHEET, BASE_URL
 from video_module import video_maker
 from telegram.wb_bot import telegram_notifier, telegram_connector
+
+from text_recognizer.main import recognize_text_server
 
 wb = Blueprint('wb', __name__)
 
@@ -53,31 +57,52 @@ def return_all_categories():
 
 @wb.route('/wb/send_post', methods=['POST'])
 def send_post():
+    def check_images(products):
+        print('check_images')
+        for product in products:
+            for image_url in schema.Product(*product).images.split(','):
+                if recognize_text_server(image_url) == None:
+                    return False, product
+        return True, products
+
     logger.info('send_post')
     products_list = db_wb.get_products_for_post(request.json)
     cards_list = []
     logger.info(products_list)
 
-    # if len(products_list != 6):
-    #     products_list = db_wb.get_products_for_post(request.json)
-    #     logger.info(products_list)
-
     if len(products_list) == 6:
-        unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
-        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
-        cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'wb'))
-        for product in products_list[1:]:
-            cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
+        is_images_good = check_images(products_list)
+        print(is_images_good)
+        if is_images_good[0]:
+            print('1111')
+            unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
+            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
+            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'wb'))
+            for product in products_list[1:]:
+                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
 
-        products_links = [schema.Product(*product).url for product in products_list]
+            products_links = [schema.Product(*product).url for product in products_list]
 
-        resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
-        if resp:
-            for product in products_list:
-                db_wb.publish_product(schema.Product(*product).id)
+            resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
+            if resp:
+                for product in products_list:
+                    db_wb.publish_product(schema.Product(*product).id)
+        else:
+            print(is_images_good[1])
+            telegram_notifier.find_text_in_verified_product(schema.Product(*is_images_good[1]).id)
+            db_wb.return_verification_false(schema.Product(*is_images_good[1]).id)
+
+            new_product = {
+                "category": request.json['category'],
+            }
+
+            requests.post("http://" + BASE_URL + ":5001/wb/send_post", json=new_product)
+
+
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
+
 
 @wb.route('/wb/get_timesheet', methods=['GET'])
 def get_timesheet():

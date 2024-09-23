@@ -133,3 +133,12 @@ def delete_product_from_db(json):
         )
     )
     connection.commit()
+
+
+def return_verification_false(id):
+    cursor.execute(
+        "update public.wb_products set verification = false where product_id = '%s'" % (
+            id
+        )
+    )
+    connection.commit()
