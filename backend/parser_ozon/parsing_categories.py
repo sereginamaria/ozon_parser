@@ -246,26 +246,26 @@ def parse_shoes():
     # get_products.parse_page('Обувь',
     #                         'https://www.ozon.ru/category/bosonozhki-zhenskie-7645/?category_was_predicted=true&color=100955527%2C100955546%2C100955529%2C100955534%2C100955530%2C100955535%2C100955540%2C100955528%2C100955537%2C100955544%2C100966307%2C100955536%2C100955542%2C100955532%2C100955547%2C100966310%2C100955541%2C101097990%2C100955545&deny_category_prediction=true&from_global=true&opened=color&text=Женская+обувь')
 
-    # ЛЕТО + ОСЕНЬ
-    # Слипоны
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/krossovki-i-kedy-zhenskie-36484/?type=56542')
-    # Мюли
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/sabo-i-myuli-zhenskie-7646/?type=151532')
+    # # ЛЕТО + ОСЕНЬ
+    # # Слипоны
+    # get_products.parse_page('Обувь',
+    #                         'https://www.ozon.ru/category/krossovki-i-kedy-zhenskie-36484/?type=56542')
+    # # Мюли
+    # get_products.parse_page('Обувь',
+    #                         'https://www.ozon.ru/category/sabo-i-myuli-zhenskie-7646/?type=151532')
+    #
+    # # Сабо
+    # get_products.parse_page('Обувь',
+    #                         'https://www.ozon.ru/category/sabo-i-myuli-zhenskie-7646/?type=32107')
+    #
+    # # Балетки
+    # get_products.parse_page('Обувь',
+    #                         'https://www.ozon.ru/category/tufli-zhenskie-7644/?type=31975')
 
-    # Сабо
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/sabo-i-myuli-zhenskie-7646/?type=32107')
-
-    # Балетки
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/tufli-zhenskie-7644/?type=31975')
-
-    # ОСЕНЬ
-    # Полуботинки
-    get_products.parse_page('Обувь',
-                            'https://www.ozon.ru/category/botinki-zhenskie-7651/?type=31939')
+    # # ОСЕНЬ
+    # # Полуботинки
+    # get_products.parse_page('Обувь',
+    #                         'https://www.ozon.ru/category/botinki-zhenskie-7651/?type=31939')
 
     # ОСЕНЬ + ЗИМА
     # Ботинки ЧЕРНЫЕ
@@ -293,9 +293,18 @@ def parse_shoes():
     get_products.parse_page('Обувь',
                             'https://www.ozon.ru/category/sapogi-i-polusapogi-zhenskie-7652/?season=82950%2C33889&type=31978')
 
-   # Полусапоги
+    # Полусапоги
     get_products.parse_page('Обувь',
                             'https://www.ozon.ru/category/sapogi-i-polusapogi-zhenskie-7652/?type=31998')
+
+    # Дутики
+    get_products.parse_page('Обувь',
+                            'https://www.ozon.ru/category/uggi-i-valenki-zhenskie-7653/?opened=category&type=38755')
+
+    # Угги
+    get_products.parse_page('Обувь',
+                            'https://www.ozon.ru/category/uggi-i-valenki-zhenskie-7653/?opened=category&type=38761')
+
 
 
 def parse_top():
@@ -447,13 +456,13 @@ def parse_accessories():
 
     # ОСЕНЬ
     # ГОЛОВНЫЕ УБОРЫ
-    # Чепчик
+    # Чепчик, балаклава, кепка
     get_products.parse_page('Аксессуары',
-                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?opened=type&type=42160')
+                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?opened=type&type=79968%2C42160%2C40548')
 
-    # Берет
+    # Берет, Капор
     get_products.parse_page('Аксессуары',
-                            'https://www.ozon.ru/category/shlyapy-zhenskie-36514/?type=40543')
+                            'https://www.ozon.ru/category/shlyapy-zhenskie-36514/?type=282537%2C40543')
 
 
     # Платки
@@ -471,6 +480,23 @@ def parse_accessories():
     # Перчатки, НЕ черные
     get_products.parse_page('Аксессуары',
                             'https://www.ozon.ru/category/perchatki-i-varezhki-zhenskie-17060/?color=100955528%2C100955546%2C100955529%2C100955527%2C100955534%2C100955530%2C100955540%2C100955535%2C100955532%2C100966310%2C100955547%2C100955542%2C100955537%2C100955536%2C100966307%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=40342')
+
+    #ЗИМА
+    # Варежки
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/perchatki-i-varezhki-zhenskie-17060/?opened=type&type=40344')
+
+    # Шапка бини
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?hattype=163399&opened=hattype%2Ctype&type=40345')
+
+    # Шапка ушанка, с ушами
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?hattype=163403%2C163405&opened=type%2Chattype&type=40345')
+
+    # Шапка другое
+    get_products.parse_page('Аксессуары',
+                            'https://www.ozon.ru/category/shapki-zhenskie-36513/?hattype=100941826%2C163402%2C100497740%2C163401%2C100488709&opened=type%2Chattype&type=40345')
 
 
 def parse_kofta():
@@ -579,37 +605,56 @@ def parse_outer_wear():
     get_products.parse_page('Верхняя Одежда',
                             'https://www.ozon.ru/category/plashchi-zhenskie-7532/?type=101121375%2C41422')
 
-    # Бомбер
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?opened=type&type=79517')
-
-    # Ветровка, ЧЕРНАЯ
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=type&type=39038')
-
-    # Ветровка, НЕ черная
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955540%2C100955527%2C100955530%2C100955528%2C100955546%2C100955534%2C100966307%2C100955532%2C100955547%2C100955535%2C100955537%2C100955529%2C100955536%2C100966310%2C100955542%2C100955544%2C100955541%2C100955545&opened=color%2Ctype&type=39038')
+    # # Бомбер
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?opened=type&type=79517')
+    #
+    # # Ветровка, ЧЕРНАЯ
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=type&type=39038')
+    #
+    # # Ветровка, НЕ черная
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955540%2C100955527%2C100955530%2C100955528%2C100955546%2C100955534%2C100966307%2C100955532%2C100955547%2C100955535%2C100955537%2C100955529%2C100955536%2C100966310%2C100955542%2C100955544%2C100955541%2C100955545&opened=color%2Ctype&type=39038')
 
     # Куртка, НЕ черная
     get_products.parse_page('Верхняя Одежда',
                             'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955546%2C100955540%2C100955528%2C100955530%2C100955529%2C100955527%2C100966307%2C100955547%2C100955534%2C100955532%2C100955535%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=37305')
 
-    # Куртка кожаная, НЕ черная
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955546%2C100955540%2C100955528%2C100955530%2C100955529%2C100955527%2C100966307%2C100955547%2C100955534%2C100955532%2C100955535%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=151844')
-
     # Куртка, ЧЕРНАЯ
     get_products.parse_page('Верхняя Одежда',
                             'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=type%2Ccolor&type=37305')
 
-    # Куртка кожаная, ЧЕРНАЯ
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=type%2Ccolor&type=151844')
+    # # Куртка кожаная, НЕ черная
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955546%2C100955540%2C100955528%2C100955530%2C100955529%2C100955527%2C100966307%2C100955547%2C100955534%2C100955532%2C100955535%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=151844')
+    #
+    #
+    # # Куртка кожаная, ЧЕРНАЯ
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=type%2Ccolor&type=151844')
 
-    # Куртка джинсовая
+    # # Куртка джинсовая
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.ozon.ru/category/kurtki-zhenskie-7530/?opened=color%2Ctype&type=151843')
+
+    # ЗИМА
+    # ВЕРХНЯЯ ОДЕЖДА
+    # Пуховик Не черный
     get_products.parse_page('Верхняя Одежда',
-                            'https://www.ozon.ru/category/kurtki-zhenskie-7530/?opened=color%2Ctype&type=151843')
+                               'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955546%2C100955540%2C100955528%2C100955530%2C100955529%2C100955527%2C100966307%2C100955547%2C100955534%2C100955532%2C100955535%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=45127')
+
+    # Пальто пуховое НЕ черное
+    get_products.parse_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955546%2C100955540%2C100955528%2C100955530%2C100955529%2C100955527%2C100966307%2C100955547%2C100955534%2C100955532%2C100955535%2C100955536%2C100955537%2C100966310%2C100955542%2C100955544%2C100955545%2C100955541%2C101097990&opened=type%2Ccolor&type=278447')
+
+    # Пуховик черный
+    get_products.parse_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=color%2Ctype&type=45127')
+
+    # Пальто пуховое + утепленное черное
+    get_products.parse_page('Верхняя Одежда',
+                               'https://www.ozon.ru/category/kurtki-zhenskie-7530/?color=100955526&opened=color%2Ctype&type=278447%2C278448')
 
 
 def parse_shorts():
@@ -637,23 +682,26 @@ def parse_swimsuit():
                             'https://www.ozon.ru/category/kupalniki-i-plyazhnaya-odezhda-zhenskie-7540/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Купальник+женский')
 
 if __name__ == "__main__":
+    parse_corset()
+    parse_blouse()
+
     # parse_trousers()
     # parse_home_clothes()
     # parse_jewelry()
     # parse_bag()
     # parse_tshirts()
     # parse_shirts()
-    # parse_jeans()
+    parse_jeans()
     # parse_jacket()
     # parse_dress()
     # parse_shoes()
     # parse_top()
     # parse_skirt()
-    # parse_suit()
+    parse_suit()
     parse_corset()
     # parse_accessories()
-    # parse_blouse()
-    # parse_kofta()
+    parse_blouse()
+    parse_kofta()
     # parse_outer_wear()
 
     # parse_shorts()

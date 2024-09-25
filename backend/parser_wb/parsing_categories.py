@@ -22,6 +22,7 @@ def parse_trousers():
     # ВСЕ категории, ЧЕРНЫЙ
     get_products.parse_page('Брюки',
                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bryuki-i-shorty?sort=popular&page=1&xsubject=11&fcolor=0')
+
 def parse_home_clothes():
     # ДОМАШНЯЯ ОДЕЖДА
     # Пижамы
@@ -77,7 +78,6 @@ def parse_jewelry():
     # Ювелирные украшения
     get_products.parse_page('Украшения',
                             'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=ювелирные+украшения&xsubject=202%3B24%3B203%3B452%3B299%3B300%3B206%3B54%3B207%3B205%3B2035%3B2679&priceU=6300%3B500000&fkind=2')
-
 
 def parse_bag():
     for i in range(4):
@@ -180,32 +180,55 @@ def parse_dress():
     #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/platya?sort=popular&page=1&fcolor=0')
 
 
-    #ОСЕНЬ
+    # #ОСЕНЬ
+    # # ПЛАТЬЕ
+    # # Все цвета, кроме черного
+    # # Вечерняя мода
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31142')
+    #
+    # # Выпускной, новый год, символ года
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31137%3B31138%3B67470')
+    #
+    # # Офис
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31140')
+    #
+    # # Повседневное
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31141')
+    #
+    # # Свадьба
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31136')
+    #
+    # # Все категории, ЧЕРНОЕ
+    # get_products.parse_page('Платье',
+    #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=0&fkind=2')
+
+    # ЗИМА
     # ПЛАТЬЕ
     # Все цвета, кроме черного
     # Вечерняя мода
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31142')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+зима&xsubject=69&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260&f23796=31142')
 
     # Выпускной, новый год, символ года
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31137%3B31138%3B67470')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+зима&xsubject=69&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260&f23796=31137%3B31138%3B67470%3B31136')
 
     # Офис
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31140')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+зима&xsubject=69&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260&f23796=31140')
 
     # Повседневное
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31141')
-
-    # Свадьба
-    get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2&f23796=31136')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+зима&xsubject=69&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260&f23796=31141')
 
     # Все категории, ЧЕРНОЕ
     get_products.parse_page('Платье',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+осень&xsubject=69&fcolor=0&fkind=2')
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Платье+женское+зима&xsubject=69&fcolor=0')
 
 def parse_shoes():
     # ОБУВЬ
@@ -216,10 +239,10 @@ def parse_shoes():
     # Ботильоны черные
     get_products.parse_page('Обувь',
                             'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=343&fcolor=0')
-
-    # Полуботинки
-    get_products.parse_page('Обувь',
-                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=2956')
+    #
+    # # Полуботинки
+    # get_products.parse_page('Обувь',
+    #                         'https://www.wildberries.ru/catalog/obuv/zhenskaya/botinki-i-polubotinki?sort=popular&page=1&xsubject=2956')
 
     # Ботинки не черные
     get_products.parse_page('Обувь',
@@ -238,9 +261,9 @@ def parse_shoes():
     get_products.parse_page('Обувь',
                             'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=105&fcolor=16119260%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B255%3B15631086%3B8421504')
 
-    # Слипоны
-    get_products.parse_page('Обувь',
-                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=396')
+    # # Слипоны
+    # get_products.parse_page('Обувь',
+    #                         'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=396')
 
     # Кроссовки черные и белые
     get_products.parse_page('Обувь',
@@ -250,21 +273,45 @@ def parse_shoes():
     get_products.parse_page('Обувь',
                             'https://www.wildberries.ru/catalog/obuv/zhenskaya/kedy-i-krossovki?sort=popular&page=1&xsubject=104&fcolor=16777215%3B0')
 
-    # Лоферы не ЧЕРНЫЕ
+    # Сабо и мюлли
     get_products.parse_page('Обувь',
-                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sabo-i-myuli?sort=popular&page=1&xsubject=98')
+
+    # # Лоферы не ЧЕРНЫЕ
+    # get_products.parse_page('Обувь',
+    #                         'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+    #
+    # # Лоферы черные
+    # get_products.parse_page('Обувь',
+    #                         'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=0')
 
     # Туфли не черные
     get_products.parse_page('Обувь',
                             'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=100&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
 
-    # Лоферы черные
-    get_products.parse_page('Обувь',
-                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=1664&fcolor=0')
-
     # Туфли черные
     get_products.parse_page('Обувь',
                             'https://www.wildberries.ru/catalog/obuv/zhenskaya/tufli-lofery?sort=popular&page=1&xsubject=100&fcolor=0')
+
+    # Ботфорты
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sapogi?sort=popular&page=1&xsubject=318')
+
+    # Дутики
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sapogi?sort=popular&page=1&xsubject=1025')
+
+    # Сапоги
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sapogi?sort=popular&page=1&xsubject=99')
+
+    # Ботфорты
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sapogi?sort=popular&page=1&xsubject=318')
+
+    # Ботфорты
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/obuv/zhenskaya/sapogi?sort=popular&page=1&xsubject=318')
 
 def parse_top():
     # ТОП
@@ -310,7 +357,7 @@ def parse_skirt():
     #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/yubki?sort=popular&page=1&fcolor=0')
 
 
-    # ОСЕНЬ
+    # ОСЕНЬ + ЗИМА
     # ЮБКА
     # Все цвета, кроме черного
     # Вечернее
@@ -383,6 +430,10 @@ def parse_accessories():
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/galstuki-i-babochki?sort=popular&page=1&xsubject=62%3B454')
 
+    # Балаклава, капор
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=1722%3B1563&fkind=2')
+
     # Бейсболка
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=84&fkind=2')
@@ -390,6 +441,18 @@ def parse_accessories():
     # Кепи, фуражка, берет
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=2150%3B83%3B2460&fkind=2')
+
+    #Шапка ушанка, чепчик
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=1863%3B309&fkind=2')
+
+    # Шапка не черная
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=82&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086&fkind=2')
+
+    # Шапка черная
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory?sort=popular&page=1&xsubject=82&fcolor=0&fkind=2')
 
     # Повязка на голову
     get_products.parse_page('Аксессуары',
@@ -399,6 +462,14 @@ def parse_accessories():
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/platki-i-sharfy?sort=popular&page=1&xsubject=431')
 
+    # Варежки
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/perchatki-i-varezhki?sort=popular&page=1&xsubject=208&fkind=2')
+
+    # Перчатки
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/perchatki-i-varezhki?sort=popular&page=1&xsubject=226&fkind=2')
+
     # Палантин
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/platki-i-sharfy?sort=popular&page=1&xsubject=58')
@@ -406,6 +477,10 @@ def parse_accessories():
     # Платок
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/platki-i-sharfy?sort=popular&page=1&xsubject=56')
+
+    # Шарф
+    get_products.parse_page('Аксессуары',
+                            'https://www.wildberries.ru/catalog/aksessuary/platki-i-sharfy?sort=popular&page=1&xsubject=57&fkind=2')
 
     # Ремень
     get_products.parse_page('Аксессуары',
@@ -415,9 +490,6 @@ def parse_accessories():
     get_products.parse_page('Аксессуары',
                             'https://www.wildberries.ru/catalog/aksessuary/chasy-i-remeshki?sort=popular&page=1&xsubject=60&fkind=2')
 
-    # Платок
-    get_products.parse_page('Аксессуары',
-                            'https://www.wildberries.ru/catalog/aksessuary/platki-i-sharfy?sort=popular&page=1&xsubject=56')
 
 def parse_shorts():
     #ШОРТЫ ОСЕНЬ
@@ -489,29 +561,29 @@ def parse_kofta():
 def parse_outer_wear():
     # ОСЕНЬ
     # ВЕРХНЯЯ ОДЕЖДА
-    # Бомберы Не черные
-    get_products.parse_page('Верхняя Одежда',
-                                'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1635&fcolor=16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086%3B16119260')
-
-    # Бомберы черные
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1635&fcolor=0')
-
-    # Ветровка
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=172')
+    # # Бомберы Не черные
+    # get_products.parse_page('Верхняя Одежда',
+    #                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1635&fcolor=16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086%3B16119260')
+    #
+    # # Бомберы черные
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1635&fcolor=0')
+    #
+    # # Ветровка
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=172')
 
     # Дубленка
     get_products.parse_page('Верхняя Одежда',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=322')
 
-    # Косуха Не черная
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=2110&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B255%3B15631086%3B8421504')
-
-    # Косуха черная
-    get_products.parse_page('Верхняя Одежда',
-                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=2110&fcolor=0')
+    # # Косуха Не черная
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=2110&fcolor=16119260%3B16777215%3B11393254%3B16776960%3B32768%3B10824234%3B16711680%3B16753920%3B16761035%3B255%3B15631086%3B8421504')
+    #
+    # # Косуха черная
+    # get_products.parse_page('Верхняя Одежда',
+    #                         'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=2110&fcolor=0')
 
     # Куртка не черная демисезон
     get_products.parse_page('Верхняя Одежда',
@@ -520,6 +592,14 @@ def parse_outer_wear():
     # Куртка черная демисезон
     get_products.parse_page('Верхняя Одежда',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=168&fcolor=0&fseason=50')
+
+    # Куртка черная зима
+    get_products.parse_page('Верхняя Одежда',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=168&fcolor=0&fseason=52')
+
+    # Куртка не черная зима
+    get_products.parse_page('Верхняя Одежда',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=168&fcolor=16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260%3B16761035%3B8421504%3B255%3B15631086&fseason=52')
 
     # Пальто не черное
     get_products.parse_page('Верхняя Одежда',
@@ -540,9 +620,18 @@ def parse_outer_wear():
     # Полупальто
     get_products.parse_page('Верхняя Одежда',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=1641')
+
     # Тренч
     get_products.parse_page('Верхняя Одежда',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=193')
+
+    # Пуховик
+    get_products.parse_page('Верхняя Одежда',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=193')
+
+    # Шуба искусственная
+    get_products.parse_page('Верхняя Одежда',
+                            'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=4377')
 
 
 if __name__ == "__main__":

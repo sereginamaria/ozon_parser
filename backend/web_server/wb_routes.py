@@ -12,6 +12,7 @@ from video_module import video_maker
 from telegram.wb_bot import telegram_notifier, telegram_connector
 
 from text_recognizer.main import recognize_text_server
+import itertools
 
 wb = Blueprint('wb', __name__)
 
@@ -60,7 +61,7 @@ def send_post():
     def check_images(products):
         print('check_images')
         for product in products:
-            for image_url in schema.Product(*product).images.split(','):
+            for image_url in itertools.islice(schema.Product(*product).images.split(','), 4):
                 if recognize_text_server(image_url) == None:
                     return False, product
         return True, products

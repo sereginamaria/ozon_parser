@@ -14,7 +14,7 @@ def recognize_text(image_url):
     text = pytesseract.image_to_string(img, lang='rus+eng', config=tessdata_dir_config)
     print(text)
     print(len(text))
-    if text == '' or len(text) == 3:
+    if text == '' or len(text) < 10:
         logger.info(f'No text in image {image_url}')
         return image_url
     else:
