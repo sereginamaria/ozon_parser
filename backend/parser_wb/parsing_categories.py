@@ -126,7 +126,7 @@ def parse_blouse():
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/bluzki-i-rubashki?sort=popular&page=1&xsubject=1429%3B41')
 
 def parse_jeans():
-    for i in range(4):
+    for i in range(8):
         # ДЖИНСЫ
         get_products.parse_page('Джинсы',
                                'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/dzhinsy-dzhegginsy')
@@ -643,15 +643,15 @@ if __name__ == "__main__":
     # parse_shirts()
     parse_jeans()
     # parse_jacket()
-    # parse_dress()
+    parse_dress()
+    # parse_shoes()
     # parse_top()
     # parse_skirt()
     # parse_suit()
     # parse_corset()
     # parse_accessories()
-    # parse_blouse()
+    parse_blouse()
     # parse_kofta()
-    # parse_outer_wear()
-    # parse_shoes()
+    parse_outer_wear()
     #
     # parse_shorts()

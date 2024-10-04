@@ -114,4 +114,4 @@ def autop():
                 (current_day_of_week == 'Sunday' and in_time('6:00', current_time, '6:59'))):
             send_post('Украшения')
 
-        time.sleep(3600)
+        time.sleep(3570)

@@ -117,12 +117,12 @@ def parse_shirts():
                                'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?type=37307')
 
 def parse_blouse():
-    for i in range(4):
+    for i in range(8):
         get_products.parse_page('Блузка',
                                 'https://www.ozon.ru/category/bluzy-i-rubashki-zhenskie-7511/?type=101121374%2C39030')
 
 def parse_jeans():
-    for i in range(4):
+    for i in range(8):
         # ДЖИНСЫ
         get_products.parse_page('Джинсы',
                                'https://www.ozon.ru/category/dzhinsy-zhenskie-7503/')
@@ -406,7 +406,7 @@ def parse_suit():
                             'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=костюм+женский+твидовый')
 
 def parse_corset():
-    for i in range(4):
+    for i in range(8):
         # КОРСЕТ
         get_products.parse_page('Корсет',
                                'https://www.ozon.ru/category/korsety-zhenskie-36462/?opened=styleapparel&type=311046')
@@ -682,21 +682,19 @@ def parse_swimsuit():
                             'https://www.ozon.ru/category/kupalniki-i-plyazhnaya-odezhda-zhenskie-7540/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=Купальник+женский')
 
 if __name__ == "__main__":
-    parse_corset()
-    parse_blouse()
 
     # parse_trousers()
     # parse_home_clothes()
-    # parse_jewelry()
-    # parse_bag()
-    # parse_tshirts()
-    # parse_shirts()
+    parse_jewelry()
+    parse_bag()
+    parse_tshirts()
+    parse_shirts()
     parse_jeans()
-    # parse_jacket()
+    parse_jacket()
     # parse_dress()
-    # parse_shoes()
-    # parse_top()
-    # parse_skirt()
+    parse_shoes()
+    parse_top()
+    parse_skirt()
     parse_suit()
     parse_corset()
     # parse_accessories()
