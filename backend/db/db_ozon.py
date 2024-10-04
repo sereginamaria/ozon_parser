@@ -137,3 +137,10 @@ def delete_product_from_db(json):
         )
     )
     connection.commit()
+
+def product_article_in_db(product_article):
+    cursor.execute(
+        " select "
+        " EXISTS (select * from public.ozon_products where product_article = '%s')" % (product_article))
+    connection.commit()
+    return cursor.fetchone()

@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import itertools
 from parser_ozon import logger, config
 from chrome_driver import driver
-from db.db_ozon import add_product
+from db import db_ozon
 from text_recognizer.main import recognize_text
 
 def parse_page(publication_category, url):
@@ -33,7 +33,7 @@ def parse_page(publication_category, url):
                     # products.append(product)
                     logger.info('Adding product to DB')
                     if not config.DEBUG:
-                        add_product(product)
+                        db_ozon.add_product(product)
                     else:
                         logger.info("Not commiting to DB cuz of debug")
 
@@ -254,82 +254,85 @@ def parse_product(url, publication_category):
     logger.info('Parse seo')
     product_name, product_rating, product_article, description = try_parse_seo(parsed_json)
 
-    logger.info('Parse widgets')
-    parsed_widget_states = parsed_json["widgetStates"]
-    raw_widget_states = json.dumps(parsed_widget_states)
+    if not db_ozon.product_article_in_db(product_article)[0]:
+        logger.info('Parse widgets')
+        parsed_widget_states = parsed_json["widgetStates"]
+        raw_widget_states = json.dumps(parsed_widget_states)
 
-    widgets_for_search = ['webGallery', 'webAspects', 'breadCrumbs', 'webPrice',
-                          'webProductHeading', 'webStickyProducts']
+        widgets_for_search = ['webGallery', 'webAspects', 'breadCrumbs', 'webPrice',
+                              'webProductHeading', 'webStickyProducts']
 
-    webGallery, webAspects, breadCrumbs, webPrice, webProductHeading, webStickyProducts = \
-        [find_nonempty_widget(raw_widget_states, widget) for widget in widgets_for_search]
+        webGallery, webAspects, breadCrumbs, webPrice, webProductHeading, webStickyProducts = \
+            [find_nonempty_widget(raw_widget_states, widget) for widget in widgets_for_search]
 
-    logger.info('Parse prices')
-    product_price_original, product_price, product_price_with_ozon_card = try_parse_price(webPrice, parsed_json)
+        logger.info('Parse prices')
+        product_price_original, product_price, product_price_with_ozon_card = try_parse_price(webPrice, parsed_json)
 
-    logger.info('Parse images')
-    product_images = try_parse_images(webGallery, parsed_widget_states)
-    product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
-                       if recognize_text(image_url) != None])
+        logger.info('Parse images')
+        product_images = try_parse_images(webGallery, parsed_widget_states)
+        product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
+                           if recognize_text(image_url) != None])
 
-    if len(product_images.split(', ')) == 3:
-        p = product_images.split(', ')
-        p.append(product_images.split(', ')[0])
-        product_images = ', '.join(p)
+        if len(product_images.split(', ')) == 3:
+            p = product_images.split(', ')
+            p.append(product_images.split(', ')[0])
+            product_images = ', '.join(p)
 
-    print('priduct_images')
-    print(product_images)
-    print(type(product_images))
+        print('priduct_images')
+        print(product_images)
+        print(type(product_images))
 
-    logger.info('Parse brand')
-    product_brand_name, product_brand_link = try_parse_brand(webStickyProducts, parsed_widget_states)
+        logger.info('Parse brand')
+        product_brand_name, product_brand_link = try_parse_brand(webStickyProducts, parsed_widget_states)
 
-    logger.info('Parse categories')
-    product_categories = try_parse_categories(breadCrumbs, parsed_widget_states)
+        logger.info('Parse categories')
+        product_categories = try_parse_categories(breadCrumbs, parsed_widget_states)
 
-    logger.info('Parse web aspects')
-    product_all_articles, product_color, product_sizes = try_parse_web_aspects(webAspects, parsed_widget_states, product_article)
+        logger.info('Parse web aspects')
+        product_all_articles, product_color, product_sizes = try_parse_web_aspects(webAspects, parsed_widget_states, product_article)
 
-    logger.info(f'product_name: {product_name}, \n'
-                f'product_rating: {product_rating}, \n'
-                f'product_article: {product_article}, \n'
-                f'description: {description}, \n'
-                f'product_price_original: {product_price_original}, \n'
-                f'product_price: {product_price}, \n'
-                f'product_price_with_ozon_card: {product_price_with_ozon_card}, \n'
-                f'product_images: {product_images}, \n'
-                f'product_brand_name: {product_brand_name}, \n'
-                f'product_brand_link: {product_brand_link}, \n'
-                f'product_categories: {product_categories}, \n'
-                f'product_all_articles: {product_all_articles}, \n'
-                f'product_color: {product_color}, \n'
-                f'product_sizes: {product_sizes}, \n')
+        logger.info(f'product_name: {product_name}, \n'
+                    f'product_rating: {product_rating}, \n'
+                    f'product_article: {product_article}, \n'
+                    f'description: {description}, \n'
+                    f'product_price_original: {product_price_original}, \n'
+                    f'product_price: {product_price}, \n'
+                    f'product_price_with_ozon_card: {product_price_with_ozon_card}, \n'
+                    f'product_images: {product_images}, \n'
+                    f'product_brand_name: {product_brand_name}, \n'
+                    f'product_brand_link: {product_brand_link}, \n'
+                    f'product_categories: {product_categories}, \n'
+                    f'product_all_articles: {product_all_articles}, \n'
+                    f'product_color: {product_color}, \n'
+                    f'product_sizes: {product_sizes}, \n')
 
-    sub_category = product_name.partition(' ')[0]
+        sub_category = product_name.partition(' ')[0]
 
-    product = validate_product(Product(
-        0,
-        product_name,
-        product_price_original,
-        product_price,
-        product_price_with_ozon_card,
-        product_images,
-        product_brand_name,
-        product_brand_link,
-        product_rating,
-        product_categories,
-        product_sizes,
-        product_color,
-        product_article,
-        product_all_articles,
-        url,
-        publication_category,
-        description,
-        sub_category
-    ))
-    if not product:
-        logger.info(f'Product validation failed')
+        product = validate_product(Product(
+            0,
+            product_name,
+            product_price_original,
+            product_price,
+            product_price_with_ozon_card,
+            product_images,
+            product_brand_name,
+            product_brand_link,
+            product_rating,
+            product_categories,
+            product_sizes,
+            product_color,
+            product_article,
+            product_all_articles,
+            url,
+            publication_category,
+            description,
+            sub_category
+        ))
+        if not product:
+            logger.info(f'Product validation failed')
+        else:
+            logger.info(f'Done parsing product')
+        logger.info('End parse_product')
+        return product
     else:
-        logger.info(f'Done parsing product')
-    logger.info('End parse_product')
-    return product
+        logger.info(f'Такой товар уже есть в базе данных {product_article}')

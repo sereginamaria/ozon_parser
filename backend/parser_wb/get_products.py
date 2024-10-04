@@ -3,7 +3,7 @@ from parser_wb.schema import Product
 from bs4 import BeautifulSoup
 import itertools
 from parser_wb import logger, config
-from db.db_wb import add_product
+from db import db_wb
 from text_recognizer.main import recognize_text
 import requests
 from chrome_driver import driver
@@ -40,7 +40,7 @@ def parse_page(publication_category, url):
                 if product is not None:
                     logger.info('Adding product to DB')
                     if not config.DEBUG:
-                        add_product(product)
+                        db_wb.add_product(product)
                     else:
                         logger.info("Not commiting to DB cuz of debug")
 
@@ -250,57 +250,60 @@ def parse_product(url, publication_category):
                 product_price_original, product_price, count_of_images, description, product_all_articles, \
                 product_categories = try_parse_product_info(json_product, json_card)
 
-            sub_category = product_name.partition(' ')[0]
+            if not db_wb.product_article_in_db(product_article)[0]:
+                sub_category = product_name.partition(' ')[0]
 
-            product_images = try_parse_images(article, count_of_images)
-            product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
-                                        if recognize_text(image_url) != None])
+                product_images = try_parse_images(article, count_of_images)
+                product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
+                                            if recognize_text(image_url) != None])
 
-            if len(product_images.split(', ')) == 3:
-                p = product_images.split(', ')
-                p.append(product_images.split(', ')[0])
-                product_images = ', '.join(p)
+                if len(product_images.split(', ')) == 3:
+                    p = product_images.split(', ')
+                    p.append(product_images.split(', ')[0])
+                    product_images = ', '.join(p)
 
-            print('priduct_images')
-            print(product_images)
-            print(type(product_images))
+                print('priduct_images')
+                print(product_images)
+                print(type(product_images))
 
 
-            print(f'product_name: {product_name}, \n'
-                  f'product_rating: {product_rating}, \n'
-                  f'product_article: {product_article}, \n'
-                  f'description: {description}, \n'
-                  f'product_price_original: {product_price_original}, \n'
-                  f'product_price: {product_price}, \n'
-                  f'product_images: {product_images}, \n'
-                  f'product_brand_name: {product_brand_name}, \n'
-                  f'product_categories: {product_categories}, \n'
-                  f'product_all_articles: {product_all_articles}, \n'
-                  f'product_color: {product_color}, \n'
-                  f'product_sizes: {product_sizes}, \n')
+                print(f'product_name: {product_name}, \n'
+                      f'product_rating: {product_rating}, \n'
+                      f'product_article: {product_article}, \n'
+                      f'description: {description}, \n'
+                      f'product_price_original: {product_price_original}, \n'
+                      f'product_price: {product_price}, \n'
+                      f'product_images: {product_images}, \n'
+                      f'product_brand_name: {product_brand_name}, \n'
+                      f'product_categories: {product_categories}, \n'
+                      f'product_all_articles: {product_all_articles}, \n'
+                      f'product_color: {product_color}, \n'
+                      f'product_sizes: {product_sizes}, \n')
 
-            product = validate_product(Product(
-                0,
-                product_name,
-                product_price_original,
-                product_price,
-                product_images,
-                product_brand_name,
-                product_rating,
-                product_categories,
-                product_sizes,
-                product_color,
-                product_article,
-                product_all_articles,
-                url,
-                publication_category,
-                description,
-                sub_category
-            ))
+                product = validate_product(Product(
+                    0,
+                    product_name,
+                    product_price_original,
+                    product_price,
+                    product_images,
+                    product_brand_name,
+                    product_rating,
+                    product_categories,
+                    product_sizes,
+                    product_color,
+                    product_article,
+                    product_all_articles,
+                    url,
+                    publication_category,
+                    description,
+                    sub_category
+                ))
 
-            if not product:
-                logger.info(f'Product validation failed')
+                if not product:
+                    logger.info(f'Product validation failed')
+                else:
+                    logger.info(f'Done parsing product')
+                logger.info('End parse_product')
+                return product
             else:
-                logger.info(f'Done parsing product')
-            logger.info('End parse_product')
-            return product
+                logger.info(f'Такой товар уже есть в базе данных {product_article}')
