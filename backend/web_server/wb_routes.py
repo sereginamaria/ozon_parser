@@ -220,3 +220,6 @@ def create_videos():
             video_b = video_maker.generate_video(cards_list)
             telegram_connector.send_video(video_b)
     return 'end'
+
+# @wb.route('/wb/get_stile_card', methods=['GET'])
+# def get_stile_card():
