@@ -150,3 +150,10 @@ def product_article_in_db(product_article):
         " EXISTS (select * from public.wb_products where product_article = '%s')" % (product_article))
     connection.commit()
     return cursor.fetchone()
+
+def get_products_for_stile_card(product1, product2, product3, product4):
+    cursor.execute(
+        "select * from public.wb_products where publication_category in ('{}', '{}', '{}', '{}')"
+        "ORDER BY RANDOM() LIMIT 4" .format(product1, product2, product3, product4))
+    connection.commit()
+    return cursor.fetchall()

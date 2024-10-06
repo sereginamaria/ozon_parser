@@ -1,3 +1,5 @@
+import random
+
 import requests
 
 from parser_wb import get_products, schema
@@ -221,5 +223,24 @@ def create_videos():
             telegram_connector.send_video(video_b)
     return 'end'
 
-# @wb.route('/wb/get_stile_card', methods=['GET'])
-# def get_stile_card():
+@wb.route('/wb/get_stile_card', methods=['GET'])
+def get_stile_card():
+    products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары', 'Украшения']
+    products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
+    products_for_card3 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
+
+    product1 = random.choice(products_for_card1)
+    product2 = random.choice(products_for_card2)
+    product3 = random.choice(products_for_card3)
+    product4 = 'Обувь'
+
+    if product3 == 'Платье' and product1 != 'Сумка':
+        product2 = 'Сумка'
+    if product3 == 'Платье' and product1 == 'Сумка':
+        product2 = 'Украшения'
+
+    print(product1, product2, product3, product4)
+    products = db_wb.get_products_for_stile_card(product1, product2, product3, product4)
+    print(products)
+
+    # card_creator.create_stiled_card()

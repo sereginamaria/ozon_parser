@@ -55,6 +55,25 @@ def create_title_card(product: Product, card_type: str) -> bytes:
     logger.info('End create_title_card')
     return screenshot_html(html, css, card_type)
 
+def create_stiled_card(product: Product, card_type: str) -> bytes:
+    def get_html(product_category, palette_colors):
+        card_title = product_category
+        return render_template('title_card.html', category=card_title,
+                               color1=palette_colors[0],
+                               color2=palette_colors[2], card_type=card_type)
+    def get_css(images_urls, palette_colors):
+        return render_template('title_card.css', url_img=images_urls[0], color=palette_colors[2])
+
+    logger.info('Start create_title_card')
+    images_urls = product.images.split(',')
+    palette = get_palette(images_urls)
+
+    html = get_html(product.publication_category, palette)
+    css = get_css(images_urls, palette)
+    logger.info('End create_title_card')
+    return screenshot_html(html, css, card_type)
+
+
 def screenshot_html(html, css, card_type) -> bytes:
     hti = Html2Image(
         custom_flags=[
