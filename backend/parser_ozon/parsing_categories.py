@@ -685,7 +685,7 @@ if __name__ == "__main__":
 
     # parse_trousers()
     # parse_home_clothes()
-    parse_jewelry()
+    # parse_jewelry()
     parse_bag()
     parse_tshirts()
     parse_shirts()

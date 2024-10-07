@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="stile_card.css">
+</head>
+<body style="margin: 0;">
+    <div class="container" style="position: relative">
+        <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
+            <div class="img1">
+                <div>
+                    <p style="font-size: 30px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>
+                    <p style="font-size: 30px">Цена: <span style="font-size: 40px">{{ price }}</span></p>
+                </div>
+
+            </div>
+            <div class="img2">
+               <div>
+                    <p style="font-size: 30px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>
+                    <p style="font-size: 30px">Цена: <span style="font-size: 40px">{{ price }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
+            <div class="img3">
+                   <div>
+                    <p style="font-size: 30px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>
+                    <p style="font-size: 30px">Цена: <span style="font-size: 40px">{{ price }}</span></p>
+                </div>
+            </div>
+            <div class="img4">
+                  <div>
+                    <p style="font-size: 30px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>
+                    <p style="font-size: 30px">Цена: <span style="font-size: 40px">{{ price }}</span></p>
+                </div>
+            </div>
+
+<!--            <div class="inf-text" style="text-align: center; height: 30%;   ">-->
+<!--                <p style="font-size: 50px; padding: 2%; background-color: rgb{{ color1 }};-->
+<!--                color: rgb{{ color2 }}">{{ name }}</p>-->
+<!--                <p style="font-size: 50px">Арт.: <span style="font-size: 40px">{{ article }}</span></p>-->
+<!--                <p style="font-size: 50px">Цена: <span style="font-size: 40px">{{ price }}</span></p>-->
+<!--&lt;!&ndash;                <p style="font-size: 40px">Размеры: <span style="font-size: 30px">{{ size }}</span></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Цена по карте OZON: <span>{{ ozon_card_price }}</span></p>&ndash;&gt;-->
+
+<!--            </div>-->
+<!--            <div class="img4">-->
+
+<!--            </div>-->
+            <img src="./logo.png" alt="" style="opacity: 0.1;
+    /*z-index: -1;*/
+    /* height: 100%; */
+    width: 25%;
+    position: absolute;
+    bottom: 0;
+    right: 0;">
+
+<!--            <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;-->
+{#            <img src="./logo.png" alt="" style="opacity: 0.1;#}
+{#    /*z-index: -1;*/#}
+{#    /* height: 100%; */#}
+{#    width: 25%;#}
+{#    position: absolute;#}
+{#    bottom: 0;#}
+{#    right: 0;">#}
+{#<!--                    <img src="{{url_for('static', filename='logo.png')}}" alt="" style="opacity: 0.2;-->#}
+<!--    z-index: -1;-->
+<!--    /* height: 100%; */-->
+<!--    width: 35%;-->
+<!--    position: absolute;-->
+<!--    bottom: 0;-->
+<!--    right: 0;">-->
+<!--            <img src="https://cdn1.ozone.ru/s3/multimedia-a/6685787134.jpg" alt="" width="100%">-->
+        </div>
+    </div>
+</body>
+</html>
