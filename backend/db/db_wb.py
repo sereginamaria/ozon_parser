@@ -153,7 +153,10 @@ def product_article_in_db(product_article):
 
 def get_products_for_stile_card(product1, product2, product3, product4):
     cursor.execute(
-        "select * from public.wb_products where publication_category in ('{}', '{}', '{}', '{}')"
+        "select product_id, product_name, product_price_original, product_price, product_images, "
+        "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+        "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+        "from public.wb_products where publication_category in ('{}', '{}', '{}', '{}')"
         "ORDER BY RANDOM() LIMIT 4" .format(product1, product2, product3, product4))
     connection.commit()
     return cursor.fetchall()

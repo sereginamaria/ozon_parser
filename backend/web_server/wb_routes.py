@@ -240,10 +240,12 @@ def get_stile_card():
         product2 = 'Украшения'
 
     print(product1, product2, product3, product4)
-    products = db_wb.get_products_for_stile_card(product1, product2, product3, product4)
+
+    products = [schema.Product(*product)
+                    for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4)]
+
     print(products)
 
-    cards_list = []
-    for product in products:
-        cards_list.append(card_creator.create_stiled_card(schema.Product(*product), 'wb'))
-    # card_creator.create_stiled_card()
+    stile_card = card_creator.create_stiled_card(products, 'wb')
+    print(stile_card)
+

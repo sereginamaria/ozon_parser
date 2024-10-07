@@ -55,19 +55,21 @@ def create_title_card(product: Product, card_type: str) -> bytes:
     logger.info('End create_title_card')
     return screenshot_html(html, css, card_type)
 
-def create_stiled_card(product: Product, card_type: str) -> bytes:
+def create_stiled_card(products, card_type: str) -> bytes:
     def get_html():
-        return render_template('title_card.html', card_type=card_type)
-    def get_css(images_urls, palette_colors):
-        return render_template('title_card.css', url_img=images_urls[0], color=palette_colors[2])
+        return render_template('stile_card.html', card_type=card_type)
 
-    logger.info('Start create_title_card')
-    images_urls = product.images.split(',')
-    palette = get_palette(images_urls)
+    def get_css(images):
+        return render_template('stile_card.css', url_img1=images[0],
+                               url_img2=images[1],
+                               url_img3=images[2],
+                               url_img4=images[3])
 
-    html = get_html(product.publication_category, palette)
-    css = get_css(images_urls, palette)
-    logger.info('End create_title_card')
+    logger.info('Start create_stile_card')
+    images_urls = [product.images.split(',')[0] for product in products]
+    html = get_html()
+    css = get_css(images_urls)
+    logger.info('End create_stile_card')
     return screenshot_html(html, css, card_type)
 
 
@@ -80,11 +82,12 @@ def screenshot_html(html, css, card_type) -> bytes:
             '--hide-scrollbars'
         ],
     )
+
     logger.info('screen')
     import os
     print(os.getcwd())
     logger.info(os.getcwd())
-
+    path = ''
     if card_type == 'ozon':
         hti.load_file('./cards_module/templates/logo_ozon.png', "logo.png")
         path = hti.screenshot(
@@ -92,12 +95,14 @@ def screenshot_html(html, css, card_type) -> bytes:
         )[0]
 
     if card_type == 'wb':
+        print('wb')
+        hti.browser.flags = ["--no-sandbox", "--disable-gpu"]
         hti.load_file('./cards_module/templates/logo_wb.png', "logo.png")
         path = hti.screenshot(
             html_str=html, css_str=css, size=(1024, 1280), save_as='wb.png'
         )[0]
 
-
+    print(path)
 
     image_b = open(path, 'rb').read()
     os.remove(path)
