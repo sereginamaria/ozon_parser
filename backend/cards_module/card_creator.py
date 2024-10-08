@@ -56,8 +56,15 @@ def create_title_card(product: Product, card_type: str) -> bytes:
     return screenshot_html(html, css, card_type)
 
 def create_stiled_card(products, card_type: str) -> bytes:
-    def get_html():
-        return render_template('stile_card.html', card_type=card_type)
+    def get_html(names):
+        return render_template('stile_card.html',
+                               name1=names[0], name2=names[1],
+                               name3=names[2], name4=names[3],
+                               name1=names[0], name2=names[1],
+                               name3=names[2], name4=names[3],
+                               name1=names[0], name2=names[1],
+                               name3=names[2], name4=names[3]
+                               )
 
     def get_css(images):
         return render_template('stile_card.css', url_img1=images[0],
@@ -67,7 +74,9 @@ def create_stiled_card(products, card_type: str) -> bytes:
 
     logger.info('Start create_stile_card')
     images_urls = [product.images.split(',')[0] for product in products]
-    html = get_html()
+    products_names = [product.sub_category for product in products]
+
+    html = get_html(products_names)
     css = get_css(images_urls)
     logger.info('End create_stile_card')
     return screenshot_html(html, css, card_type)

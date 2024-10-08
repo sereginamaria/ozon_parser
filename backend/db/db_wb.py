@@ -1,9 +1,7 @@
 from db import cursor, connection, logger
 from parser_wb import schema
-
 def add_product(product: schema.Product):
     logger.info('Start add_product')
-
     sql = 'INSERT INTO public.wb_products (product_name, product_price_original, ' \
           'product_price, product_images,' \
           'product_brand_name, product_rating, ' \
@@ -119,7 +117,7 @@ def count_of_not_verified_products():
     return cursor.fetchall()
 def publish_product(id):
     cursor.execute(
-        "update public.wb_products set is_published = true where product_id = '%s'" % (
+        "update public.wb_products set (is_published = true and publication_date = current_date) where product_id = '%s'" % (
             id
         )
     )
@@ -151,12 +149,20 @@ def product_article_in_db(product_article):
     connection.commit()
     return cursor.fetchone()
 
-def get_products_for_stile_card(product1, product2, product3, product4):
-    cursor.execute(
-        "select product_id, product_name, product_price_original, product_price, product_images, "
-        "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
-        "product_article, product_all_articles, product_url, publication_category, description, sub_category "
-        "from public.wb_products where publication_category in ('{}', '{}', '{}', '{}')"
-        "ORDER BY RANDOM() LIMIT 4" .format(product1, product2, product3, product4))
-    connection.commit()
-    return cursor.fetchall()
+def get_products_for_stile_card(product1, product2, product3, product4, current_date):
+    product_categories_list = [product1, product2, product3, product4]
+
+    products_list = []
+    for product in product_categories_list:
+        cursor.execute(
+            "select product_id, product_name, product_price_original, product_price, product_images, "
+            "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.wb_products where (publication_category = '%s' and is_published = true and publication_date > '%s') "
+            "ORDER BY RANDOM() Limit 1" % (product, current_date)
+        )
+        connection.commit()
+        products_list.append(cursor.fetchone())
+
+    print(products_list)
+    return products_list

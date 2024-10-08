@@ -1,3 +1,4 @@
+import datetime
 import random
 
 import requests
@@ -12,6 +13,8 @@ import datetime as datetime2
 from main_config import TIMESHEET, BASE_URL
 from video_module import video_maker
 from telegram.wb_bot import telegram_notifier, telegram_connector
+
+from telegram.stilist_bot import telegram_connector as stilist_bot_telegram_connector
 
 from text_recognizer.main import recognize_text_server
 import itertools
@@ -87,9 +90,10 @@ def send_post():
             products_links = [schema.Product(*product).url for product in products_list]
 
             resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
+            current_date = datetime.date.today()
             if resp:
                 for product in products_list:
-                    db_wb.publish_product(schema.Product(*product).id)
+                    db_wb.publish_product(schema.Product(*product).id, current_date)
         else:
             print(is_images_good[1])
             telegram_notifier.find_text_in_verified_product(schema.Product(*is_images_good[1]).id)
@@ -241,11 +245,19 @@ def get_stile_card():
 
     print(product1, product2, product3, product4)
 
-    products = [schema.Product(*product)
-                    for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4)]
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+    print(current_date)
 
-    print(products)
+    products = [schema.Product(*product)
+                    for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
+
+    for product in products:
+        print(product.name)
 
     stile_card = card_creator.create_stiled_card(products, 'wb')
-    print(stile_card)
+
+    stilist_bot_telegram_connector.send_post(stile_card)
+
+
 

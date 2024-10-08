@@ -26,32 +26,14 @@
     box-sizing: border-box;
 }
 
-.img1 {
-    height: 60%;
-}
 
-.img2 {
-    height: 39%;
-}
-
-.img1, .img2 {
+.img1, .img2, .img3, .img4 {
     width: 99%;
     display: flex;
     align-items: end;
-}
-.img3 {
-    height: 60%;
+    height: 49.5%;
 }
 
-.img4 {
-    height: 39%;
-}
-
-.img3, .img4 {
-    width: 99%;
-    display: flex;
-    align-items: end;
-}
 
 
 .inf-text {
@@ -100,17 +82,17 @@
     /*height: 70%;*/
 }
 
-/*.img1 {*/
-/*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
-/*}*/
-/*.img2 {*/
-/*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
-/*}*/
-/*.img3 {*/
-/*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
-/*    height: 70%;*/
-/*}*/
-/*.img4 {*/
-/*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/
-/*    height: 70%;*/
-/*}*/
+.img1 {
+    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;
+}
+.img2 {
+    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;
+}
+.img3 {
+    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;
+
+}
+.img4 {
+    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;
+
+}
