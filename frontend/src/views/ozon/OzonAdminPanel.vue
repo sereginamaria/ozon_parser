@@ -1,5 +1,5 @@
 <template>
-  <AdminPanel :adminPanel="adminPanel_ozon" :goToUrl="'/ozon/verification'"/>
+  <AdminPanel :adminPanel="adminPanel_ozon" :goToUrls="goToUrls"/>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,11 @@ import {useAdminPanelStore} from "@/stores/ozon";
 
 export default defineComponent({
   name: "OzonAdminPanel",
+  data() {
+      return {
+          goToUrls: ['/wb/verification', '/wb/stylist_panel'],
+      }
+  },
   components: {AdminPanel},
     computed: {
     ...mapStores(useAdminPanelStore),

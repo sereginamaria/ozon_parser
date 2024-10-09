@@ -1,5 +1,5 @@
 <template>
-  <NavbarComponent :label="'Верификация'" :goToUrl="goToUrl"/>
+  <NavbarComponent :labels="labels" :goToUrls="goToUrls"/>
   <div class="admin-panel-block">
       <h3>Работа с данными</h3>
       <div>
@@ -64,10 +64,14 @@ export default defineComponent({
       type: Object,
       default: {}
     },
-    goToUrl: {
-      type: String,
-      default: '/'
-    }
+    goToUrls: {
+        type: Array,
+        default: []
+    },
+      labels: {
+          type: Array,
+          default: []
+      }
   },
   components: {NavbarComponent, Button, Accordion, AccordionPanel, AccordionHeader, AccordionContent},
   methods: {

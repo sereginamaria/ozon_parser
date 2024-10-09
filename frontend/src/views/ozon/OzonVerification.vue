@@ -1,5 +1,5 @@
 <template>
-  <Verification :verification="verification_ozon" :goToUrl="'/ozon/admin-panel'" :product="product_ozon"/>
+  <Verification :verification="verification_ozon" :goToUrls="goToUrls" :product="product_ozon"/>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,11 @@ import {mapStores} from "pinia";
 
 export default defineComponent({
   name: "OzonPage",
+  data() {
+      return {
+          goToUrls: ['/wb/verification', '/wb/stylist_panel'],
+      }
+  },
   components: {Verification},
   computed: {
     ...mapStores(useVerificationStore, useProductStore),

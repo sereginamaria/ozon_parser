@@ -1,5 +1,5 @@
 <template>
-  <Verification :verification="verification_wb" :goToUrl="'/wb/admin-panel'" :product="product_wb"/>
+  <Verification :verification="verification_wb" :labels="labels" :goToUrls="goToUrls" :product="product_wb"/>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,12 @@ import {mapStores} from "pinia";
 
 export default defineComponent({
   name: "WbPage",
+  data() {
+      return {
+          goToUrls: ['/wb/admin-panel', '/wb/stylist_panel'],
+          labels: ['Панель Администратора', 'Стилист']
+      }
+  },
   components: {Verification},
   computed: {
     ...mapStores(useVerificationStore, useProductStore),

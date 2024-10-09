@@ -3,7 +3,7 @@
     <template #start>
       <div class="flex items-center gap-2">
         <Button label="H" text plain @click="goToHome()"/>
-        <Button :label="label" text plain @click="goTo()"/>
+        <Button v-for="(label, index) in labels" :label="label" text plain @click="goTo(index)"/>
       </div>
     </template>
         <template #end>
@@ -22,16 +22,21 @@ import {defineComponent} from "vue";
 export default defineComponent( {
   name: "NavbarComponent",
   props: {
-    label: String,
-    goToUrl: {
-      type: String,
-      default: '/'
+    labels: {
+        type: Array,
+        default: []
+    },
+    goToUrls: {
+      type: Array,
+      default: []
     }
   },
   components: { Toolbar, Button},
   methods: {
-    goTo() {
-      this.$router.push(this.goToUrl)
+    goTo(index) {
+      if (this.goToUrls.length !== 0) {
+          this.$router.push(this.goToUrls[index])
+      }
     },
     goToHome() {
       this.$router.push('/home')

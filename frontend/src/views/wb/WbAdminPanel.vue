@@ -1,5 +1,5 @@
 <template>
-  <AdminPanel :adminPanel="adminPanel_wb" :goToUrl="'/wb/verification'"/>
+  <AdminPanel :adminPanel="adminPanel_wb" :labels="labels" :goToUrls="goToUrls"/>
 </template>
 
 <script lang="ts">
@@ -10,6 +10,12 @@ import {useAdminPanelStore} from "@/stores/wb";
 
 export default defineComponent({
   name: "WbAdminPanel",
+  data() {
+      return {
+          goToUrls: ['/wb/verification', '/wb/stylist_panel'],
+          labels: ['Верификация', 'Стилист']
+      }
+  },
   components: {AdminPanel},
     computed: {
     ...mapStores(useAdminPanelStore),

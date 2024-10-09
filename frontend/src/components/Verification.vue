@@ -1,6 +1,6 @@
 <template>
   <div class="verification-block">
-    <NavbarComponent :label="'Панель Администратора'" :goToUrl="goToUrl"/>
+    <NavbarComponent :labels="labels" :goToUrls="goToUrls"/>
 
     <div v-if="verification.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
       <GalleryComponent :verification="verification"/>
@@ -54,9 +54,13 @@ export default defineComponent ({
       type: Object,
       default: {}
     },
-    goToUrl: {
-      type: String,
-      default: '/'
+    goToUrls: {
+      type: Array,
+      default: []
+    },
+    labels: {
+        type: Array,
+        default: []
     }
   },
   data() {
