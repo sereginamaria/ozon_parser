@@ -2,7 +2,7 @@ import telebot as telebot
 import sys
 import logging
 
-logger = logging.getLogger('telegram_stilist_bot')
+logger = logging.getLogger('telegram_stylist_bot')
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler(sys.stdout)
 handler.setLevel(logging.DEBUG)

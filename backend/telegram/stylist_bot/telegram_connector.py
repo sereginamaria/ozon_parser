@@ -1,7 +1,7 @@
 from telebot import apihelper
 
-from telegram.stilist_bot import bot, logger
-from telegram.stilist_bot import config
+from telegram.stylist_bot import bot, logger
+from telegram.stylist_bot import config
 import random
 import io
 

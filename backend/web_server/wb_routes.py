@@ -14,7 +14,7 @@ from main_config import TIMESHEET, BASE_URL
 from video_module import video_maker
 from telegram.wb_bot import telegram_notifier, telegram_connector
 
-from telegram.stilist_bot import telegram_connector as stilist_bot_telegram_connector
+from telegram.stylist_bot import telegram_connector as stylist_bot_telegram_connector
 
 from text_recognizer.main import recognize_text_server
 import itertools
@@ -257,7 +257,7 @@ def get_stile_card():
 
     stile_card = card_creator.create_stiled_card(products, 'wb')
 
-    stilist_bot_telegram_connector.send_post(stile_card)
+    stylist_bot_telegram_connector.send_post(stile_card)
 
 
 

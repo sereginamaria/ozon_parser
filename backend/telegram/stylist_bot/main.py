@@ -5,7 +5,7 @@ import time
 import requests
 
 from main_config import BASE_URL
-from telegram.stilist_bot import bot
+from telegram.stylist_bot import bot
 
 @bot.message_handler(content_types=['text'])
 def get_text_message(message):
