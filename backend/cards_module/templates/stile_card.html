@@ -6,44 +6,53 @@
     <link rel="stylesheet" href="stile_card.css">
 </head>
 <body style="margin: 0;">
-    <div class="container" style="position: relative">
-        <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
-            <div class="img1">
-                <div style="background: white">
-                    <p style="font-size: 30px; margin: 0"><span style="font-size: 40px">{{ name1 }}</span></p>
-                    <p style="font-size: 30px; margin: 0"><span style="font-size: 40px">{{ article1 }}</span></p>
-                    <p style="font-size: 30px; margin: 0"><span style="font-size: 40px">{{ price1 }}</span></p>
-                </div>
+    <div class="container" style="position: relative; flex-direction: column">
+        <div style="width: 100%; height: 100%; display: flex">
 
-            </div>
-            <div class="img3">
-               <div>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ article }}</span></p>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ price }}</span></p>
+            <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
+                <div class="img1">
+                    <div style="background: white; text-align: center;">
+                        <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name1 }}</span></p>
+                        <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article1 }}</span></p>
+                        <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price1 }}</span></p>
+                    </div>
+
+                </div>
+                <div class="img3">
+                   <div style="background: white; text-align: center;">
+                        <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name3 }}</span></p>
+                        <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article3 }}</span></p>
+                        <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price3 }}</span></p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
-            <div class="img2">
-                   <div>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ article }}</span></p>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ price }}</span></p>
+            <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
+            <div class="img2" style="display: flex; justify-content: end">
+                    <div style="background: white; text-align: center;">
+                    <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name2 }}</span></p>
+                    <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article2 }}</span></p>
+                    <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price2 }}</span></p>
                 </div>
             </div>
-            <div class="img4">
-                  <div>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ article }}</span></p>
-                    <p style="font-size: 30px"><span style="font-size: 40px">{{ price }}</span></p>
+            <div class="img4" style="display: flex; justify-content: end">
+                   <div style="background: white; text-align: center;">
+                    <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name4 }}</span></p>
+                    <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article4 }}</span></p>
+                    <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price4 }}</span></p>
                 </div>
             </div>
             <img src="./logo.png" alt="" style="opacity: 0.1;
     /*z-index: -1;*/
     /* height: 100%; */
-    width: 20%;
+    width: 16%;
     position: absolute;
     bottom: 0;
     right: 0;">
         </div>
+        </div>
+        <ps style="margin: 0;
+    text-align: center;
+    font-size: 30px;">tg: @wb_trend_plus</ps>
     </div>
 </body>
 </html>
