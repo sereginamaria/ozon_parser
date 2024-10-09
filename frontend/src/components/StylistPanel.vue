@@ -1,9 +1,11 @@
 <template>
     <NavbarComponent :labels="labels" :goToUrls="goToUrls"/>
+  <StylistCardComponent/>
 </template>
 
 <script>
 import NavbarComponent from "@/components/NavbarComponent.vue";
+import StylistCardComponent from "@/components/StylistCardComponent.vue";
 
 export default {
     name: "StylistPanel",
@@ -17,7 +19,7 @@ export default {
             default: []
         }
     },
-    components: {NavbarComponent}
+    components: {StylistCardComponent, NavbarComponent}
 }
 </script>
 

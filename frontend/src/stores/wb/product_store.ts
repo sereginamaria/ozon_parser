@@ -82,7 +82,7 @@ export const useProductStore = defineStore('product_wb', {
         saveNewName(newName: string): void {
             this.name = newName
         },
-         saveNewSubCategory(NewSubCategory: string): void {
+        saveNewSubCategory(NewSubCategory: string): void {
             this.subCategory = NewSubCategory
         },
         saveNewCategory(newCategory: string): void {
