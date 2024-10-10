@@ -227,8 +227,8 @@ def create_videos():
             telegram_connector.send_video(video_b)
     return 'end'
 
-@wb.route('/wb/get_stile_card', methods=['GET'])
-def get_stile_card():
+@wb.route('/wb/get_stylist_card_information', methods=['GET'])
+def get_stylist_card_information():
     products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары', 'Украшения']
     products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
     products_for_card3 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
@@ -255,9 +255,11 @@ def get_stile_card():
     for product in products:
         print(product.name)
 
-    stile_card = card_creator.create_stiled_card(products, 'wb')
+    # stile_card = card_creator.create_stiled_card(products, 'wb')
 
-    stylist_bot_telegram_connector.send_post(stile_card)
+    # stylist_bot_telegram_connector.send_post(stile_card)
+
+    return products
 
 
 
