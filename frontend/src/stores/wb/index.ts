@@ -11,3 +11,4 @@ setMapStoreSuffix('')
 export * from './verification_store';
 export * from './product_store';
 export * from './admin_panel_store';
+export * from './stylist_panel_store';

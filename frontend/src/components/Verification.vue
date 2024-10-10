@@ -86,7 +86,7 @@ export default defineComponent ({
     })
   },
   created() {
-    this.product.get_verification_information()
+    this.verification.get_verification_information()
   }
 
 })

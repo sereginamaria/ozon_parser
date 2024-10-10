@@ -68,10 +68,10 @@ export default defineComponent({
         type: Array,
         default: []
     },
-      labels: {
-          type: Array,
-          default: []
-      }
+    labels: {
+        type: Array,
+        default: []
+    }
   },
   components: {NavbarComponent, Button, Accordion, AccordionPanel, AccordionHeader, AccordionContent},
   methods: {

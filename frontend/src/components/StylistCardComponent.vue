@@ -34,25 +34,21 @@
             <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price4 }}</span></p>
           </div>
         </div>
-        <img src="./logo.png" alt="" style="opacity: 0.1;
-    /*z-index: -1;*/
-    /* height: 100%; */
-    width: 16%;
-    position: absolute;
-    bottom: 0;
-    right: 0;">
+<!--        <img src="./logo.png" alt="" class="logo">-->
       </div>
     </div>
-    <ps style="margin: 0;
+    <p style="margin: 0;
     text-align: center;
-    font-size: 30px;">tg: @wb_trend_plus</ps>
+    font-size: 30px;">tg: @wb_trend_plus</p>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from 'vue'
+
+export default defineComponent({
   name: "StylistCardComponent"
-}
+})
 </script>
 
 <style scoped>
@@ -73,15 +69,13 @@ export default {
   font-style: normal;
 }
 
-
 .container {
   display: flex;
-  width: 1024px;
-  height: 1280px;
   padding: 5% 2% 1% 2%;
-  /*Хорошо для телефона, но не очень для компа*/
-  /*padding: 5% 15%;*/
   box-sizing: border-box;
+  border: 1px solid black;
+  width: 512px;
+  height: 640px;
 }
 
 
@@ -93,7 +87,6 @@ export default {
 }
 
 
-
 .inf-text {
   display: flex;
   text-align: center;
@@ -102,22 +95,29 @@ export default {
   align-items: center;
   justify-content: space-between;
   /*padding: 30px 0 0 0;*/
-  padding: 30px 30% 0 0;
+  padding: 15px 15% 0 0;
   box-sizing: border-box;
+  font-size: 25px;
 }
 
 .inf-text p{
   font-family: 'Roboto-Regular';
-  font-size: 30px;
   margin: 0;
   padding: 0;
 }
 
 .inf-text span{
   font-family: 'Roboto-Bold';
-  font-size: 30px;
   margin: 0;
   padding: 0;
+}
+
+.logo {
+  opacity: 0.1;
+  width: 25%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .img1 {

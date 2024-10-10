@@ -88,28 +88,28 @@ export default defineComponent({
   },
   methods: {
     deleteImage(): void {
-      this.product.deleteImage(this.verification.activeIndex)
+      this.verification.deleteImage(this.verification.activeIndex)
     },
     saveNewName(): void {
-      this.product.saveNewName(this.newName)
+      this.verification.saveNewName(this.newName)
       this.visibleChangeName = false
     },
     saveNewSubCategory(): void {
-      this.product.saveNewSubCategory(this.newSubCategory)
+      this.verification.saveNewSubCategory(this.newSubCategory)
       this.visibleChangeSubCategory = false
     },
     saveNewCategory(): void {
-      this.product.saveNewCategory(this.newCategory)
+      this.verification.saveNewCategory(this.newCategory)
       this.visibleChangeCategory = false
     },
     saveProduct(): void {
-      this.product.saveProduct()
+      this.verification.saveProduct()
     },
     deleteProduct(): void {
-      this.product.deleteProduct()
+      this.verification.deleteProduct()
     },
     deleteFromDB(): void {
-        this.product.deleteFromDB()
+        this.verification.deleteFromDB()
     }
   },
   updated() {

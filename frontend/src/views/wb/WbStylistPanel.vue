@@ -1,11 +1,14 @@
 <template>
-    <StylistPanel :labels="labels"  :goToUrls="goToUrls"/>
+    <StylistPanel :labels="labels" :goToUrls="goToUrls" :product="product_wb" :stylistPanel="stylistPanel_wb"/>
 </template>
 
-<script>
+<script lang="ts">
+import {defineComponent} from 'vue'
 import StylistPanel from "@/components/StylistPanel.vue";
+import {mapStores} from "pinia";
+import {useProductStore, useStylistPanelStore} from "@/stores/wb";
 
-export default {
+export default defineComponent({
     name: "WbStylistPanel",
     data() {
         return {
@@ -13,8 +16,11 @@ export default {
             labels: ['Верификация', 'Панель Администратора']
         }
     },
-    components: {StylistPanel}
-}
+    components: {StylistPanel},
+  computed: {
+    ...mapStores(useStylistPanelStore, useProductStore),
+  }
+})
 </script>
 
 <style scoped>
