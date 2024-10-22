@@ -10,6 +10,9 @@ from video_module import video_maker
 
 from telegram.ozon_bot import telegram_notifier, telegram_connector
 
+import datetime
+import random
+
 ozon = Blueprint('ozon', __name__)
 
 @ozon.route('/')
@@ -198,3 +201,37 @@ def create_videos():
             video_b = video_maker.generate_video(cards_list)
             telegram_connector.send_video(video_b)
     return 'end'
+
+@ozon.route('/get_stylist_card_information', methods=['GET'])
+def get_stylist_card_information():
+    products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары']
+    products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
+    products_for_card3 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
+
+    product1 = random.choice(products_for_card1)
+    product2 = random.choice(products_for_card2)
+    product3 = random.choice(products_for_card3)
+    product4 = 'Обувь'
+
+    if product3 == 'Платье' and product1 != 'Сумка':
+        product2 = 'Сумка'
+    if product3 == 'Платье' and product1 == 'Сумка':
+        product2 = 'Украшения'
+
+    print(product1, product2, product3, product4)
+
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+    print(current_date)
+
+    products = [schema.Product(*product)
+                    for product in db_ozon.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
+
+    for product in products:
+        print(product.name)
+
+    # stile_card = card_creator.create_stiled_card(products, 'ozon')
+
+    # stylist_bot_telegram_connector.send_post(stile_card)
+
+    return products

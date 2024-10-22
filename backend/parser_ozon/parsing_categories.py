@@ -683,15 +683,15 @@ def parse_swimsuit():
 
 if __name__ == "__main__":
 
-    # parse_trousers()
-    # parse_home_clothes()
-    # parse_jewelry()
-    # parse_bag()
-    parse_tshirts()
-    # parse_shirts()
+    parse_trousers()
+    parse_home_clothes()
+    parse_jewelry()
+    parse_bag()
+    # parse_tshirts()
+    parse_shirts()
     # parse_jeans()
-    parse_jacket()
-    # # parse_dress()
+    # parse_jacket()
+    # parse_dress()
     # parse_shoes()
     # parse_top()
     # parse_skirt()

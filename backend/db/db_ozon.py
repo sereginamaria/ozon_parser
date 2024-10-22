@@ -144,3 +144,23 @@ def product_article_in_db(product_article):
         " EXISTS (select * from public.ozon_products where product_article = '%s')" % (product_article))
     connection.commit()
     return cursor.fetchone()
+
+
+
+def get_products_for_stile_card(product1, product2, product3, product4, current_date):
+    product_categories_list = [product1, product2, product3, product4]
+
+    products_list = []
+    for product in product_categories_list:
+        cursor.execute(
+            "select product_id, product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
+        "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
+        "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.ozon_products where (publication_category = '%s' and is_published = true and publication_date > '%s') "
+            "ORDER BY RANDOM() Limit 1" % (product, current_date)
+        )
+        connection.commit()
+        products_list.append(cursor.fetchone())
+
+    print(products_list)
+    return products_list

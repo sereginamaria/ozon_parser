@@ -229,7 +229,7 @@ def create_videos():
 
 @wb.route('/wb/get_stylist_card_information', methods=['GET'])
 def get_stylist_card_information():
-    products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары', 'Украшения']
+    products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары']
     products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
     products_for_card3 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
 
