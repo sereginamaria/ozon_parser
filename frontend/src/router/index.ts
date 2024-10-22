@@ -8,7 +8,7 @@ import WbAdminPanel from "@/views/wb/WbAdminPanel.vue";
 import WbVerification from "@/views/wb/WbVerification.vue";
 
 import WbStylistPanel from "@/views/wb/WbStylistPanel.vue";
-
+import OzonStylistPanel from "@/views/ozon/OzonStylistPanel.vue";
 const routes = [
 	{
 		path: "/",
@@ -29,6 +29,11 @@ const routes = [
 		path: "/ozon/admin-panel",
 		name: "OzonAdminPanel",
 		component: OzonAdminPanel
+	},
+	{
+		path: "/ozon/stylist_panel",
+		name: "OzonStylistPanel",
+		component: OzonStylistPanel
 	},
 	{
 		path: "/wb/verification",

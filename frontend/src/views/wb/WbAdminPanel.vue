@@ -1,5 +1,5 @@
 <template>
-  <AdminPanel :adminPanel="adminPanel_wb" :labels="labels" :goToUrls="goToUrls"/>
+  <AdminPanel :adminPanel="adminPanel_wb" :labels="labels" :goToUrls="goToUrls" :channelName="'@wb_trend_plus'"/>
 </template>
 
 <script lang="ts">

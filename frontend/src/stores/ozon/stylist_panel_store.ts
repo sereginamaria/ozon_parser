@@ -25,7 +25,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
     actions: {
         get_stylist_panel_information() {
             const productStore = useProductStore()
-            axios.get(base_url + '/wb/get_stylist_card_information')
+            axios.get(base_url + '/get_stylist_card_information')
                 .then ((response) => {
                     console.log(response.data)
                     console.log(response.data[0].article)

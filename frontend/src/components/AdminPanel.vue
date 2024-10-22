@@ -1,5 +1,5 @@
 <template>
-  <NavbarComponent :labels="labels" :goToUrls="goToUrls"/>
+  <NavbarComponent :labels="labels" :goToUrls="goToUrls" :channelName="channelName"/>
   <div class="admin-panel-block">
       <h3>Работа с данными</h3>
       <div>
@@ -71,6 +71,10 @@ export default defineComponent({
     labels: {
         type: Array,
         default: []
+    },
+      channelName:{
+        type: String,
+        default: ''
     }
   },
   components: {NavbarComponent, Button, Accordion, AccordionPanel, AccordionHeader, AccordionContent},

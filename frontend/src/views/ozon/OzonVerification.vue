@@ -12,7 +12,7 @@ export default defineComponent({
   name: "OzonPage",
   data() {
     return {
-      goToUrls: ['/admin-panel', '/stylist_panel'],
+      goToUrls: ['/ozon/admin-panel', '/ozon/stylist_panel'],
       labels: ['Панель Администратора', 'Стилист']
     }
   },

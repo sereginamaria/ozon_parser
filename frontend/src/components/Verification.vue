@@ -1,6 +1,6 @@
 <template>
   <div class="verification-block">
-    <NavbarComponent :labels="labels" :goToUrls="goToUrls"/>
+    <NavbarComponent :labels="labels" :goToUrls="goToUrls" :channelName="channelName"/>
 
     <div v-if="verification.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
       <GalleryComponent :verification="verification"/>
@@ -61,7 +61,11 @@ export default defineComponent ({
     labels: {
         type: Array,
         default: []
-    }
+    },
+      channelName:{
+          type: String,
+          default: ''
+      }
   },
   data() {
     return {

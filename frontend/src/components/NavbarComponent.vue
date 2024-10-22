@@ -1,12 +1,16 @@
 <template>
   <Toolbar id="toolbar" ref="toolbar" class="toolbar-block">
     <template #start>
-      <div class="flex items-center gap-2">
-        <Button label="H" text plain @click="goToHome()"/>
-        <Button v-for="(label, index) in labels" :label="label" text plain @click="goTo(index)"/>
-      </div>
+        <div style="display: flex; flex-direction: column">
+            <div class="flex items-center gap-2">
+                <Button label="H" text plain @click="goToHome()"/>
+                <Button v-for="(label, index) in labels" :label="label" text plain @click="goTo(index)"/>
+            </div>
+            <p style="text-align: center; margin: 0; padding: 0">{{ channel_name }}</p>
+        </div>
+
     </template>
-        <template #end>
+    <template #end>
       <div class="flex items-center gap-2">
         <Button label="Выйти" text plain @click="exit()"/>
       </div>
@@ -29,7 +33,11 @@ export default defineComponent( {
     goToUrls: {
       type: Array,
       default: []
-    }
+    },
+      channel_name:{
+          type: String,
+          default: ''
+      }
   },
   components: { Toolbar, Button},
   methods: {

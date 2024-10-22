@@ -3,35 +3,35 @@
     <div style="width: 100%; height: 100%; display: flex">
 
       <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
-        <div class="img1">
+        <div class="img1" :style="{'background': 'url(' + this.stylistPanel.products[0].images[0] + ') 100% / cover no-repeat'}">
           <div style="background: white; text-align: center;">
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name1 }}</span></p>
-            <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article1 }}</span></p>
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price1 }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[0].sub_category }}</span></p>
+            <p style="font-size: 8px; margin: 0">Арт.: <span style="font-size: 8px">{{ this.stylistPanel.products[0].article }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[0].price }}</span></p>
           </div>
 
         </div>
-        <div class="img3">
+        <div class="img3" :style="{'background': 'url(' + this.stylistPanel.products[2].images[0] + ') 100% / cover no-repeat'}">
           <div style="background: white; text-align: center;">
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name3 }}</span></p>
-            <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article3 }}</span></p>
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price3 }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[2].sub_category }}</span></p>
+            <p style="font-size: 8px; margin: 0">Арт.: <span style="font-size: 8px">{{ this.stylistPanel.products[2].article }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[2].price }}</span></p>
           </div>
         </div>
       </div>
       <div style="width: 50%; display: flex; flex-direction: column; justify-content: space-between">
-        <div class="img2" style="display: flex; justify-content: end">
+        <div class="img2" style="display: flex; justify-content: end" :style="{'background': 'url(' + this.stylistPanel.products[1].images[0] + ') 100% / cover no-repeat'}">
           <div style="background: white; text-align: center;">
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name2 }}</span></p>
-            <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article2 }}</span></p>
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price2 }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[1].sub_category }}</span></p>
+            <p style="font-size: 8px; margin: 0">Арт.: <span style="font-size: 8px">{{ this.stylistPanel.products[1].article }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[1].price }}</span></p>
           </div>
         </div>
-        <div class="img4" style="display: flex; justify-content: end">
+        <div class="img4" style="display: flex; justify-content: end" :style="{'background': 'url(' + this.stylistPanel.products[3].images[0] + ') 100% / cover no-repeat'}">
           <div style="background: white; text-align: center;">
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ name4 }}</span></p>
-            <p style="font-size: 30px; margin: 0">Арт.: <span style="font-size: 30px">{{ article4 }}</span></p>
-            <p style="font-size: 30px; margin: 0"><span style="font-size: 30px">{{ price4 }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[3].sub_category }}</span></p>
+            <p style="font-size: 8px; margin: 0">Арт.: <span style="font-size: 8px">{{ this.stylistPanel.products[3].article }}</span></p>
+            <p style="font-size: 8px; margin: 0"><span style="font-size: 8px">{{ this.stylistPanel.products[3].price }}</span></p>
           </div>
         </div>
 <!--        <img src="./logo.png" alt="" class="logo">-->
@@ -39,7 +39,7 @@
     </div>
     <p style="margin: 0;
     text-align: center;
-    font-size: 30px;">tg: @wb_trend_plus</p>
+    font-size: 8px;">tg: @wb_trend_plus</p>
   </div>
 </template>
 
@@ -47,7 +47,13 @@
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "StylistCardComponent"
+  name: "StylistCardComponent",
+  props: {
+      stylistPanel: {
+          type: Object,
+          default: {}
+      }
+  },
 })
 </script>
 
@@ -74,8 +80,8 @@ export default defineComponent({
   padding: 5% 2% 1% 2%;
   box-sizing: border-box;
   border: 1px solid black;
-  width: 512px;
-  height: 640px;
+  width: 480px;
+  height: 600px;
 }
 
 
@@ -88,16 +94,15 @@ export default defineComponent({
 
 
 .inf-text {
-  display: flex;
-  text-align: center;
-  height: 30%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  /*padding: 30px 0 0 0;*/
-  padding: 15px 15% 0 0;
-  box-sizing: border-box;
-  font-size: 25px;
+    display: flex;
+    text-align: center;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15% 0 0;
+    box-sizing: border-box;
+    font-size: 8px;
 }
 
 .inf-text p{
@@ -120,25 +125,25 @@ export default defineComponent({
   right: 0;
 }
 
-.img1 {
-  background: url("{{ url_img1 }}") 100% / cover no-repeat;
-  background-position: center;
-}
-.img2 {
-  background: url("{{ url_img2 }}") 100% / cover no-repeat;
-  background-position: center;
-}
-.img3 {
-  background: url("{{ url_img3 }}") 100% / cover no-repeat;
-  background-position: center;
-  /*height: 70%;*/
-}
+/*.img1 {*/
+/*  background: url("{{ article }}") 100% / cover no-repeat;*/
+/*  background-position: center;*/
+/*}*/
+/*.img2 {*/
+/*  background: url("{{ url_img2 }}") 100% / cover no-repeat;*/
+/*  background-position: center;*/
+/*}*/
+/*.img3 {*/
+/*  background: url("{{ url_img3 }}") 100% / cover no-repeat;*/
+/*  background-position: center;*/
+/*  !*height: 70%;*!*/
+/*}*/
 
-.img4 {
-  background: url("{{ url_img4 }}") 100% / cover no-repeat;
-  background-position: center;
-  /*height: 70%;*/
-}
+/*.img4 {*/
+/*  background: url("{{ url_img4 }}") 100% / cover no-repeat;*/
+/*  background-position: center;*/
+/*  !*height: 70%;*!*/
+/*}*/
 
 /*.img1 {*/
 /*    background: url("https://ir.ozone.ru/s3/multimedia-k/wc750/6797602028.jpg") 100% / cover no-repeat;*/

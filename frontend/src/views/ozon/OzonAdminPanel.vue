@@ -1,5 +1,5 @@
 <template>
-  <AdminPanel :adminPanel="adminPanel_ozon" :labels="labels" :goToUrls="goToUrls"/>
+  <AdminPanel :adminPanel="adminPanel_ozon" :labels="labels" :goToUrls="goToUrls" :channelName="'@ozon_trend_plus'"/>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@ export default defineComponent({
   name: "OzonAdminPanel",
   data() {
     return {
-      goToUrls: ['/verification', '/stylist_panel'],
+      goToUrls: ['/ozon/verification', '/ozon/stylist_panel'],
       labels: ['Верификация', 'Стилист']
     }
   },

@@ -6,20 +6,20 @@
 import {defineComponent} from 'vue'
 import StylistPanel from "@/components/StylistPanel.vue";
 import {mapStores} from "pinia";
-import {useProductStore, useStylistPanelStore} from "@/stores/wb";
+import {useProductStore, useStylistPanelStore} from "@/stores/ozon";
 
 export default defineComponent({
-    name: "WbStylistPanel",
+    name: "OzonStylistPanel",
     data() {
         return {
-            goToUrls: ['/wb/verification', '/wb/admin-panel'],
+            goToUrls: ['/ozon/verification', '/ozon/admin-panel'],
             labels: ['Верификация', 'Панель Администратора']
         }
     },
     components: {StylistPanel},
-  computed: {
-    ...mapStores(useStylistPanelStore),
-  }
+    computed: {
+        ...mapStores(useStylistPanelStore),
+    }
 })
 </script>
 
