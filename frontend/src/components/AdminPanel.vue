@@ -72,9 +72,9 @@ export default defineComponent({
         type: Array,
         default: []
     },
-      channelName:{
-        type: String,
-        default: ''
+    channelName:{
+      type: String,
+      default: ''
     }
   },
   components: {NavbarComponent, Button, Accordion, AccordionPanel, AccordionHeader, AccordionContent},

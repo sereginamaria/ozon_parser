@@ -6,7 +6,7 @@
                 <Button label="H" text plain @click="goToHome()"/>
                 <Button v-for="(label, index) in labels" :label="label" text plain @click="goTo(index)"/>
             </div>
-            <p style="text-align: center; margin: 0; padding: 0">{{ channel_name }}</p>
+            <p style="text-align: center; margin: 0; padding: 0; font-size: 10px">{{ channelName }}</p>
         </div>
 
     </template>
@@ -34,7 +34,7 @@ export default defineComponent( {
       type: Array,
       default: []
     },
-      channel_name:{
+      channelName:{
           type: String,
           default: ''
       }

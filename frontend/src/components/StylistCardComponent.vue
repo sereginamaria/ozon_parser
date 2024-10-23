@@ -39,7 +39,7 @@
     </div>
     <p style="margin: 0;
     text-align: center;
-    font-size: 8px;">tg: @wb_trend_plus</p>
+    font-size: 8px;">tg: {{ channelName }}</p>
   </div>
 </template>
 
@@ -52,6 +52,10 @@ export default defineComponent({
       stylistPanel: {
           type: Object,
           default: {}
+      },
+      channelName:{
+          type: String,
+          default: ''
       }
   },
 })

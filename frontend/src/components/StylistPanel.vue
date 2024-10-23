@@ -1,7 +1,7 @@
 <template>
   <NavbarComponent :labels="labels" :goToUrls="goToUrls" :channelName="channelName"/>
   <div v-if="stylistPanel.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
-    <StylistCardComponent :stylistPanel="stylistPanel"/>
+    <StylistCardComponent :stylistPanel="stylistPanel" :channelName="channelName"/>
   </div>
   <div v-if="!stylistPanel.contentReady">Загрузка... Пожалуйста, подождите!</div>
 </template>
@@ -26,14 +26,15 @@
       type: Object,
       default: {}
     },
-      channelName:{
-          type: String,
-          default: ''
-      }
+    channelName:{
+        type: String,
+        default: ''
+    }
   },
   components: {StylistCardComponent, NavbarComponent},
   created() {
-    this.stylistPanel.get_stylist_panel_information()
+      console.log('gi')
+      this.stylistPanel.get_stylist_panel_information()
   }
 })
 </script>

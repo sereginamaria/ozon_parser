@@ -17,7 +17,7 @@ interface Product {
     images: string[]
 }
 
-export const useStylistPanelStore = defineStore('stylistPanel_wb', {
+export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
     state: () => ({
         contentReady: false,
         products: []
@@ -27,14 +27,18 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
             const productStore = useProductStore()
             axios.get(base_url + '/get_stylist_card_information')
                 .then ((response) => {
+                    this.contentReady = false
+                    this.products = []
+
+                    console.log('ozon')
                     console.log(response.data)
                     console.log(response.data[0].article)
-                    let imagesURL: string
 
                     if (response.data[0] === null) {
                         this.contentReady = false
                     }
                     else {
+                        this.products = []
                         response.data.forEach((product: object):void => {
                             console.log(response.data.indexOf(product))
                             console.log(product)

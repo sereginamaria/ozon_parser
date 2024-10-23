@@ -1,5 +1,5 @@
 <template>
-    <StylistPanel :labels="labels" :goToUrls="goToUrls" :stylistPanel="stylistPanel_wb"/>
+    <StylistPanel :labels="labels" :goToUrls="goToUrls" :stylistPanel="stylistPanel_wb" :channelName="'@wb_trend_plus'"/>
 </template>
 
 <script lang="ts">

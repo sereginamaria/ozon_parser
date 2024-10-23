@@ -1,12 +1,12 @@
 <template>
-    <StylistPanel :labels="labels" :goToUrls="goToUrls" :stylistPanel="stylistPanel_wb"/>
+    <StylistPanel :labels="labels" :goToUrls="goToUrls" :stylistPanel="stylistPanel_ozon" :channelName="'@ozon_trend_plus'"/>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue'
 import StylistPanel from "@/components/StylistPanel.vue";
 import {mapStores} from "pinia";
-import {useProductStore, useStylistPanelStore} from "@/stores/ozon";
+import {useStylistPanelStore} from "@/stores/ozon";
 
 export default defineComponent({
     name: "OzonStylistPanel",

@@ -1,5 +1,5 @@
 <template>
-  <Verification :verification="verification_ozon" :labels="labels" :goToUrls="goToUrls" :product="product_ozon"/>
+  <Verification :verification="verification_ozon" :labels="labels" :goToUrls="goToUrls" :product="product_ozon" :channelName="'@ozon_trend_plus'"/>
 </template>
 
 <script lang="ts">

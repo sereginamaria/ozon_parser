@@ -1,5 +1,5 @@
 <template>
-  <Verification :verification="verification_wb" :labels="labels" :goToUrls="goToUrls" :product="product_wb"/>
+  <Verification :verification="verification_wb" :labels="labels" :goToUrls="goToUrls" :product="product_wb" :channelName="'@wb_trend_plus'"/>
 </template>
 
 <script lang="ts">

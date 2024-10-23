@@ -27,10 +27,12 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
             const productStore = useProductStore()
             axios.get(base_url + '/wb/get_stylist_card_information')
                 .then ((response) => {
+                    this.contentReady = false
+                    this.products = []
+
+                    console.log('wb')
                     console.log(response.data)
                     console.log(response.data[0].article)
-                    let imagesURL: string
-
                     if (response.data[0] === null) {
                         this.contentReady = false
                     }
