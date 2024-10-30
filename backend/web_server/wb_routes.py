@@ -34,7 +34,8 @@ def get_verification_information():
 @wb.route('/wb/save_product', methods=['POST'])
 def save_product():
     logger.info('save_product')
-    db_wb.save_product(request.json)
+    current_date = datetime.date.today()
+    db_wb.save_product(request.json, current_date)
     return 'save_product'
 
 @wb.route('/wb/delete_product', methods=['POST'])
@@ -261,5 +262,13 @@ def get_stylist_card_information():
 
     return products
 
+@wb.route('/wb/save_styled_card', methods=['POST'])
+def save_styled_card():
+    # print(request.json)
+    # print(request.json['products'])
+    # print(type(request.json['products']))
+    # print(request.json['products'][0])
 
+    db_wb.save_styled_card(request.json['products'])
+    return 'save_styled_card'
 

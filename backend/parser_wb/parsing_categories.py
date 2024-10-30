@@ -641,7 +641,7 @@ if __name__ == "__main__":
     # parse_bag()
     # parse_tshirts()
     # parse_shirts()
-    parse_jeans()
+    # parse_jeans()
     # parse_jacket()
     # parse_dress()
     # parse_shoes()
@@ -651,7 +651,7 @@ if __name__ == "__main__":
     # parse_corset()
     # parse_accessories()
     # parse_blouse()
-    # parse_kofta()
+    parse_kofta()
     # parse_outer_wear()
     #
     # parse_shorts()

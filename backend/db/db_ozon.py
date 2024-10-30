@@ -9,7 +9,7 @@ def add_product(product: schema.Product):
           'product_brand_name, product_brand_link, product_rating, ' \
           'product_categories, product_color, product_article, product_sizes,' \
           'product_all_articles, product_url, publication_category, ' \
-          'verification, is_published, description, sub_category, stored) ' \
+          'verification, is_published, description, sub_category, stored, styled_set) ' \
           'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,%s,%s,FALSE)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
@@ -30,7 +30,8 @@ def add_product(product: schema.Product):
             product.url,
             product.publication_category,
             product.description,
-            product.sub_category
+            product.sub_category,
+            []
     )]
 
     cursor.executemany(sql, data)
@@ -56,7 +57,7 @@ def get_verification_information():
     connection.commit()
     return product_information, cursor.fetchone()
 
-def save_product(json):
+def save_product(json, current_date):
     images = ''
     i = 1
     for image in json['images']:
@@ -67,8 +68,8 @@ def save_product(json):
         i += 1
     cursor.execute(
         "update public.ozon_products set product_name = '%s', product_images = '%s', verification = '%s', "
-        "sub_category = '%s', publication_category = '%s' where product_id = '%s'" % (
-            json['name'], images, True, json['sub_category'], json['category'], json['id']
+        "sub_category = '%s', publication_category = '%s', publication_date = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['sub_category'], json['category'], current_date, json['id']
         )
     )
     connection.commit()

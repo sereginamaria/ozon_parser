@@ -7,8 +7,8 @@ def add_product(product: schema.Product):
           'product_brand_name, product_rating, ' \
           'product_categories, product_color, product_article, product_sizes,' \
           'product_all_articles, product_url, publication_category, ' \
-          'sub_category, verification, is_published, stored, description) ' \
-          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,FALSE,%s)' \
+          'sub_category, verification, is_published, stored, description, styled_set) ' \
+          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,FALSE,%s,%s)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
     data = [(
@@ -26,7 +26,8 @@ def add_product(product: schema.Product):
             product.url,
             product.publication_category,
             product.sub_category,
-            product.description
+            product.description,
+            []
     )]
 
     cursor.executemany(sql, data)
@@ -51,7 +52,7 @@ def get_verification_information():
     connection.commit()
     return product_information, cursor.fetchone()
 
-def save_product(json):
+def save_product(json, current_date):
     images = ''
     i = 1
     for image in json['images']:
@@ -62,8 +63,8 @@ def save_product(json):
         i += 1
     cursor.execute(
         "update public.wb_products set product_name = '%s', product_images = '%s', verification = '%s', "
-        "sub_category = '%s', publication_category = '%s' where product_id = '%s'" % (
-            json['name'], images, True, json['sub_category'], json['category'], json['id']
+        "sub_category = '%s', publication_category = '%s', publication_date = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['sub_category'], json['category'], current_date, json['id']
         )
     )
     connection.commit()
@@ -166,3 +167,15 @@ def get_products_for_stile_card(product1, product2, product3, product4, current_
 
     print(products_list)
     return products_list
+
+def save_styled_card(json):
+
+    print(len(json))
+
+
+    # cursor.execute(
+    #     "update public.wb_products set styled_set = '%s' where product_id = '%s'" % (
+    #         id
+    #     )
+    # )
+    # connection.commit()
