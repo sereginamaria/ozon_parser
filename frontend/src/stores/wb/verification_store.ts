@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 import { useProductStore } from './product_store'
 import axios from "axios";
-import { createPinia, setActivePinia } from 'pinia';
-setActivePinia(createPinia());
+
+// import { createPinia, setActivePinia } from 'pinia';
+// setActivePinia(createPinia());
 
 interface State {
     activeIndex: number,
@@ -12,9 +13,9 @@ interface State {
     countOfCategoryProducts: number
 }
 
-
 const base_url = import.meta.env.VITE_BASE_URL
-const productStore = useProductStore()
+
+// const productStore = useProductStore()
 
 export const useVerificationStore = defineStore('verification_wb', {
     state: () => ({
@@ -22,11 +23,12 @@ export const useVerificationStore = defineStore('verification_wb', {
         contentReady: false,
         contentEmpty: false,
         images: [],
-        countOfCategoryProducts: 0
+        countOfCategoryProducts: 0,
+
+        productStore: useProductStore()
     }),
     actions: {
         get_verification_information() {
-            const productStore = useProductStore()
             axios.get(base_url + '/wb/get_verification_information')
                 .then ((response) => {
                     let imagesURL: string
@@ -82,6 +84,7 @@ export const useVerificationStore = defineStore('verification_wb', {
             productStore.category = newCategory
         },
         saveProduct(): void {
+
             axios.post(base_url + '/wb/save_product', {
                 id: productStore.id,
                 name: productStore.name,

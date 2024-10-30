@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import { useProductStore } from './product_store'
 import axios from 'axios'
-import { createPinia, setActivePinia } from 'pinia';
-setActivePinia(createPinia());
+// import { createPinia, setActivePinia } from 'pinia';
+// setActivePinia(createPinia());
 const base_url = import.meta.env.VITE_BASE_URL
 
 interface State {
@@ -57,5 +57,19 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
                     }
                 })
         },
+        saveStyledCard(){
+            console.log(this.products)
+            axios.post(base_url + '/save_styled_card', {
+                products: this.products
+            })
+                .then ((response) => {
+                    if (response.status == 200){
+                        this.get_stylist_panel_information()
+                    }
+                })
+        },
+        deleteStyledCard(){
+            this.get_stylist_panel_information()
+        }
     }
 })

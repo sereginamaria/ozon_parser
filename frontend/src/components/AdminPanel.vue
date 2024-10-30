@@ -81,11 +81,11 @@ export default defineComponent({
   methods: {
       storeCategory() {
           this.adminPanel.storeCategory()
-          this.$router.push(this.goToUrl)
+          this.$router.push(this.goToUrls[0])
       },
       returnAllCategories() {
           this.adminPanel.returnAllCategories()
-          this.$router.push(this.goToUrl)
+          this.$router.push(this.goToUrls[0])
       },
       getVideos(){
         this.adminPanel.getVideos()
