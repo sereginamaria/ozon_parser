@@ -168,14 +168,14 @@ def get_products_for_stile_card(product1, product2, product3, product4, current_
     print(products_list)
     return products_list
 
-def save_styled_card(json):
+def save_styled_card(products_list):
+    articles = [product['article'] for product in products_list]
+    print(articles)
 
-    print(len(json))
-
-
-    # cursor.execute(
-    #     "update public.wb_products set styled_set = '%s' where product_id = '%s'" % (
-    #         id
-    #     )
-    # )
-    # connection.commit()
+    for product in products_list:
+        cursor.execute(
+            "update public.wb_products set styled_set = styled_set || ARRAY[ARRAY %s ] where product_article = '%s'" % (
+                articles, product['article']
+            )
+        )
+        connection.commit()

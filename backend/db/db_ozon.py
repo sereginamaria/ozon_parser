@@ -10,7 +10,7 @@ def add_product(product: schema.Product):
           'product_categories, product_color, product_article, product_sizes,' \
           'product_all_articles, product_url, publication_category, ' \
           'verification, is_published, description, sub_category, stored, styled_set) ' \
-          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,%s,%s,FALSE)' \
+          'VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,FALSE,FALSE,%s,%s,FALSE,%s)' \
           'ON CONFLICT (product_article) DO NOTHING;'
 
     data = [(

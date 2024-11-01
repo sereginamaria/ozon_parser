@@ -31,7 +31,8 @@ def get_verification_information():
 @ozon.route('/save_product', methods=['POST'])
 def save_product():
     logger.info('save_product')
-    db_ozon.save_product(request.json)
+    current_date = datetime.date.today()
+    db_ozon.save_product(request.json, current_date)
     return 'save_product'
 
 @ozon.route('/delete_product', methods=['POST'])
