@@ -38,15 +38,15 @@ export const useVerificationStore = defineStore('verification_wb', {
                         this.contentReady = false
                     }
                     else {
-                        [productStore.id, productStore.category, productStore.subCategory,
-                            productStore.name, productStore.article, productStore.price, imagesURL] = response.data[0];
+                        [this.productStore.id, this.productStore.category, this.productStore.subCategory,
+                            this.productStore.name, this.productStore.article, this.productStore.price, imagesURL] = response.data[0];
                         this.countOfCategoryProducts = response.data[1][0]
 
-                        productStore.images = imagesURL.split(', ')
+                        this.productStore.images = imagesURL.split(', ')
 
                         this.images = []
                         let i: number = 0
-                        productStore.images.forEach( (image: string): void => {
+                        this.productStore.images.forEach( (image: string): void => {
                             this.images.push(
                                 {
                                     itemImageSrc: image,
@@ -64,33 +64,33 @@ export const useVerificationStore = defineStore('verification_wb', {
                 })
         },
         deleteImage(activeIndex: number): void {
-            if (productStore.images !== null) {
-                productStore.images.splice(activeIndex, 1)
+            if (this.productStore.images !== null) {
+                this.productStore.images.splice(activeIndex, 1)
             }
             this.images.splice(activeIndex, 1)
 
-            if (productStore.images.length == 3){
-                productStore.images.push(productStore.images[0])
+            if (this.productStore.images.length == 3){
+                this.productStore.images.push(this.productStore.images[0])
                 this.images.push(this.images[0])
             }
         },
         saveNewName(newName: string): void {
-            productStore.name = newName
+            this.productStore.name = newName
         },
         saveNewSubCategory(NewSubCategory: string): void {
-            productStore.subCategory = NewSubCategory
+            this.productStore.subCategory = NewSubCategory
         },
         saveNewCategory(newCategory: string): void {
-            productStore.category = newCategory
+            this.productStore.category = newCategory
         },
         saveProduct(): void {
 
             axios.post(base_url + '/wb/save_product', {
-                id: productStore.id,
-                name: productStore.name,
-                images: productStore.images,
-                sub_category: productStore.subCategory,
-                category: productStore.category
+                id: this.productStore.id,
+                name: this.productStore.name,
+                images: this.productStore.images,
+                sub_category: this.productStore.subCategory,
+                category: this.productStore.category
             })
                 .then ((response) => {
                     if (response.status == 200){
@@ -100,7 +100,7 @@ export const useVerificationStore = defineStore('verification_wb', {
         },
         deleteProduct(): void {
             axios.post(base_url + '/wb/delete_product', {
-                id: productStore.id
+                id: this.productStore.id
             })
                 .then ((response) => {
                     if (response.status == 200){
@@ -110,7 +110,7 @@ export const useVerificationStore = defineStore('verification_wb', {
         },
         deleteFromDB(): void {
             axios.post(base_url + '/wb/delete_product_from_db', {
-                id: productStore.id
+                id: this.productStore.id
             })
                 .then ((response) => {
                     if (response.status == 200){
