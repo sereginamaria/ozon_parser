@@ -25,7 +25,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
     actions: {
         get_stylist_panel_information() {
             const productStore = useProductStore()
-            axios.get(base_url + '/get_stylist_card_information')
+            axios.get(base_url + '/ozon/get_stylist_card_information')
                 .then ((response) => {
                     this.contentReady = false
                     this.products = []
@@ -59,7 +59,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
         },
         saveStyledCard(){
             console.log(this.products)
-            axios.post(base_url + '/save_styled_card', {
+            axios.post(base_url + '/ozon/save_styled_card', {
                 products: this.products
             })
                 .then ((response) => {

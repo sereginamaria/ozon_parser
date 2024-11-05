@@ -29,7 +29,7 @@ export const useVerificationStore = defineStore('verification_ozon', {
     }),
     actions: {
         get_verification_information() {
-            axios.get(base_url + '/get_verification_information')
+            axios.get(base_url + '/ozon/get_verification_information')
                 .then ((response) => {
                     let imagesURL: string
 
@@ -84,7 +84,7 @@ export const useVerificationStore = defineStore('verification_ozon', {
             this.productStore.category = newCategory
         },
         saveProduct(): void {
-            axios.post(base_url + '/save_product', {
+            axios.post(base_url + '/ozon/save_product', {
                 id: this.productStore.id,
                 name: this.productStore.name,
                 images: this.productStore.images,
@@ -98,7 +98,7 @@ export const useVerificationStore = defineStore('verification_ozon', {
                 })
         },
         deleteProduct(): void {
-            axios.post(base_url + '/delete_product', {
+            axios.post(base_url + '/ozon/delete_product', {
                 id: this.productStore.id
             })
                 .then ((response) => {
@@ -108,7 +108,7 @@ export const useVerificationStore = defineStore('verification_ozon', {
                 })
         },
         deleteFromDB(): void {
-            axios.post(base_url + '/delete_product_from_db', {
+            axios.post(base_url + '/ozon/delete_product_from_db', {
                 id: this.productStore.id
             })
                 .then ((response) => {

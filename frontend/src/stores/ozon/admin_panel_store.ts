@@ -17,7 +17,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
     }),
     actions: {
         storeCategory(): void {
-            axios.post(base_url + '/store_category', {
+            axios.post(base_url + '/ozon/store_category', {
                 category: productStore.category
             })
                 .then((response) => {
@@ -27,7 +27,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 })
         },
         returnAllCategories(): void {
-            axios.post(base_url + '/return_all_categories')
+            axios.post(base_url + '/ozon/return_all_categories')
                 .then((response) => {
                     if (response.status == 200){
                         verificationStore.get_verification_information()
@@ -35,7 +35,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 })
         },
         getTimeSheet(): void {
-            axios.get(base_url + '/get_timesheet')
+            axios.get(base_url + '/ozon/get_timesheet')
                 .then((response) => {
                     if (response.status == 200){
                         this.timesheet = response.data
@@ -44,7 +44,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 })
         },
         getCountOfVerifiedProducts(): void {
-            axios.get(base_url + '/count_of_verified_products')
+            axios.get(base_url + '/ozon/count_of_verified_products')
                 .then((response) => {
                     if (response.status == 200){
                         this.countOfVerifiedProducts = response.data
@@ -53,7 +53,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 })
         },
         getCountOfNotVerifiedProducts(): void {
-            axios.get(base_url + '/count_of_not_verified_products')
+            axios.get(base_url + '/ozon/count_of_not_verified_products')
                 .then((response) => {
                     if (response.status == 200){
                         this.countOfNotVerifiedProducts = response.data
@@ -61,7 +61,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
                 })
         },
         getVideos(): void {
-            axios.get(base_url + '/create_videos')
+            axios.get(base_url + '/ozon/create_videos')
                 .then((response) => {
 
                 })
