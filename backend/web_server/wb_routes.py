@@ -120,7 +120,7 @@ def get_timesheet():
     for count_of_product in count_of_products:
         count_of_products_list.append(list(count_of_product))
 
-    def are_there_products_in_db_ozon(category, time):
+    def are_there_products_in_db_wb(category, time):
         for count_of_product_list in count_of_products_list:
             if category in count_of_product_list:
                 if count_of_product_list[1] >= 6 and count_of_product_list[1] != 0:
@@ -142,7 +142,7 @@ def get_timesheet():
         date_name = date_of_publication.strftime("%A")
         for category, time in TIMESHEET[date_name].items():
 
-            resp = are_there_products_in_db_ozon(category, time)
+            resp = are_there_products_in_db_wb(category, time)
             timesheet_text += resp
 
         i += 1
@@ -270,5 +270,30 @@ def save_styled_card():
     # print(request.json['products'][0])
 
     db_wb.save_styled_card(request.json['products'])
+
+    current_date = datetime.date.today() - datetime.timedelta(14)
+    products_list = db_wb.get_styled_card(current_date)
+
+    products = [schema.Product(*product)
+                for product in products_list]
+
+    stile_card = card_creator.create_stiled_card(products, 'wb')
+
+    stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
+
     return 'save_styled_card'
+
+
+@wb.route('/wb/send_stylist_card', methods=['POST'])
+def send_stylist_card():
+    current_date = datetime.date.today() - datetime.timedelta(14)
+    products_list = db_wb.get_styled_card(current_date)
+
+    products = [schema.Product(*product)
+                for product in products_list]
+
+    stile_card = card_creator.create_stiled_card(products, 'wb')
+
+    stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
+    return 'send_stylist_card'
 

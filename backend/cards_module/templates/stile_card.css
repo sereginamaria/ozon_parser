@@ -20,7 +20,7 @@
     display: flex;
     width: 1024px;
     height: 1280px;
-    padding: 5% 2% 1% 2%;
+    padding: 5% 0% 1% 0%;
      /*Хорошо для телефона, но не очень для компа*/
     /*padding: 5% 15%;*/
     box-sizing: border-box;
@@ -28,7 +28,7 @@
 
 
 .img1, .img2, .img3, .img4 {
-    width: 99%;
+    /*width: 99%;*/
     display: flex;
     align-items: end;
     height: 49.5%;
@@ -37,30 +37,31 @@
 
 
 .inf-text {
-    display: flex;
-    text-align: center;
-    height: 30%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    /*padding: 30px 0 0 0;*/
-    padding: 30px 30% 0 0;
-    box-sizing: border-box;
-}
-
-.inf-text p{
     font-family: 'Roboto-Regular';
-    font-size: 30px;
-    margin: 0;
-    padding: 0;
+    /*display: flex;*/
+    /*text-align: center;*/
+    /*height: 30%;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    /*!*padding: 30px 0 0 0;*!*/
+    /*padding: 30px 30% 0 0;*/
+    /*box-sizing: border-box;*/
 }
 
-.inf-text span{
-    font-family: 'Roboto-Bold';
-    font-size: 30px;
-    margin: 0;
-    padding: 0;
-}
+/*.inf-text p{*/
+/*    font-family: 'Roboto-Regular';*/
+/*    !*font-size: 30px;*!*/
+/*    !*margin: 0;*!*/
+/*    !*padding: 0;*!*/
+/*}*/
+
+/*.inf-text span{*/
+/*    font-family: 'Roboto-Bold';*/
+/*    !*font-size: 30px;*!*/
+/*    !*margin: 0;*!*/
+/*    !*padding: 0;*!*/
+/*}*/
 
 .img1 {
     background: url("{{ url_img1 }}") 100% / cover no-repeat;

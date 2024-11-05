@@ -179,3 +179,34 @@ def save_styled_card(products_list):
             )
         )
         connection.commit()
+
+def get_styled_card(current_date):
+    import random
+
+    cursor.execute(
+        "select styled_set "
+        "from public.wb_products where (is_published = true and publication_date > '%s' and ARRAY_LENGTH(styled_set, 1) IS NOT NULL) "
+        "ORDER BY RANDOM()"
+        % (current_date))
+
+    styled_set = random.choice(cursor.fetchone()[0])
+    # print('styled_set')
+    # print(styled_set)
+    # print(type(styled_set))
+
+    # print(random.choice(styled_set[0]))
+
+    products_list = []
+    for product in styled_set:
+        cursor.execute(
+            "select product_id, product_name, product_price_original, product_price, product_images, "
+            "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.wb_products where (product_article = '%s') "
+            % (product)
+        )
+        connection.commit()
+        products_list.append(cursor.fetchone())
+
+    # print(products_list)
+    return products_list

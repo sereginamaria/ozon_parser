@@ -163,5 +163,48 @@ def get_products_for_stile_card(product1, product2, product3, product4, current_
         connection.commit()
         products_list.append(cursor.fetchone())
 
-    print(products_list)
+    # print(products_list)
+    return products_list
+
+def save_styled_card(products_list):
+    articles = [product['article'] for product in products_list]
+    # print(articles)
+
+    for product in products_list:
+        cursor.execute(
+            "update public.ozon_products set styled_set = styled_set || ARRAY[ARRAY %s ] where product_article = '%s'" % (
+                articles, product['article']
+            )
+        )
+        connection.commit()
+
+def get_styled_card(current_date):
+    import random
+
+    cursor.execute(
+        "select styled_set "
+        "from public.ozon_products where (is_published = true and publication_date > '%s' and ARRAY_LENGTH(styled_set, 1) IS NOT NULL)"
+        "ORDER BY RANDOM()"
+        % (current_date))
+
+    styled_set = random.choice(cursor.fetchone()[0])
+    # print('styled_set')
+    # print(styled_set)
+    # print(type(styled_set))
+
+    # print(random.choice(styled_set[0]))
+
+    products_list = []
+    for product in styled_set:
+        cursor.execute(
+            "select product_id, product_name, product_price_original, product_price, product_price_with_ozon_card, product_images, "
+        "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
+        "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.ozon_products where (product_article = '%s') "
+            % (product)
+        )
+        connection.commit()
+        products_list.append(cursor.fetchone())
+
+    # print(products_list)
     return products_list

@@ -9,57 +9,58 @@ from main_config import TIMESHEET
 from video_module import video_maker
 
 from telegram.ozon_bot import telegram_notifier, telegram_connector
-
+from telegram.stylist_bot import telegram_connector as stylist_bot_telegram_connector
+from datetime import timedelta
 import datetime
 import random
 
 ozon = Blueprint('ozon', __name__)
 
-@ozon.route('/')
+@ozon.route('/ozon/')
 def hello():
     return 'Hello!'
 
-@ozon.route('/parse_page', methods=['GET'])
+@ozon.route('/ozon/parse_page', methods=['GET'])
 def parse_page():
     parsing_categories.parse_kofta()
 
-@ozon.route('/get_verification_information', methods=['GET'])
+@ozon.route('/ozon/get_verification_information', methods=['GET'])
 def get_verification_information():
     logger.info('get_verification_information')
     return list(db_ozon.get_verification_information())
 
-@ozon.route('/save_product', methods=['POST'])
+@ozon.route('/ozon/save_product', methods=['POST'])
 def save_product():
     logger.info('save_product')
     current_date = datetime.date.today()
     db_ozon.save_product(request.json, current_date)
     return 'save_product'
 
-@ozon.route('/delete_product', methods=['POST'])
+@ozon.route('/ozon/delete_product', methods=['POST'])
 def delete_product():
     logger.info('delete_product')
     db_ozon.delete_product(request.json)
     return 'delete_product'
 
-@ozon.route('/delete_product_from_db', methods=['POST'])
+@ozon.route('/ozon/delete_product_from_db', methods=['POST'])
 def delete_product_from_db():
     logger.info('delete_product_from_db')
     db_ozon.delete_product_from_db(request.json)
     return 'delete_product_from_db'
 
-@ozon.route('/store_category', methods=['POST'])
+@ozon.route('/ozon/store_category', methods=['POST'])
 def store_category():
     logger.info('store_category')
     db_ozon.store_category(request.json)
     return 'store_category'
 
-@ozon.route('/return_all_categories', methods=['POST'])
+@ozon.route('/ozon/return_all_categories', methods=['POST'])
 def return_all_categories():
     logger.info('return_all_categories')
     db_ozon.return_all_categories()
     return 'return_all_categories'
 
-@ozon.route('/send_post', methods=['POST'])
+@ozon.route('/ozon/send_post', methods=['POST'])
 def send_post():
     logger.info('send_post')
     products_list = db_ozon.get_products_for_post(request.json)
@@ -88,7 +89,7 @@ def send_post():
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
 
-@ozon.route('/get_timesheet', methods=['GET'])
+@ozon.route('/ozon/get_timesheet', methods=['GET'])
 def get_timesheet():
     list_with_timesheet = []
     count_of_products = db_ozon.count_of_verified_products()
@@ -126,7 +127,7 @@ def get_timesheet():
         list_with_timesheet.append(timesheet_text)
 
     return list_with_timesheet
-@ozon.route('/count_of_verified_products', methods=['GET'])
+@ozon.route('/ozon/count_of_verified_products', methods=['GET'])
 def count_of_verified_products():
     list_with_count_of_verified_products = []
     count_of_products = db_ozon.count_of_verified_products()
@@ -179,11 +180,11 @@ def count_of_verified_products():
                                            ' ❌ ' + 'Нужно еще ' + str(12 - count_of_product_list[1]))
     return list_with_count_of_verified_products
 
-@ozon.route('/count_of_not_verified_products', methods=['GET'])
+@ozon.route('/ozon/count_of_not_verified_products', methods=['GET'])
 def count_of_not_verified_products():
     return db_ozon.count_of_not_verified_products()
 
-@ozon.route('/create_videos', methods=['GET'])
+@ozon.route('/ozon/create_videos', methods=['GET'])
 def create_videos():
     categories = ["Украшения", "Верхняя Одежда", "Кофта", "Брюки", "Джинсы", "Платье", "Пиджак", "Сумка", "Костюм",
                  "Юбка", "Блузка", "Обувь", "Футболка", "Топ", "Домашняя Одежда", "Рубашка"]
@@ -203,7 +204,7 @@ def create_videos():
             telegram_connector.send_video(video_b)
     return 'end'
 
-@ozon.route('/get_stylist_card_information', methods=['GET'])
+@ozon.route('/ozon/get_stylist_card_information', methods=['GET'])
 def get_stylist_card_information():
     products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары']
     products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
@@ -219,20 +220,54 @@ def get_stylist_card_information():
     if product3 == 'Платье' and product1 == 'Сумка':
         product2 = 'Украшения'
 
-    print(product1, product2, product3, product4)
+    # print(product1, product2, product3, product4)
 
-    from datetime import timedelta
+
     current_date = datetime.date.today() - timedelta(14)
-    print(current_date)
+    # print(current_date)
 
     products = [schema.Product(*product)
-                    for product in db_ozon.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
+                for product in db_ozon.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
 
-    for product in products:
-        print(product.name)
+    # for product in products:
+        # print(product.name)
 
     # stile_card = card_creator.create_stiled_card(products, 'ozon')
 
     # stylist_bot_telegram_connector.send_post(stile_card)
 
     return products
+
+@ozon.route('/ozon/save_styled_card', methods=['POST'])
+def save_styled_card():
+    # print(request.json)
+    # print(request.json['products'])
+    # print(type(request.json['products']))
+    # print(request.json['products'][0])
+
+    db_ozon.save_styled_card(request.json['products'])
+
+    current_date = datetime.date.today() - datetime.timedelta(14)
+    products_list = db_ozon.get_styled_card(current_date)
+
+    products = [schema.Product(*product)
+                for product in products_list]
+
+    stile_card = card_creator.create_stiled_card(products, 'ozon')
+
+    stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
+
+    return 'save_styled_card'
+
+@ozon.route('/ozon/send_stylist_card', methods=['POST'])
+def send_stylist_card():
+    current_date = datetime.date.today() - timedelta(14)
+    products_list = db_ozon.get_styled_card(current_date)
+
+    products = [schema.Product(*product)
+                for product in products_list]
+
+    stile_card = card_creator.create_stiled_card(products, 'ozon')
+
+    stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
+    return 'send_stylist_card'

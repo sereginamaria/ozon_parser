@@ -63,7 +63,7 @@ def create_stiled_card(products, card_type: str) -> bytes:
                                article1=articles[0], article2=articles[1],
                                article3=articles[2], article4=articles[3],
                                price1=prices[0], price2=prices[1],
-                               price3=prices[2], price4=prices[3]
+                               price3=prices[2], price4=prices[3], type=card_type
                                )
 
     def get_css(images):

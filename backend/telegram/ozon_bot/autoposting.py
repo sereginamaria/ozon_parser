@@ -12,6 +12,10 @@ def send_post(category):
     r = requests.post("http://" + BASE_URL + ":5001/send_post", json=new_product)
     print(r)
 
+def send_stylist_card():
+    r = requests.post("http://" + BASE_URL + ":5001/ozon/send_stylist_card")
+    print(r)
+
 def get_publishing_time(time_str):
     return datetime.strptime(time_str, '%H:%M').time()
 
@@ -22,6 +26,9 @@ def autop():
     while True:
         current_day_of_week = datetime.now().strftime('%A')
         current_time = datetime.now().time()
+
+        if in_time('9:00', current_time, '9:59'):
+            send_stylist_card()
 
         if ((current_day_of_week == 'Monday' and in_time('8:00', current_time, '8:59')) or
                 (current_day_of_week == 'Wednesday' and in_time('8:00', current_time, '8:59')) or
