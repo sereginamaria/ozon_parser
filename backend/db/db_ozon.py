@@ -171,9 +171,19 @@ def save_styled_card(products_list):
     # print(articles)
 
     for product in products_list:
+        images = ''
+        i = 1
+        for image in product['images']:
+            if i == len(product['images']):
+                images += image
+            else:
+                images += image + ', '
+            i += 1
+
         cursor.execute(
-            "update public.ozon_products set styled_set = styled_set || ARRAY[ARRAY %s ] where product_article = '%s'" % (
-                articles, product['article']
+            "update public.ozon_products set product_images = '%s', styled_set = styled_set || ARRAY[ARRAY %s ] "
+            "where product_article = '%s'" % (
+                images, articles, product['article']
             )
         )
         connection.commit()

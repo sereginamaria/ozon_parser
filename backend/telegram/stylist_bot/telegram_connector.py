@@ -1,12 +1,15 @@
 from telebot import types
 from telebot import apihelper
-from telegram import bot, logger
+from telegram import bot, logger, mass_of_stikers
 from telegram.stylist_bot import config
+import random
 
 def send_post(card, products, type):
     logger.info('Start send_post')
+    caption = '#ОбразДня '
+    for stiker in random.sample(mass_of_stikers, 1):
+        caption += stiker
 
-    caption = '#ОбразДня'
 
     markup = types.InlineKeyboardMarkup(row_width=2)
     buttons = []

@@ -20,7 +20,7 @@
     display: flex;
     width: 1024px;
     height: 1280px;
-    padding: 5% 0% 1% 0%;
+    padding: 0% 0% 1% 0%;
      /*Хорошо для телефона, но не очень для компа*/
     /*padding: 5% 15%;*/
     box-sizing: border-box;
@@ -62,6 +62,18 @@
 /*    !*margin: 0;*!*/
 /*    !*padding: 0;*!*/
 /*}*/
+
+.photo-block{
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    /* align-items: end; */
+    flex-direction: column;
+    display: flex;
+    height: 49.5%;
+    width: 100%;
+    align-items: end;
+    /*height: 49.5%;*/
+}
 
 .img1 {
     background: url("{{ url_img1 }}") 100% / cover no-repeat;

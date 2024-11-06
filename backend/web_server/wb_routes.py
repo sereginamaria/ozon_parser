@@ -231,30 +231,31 @@ def create_videos():
 @wb.route('/wb/get_stylist_card_information', methods=['GET'])
 def get_stylist_card_information():
     products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары']
-    products_for_card2 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
-    products_for_card3 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
+    products_for_card2 = 'Обувь'
+    products_for_card3 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
+    products_for_card4 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
 
     product1 = random.choice(products_for_card1)
-    product2 = random.choice(products_for_card2)
+    product2 = 'Обувь'
     product3 = random.choice(products_for_card3)
-    product4 = 'Обувь'
+    product4 = random.choice(products_for_card4)
 
-    if product3 == 'Платье' and product1 != 'Сумка':
-        product2 = 'Сумка'
-    if product3 == 'Платье' and product1 == 'Сумка':
-        product2 = 'Украшения'
+    if product4 == 'Платье' and product1 != 'Сумка':
+        product3 = 'Сумка'
+    if product4 == 'Платье' and product1 == 'Сумка':
+        product3 = 'Украшения'
 
-    print(product1, product2, product3, product4)
+    # print(product1, product2, product3, product4)
 
     from datetime import timedelta
     current_date = datetime.date.today() - timedelta(14)
-    print(current_date)
+    # print(current_date)
 
     products = [schema.Product(*product)
                     for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
 
-    for product in products:
-        print(product.name)
+    # for product in products:
+        # print(product.name)
 
     # stile_card = card_creator.create_stiled_card(products, 'wb')
 
@@ -271,15 +272,15 @@ def save_styled_card():
 
     db_wb.save_styled_card(request.json['products'])
 
-    current_date = datetime.date.today() - datetime.timedelta(14)
-    products_list = db_wb.get_styled_card(current_date)
-
-    products = [schema.Product(*product)
-                for product in products_list]
-
-    stile_card = card_creator.create_stiled_card(products, 'wb')
-
-    stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
+    # current_date = datetime.date.today() - datetime.timedelta(14)
+    # products_list = db_wb.get_styled_card(current_date)
+    #
+    # products = [schema.Product(*product)
+    #             for product in products_list]
+    #
+    # stile_card = card_creator.create_stiled_card(products, 'wb')
+    #
+    # stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
 
     return 'save_styled_card'
 

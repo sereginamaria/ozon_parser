@@ -165,17 +165,27 @@ def get_products_for_stile_card(product1, product2, product3, product4, current_
         connection.commit()
         products_list.append(cursor.fetchone())
 
-    print(products_list)
+    # print(products_list)
     return products_list
 
 def save_styled_card(products_list):
     articles = [product['article'] for product in products_list]
-    print(articles)
+    # print(articles)
 
     for product in products_list:
+        images = ''
+        i = 1
+        for image in product['images']:
+            if i == len(product['images']):
+                images += image
+            else:
+                images += image + ', '
+            i += 1
+
         cursor.execute(
-            "update public.wb_products set styled_set = styled_set || ARRAY[ARRAY %s ] where product_article = '%s'" % (
-                articles, product['article']
+            "update public.wb_products set product_images = '%s', styled_set = styled_set || ARRAY[ARRAY %s ] "
+            "where product_article = '%s'" % (
+                images, articles, product['article']
             )
         )
         connection.commit()
