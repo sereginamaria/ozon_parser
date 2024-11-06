@@ -14,13 +14,15 @@ interface Product {
     sub_category: string;
     article: string;
     price: number,
-    images: string[]
+    images: string[],
+    imagesIndex: number[]
 }
 
 export const useStylistPanelStore = defineStore('stylistPanel_wb', {
     state: () => ({
         contentReady: false,
-        products: []
+        products: [],
+        imagesIndex: [0, 0, 0, 0]
     }),
     actions: {
         get_stylist_panel_information() {

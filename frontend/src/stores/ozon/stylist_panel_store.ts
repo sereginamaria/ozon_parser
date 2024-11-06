@@ -14,13 +14,15 @@ interface Product {
     sub_category: string;
     article: string;
     price: number,
-    images: string[]
+    images: string[],
+    imagesIndex: number[]
 }
 
 export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
     state: () => ({
         contentReady: false,
-        products: []
+        products: [],
+        imagesIndex: [0, 0, 0, 0]
     }),
     actions: {
         get_stylist_panel_information() {
@@ -59,6 +61,24 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
         },
         saveStyledCard(){
             console.log(this.products)
+            console.log(this.imagesIndex)
+
+            this.imagesIndex.forEach((item, index, theArray) => {
+                if (item !== 0){
+                    console.log('indexof index')
+                    console.log(index)
+                    console.log(this.products[index])
+                    console.log(this.products[index].images[0])
+
+                    console.log(this.products[index].images[item])
+                    this.products[index].images.unshift(...this.products[index].images.splice(item,1));
+                    console.log(this.products[index].images[0])
+
+                    theArray[index] = 0
+                    console.log(this.imagesIndex)
+
+                }
+            })
             axios.post(base_url + '/ozon/save_styled_card', {
                 products: this.products
             })
