@@ -9,7 +9,7 @@ def send_post(category):
         "category": category,
     }
 
-    r = requests.post("http://" + BASE_URL + ":5001/send_post", json=new_product)
+    r = requests.post("http://" + BASE_URL + ":5001/ozon/send_post", json=new_product)
     print(r)
 
 def send_stylist_card():

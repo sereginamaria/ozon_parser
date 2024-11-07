@@ -260,7 +260,8 @@ def get_stylist_card_information():
     # stile_card = card_creator.create_stiled_card(products, 'wb')
 
     # stylist_bot_telegram_connector.send_post(stile_card)
-
+    print(products)
+    print((type(products)))
     return products
 
 @wb.route('/wb/save_styled_card', methods=['POST'])
@@ -298,3 +299,16 @@ def send_stylist_card():
     stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
     return 'send_stylist_card'
 
+@wb.route('/wb/change_stylist_panel_image/<string:product_category>', methods=['GET'])
+def change_stylist_panel_image(product_category):
+    print(product_category)
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+
+    product = schema.Product(*db_wb.get_stylist_panel_image(product_category, current_date))
+
+    t = []
+    t.append(product)
+    print(t)
+    print(type(t))
+    return list(t)

@@ -271,3 +271,18 @@ def send_stylist_card():
 
     stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
     return 'send_stylist_card'
+
+
+@ozon.route('/ozon/change_stylist_panel_image/<string:product_category>', methods=['GET'])
+def change_stylist_panel_image(product_category):
+    print(product_category)
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+
+    product = schema.Product(*db_ozon.get_stylist_panel_image(product_category, current_date))
+
+    t = []
+    t.append(product)
+    print(t)
+    print(type(t))
+    return list(t)

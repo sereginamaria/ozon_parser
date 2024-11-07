@@ -220,3 +220,15 @@ def get_styled_card(current_date):
 
     # print(products_list)
     return products_list
+
+def get_stylist_panel_image(product_category, current_date):
+    cursor.execute(
+            "select product_id, product_name, product_price_original, product_price, product_images, "
+            "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+            "from public.wb_products where (publication_category = '%s' and is_published = true and publication_date > '%s') "
+            "ORDER BY RANDOM() limit 1"
+            % (product_category, current_date)
+        )
+    connection.commit()
+    return cursor.fetchone()
