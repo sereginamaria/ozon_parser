@@ -3,8 +3,8 @@
     <template #start>
         <div style="display: flex; flex-direction: column">
             <div class="flex items-center gap-2">
-                <Button label="H" text plain @click="goToHome()"/>
-                <Button v-for="(label, index) in labels" :label="label" text plain @click="goTo(index)"/>
+                <Button icon="pi pi-home" aria-label="Home" text plain @click="goToHome()"/>
+                <Button v-for="(icon, index) in labels" :icon="icon" text plain @click="goTo(index)"/>
             </div>
             <p style="text-align: center; margin: 0; padding: 0; font-size: 10px">{{ channelName }}</p>
         </div>
@@ -12,7 +12,7 @@
     </template>
     <template #end>
       <div class="flex items-center gap-2">
-        <Button label="Выйти" text plain @click="exit()"/>
+        <Button icon="pi pi-sign-out" aria-label="Exit" text plain @click="exit()"/>
       </div>
     </template>
   </Toolbar>
@@ -69,4 +69,5 @@ export default defineComponent( {
       margin-bottom: 0.5rem
     }
   }
+
 </style>

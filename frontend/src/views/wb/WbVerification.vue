@@ -13,7 +13,7 @@ export default defineComponent({
   data() {
       return {
           goToUrls: ['/wb/admin-panel', '/wb/stylist_panel'],
-          labels: ['Панель Администратора', 'Стилист']
+          labels: ['pi pi-wrench', 'pi pi-palette']
       }
   },
   components: {Verification},

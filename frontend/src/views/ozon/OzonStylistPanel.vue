@@ -13,7 +13,7 @@ export default defineComponent({
     data() {
         return {
             goToUrls: ['/ozon/verification', '/ozon/admin-panel'],
-            labels: ['Верификация', 'Панель Администратора']
+            labels: ['pi pi-check-square', 'pi pi-wrench']
         }
     },
     components: {StylistPanel},
