@@ -16,7 +16,7 @@
       <p>Подкатегория: {{ product.subCategory }}</p>
       <p>Название: {{product.name}}</p>
       <p v-if="product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
-      <p>Проверефицированных товаров данной категории: {{ product.countOfCategoryProducts }}</p>
+      <p>Проверефицированных товаров данной категории: {{ verification.countOfCategoryProducts }}</p>
       <p>ID: {{ product.id }}</p>
     </div>
     <div>

@@ -15,6 +15,7 @@ interface Product {
     article: string;
     price: number,
     images: string[],
+    product_category: string;
     imagesIndex: number[]
 }
 
@@ -47,6 +48,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
                                 sub_category: product.sub_category,
                                 article: product.article,
                                 price: product.price,
+                                product_category: product.publication_category,
                                 images: product.images.split(', '),
                             })
 
@@ -59,6 +61,24 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
         },
         saveStyledCard(){
             console.log(this.products)
+            console.log(this.imagesIndex)
+
+            this.imagesIndex.forEach((item, index, theArray) => {
+                if (item !== 0){
+                    console.log('indexof index')
+                    console.log(index)
+                    console.log(this.products[index])
+                    console.log(this.products[index].images[0])
+
+                    console.log(this.products[index].images[item])
+                    this.products[index].images.unshift(...this.products[index].images.splice(item,1));
+                    console.log(this.products[index].images[0])
+
+                    theArray[index] = 0
+                    console.log(this.imagesIndex)
+
+                }
+            })
             axios.post(base_url + '/wb/save_styled_card', {
                 products: this.products
             })
@@ -70,6 +90,26 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
         },
         deleteStyledCard(){
             this.get_stylist_panel_information()
+        },
+        changeImage(n:number){
+            axios.get(base_url + '/wb/change_stylist_panel_image/' + this.products[n].product_category)
+                .then ((response) => {
+                    if (response.status == 200){
+                        console.log('ddddddddddddd')
+                        console.log(response.data[0])
+                        this.products.splice(n, 1,
+                            {
+                                sub_category: response.data[0].sub_category,
+                                article: response.data[0].article,
+                                price: response.data[0].price,
+                                product_category: response.data[0].publication_category,
+                                images: response.data[0].images.split(', '),
+                            })
+
+
+                        // this.products[n]
+                    }
+                })
         }
     }
 })

@@ -1,7 +1,7 @@
 <template>
   <NavbarComponent :labels="labels" :goToUrls="goToUrls" :channelName="channelName"/>
   <div v-if="stylistPanel.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
-    <StylistCardComponent :stylistPanel="stylistPanel" :channelName="channelName" @change-image-index="increaseCount" />
+    <StylistCardComponent :stylistPanel="stylistPanel" :channelName="channelName" @change-image-index="changeImageIndex" @change-image="changeImage"/>
     <div>
         <h3>Оставляем образ?</h3>
         <Button label="Да" style="margin-right: 1rem; min-width: 50px;" @click="saveStyledCard()"/>
@@ -45,7 +45,7 @@
       deleteStyledCard() {
           this.stylistPanel.deleteStyledCard()
       },
-      increaseCount(n){
+      changeImageIndex(n){
           console.log(n)
 
           if (this.stylistPanel.imagesIndex[n] < this.stylistPanel.products[n].images.length){
@@ -54,9 +54,11 @@
           else {
               this.stylistPanel.imagesIndex[n] = 0
           }
-
-
       },
+      changeImage(n){
+          console.log(n)
+          this.stylistPanel.changeImage(n)
+      }
   },
   created() {
       this.stylistPanel.get_stylist_panel_information()

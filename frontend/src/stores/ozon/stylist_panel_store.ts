@@ -15,6 +15,7 @@ interface Product {
     article: string;
     price: number,
     images: string[],
+    product_category: string;
     imagesIndex: number[]
 }
 
@@ -49,6 +50,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
                                 sub_category: product.sub_category,
                                 article: product.article,
                                 price: product.price,
+                                product_category: product.publication_category,
                                 images: product.images.split(', '),
                             })
 
@@ -90,6 +92,26 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
         },
         deleteStyledCard(){
             this.get_stylist_panel_information()
+        },
+        changeImage(n:number) {
+            axios.get(base_url + '/ozon/change_stylist_panel_image/' + this.products[n].product_category)
+                .then((response) => {
+                    if (response.status == 200) {
+                        console.log('rrrrrrrrrrrrr')
+                        console.log(response.data[0])
+                        this.products.splice(n, 1,
+                            {
+                                sub_category: response.data[0].sub_category,
+                                article: response.data[0].article,
+                                price: response.data[0].price,
+                                product_category: response.data[0].publication_category,
+                                images: response.data[0].images.split(', '),
+                            })
+
+
+                        // this.products[n]
+                    }
+                })
         }
     }
 })

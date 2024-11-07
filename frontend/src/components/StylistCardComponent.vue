@@ -4,8 +4,12 @@
 
       <div style="width: 49.5%;  display: flex; flex-direction: column; justify-content: space-between">
           <div class="photo-block">
-              <div class="img1" style="justify-content: end; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 0)"
-                   :style="{'background': 'url(' + this.stylistPanel.products[0].images[this.stylistPanel.imagesIndex[0]] + ') 100% / cover no-repeat'}">
+              <div style="align-items: start; height: 100%; width: 100%;position: relative; display: flex">
+                  <div class="img1"  style="align-items: start; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 0)"
+                       :style="{'background': 'url(' + this.stylistPanel.products[0].images[this.stylistPanel.imagesIndex[0]] + ') 100% / cover no-repeat'}">
+
+                  </div>
+                  <Button style="position: absolute" icon="pi pi-refresh" severity="secondary"  @click="$emit('changeImage', 0)"/>
               </div>
               <div style="background: white; text-align: center;padding: 0 2%;width: 100%">
                   <span style="">{{ this.stylistPanel.products[0].sub_category }}</span>
@@ -16,8 +20,12 @@
               </div>
           </div>
           <div class="photo-block">
-              <div class="img2" style="justify-content: end; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 1)"
-                   :style="{'background': 'url(' + this.stylistPanel.products[1].images[this.stylistPanel.imagesIndex[1]] + ') 100% / cover no-repeat'}">
+              <div style="align-items: end; height: 100%; width: 100%;position: relative; display: flex">
+                  <div class="img2"  style="align-items: start; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 1)"
+                       :style="{'background': 'url(' + this.stylistPanel.products[1].images[this.stylistPanel.imagesIndex[1]] + ') 100% / cover no-repeat'}">
+
+                  </div>
+                  <Button style="position: absolute" icon="pi pi-refresh" severity="secondary"  @click="$emit('changeImage', 1)"/>
               </div>
               <div style="background: white; text-align: center;padding: 0 2%;width: 100%">
                   <span style="">{{ this.stylistPanel.products[1].sub_category }}</span>
@@ -31,8 +39,12 @@
       </div>
       <div style="width: 49.5%;  display: flex; flex-direction: column; justify-content: space-between">
           <div class="photo-block">
-              <div class="img2" style="justify-content: end; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 2)"
-                   :style="{'background': 'url(' + this.stylistPanel.products[2].images[this.stylistPanel.imagesIndex[2]] + ') 100% / cover no-repeat'}">
+              <div style="justify-content: end; height: 100%; width: 100%;position: relative; display: flex">
+                  <div class="img3"  style=" height: 100%; width: 100%;" @click="$emit('changeImageIndex', 2)"
+                       :style="{'background': 'url(' + this.stylistPanel.products[2].images[this.stylistPanel.imagesIndex[2]] + ') 100% / cover no-repeat'}">
+
+                  </div>
+                  <Button style="position: absolute" icon="pi pi-refresh" severity="secondary"  @click="$emit('changeImage', 2)"/>
               </div>
               <div style="background: white; text-align: center;padding: 0 2%;width: 100%">
                   <span style="">{{ this.stylistPanel.products[2].sub_category }}</span>
@@ -43,8 +55,12 @@
               </div>
           </div>
           <div class="photo-block">
-              <div class="img3" style="justify-content: end; height: 100%; width: 100%;" @click="$emit('changeImageIndex', 3)"
-                   :style="{'background': 'url(' + this.stylistPanel.products[3].images[this.stylistPanel.imagesIndex[3]] + ') 100% / cover no-repeat'}">
+              <div style="align-items: end;justify-content: end;  height: 100%; width: 100%;position: relative; display: flex">
+                  <div class="img4"  style="height: 100%; width: 100%;" @click="$emit('changeImageIndex', 3)"
+                       :style="{'background': 'url(' + this.stylistPanel.products[3].images[this.stylistPanel.imagesIndex[3]] + ') 100% / cover no-repeat'}">
+
+                  </div>
+                  <Button style="position: absolute" icon="pi pi-refresh" severity="secondary"  @click="$emit('changeImage', 3)"/>
               </div>
               <div style="background: white; text-align: center;padding: 0 2%;width: 100%">
                   <span style="">{{ this.stylistPanel.products[3].sub_category }}</span>
@@ -65,9 +81,13 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import Button from 'primevue/button';
+import InputText from "primevue/inputtext";
+import Dialog from "primevue/dialog";
 
 export default defineComponent({
   name: "StylistCardComponent",
+    components: {Button},
   props: {
       stylistPanel: {
           type: Object,
