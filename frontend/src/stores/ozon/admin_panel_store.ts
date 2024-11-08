@@ -2,27 +2,30 @@ import { defineStore } from 'pinia'
 import { useProductStore } from './product_store'
 import { useVerificationStore } from "./verification_store";
 import axios from 'axios'
-import { createPinia, setActivePinia } from 'pinia';
-setActivePinia(createPinia());
+// import { createPinia, setActivePinia } from 'pinia';
+// setActivePinia(createPinia());
 
 const base_url = import.meta.env.VITE_BASE_URL
-const productStore = useProductStore()
-const verificationStore = useVerificationStore()
+// const productStore = useProductStore()
+// const verificationStore = useVerificationStore()
 
 export const useAdminPanelStore = defineStore('adminPanel_ozon', {
     state: () => ({
         timesheet: [],
         countOfVerifiedProducts: [],
-        countOfNotVerifiedProducts: []
+        countOfNotVerifiedProducts: [],
+
+        productStore: useProductStore(),
+        verificationStore: useVerificationStore()
     }),
     actions: {
         storeCategory(): void {
             axios.post(base_url + '/ozon/store_category', {
-                category: productStore.category
+                category: this.productStore.category
             })
                 .then((response) => {
                     if (response.status == 200){
-                        verificationStore.get_verification_information()
+                        this.verificationStore.get_verification_information()
                     }
                 })
         },
@@ -30,7 +33,7 @@ export const useAdminPanelStore = defineStore('adminPanel_ozon', {
             axios.post(base_url + '/ozon/return_all_categories')
                 .then((response) => {
                     if (response.status == 200){
-                        verificationStore.get_verification_information()
+                        this.verificationStore.get_verification_information()
                     }
                 })
         },
