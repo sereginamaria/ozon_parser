@@ -36,6 +36,34 @@ def create_triple_card(product: Product, front: bool, card_type: str) -> bytes:
     logger.info('End create_triple_card')
     return screenshot_html(html, css, card_type)
 
+def create_duo_card(products: [], front: bool, card_type: str) -> bytes:
+    def get_html(product_name, product_article, product_price, palette_colors):
+        return render_template('triple_card.html', name=product_name, article=product_article,
+                               price=product_price,
+                               color1=palette_colors[0],
+                               color2=palette_colors[2])
+    def get_css(images_urls, palette_colors):
+        if front:
+            return render_template('triple_card.css', url_img1=images_urls[1],
+                               url_img2=images_urls[2],
+                               url_img3=images_urls[3],
+                               color=palette_colors[2])
+        else:
+            return render_template('triple_card.css', url_img1=images_urls[0],
+                               url_img2=images_urls[1],
+                               url_img3=images_urls[2],
+                               color=palette_colors[2])
+
+    logger.info('Start create_triple_card')
+    print(products)
+
+    images_urls = product.images.split(',')
+    palette = get_palette(images_urls)
+
+    html = get_html(product.name, product.article, product.price, palette)
+    css = get_css(images_urls, palette)
+    logger.info('End create_triple_card')
+    return screenshot_html(html, css, card_type)
 
 def create_title_card(product: Product, card_type: str) -> bytes:
     def get_html(product_category, palette_colors):

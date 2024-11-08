@@ -10,31 +10,34 @@
         <div style="width: 100%; display: flex; flex-direction: column; justify-content: space-between;
         position: relative;
         ">
-            <div style="height: 14%; font-size: 30px;  background-color: white;
-    align-items: center; padding: 0 15%;
-    justify-content: center; display: flex">
-<!--                background-color: rgb{{ color1 }}-->
-                <p style="font-size: 80px; color: rgb{{ color2 }}; ;
-                font-weight: bold; font-family: 'Roboto-Regular'; padding: 1% 2%;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-    margin: 0; text-align: center">{{ category }}</p>
-            </div>
 
-            <div style="padding: 0 15%; height: 100%">
-                <div class="img">
+
+            <div style="height: 84.45%">
+                <div class="img" style="background-position: center;
+    height: 100%;
+    width: 100%;">
 
                 </div>
             </div>
 
 <!--            background-color: rgb{{ color1 }}-->
-            <div class="inf-text" style="text-align: center; background-color: white; padding: 0 15%">
+            <div class="inf-text" style="text-align: center; background-color: white;  display: flex; flex-direction: column">
+                            <div style=" font-size: 30px;  background-color: white; width: 100% ;
+    align-items: center;
+    justify-content: center; display: flex">
+<!--                background-color: rgb{{ color1 }}-->
+                <p style="font-size: 70px; color: rgb{{ color2 }};
+                font-weight: bold; font-family: 'Roboto-Regular';
+    text-transform: uppercase;
+
+    margin: 0; text-align: center">{{ category }}</p>
+            </div>
                 <div style="margin-right: 2%">
-                     <p> ПОДБОРКА</p>
+                     <p style="text-transform: uppercase;"> ПОДБОРКА {{card_type}}</p>
                 </div>
-                <div>
-                     <p style="text-transform: uppercase;"> {{card_type}} </p>
-                </div>
+<!--                <div>-->
+<!--                     <p style="text-transform: uppercase;"> {{card_type}} </p>-->
+<!--                </div>-->
             </div>
 <!--                        <img src="./logo.png" alt="" style="opacity: 0.1;-->
 <!--    /*z-index: -1;*/-->

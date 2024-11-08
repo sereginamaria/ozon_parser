@@ -83,10 +83,12 @@ def send_post():
         if is_images_good[0]:
             print('1111')
             unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
+
             cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
-            cards_list.append(card_creator.create_triple_card(schema.Product(*products_list[0]), True, 'wb'))
-            for product in products_list[1:]:
-                cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
+
+            cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[0]), schema.Product(*products_list[1])], True, 'wb'))
+            # for product in products_list[2:]:
+            #     cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
 
             products_links = [schema.Product(*product).url for product in products_list]
 
