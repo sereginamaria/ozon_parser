@@ -102,7 +102,7 @@ def get_products_for_post(json):
         "product_brand_name, product_brand_link, product_rating, product_categories, product_sizes, product_color, "
         "product_article, product_all_articles, product_url, publication_category, description, sub_category "
         "from public.ozon_products where (verification = true and is_published = false and "
-        "publication_category = '%s') order by product_id limit 6" % (json['category']))
+        "publication_category = '%s') order by product_id limit 12" % (json['category']))
 
     connection.commit()
     return cursor.fetchall()
@@ -170,6 +170,14 @@ def save_styled_card(products_list):
     articles = [product['article'] for product in products_list]
     # print(articles)
 
+    cursor.execute(
+        "update public.ozon_products set styled_set = styled_set || ARRAY[ARRAY %s ] "
+        "where product_article = '%s'" % (
+            articles, products_list[0]['article']
+        )
+    )
+    connection.commit()
+
     for product in products_list:
         images = ''
         i = 1
@@ -181,9 +189,9 @@ def save_styled_card(products_list):
             i += 1
 
         cursor.execute(
-            "update public.ozon_products set product_images = '%s', styled_set = styled_set || ARRAY[ARRAY %s ] "
+            "update public.ozon_products set product_images = '%s' "
             "where product_article = '%s'" % (
-                images, articles, product['article']
+                images, product['article']
             )
         )
         connection.commit()

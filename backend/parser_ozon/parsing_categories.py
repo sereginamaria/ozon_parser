@@ -326,6 +326,12 @@ def parse_top():
     get_products.parse_page('Топ',
                             'https://www.ozon.ru/category/futbolki-i-topy-zhenskie-7505/?color=100955526&opened=color%2Ctype%2Cstyleapparel&type=38835%2C38833%2C178570%2C71937')
 
+    for i in range(8):
+        # КОРСЕТ
+        get_products.parse_page('Корсет',
+                               'https://www.ozon.ru/category/korsety-zhenskie-36462/?opened=styleapparel&type=311046')
+
+
 def parse_skirt():
     # ЛЕТО (НАДО МЕНЯТЬ)
     # # ЮБКА
@@ -405,11 +411,11 @@ def parse_suit():
     get_products.parse_page('Костюм',
                             'https://www.ozon.ru/category/zhenskaya-odezhda-7501/?category_was_predicted=true&deny_category_prediction=true&from_global=true&text=костюм+женский+твидовый')
 
-def parse_corset():
-    for i in range(8):
-        # КОРСЕТ
-        get_products.parse_page('Корсет',
-                               'https://www.ozon.ru/category/korsety-zhenskie-36462/?opened=styleapparel&type=311046')
+# def parse_corset():
+#     for i in range(8):
+#         # КОРСЕТ
+#         get_products.parse_page('Корсет',
+#                                'https://www.ozon.ru/category/korsety-zhenskie-36462/?opened=styleapparel&type=311046')
 
 def parse_accessories():
     # АКСЕССУАРЫ
@@ -695,7 +701,6 @@ if __name__ == "__main__":
     # parse_top()
     # parse_skirt()
     # parse_suit()
-    parse_corset()
     # parse_accessories()
     # parse_blouse()
     parse_kofta()

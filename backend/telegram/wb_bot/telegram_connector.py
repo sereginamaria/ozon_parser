@@ -23,7 +23,7 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
         text += stiker
     text += 'ㅤ'
 
-    markup = types.InlineKeyboardMarkup(row_width=3)
+    markup = types.InlineKeyboardMarkup(row_width=6)
     buttons = []
     i = 0
     for product_link in product_links:
@@ -33,8 +33,8 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
     markup.add(*buttons)
 
     try:
-        bot.send_media_group(config.CHAT_ID, media=media_group, timeout=120)
-        bot.send_message(config.CHAT_ID, text, reply_markup=markup)
+        bot.send_media_group(config.CHANNEL_ID, media=media_group, timeout=120)
+        bot.send_message(config.CHANNEL_ID, text, reply_markup=markup)
         logger.info('End send_post')
         return True
     except apihelper.ApiTelegramException as e:

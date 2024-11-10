@@ -23,7 +23,7 @@ def send_post(cards_list, json, product_links, unique_sub_categories):
         text += stiker
     text += 'ㅤ'
 
-    markup = types.InlineKeyboardMarkup(row_width=3)
+    markup = types.InlineKeyboardMarkup(row_width=6)
     buttons = []
     i = 0
     for product_link in product_links:

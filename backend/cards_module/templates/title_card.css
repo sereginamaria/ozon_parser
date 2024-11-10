@@ -30,7 +30,7 @@
 .inf-text {
     display: flex;
     text-align: center;
-    height: 15.75%;
+    height: 15.5%;
     align-items: center;
     justify-content: center;
     /*box-sizing: border-box;*/
@@ -50,7 +50,7 @@
 .inf-text div p{
     font-size: 65px;
     font-weight: bold;
-        color: rgb{{ color }};
+    color: rgb{{ color }};
     font-family: 'Roboto-Regular';
 
     letter-spacing: 5px;
@@ -60,7 +60,7 @@
 
 
 .img {
-    background: url("{{ url_img1 }}") 100% / cover no-repeat;
+    background: url("{{ url_img }}") 100% / cover no-repeat;
     background-position: center;
     height: 100%;
 }

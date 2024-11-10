@@ -336,6 +336,17 @@ def parse_top():
     get_products.parse_page('Топ',
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/futbolki-i-topy?sort=popular&page=1&xsubject=185&fcolor=16777215%3B0&f23796=31136%3B31137%3B31138%3B31140%3B31141%3B31142%3B67470')
 
+    # КОРСЕТ
+    # НЕ черный
+    get_products.parse_page('Корсет',
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260')
+
+    # Черный
+    get_products.parse_page('Корсет',
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=0')
+
+
+
 def parse_skirt():
     # ЛЕТО
     # # ЮБКА
@@ -411,15 +422,15 @@ def parse_suit():
     get_products.parse_page('Костюм',
                             'https://www.wildberries.ru/catalog/0/search.aspx?search=%D0%96%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9%20%D0%B1%D1%80%D1%8E%D0%BA%D0%B8%20%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC%20%D1%82%D0%B2%D0%B8%D0%B4%D0%BE%D0%B2%D1%8B%D0%B9')
 
-def parse_corset():
-        # КОРСЕТ
-        # НЕ черный
-        get_products.parse_page('Корсет',
-                               'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260')
-
-        # Черный
-        get_products.parse_page('Корсет',
-                               'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=0')
+# def parse_corset():
+#         # КОРСЕТ
+#         # НЕ черный
+#         get_products.parse_page('Корсет',
+#                                'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=15631086%3B255%3B8421504%3B16761035%3B16753920%3B16711680%3B10824234%3B32768%3B16776960%3B11393254%3B16777215%3B16119260')
+#
+#         # Черный
+#         get_products.parse_page('Корсет',
+#                                'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=%D0%9A%D0%BE%D1%80%D1%81%D0%B5%D1%82+%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&xsubject=74&fcolor=0')
 
 def parse_accessories():
     # АКСЕССУАРЫ
@@ -648,7 +659,6 @@ if __name__ == "__main__":
     # parse_top()
     # parse_skirt()
     # parse_suit()
-    # parse_corset()
     # parse_accessories()
     # parse_blouse()
     # parse_kofta()

@@ -77,7 +77,7 @@ def send_post():
     cards_list = []
     logger.info(products_list)
 
-    if len(products_list) == 6:
+    if len(products_list) == 12:
         is_images_good = check_images(products_list)
         print(is_images_good)
         if is_images_good[0]:
@@ -87,8 +87,9 @@ def send_post():
             cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
 
             cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[0]), schema.Product(*products_list[1])], True, 'wb'))
-            # for product in products_list[2:]:
-            #     cards_list.append(card_creator.create_triple_card(schema.Product(*product), False, 'wb'))
+            for i in range(2, len(products_list), 2):
+                print(i)
+                cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[i]), schema.Product(*products_list[i+1])], False, 'wb'))
 
             products_links = [schema.Product(*product).url for product in products_list]
 
@@ -125,15 +126,15 @@ def get_timesheet():
     def are_there_products_in_db_wb(category, time):
         for count_of_product_list in count_of_products_list:
             if category in count_of_product_list:
-                if count_of_product_list[1] >= 6 and count_of_product_list[1] != 0:
-                    count_of_product_list[1] = count_of_product_list[1] - 6
+                if count_of_product_list[1] >= 12 and count_of_product_list[1] != 0:
+                    count_of_product_list[1] = count_of_product_list[1] - 12
                     return '\n' + time + ' ' + category + '  ✅️'
                 else:
-                    text = ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще ' + str(6 - count_of_product_list[1]))
+                    text = ('\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще ' + str(12 - count_of_product_list[1]))
                     count_of_product_list[1] = 0
                     return text
 
-        return '\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще 6'
+        return '\n' + time + ' ' + category + ' ❌ ' + 'Нужно еще 12'
 
     date_of_publication = date.today()
     date_of_publication += datetime2.timedelta(days=1)
@@ -161,49 +162,40 @@ def count_of_verified_products():
     for count_of_product in count_of_products:
         count_of_products_list.append(list(count_of_product))
 
-
     for count_of_product_list in count_of_products_list:
         if count_of_product_list[0] == 'Верхняя Одежда' or count_of_product_list[0] == 'Кофта':
-            if count_of_product_list[1] >= 60:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
-            else:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
-                                           ' ❌ ' + 'Нужно еще ' + str(60 - count_of_product_list[1]))
-
-        if count_of_product_list[0] == 'Платье' or count_of_product_list[0] == 'Юбка' \
-                or count_of_product_list[0] == 'Футболка' or count_of_product_list[0] == 'Костюм'\
-                or count_of_product_list[0] == 'Джинсы' or count_of_product_list[0] == 'Аксессуары':
-            if count_of_product_list[1] >= 36:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
-            else:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
-                                           ' ❌ ' + 'Нужно еще ' + str(36 - count_of_product_list[1]))
-
-        if count_of_product_list[0] == 'Брюки' or count_of_product_list[0] == 'Пиджак' \
-                or count_of_product_list[0] == 'Обувь' or count_of_product_list[0] == 'Сумка'\
-                or count_of_product_list[0] == 'Украшения':
-            if count_of_product_list[1] >= 48:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
-            else:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
-                                           ' ❌ ' + 'Нужно еще ' + str(48 - count_of_product_list[1]))
-
-        if count_of_product_list[0] == 'Топ' or count_of_product_list[0] == 'Рубашка' \
-                or count_of_product_list[0] == 'Блузка':
-            if count_of_product_list[1] >= 24:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
-            else:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
-                                           ' ❌ ' + 'Нужно еще ' + str(24 - count_of_product_list[1]))
-
-        if count_of_product_list[0] == 'Домашняя Одежда' or count_of_product_list[0] == 'Шорты' \
-                or count_of_product_list[0] == 'Корсет':
-            if count_of_product_list[1] >= 12:
+            if count_of_product_list[1] >= 72:
                 list_with_count_of_verified_products.append(
                     '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
             else:
-                list_with_count_of_verified_products.append('\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
-                                           ' ❌ ' + 'Нужно еще ' + str(12 - count_of_product_list[1]))
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                    ' ❌ ' + 'Нужно еще ' + str(72 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Платье' or count_of_product_list[0] == 'Костюм' \
+                or count_of_product_list[0] == 'Обувь' or count_of_product_list[0] == 'Сумка' \
+                or count_of_product_list[0] == 'Пиджак' or count_of_product_list[0] == 'Аксессуары':
+            if count_of_product_list[1] >= 48:
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                    ' ❌ ' + 'Нужно еще ' + str(48 - count_of_product_list[1]))
+
+        if count_of_product_list[0] == 'Юбка' or count_of_product_list[0] == 'Топ' \
+                or count_of_product_list[0] == 'Футболка' or count_of_product_list[0] == 'Рубашка' \
+                or count_of_product_list[0] == 'Блузка' or count_of_product_list[0] == 'Брюки' \
+                or count_of_product_list[0] == 'Джинсы' or count_of_product_list[0] == 'Домашняя Одежда' \
+                or count_of_product_list[0] == 'Украшения':
+            if count_of_product_list[1] >= 24:
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) + '  ✅️')
+            else:
+                list_with_count_of_verified_products.append(
+                    '\n' + count_of_product_list[0] + ' ' + str(count_of_product_list[1]) +
+                    ' ❌ ' + 'Нужно еще ' + str(24 - count_of_product_list[1]))
+
     return list_with_count_of_verified_products
 
 @wb.route('/wb/count_of_not_verified_products', methods=['GET'])
