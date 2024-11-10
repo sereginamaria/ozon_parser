@@ -1,24 +1,66 @@
 <template>
-  <div class="container" :class="cardClass">
-    <div class="header">
-        <p>{{ product.category }}</p>
-    </div>
+    <div class="container" :class="cardClass" style="padding: 0">
+        <div style="width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+        position: relative;
+        ">
 
-    <div class="body">
-        <div class="img" :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat'}">
+
+            <div style="height: 84.5%">
+                <div class="img" style="background-position: bottom; height: 100%; width: 100%;"
+                     :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat'}">
+
+                </div>
+            </div>
+
+            <!--            background-color: rgb{{ color1 }}-->
+            <div class="inf-text" style="text-align: center; background-color: white;  display: flex; flex-direction: column">
+                <div style=" background-color: white; width: 100% ;
+    align-items: center;
+    justify-content: center; display: flex">
+                    <!--                background-color: rgb{{ color1 }}-->
+                    <p style="
+                font-weight: bold; font-family: 'Roboto-Regular';
+    text-transform: uppercase;
+
+    margin: 0; text-align: center">{{ product.category }}</p>
+                </div>
+                <div style="margin-right: 2%">
+                    <p style="text-transform: uppercase;"> ПОДБОРКА OZON</p>
+                </div>
+                <!--                <div>-->
+                <!--                     <p style="text-transform: uppercase;"> {{card_type}} </p>-->
+                <!--                </div>-->
+            </div>
+            <!--                        <img src="./logo.png" alt="" style="opacity: 0.1;-->
+            <!--    /*z-index: -1;*/-->
+            <!--    /* height: 100%; */-->
+            <!--    width: 15%;-->
+            <!--    position: absolute;-->
+            <!--    bottom: 0;-->
+            <!--    right: 0;">-->
         </div>
     </div>
 
-    <div class="footer">
-        <div style="margin-right: 2%">
-             <p>ПОДБОРКА</p>
-        </div>
-        <div>
-             <p>OZON </p>
-        </div>
-    </div>
+<!--  <div class="container" :class="cardClass">-->
+<!--    <div class="header">-->
+<!--        <p>{{ product.category }}</p>-->
+<!--    </div>-->
 
-    </div>
+<!--    <div class="body">-->
+<!--        <div class="img" :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat'}">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="footer">-->
+<!--        <div style="margin-right: 2%">-->
+<!--             <p>ПОДБОРКА</p>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--             <p>OZON</p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    </div>-->
 </template>
 
 <script lang="ts">
@@ -155,5 +197,9 @@ export default defineComponent({
 
 .container_025 .header p{
   font-size: 20px;
+}
+
+.img{
+    background-position: bottom !important;
 }
 </style>

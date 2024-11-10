@@ -73,12 +73,34 @@ export default defineComponent ({
       height: 0
     }
   },
-  mounted() {
-    const toolBarElement = document.getElementById('toolbar')
-
-    if (toolBarElement !== null) {
-      this.height = document.getElementById('toolbar')!.offsetHeight
+  methods: {
+    leftScroll(e){
+        if (e.code === 'ArrowLeft'){
+            if (this.verification.activeIndex != 0){
+                this.verification.activeIndex -= 1
+            }
+            else{
+                this.verification.activeIndex = this.product.images.length - 1
+            }
+        }
+        if (e.code === 'ArrowRight'){
+            if (this.verification.activeIndex < (this.product.images.length - 1)){
+                this.verification.activeIndex += 1
+            }
+            else {
+                this.verification.activeIndex = 0
+            }
+        }
     }
+  },
+  mounted() {
+      const toolBarElement = document.getElementById('toolbar')
+
+      if (toolBarElement !== null) {
+        this.height = document.getElementById('toolbar')!.offsetHeight
+      }
+
+      document.addEventListener( "keydown", this.leftScroll );
   },
   updated() {
     this.$nextTick(function () {

@@ -1,26 +1,79 @@
 <template>
-  <div class="container" :class="cardClass">
-    <div class="column left-column">
-      <div class="img1" :style="{'background': 'url(' + product.images[ startImageIndex ] + ') 100% / cover no-repeat'}">
 
-      </div>
-      <div class="img2" :style="{'background': 'url(' + product.images[ startImageIndex+1] + ') 100% / cover no-repeat'}">
+    <div class="container" style="position: relative; padding: 0; flex-direction: column" :class="cardClass">
+        <div style="width: 100%; height: 100%; display: flex; justify-content: space-between">
+            <div style="width: 49.5%; display: flex; flex-direction: column; justify-content: space-between">
+                <div class="photo-block">
+                    <div class="img1" style="width: 100%;height:100%;"
+                         :style="{'background': 'url(' + product.images[ startImageIndex ] + ') 100%/ cover no-repeat'}">
+                    </div>
+                    <div class="inf-text" style="background: white; text-align: right;padding-right: 2%; width: 100%; padding-top: 2%;" >
+                        <span style="padding: 0 2%;">{{ product.subCategory }}</span>
+                        <div style="margin: 0; display: flex; justify-content: right">
 
-      </div>
+                            <p style="margin: 0">Арт.: <span>{{ product.article }}</span></p>
+
+                        </div>
+                        <span>{{ product.price }}</span>
+                        <!--                        <p style="margin: 0">Арт.: <span style="font-size: 40px">{{ article1 }}</span></p>-->
+                        <!--                        <p style="margin: 0"><span style="font-size: 40px">{{ price1 }}</span></p>-->
+                    </div>
+                </div>
+            </div>
+            <div style="width: 49.5%; display: flex; flex-direction: column; justify-content: space-between">
+                <div class="photo-block">
+                    <div class="img2" style="width: 100%;height:100%;background-position: center;"
+                         :style="{'background': 'url(' + product.images[ startImageIndex] + ') 100%/ cover no-repeat'}">
+                    </div>
+                    <div class="inf-text" style="background: white; text-align: left;padding-left: 2%; width: 100%; padding-top: 2%;">
+                        <span style="padding: 0 2%;">{{ product.subCategory }}</span>
+                        <div style="margin: 0; display: flex; justify-content: left">
+
+                            <p style="margin: 0">Арт.: <span >{{ product.article }}</span></p>
+
+                        </div>
+                        <span >{{ product.price }}</span>
+                        <!--                        <p style="margin: 0">Арт.: <span style="font-size: 40px">{{ article1 }}</span></p>-->
+                        <!--                        <p style="margin: 0"><span style="font-size: 40px">{{ price1 }}</span></p>-->
+                    </div>
+                </div>
+
+                <!--                <img src="./logo.png" alt="" style="opacity: 0.1;-->
+                <!--    /*z-index: -1;*/-->
+                <!--    /* height: 100%; */-->
+                <!--    width: 16%;-->
+                <!--    position: absolute;-->
+                <!--    bottom: 0;-->
+                <!--    right: 0;">-->
+            </div>
+        </div>
+        <p style="margin: 0;font-size: 12.5px;
+    text-align: center;">tg: @x_trend_plus</p>
     </div>
 
-    <div class="column right-column">
-      <div class="img3" :style="{'background': 'url(' + product.images[ startImageIndex+2] + ') 100% / cover no-repeat'}">
+<!--  <div class="container" :class="cardClass">-->
+<!--    <div class="column left-column">-->
+<!--      <div class="img1" :style="{'background': 'url(' + product.images[ startImageIndex ] + ') 100% / cover no-repeat'}">-->
 
-      </div>
-      <div class="inf-text">
-        <p style="padding: 2%">{{ product.name }}</p>
-        <p>Арт.: <span>{{ product.article }}</span></p>
-        <p>Цена: <span>{{ product.price }}</span></p>
-      </div>
-<!--      <img class="logo" src="./logo.png" alt="logo">-->
-    </div>
-  </div>
+<!--      </div>-->
+<!--      <div class="img2" :style="{'background': 'url(' + product.images[ startImageIndex+1] + ') 100% / cover no-repeat'}">-->
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="column right-column">-->
+<!--      <div class="img3" :style="{'background': 'url(' + product.images[ startImageIndex+2] + ') 100% / cover no-repeat'}">-->
+
+<!--      </div>-->
+<!--      <div class="inf-text">-->
+<!--        <p style="padding: 2%">{{ product.name }}</p>-->
+<!--        <p>Арт.: <span>{{ product.article }}</span></p>-->
+<!--        <p>Цена: <span>{{ product.price }}</span></p>-->
+<!--      </div>-->
+<!--&lt;!&ndash;      <img class="logo" src="./logo.png" alt="logo">&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+
 </template>
 
 <script lang="ts">
@@ -98,6 +151,7 @@ export default defineComponent({
 .img1, .img2 {
   width: 95%;
   height: 49%;
+    background-position: center !important;
 }
 
 .img3 {
@@ -105,7 +159,7 @@ export default defineComponent({
 }
 
 .inf-text {
-    display: flex;
+    /*display: flex;*/
     text-align: center;
     height: 30%;
     flex-direction: column;
@@ -122,7 +176,7 @@ export default defineComponent({
 }
 
 .inf-text span{
-    font-family: 'Roboto-Bold';
+    /*font-family: 'Roboto-Bold';*/
     margin: 0;
     padding: 0;
 }
@@ -145,5 +199,17 @@ export default defineComponent({
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.photo-block{
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    /* align-items: end; */
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /*align-items: end;*/
+    /*height: 49.5%;*/
 }
 </style>
