@@ -16,14 +16,16 @@ interface Product {
     price: number,
     images: string[],
     product_category: string;
-    imagesIndex: number[]
+    imagesIndex: number[],
+    count_of_styled_card: number
 }
 
 export const useStylistPanelStore = defineStore('stylistPanel_wb', {
     state: () => ({
         contentReady: false,
         products: [],
-        imagesIndex: [0, 0, 0, 0]
+        imagesIndex: [0, 0, 0, 0],
+        count_of_styled_card: 0
     }),
     actions: {
         get_stylist_panel_information() {
@@ -53,8 +55,9 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
                             })
 
                             console.log(this.products)
-                        })
 
+                        })
+                        this.getCountOfStyledCards()
                         this.contentReady = true
                     }
                 })
@@ -108,6 +111,14 @@ export const useStylistPanelStore = defineStore('stylistPanel_wb', {
 
 
                         // this.products[n]
+                    }
+                })
+        },
+        getCountOfStyledCards(): void{
+            axios.get(base_url + '/wb/get_count_of_styled_cards')
+                .then((response) => {
+                    if (response.status == 200){
+                        this.count_of_styled_card = response.data[0]
                     }
                 })
         }

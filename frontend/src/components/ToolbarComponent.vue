@@ -14,7 +14,7 @@
       <h3>Информация о товаре</h3>
       <p>Категория: {{ product.category }}</p>
       <p>Подкатегория: {{ product.subCategory }}</p>
-      <p>Название: {{product.name}}</p>
+      <p>Название: {{ product.name.slice(0,30) }}</p>
       <p v-if="product.name.length > 30" style="color: red">В названии более 30 символов! Рекомендовано изменить название!</p>
       <p>Проверефицированных товаров данной категории: {{ verification.countOfCategoryProducts }}</p>
       <p>ID: {{ product.id }}</p>
@@ -53,6 +53,15 @@
         <Button  label="Сохранить" @click="saveNewSubCategory()"/>
       </div>
     </Dialog>
+
+      <Dialog v-model:visible="visibleCheckSubCategory" modal :draggable="false" style="min-width: 30%">
+          <div>
+              <h3>Проверьте подкатегорию</h3>
+              <p>Текущая подкатегория: {{product.subCategory}}</p>
+              <InputText type="text" v-model="newSubCategory" style="min-width: 300px; margin: 0 1rem 1rem 0"/>
+              <Button  label="Сохранить" @click="saveNewSubCategory()"/>
+          </div>
+      </Dialog>
   </div>
 </template>
 
@@ -81,6 +90,7 @@ export default defineComponent({
       visibleChangeName: false,
       visibleChangeCategory: false,
       visibleChangeSubCategory: false,
+      visibleCheckSubCategory: false,
       newName: '',
       newCategory: '',
       newSubCategory: ''
@@ -97,13 +107,19 @@ export default defineComponent({
     saveNewSubCategory(): void {
       this.verification.saveNewSubCategory(this.newSubCategory)
       this.visibleChangeSubCategory = false
+      this.visibleCheckSubCategory = false
     },
     saveNewCategory(): void {
       this.verification.saveNewCategory(this.newCategory)
       this.visibleChangeCategory = false
     },
     saveProduct(): void {
-      this.verification.saveProduct()
+        if (this.verification.listOfSubCategories.indexOf(this.product.subCategory) === -1){
+            this.visibleCheckSubCategory = true
+        }
+        else{
+            this.verification.saveProduct()
+        }
     },
     deleteProduct(): void {
       this.verification.deleteProduct()
