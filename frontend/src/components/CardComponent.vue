@@ -23,7 +23,7 @@
             <div style="width: 49.5%; display: flex; flex-direction: column; justify-content: space-between">
                 <div class="photo-block">
                     <div class="img2" style="width: 100%;height:100%;background-position: center;"
-                         :style="{'background': 'url(' + product.images[ startImageIndex] + ') 100%/ cover no-repeat'}">
+                         :style="{'background': 'url(' + product.images[ startImageIndex + 1] + ') 100%/ cover no-repeat'}">
                     </div>
                     <div class="inf-text" style="background: white; text-align: left;padding-left: 2%; width: 100%; padding-top: 2%;">
                         <span style="padding: 0 2%;">{{ product.subCategory }}</span>

@@ -12,14 +12,14 @@
         </div>
         <div style="display: flex; flex-wrap: wrap">
           <TitleCardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0" :product="product"/>
-          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="1" :product="product"/>
           <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="0" :product="product"/>
+          <CardComponent @click="visible = true" :cardClass="'container_025'" :startImageIndex="2" :product="product"/>
         </div>
         <Dialog v-model:visible="visible" modal dismissableMask :draggable="false">
           <div style="display: flex; flex-wrap: wrap">
             <TitleCardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0" :product="product"/>
-            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="1" :product="product"/>
             <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="0" :product="product"/>
+            <CardComponent @click="visible = true" :cardClass="'container_05'" :startImageIndex="2" :product="product"/>
           </div>
         </Dialog>
       </div>
@@ -75,7 +75,7 @@ export default defineComponent ({
   },
   methods: {
     leftScroll(e){
-        if (e.code === 'ArrowLeft'){
+        if (e.code === 'ArrowLeft' || e.code === 'KeyA'){
             if (this.verification.activeIndex != 0){
                 this.verification.activeIndex -= 1
             }
@@ -83,7 +83,7 @@ export default defineComponent ({
                 this.verification.activeIndex = this.product.images.length - 1
             }
         }
-        if (e.code === 'ArrowRight'){
+        if (e.code === 'ArrowRight' || e.code === 'KeyD'){
             if (this.verification.activeIndex < (this.product.images.length - 1)){
                 this.verification.activeIndex += 1
             }

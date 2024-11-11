@@ -6,8 +6,9 @@
 
 
             <div style="height: 84.5%">
-                <div class="img" style="background-position: bottom; height: 100%; width: 100%;"
-                     :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat'}">
+                <div class="img" style=" height: 100%; width: 100%;"
+                     :style="{'background': 'url(' + product.images[startImageIndex] + ') 100% / cover no-repeat',
+                     'background-position': backgroundPosition}">
 
                 </div>
             </div>
@@ -78,7 +79,18 @@ export default defineComponent({
       type: Number,
       default: 0
     }
-  }
+  },
+    data() {
+        return {
+            backgroundPosition: 'center'
+        }
+    },
+    mounted() {
+        if (this.product.category == 'Обувь' || this.product.category == 'Брюки' ||
+        this.product.category == 'Джинсы') {
+            this.backgroundPosition = 'bottom'
+        }
+    }
 })
 </script>
 
@@ -175,7 +187,7 @@ export default defineComponent({
 }
 
 .img {
-    background-position: center;
+    /*background-position: center;*/
     height: 100%;
 }
 
@@ -199,7 +211,7 @@ export default defineComponent({
   font-size: 20px;
 }
 
-.img{
-    background-position: bottom !important;
-}
+/*.img{*/
+/*    background-position: bottom !important;*/
+/*}*/
 </style>
