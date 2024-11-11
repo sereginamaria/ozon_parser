@@ -240,3 +240,11 @@ def get_stylist_panel_image(product_category, current_date):
         )
     connection.commit()
     return cursor.fetchone()
+
+def count_of_styled_cards(current_date):
+    cursor.execute(
+        "select count(*) "
+        " from public.wb_products where (ARRAY_LENGTH(styled_set, 1) IS NOT NULL and publication_date > '%s')"
+        % (current_date))
+    connection.commit()
+    return cursor.fetchone()

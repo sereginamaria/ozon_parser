@@ -278,3 +278,7 @@ def change_stylist_panel_image(product_category):
     print(t)
     print(type(t))
     return list(t)
+
+@ozon.route('/ozon/count_of_styled_card', methods=['GET'])
+def count_of_styled_cards():
+    return db_ozon.count_of_styled_cards()

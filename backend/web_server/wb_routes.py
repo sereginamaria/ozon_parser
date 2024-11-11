@@ -245,6 +245,10 @@ def get_stylist_card_information():
     current_date = datetime.date.today() - timedelta(14)
     # print(current_date)
 
+    pr = db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)
+
+    print(pr)
+
     products = [schema.Product(*product)
                     for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
 
@@ -306,3 +310,10 @@ def change_stylist_panel_image(product_category):
     print(t)
     print(type(t))
     return list(t)
+
+@wb.route('/wb/get_count_of_styled_cards', methods=['GET'])
+def count_of_styled_cards():
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+
+    return list(db_wb.count_of_styled_cards(current_date))
