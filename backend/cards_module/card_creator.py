@@ -73,11 +73,11 @@ def create_duo_card(products: [], front: bool, card_type: str) -> bytes:
     return screenshot_html(html, css, card_type)
 
 def create_title_card(product: Product, card_type: str) -> bytes:
-    def get_html(product_category, palette_colors):
+    def get_html(product_category, palette_colors, bp):
         card_title = product_category
         return render_template('title_card.html', category=card_title,
                                color1=palette_colors[0],
-                               color2=palette_colors[2], card_type=card_type)
+                               color2=palette_colors[2], card_type=card_type, background_position=bp)
     def get_css(images_urls, palette_colors):
         return render_template('title_card.css',
                                url_img=images_urls[0], color=palette_colors[2])
@@ -86,7 +86,12 @@ def create_title_card(product: Product, card_type: str) -> bytes:
     images_urls = product.images.split(',')
     palette = get_palette(images_urls[0])
 
-    html = get_html(product.publication_category, palette)
+    background_position = 'center'
+    if (product.publication_category == 'Обувь' or product.publication_category == 'Брюки' or
+        product.publication_category == 'Джинсы'):
+        background_position = 'bottom'
+
+    html = get_html(product.publication_category, palette, background_position)
     css = get_css(images_urls, palette)
     logger.info('End create_title_card')
     return screenshot_html(html, css, card_type)
