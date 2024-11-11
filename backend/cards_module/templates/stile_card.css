@@ -81,7 +81,7 @@
 }
 .img2 {
     background: url("{{ url_img2 }}") 100% / cover no-repeat;
-    background-position: center;
+    background-position: bottom;
 }
 .img3 {
     background: url("{{ url_img3 }}") 100% / cover no-repeat;
@@ -91,7 +91,7 @@
 
 .img4 {
     background: url("{{ url_img4 }}") 100% / cover no-repeat;
-    background-position: center;
+    background-position: bottom;
     /*height: 70%;*/
 }
 
