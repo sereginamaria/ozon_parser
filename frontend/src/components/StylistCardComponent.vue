@@ -148,6 +148,9 @@ export default defineComponent({
   height: 49.5%;
 }
 
+.img2, .img4 {
+    background-position: bottom !important;
+}
 .photo-block{
     justify-content: space-between;
     /* align-items: flex-end; */
