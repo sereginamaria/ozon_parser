@@ -29,30 +29,6 @@ def autop():
         if in_time('8:00', current_time, '8:59'):
             send_stylist_card()
 
-        if in_time('12:00', current_time, '12:59'):
-            send_stylist_card()
-
-        if in_time('11:00', current_time, '11:59'):
-            send_stylist_card()
-
-        if in_time('13:00', current_time, '13:59'):
-            send_stylist_card()
-
-        if in_time('14:00', current_time, '14:59'):
-            send_stylist_card()
-
-        if in_time('15:00', current_time, '15:59'):
-            send_stylist_card()
-
-        if in_time('16:00', current_time, '16:59'):
-            send_stylist_card()
-
-        if in_time('17:00', current_time, '17:59'):
-            send_stylist_card()
-
-        if in_time('18:00', current_time, '18:59'):
-            send_stylist_card()
-
         if ((current_day_of_week == 'Monday' and in_time('10:00', current_time, '10:59')) or
                 (current_day_of_week == 'Wednesday' and in_time('10:00', current_time, '10:59')) or
                 (current_day_of_week == 'Friday' and in_time('10:00', current_time, '10:59'))):

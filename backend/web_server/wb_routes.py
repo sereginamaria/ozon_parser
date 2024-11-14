@@ -67,7 +67,7 @@ def send_post():
     def check_images(products):
         print('check_images')
         for product in products:
-            for image_url in itertools.islice(schema.Product(*product).images.split(','), 4):
+            for image_url in itertools.islice(schema.Product(*product).images.split(','), 1):
                 if recognize_text_server(image_url) == None:
                     return False, product
         return True, products
@@ -84,12 +84,15 @@ def send_post():
             print('1111')
             unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
 
-            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'wb'))
+            cards_list.append(card_creator.create_title_card(schema.Product(*products_list[10]), 'wb'))
 
-            cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[0]), schema.Product(*products_list[1])], True, 'wb'))
-            for i in range(2, len(products_list), 2):
+            for i in range(0, len(products_list)-2, 2):
                 print(i)
                 cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[i]), schema.Product(*products_list[i+1])], False, 'wb'))
+
+            cards_list.append(
+                card_creator.create_duo_card([schema.Product(*products_list[10]), schema.Product(*products_list[11])],
+                                             True, 'wb'))
 
             products_links = [schema.Product(*product).url for product in products_list]
 

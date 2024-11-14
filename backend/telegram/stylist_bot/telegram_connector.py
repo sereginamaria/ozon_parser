@@ -25,7 +25,10 @@ def send_post(card, products, type):
     markup.add(*buttons)
 
     try:
-        bot.send_photo(config.CHAT_ID, photo=card, reply_markup=markup, caption=caption, timeout=120)
+        if type == 'ozon':
+            bot.send_photo(config.CHANNEL_OZON_ID, photo=card, reply_markup=markup, caption=caption, timeout=120)
+        if type == 'wb':
+            bot.send_photo(config.CHANNEL_WB_ID, photo=card, reply_markup=markup, caption=caption, timeout=120)
         logger.info('End send_post')
         return True
     except apihelper.ApiTelegramException as e:

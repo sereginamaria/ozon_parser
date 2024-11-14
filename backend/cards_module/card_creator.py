@@ -52,12 +52,14 @@ def create_duo_card(products: [], front: bool, card_type: str) -> bytes:
 
     logger.info('Start create_triple_card')
     print(products)
-    if front:
-        images_urls = []
-        images_urls.append(products[0].images.split(',')[1])
-        images_urls.append(products[1].images.split(',')[0])
-    else:
-        images_urls = [product.images.split(',')[0] for product in products]
+    images_urls = [product.images.split(',')[0] for product in products]
+
+    # if front:
+    #     images_urls = []
+    #     images_urls.append(products[0].images.split(',')[1])
+    #     images_urls.append(products[1].images.split(',')[0])
+    # else:
+    #     images_urls = [product.images.split(',')[0] for product in products]
 
     products_names = [product.sub_category for product in products]
     products_articles = [product.article for product in products]

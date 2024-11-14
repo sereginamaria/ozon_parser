@@ -74,23 +74,27 @@ def send_post():
     # print(len(products_list))
     if len(products_list) == 12:
         unique_sub_categories = list(set([schema.Product(*product).sub_category for product in products_list]))
-        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[0]), 'ozon'))
 
-        cards_list.append(
-            card_creator.create_duo_card([schema.Product(*products_list[0]), schema.Product(*products_list[1])], True,
-                                         'ozon'))
-        for i in range(2, len(products_list), 2):
+        cards_list.append(card_creator.create_title_card(schema.Product(*products_list[10]), 'ozon'))
+
+        for i in range(0, len(products_list) - 2, 2):
             print(i)
             cards_list.append(
                 card_creator.create_duo_card([schema.Product(*products_list[i]), schema.Product(*products_list[i + 1])],
                                              False, 'ozon'))
 
+        cards_list.append(
+            card_creator.create_duo_card([schema.Product(*products_list[10]), schema.Product(*products_list[11])],
+                                         True, 'ozon'))
+        
+
         products_links = [schema.Product(*product).url for product in products_list]
 
         resp = telegram_connector.send_post(cards_list, request.json, products_links, unique_sub_categories)
+        current_date = datetime.date.today()
         if resp:
             for product in products_list:
-                db_ozon.publish_product(schema.Product(*product).id)
+                db_ozon.publish_product(schema.Product(*product).id, current_date)
     else:
         telegram_notifier.not_enough_products_in_db(request.json)
     return 'send_post'
@@ -279,6 +283,9 @@ def change_stylist_panel_image(product_category):
     print(type(t))
     return list(t)
 
-@ozon.route('/ozon/count_of_styled_card', methods=['GET'])
+@ozon.route('/ozon/get_count_of_styled_cards', methods=['GET'])
 def count_of_styled_cards():
-    return db_ozon.count_of_styled_cards()
+    from datetime import timedelta
+    current_date = datetime.date.today() - timedelta(14)
+
+    return list(db_ozon.count_of_styled_cards(current_date))

@@ -68,8 +68,8 @@ def save_product(json, current_date):
         i += 1
     cursor.execute(
         "update public.ozon_products set product_name = '%s', product_images = '%s', verification = '%s', "
-        "sub_category = '%s', publication_category = '%s', publication_date = '%s' where product_id = '%s'" % (
-            json['name'], images, True, json['sub_category'], json['category'], current_date, json['id']
+        "sub_category = '%s', publication_category = '%s' where product_id = '%s'" % (
+            json['name'], images, True, json['sub_category'], json['category'], json['id']
         )
     )
     connection.commit()
@@ -122,14 +122,13 @@ def count_of_not_verified_products():
     connection.commit()
     return cursor.fetchall()
 
-def publish_product(id):
+def publish_product(id, current_date):
     cursor.execute(
-        "update public.ozon_products set is_published = true where product_id = '%s'" % (
-            id
+        "update public.ozon_products set is_published = true, publication_date = '%s' where product_id = '%s'" % (
+            current_date, id
         )
     )
     connection.commit()
-
 
 def delete_product_from_db(json):
     cursor.execute(
@@ -242,7 +241,7 @@ def get_stylist_panel_image(product_category, current_date):
 def count_of_styled_cards(current_date):
     cursor.execute(
         "select count(*) "
-        " from public.ozon_products where (ARRAY_LENGTH(styled_set, 1) IS NOT NULL and publication_date > '%s')" 
+        " from public.ozon_products where (ARRAY_LENGTH(styled_set, 1) IS NOT NULL and publication_date > '%s')"
         % (current_date))
     connection.commit()
-    return cursor.fetchall()
+    return cursor.fetchone()
