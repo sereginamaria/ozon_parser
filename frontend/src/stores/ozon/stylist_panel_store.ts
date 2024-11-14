@@ -116,7 +116,7 @@ export const useStylistPanelStore = defineStore('stylistPanel_ozon', {
                 })
         },
         getCountOfStyledCards(): void{
-            axios.get(base_url + '/wb/get_count_of_styled_cards')
+            axios.get(base_url + '/ozon/get_count_of_styled_cards')
                 .then((response) => {
                     if (response.status == 200){
                         this.count_of_styled_card = response.data[0]

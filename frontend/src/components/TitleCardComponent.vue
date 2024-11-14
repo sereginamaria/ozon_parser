@@ -87,8 +87,11 @@ export default defineComponent({
     },
     mounted() {
         if (this.product.category == 'Обувь' || this.product.category == 'Брюки' ||
-        this.product.category == 'Джинсы') {
+            this.product.category == 'Джинсы') {
             this.backgroundPosition = 'bottom'
+        }
+        else {
+            this.backgroundPosition = 'center'
         }
     }
 })
