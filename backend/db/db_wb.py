@@ -172,15 +172,16 @@ def get_products_for_stile_card(product1, product2, product3, product4, current_
 
 def save_styled_card(products_list):
     articles = [product['article'] for product in products_list]
+    articles.insert(0, 'false')
     # print(articles)
 
-    cursor.execute(
-        "update public.wb_products set styled_set = styled_set || ARRAY[ARRAY %s ] "
-        "where product_article = '%s'" % (
-            articles, products_list[0]['article']
-        )
-    )
-    connection.commit()
+    # cursor.execute(
+    #     "update public.wb_products set styled_set = styled_set || ARRAY[ARRAY %s] "
+    #     "where product_article = '%s'" % (
+    #         articles, products_list[0]['article']
+    #     )
+    # )
+    # connection.commit()
 
     for product in products_list:
         images = ''
@@ -193,6 +194,14 @@ def save_styled_card(products_list):
             i += 1
 
         cursor.execute(
+            "update public.wb_products set styled_set = styled_set || ARRAY[ARRAY %s] "
+            "where product_article = '%s'" % (
+                articles, product['article']
+            )
+        )
+        connection.commit()
+
+        cursor.execute(
             "update public.wb_products set product_images = '%s' "
             "where product_article = '%s'" % (
                 images, product['article']
@@ -203,32 +212,31 @@ def save_styled_card(products_list):
 def get_styled_card(current_date):
     import random
 
-    cursor.execute(
-        "select styled_set "
-        "from public.wb_products where (is_published = true and publication_date > '%s' and ARRAY_LENGTH(styled_set, 1) IS NOT NULL) "
-        "ORDER BY RANDOM()"
-        % (current_date))
-
-    styled_set = random.choice(cursor.fetchone()[0])
-    # print('styled_set')
-    # print(styled_set)
-    # print(type(styled_set))
-
-    # print(random.choice(styled_set[0]))
-
     products_list = []
-    for product in styled_set:
+    for i in range(0, count_of_styled_cards(current_date)[0]):
         cursor.execute(
-            "select product_id, product_name, product_price_original, product_price, product_images, "
-            "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
-            "product_article, product_all_articles, product_url, publication_category, description, sub_category "
-            "from public.wb_products where (product_article = '%s') "
-            % (product)
-        )
+            "select styled_set "
+            "from public.wb_products where (is_published = true and publication_date > '%s' and ARRAY_LENGTH(styled_set, 1) IS NOT NULL) "
+            "ORDER BY RANDOM()"
+            % (current_date))
         connection.commit()
-        products_list.append(cursor.fetchone())
+        styled_set = random.choice(cursor.fetchone()[0])
 
-    # print(products_list)
+        if styled_set[0] == 'false':
+            for product in styled_set[1:]:
+                cursor.execute(
+                    "select product_id, product_name, product_price_original, product_price, product_images, "
+                    "product_brand_name, product_rating, product_categories, product_sizes, product_color, "
+                    "product_article, product_all_articles, product_url, publication_category, description, sub_category "
+                    "from public.wb_products where (product_article = '%s') "
+                    % (product)
+                )
+                connection.commit()
+                products_list.append(cursor.fetchone())
+            break
+        if styled_set[0] == 'true':
+            print('true')
+
     return products_list
 
 def get_stylist_panel_image(product_category, current_date):
@@ -250,3 +258,38 @@ def count_of_styled_cards(current_date):
         % (current_date))
     connection.commit()
     return cursor.fetchone()
+
+def publish_styled_card(products_list):
+    articles = [product.article for product in products_list]
+    articles.insert(0, 'true')
+    for product in products_list:
+
+        cursor.execute(
+                "select styled_set "
+                "from public.wb_products where product_article = '%s' "
+                % (product.article))
+
+        styled_set = cursor.fetchone()[0]
+        if len(styled_set) > 1:
+            articles[0] = 'false'
+            index = styled_set.index(articles)
+            articles[0] = 'true'
+
+            styled_set[index] = articles
+
+            cursor.execute(
+                "update public.wb_products set styled_set = ARRAY %s "
+                "where product_article = '%s'" % (
+                    styled_set, product.article
+                )
+            )
+            connection.commit()
+        else:
+
+            cursor.execute(
+                "update public.wb_products set styled_set = ARRAY[ARRAY %s]  "
+                "where product_article = '%s'" % (
+                    articles, product.article
+                )
+            )
+            connection.commit()

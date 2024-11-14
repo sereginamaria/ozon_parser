@@ -236,38 +236,28 @@ def get_stylist_card_information():
 
 @ozon.route('/ozon/save_styled_card', methods=['POST'])
 def save_styled_card():
-    # print(request.json)
-    # print(request.json['products'])
-    # print(type(request.json['products']))
-    # print(request.json['products'][0])
-
     db_ozon.save_styled_card(request.json['products'])
-
-    # current_date = datetime.date.today() - datetime.timedelta(14)
-    # products_list = db_ozon.get_styled_card(current_date)
-    #
-    # products = [schema.Product(*product)
-    #             for product in products_list]
-    #
-    # stile_card = card_creator.create_stiled_card(products, 'ozon')
-    #
-    # stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
-
     return 'save_styled_card'
+
 
 @ozon.route('/ozon/send_stylist_card', methods=['POST'])
 def send_stylist_card():
-    current_date = datetime.date.today() - timedelta(14)
+    current_date = datetime.date.today() - datetime.timedelta(14)
     products_list = db_ozon.get_styled_card(current_date)
 
-    products = [schema.Product(*product)
-                for product in products_list]
+    if products_list:
+        products = [schema.Product(*product)
+                    for product in products_list]
 
-    stile_card = card_creator.create_stiled_card(products, 'ozon')
+        stile_card = card_creator.create_stiled_card(products, 'ozon')
 
-    stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
+        resp = stylist_bot_telegram_connector.send_post(stile_card, products, 'ozon')
+        if resp:
+            db_ozon.publish_styled_card(products)
+
+    else:
+        logger.info('No products for style card')
     return 'send_stylist_card'
-
 
 @ozon.route('/ozon/change_stylist_panel_image/<string:product_category>', methods=['GET'])
 def change_stylist_panel_image(product_category):

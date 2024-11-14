@@ -248,9 +248,9 @@ def get_stylist_card_information():
     current_date = datetime.date.today() - timedelta(14)
     # print(current_date)
 
-    pr = db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)
-
-    print(pr)
+    # pr = db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)
+    #
+    # print(pr)
 
     products = [schema.Product(*product)
                     for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
@@ -261,29 +261,13 @@ def get_stylist_card_information():
     # stile_card = card_creator.create_stiled_card(products, 'wb')
 
     # stylist_bot_telegram_connector.send_post(stile_card)
-    print(products)
-    print((type(products)))
+    # print(products)
+    # print((type(products)))
     return products
 
 @wb.route('/wb/save_styled_card', methods=['POST'])
 def save_styled_card():
-    # print(request.json)
-    # print(request.json['products'])
-    # print(type(request.json['products']))
-    # print(request.json['products'][0])
-
     db_wb.save_styled_card(request.json['products'])
-
-    # current_date = datetime.date.today() - datetime.timedelta(14)
-    # products_list = db_wb.get_styled_card(current_date)
-    #
-    # products = [schema.Product(*product)
-    #             for product in products_list]
-    #
-    # stile_card = card_creator.create_stiled_card(products, 'wb')
-    #
-    # stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
-
     return 'save_styled_card'
 
 
@@ -292,12 +276,18 @@ def send_stylist_card():
     current_date = datetime.date.today() - datetime.timedelta(14)
     products_list = db_wb.get_styled_card(current_date)
 
-    products = [schema.Product(*product)
-                for product in products_list]
+    if products_list:
+        products = [schema.Product(*product)
+                    for product in products_list]
 
-    stile_card = card_creator.create_stiled_card(products, 'wb')
+        stile_card = card_creator.create_stiled_card(products, 'wb')
 
-    stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
+        resp = stylist_bot_telegram_connector.send_post(stile_card, products, 'wb')
+        if resp:
+            db_wb.publish_styled_card(products)
+
+    else:
+        logger.info('No products for style card')
     return 'send_stylist_card'
 
 @wb.route('/wb/change_stylist_panel_image/<string:product_category>', methods=['GET'])
