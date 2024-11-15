@@ -3,7 +3,7 @@
   <div v-if="stylistPanel.contentReady" class="verification-block-body" :style="'height: calc(100% - ' + height + 'px'">
     <StylistCardComponent :stylistPanel="stylistPanel" :channelName="channelName" @change-image-index="changeImageIndex" @change-image="changeImage"/>
     <div>
-        <p>Количество готовых карточек: {{ stylistPanel.count_of_styled_card}}</p>
+        <p>Количество готовых карточек: {{ Math.floor(stylistPanel.count_of_styled_card/4) }}</p>
         <h3>Оставляем образ?</h3>
         <Button label="Да" style="margin-right: 1rem; min-width: 50px;" @click="saveStyledCard()"/>
         <Button label="Нет" @click="deleteStyledCard()" style="min-width: 50px;"/>

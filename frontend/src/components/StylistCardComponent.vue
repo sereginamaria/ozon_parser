@@ -57,7 +57,8 @@
           <div class="photo-block">
               <div style="align-items: end;justify-content: end;  height: 100%; width: 100%;position: relative; display: flex">
                   <div class="img4"  style="height: 100%; width: 100%;" @click="$emit('changeImageIndex', 3)"
-                       :style="{'background': 'url(' + this.stylistPanel.products[3].images[this.stylistPanel.imagesIndex[3]] + ') 100% / cover no-repeat'}">
+                       :style="{'background': 'url(' + this.stylistPanel.products[3].images[this.stylistPanel.imagesIndex[3]] + ') 100% / cover no-repeat',
+                     'background-position': backgroundPosition}">
 
                   </div>
                   <Button style="position: absolute" icon="pi pi-refresh" severity="secondary"  @click="$emit('changeImage', 3)"/>
@@ -98,6 +99,27 @@ export default defineComponent({
           default: ''
       }
   },
+    data() {
+        return {
+            backgroundPosition: 'bottom'
+        }
+    },
+    updated() {
+        if (this.stylistPanel.products[3].product_category == 'Костюм' || this.stylistPanel.products[3].product_category == 'Платье') {
+            this.backgroundPosition = 'center'
+        }
+        else {
+            this.backgroundPosition = 'bottom'
+        }
+    },
+    mounted() {
+        if (this.stylistPanel.products[3].product_category == 'Костюм' || this.stylistPanel.products[3].product_category == 'Платье') {
+            this.backgroundPosition = 'center'
+        }
+        else {
+            this.backgroundPosition = 'bottom'
+        }
+    }
 })
 </script>
 
@@ -148,9 +170,10 @@ export default defineComponent({
   height: 49.5%;
 }
 
-.img2, .img4 {
+.img2{
     background-position: bottom !important;
 }
+
 .photo-block{
     justify-content: space-between;
     /* align-items: flex-end; */
