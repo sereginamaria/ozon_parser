@@ -204,18 +204,21 @@ def create_videos():
 def get_stylist_card_information():
     products_for_card1 = ['Верхняя Одежда', 'Сумка', 'Аксессуары']
     products_for_card2 = 'Обувь'
-    products_for_card3 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак']
-    products_for_card4 = ['Платье', 'Юбка', 'Брюки', 'Джинсы']
+    # products_for_card3 = ['Кофта', 'Топ', 'Корсет', 'Футболка', 'Рубашка', 'Блузка', 'Пиджак'
+    products_for_card3 = ['Кофта', 'Топ', 'Корсет', 'Рубашка', 'Блузка']
+    products_for_card4 = ['Платье', 'Юбка', 'Брюки', 'Джинсы', 'Костюм']
 
-    product1 = random.choice(products_for_card1)
+    product1 = 'Верхняя Одежда'
     product2 = 'Обувь'
     product3 = random.choice(products_for_card3)
     product4 = random.choice(products_for_card4)
 
-    if product4 == 'Платье' and product1 != 'Сумка':
-        product3 = 'Сумка'
-    if product4 == 'Платье' and product1 == 'Сумка':
+    if product4 == 'Платье':
+        product1 = 'Сумка'
         product3 = 'Украшения'
+
+    if product4 == 'Костюм':
+        product3 = 'Аксессуары'
     # print(product1, product2, product3, product4)
 
 

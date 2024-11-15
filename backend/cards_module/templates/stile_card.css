@@ -91,7 +91,7 @@
 
 .img4 {
     background: url("{{ url_img4 }}") 100% / cover no-repeat;
-    background-position: bottom;
+    background-position: {{ bp4 }};
     /*height: 70%;*/
 }
 

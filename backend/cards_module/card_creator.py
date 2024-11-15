@@ -109,11 +109,11 @@ def create_stiled_card(products, card_type: str) -> bytes:
                                price3=prices[2], price4=prices[3], type=card_type
                                )
 
-    def get_css(images):
+    def get_css(images, bp):
         return render_template('stile_card.css', url_img1=images[0],
                                url_img2=images[1],
                                url_img3=images[2],
-                               url_img4=images[3])
+                               url_img4=images[3], bp4=bp)
 
     logger.info('Start create_stile_card')
     images_urls = [product.images.split(',')[0] for product in products]
@@ -123,8 +123,12 @@ def create_stiled_card(products, card_type: str) -> bytes:
 
     print(images_urls)
 
+    background_position = 'bottom'
+    if products[3].sub_category == 'Костюм' or products[3].sub_category == 'Платье':
+        background_position = 'center'
     html = get_html(products_names, products_articles, products_prices)
-    css = get_css(images_urls)
+
+    css = get_css(images_urls, background_position)
     logger.info('End create_stile_card')
     return screenshot_html(html, css, card_type)
 

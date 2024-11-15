@@ -128,6 +128,7 @@ def try_parse_images(webGallery, parsed_widget_states):
                             if json.loads(parsed_widget_states[webGallery])['images'][-1]['src'] == v:
                                 product_images += v
                             else: product_images += v + ', '
+        logger.info(product_images)
         logger.info('End try_parse_images')
     except KeyError:
         logger.warning("Cannot get product images")
@@ -270,8 +271,9 @@ def parse_product(url, publication_category):
 
         logger.info('Parse images')
         product_images = try_parse_images(webGallery, parsed_widget_states)
-        product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
-                           if recognize_text(image_url) != None])
+        if product_images != '':
+            product_images = ', '.join([recognize_text(image_url) for image_url in product_images.split(',')
+                               if recognize_text(image_url) != None])
 
         if len(product_images.split(', ')) == 3:
             p = product_images.split(', ')
