@@ -3,7 +3,8 @@ import random
 
 import requests
 
-from parser_wb import get_products, schema
+from my_parsers.parser_wb import schema
+from my_parsers.parser_wb import get_products
 from web_server import logger
 from db import db_wb
 from flask import request, Blueprint
@@ -88,7 +89,7 @@ def send_post():
 
             for i in range(0, len(products_list)-2, 2):
                 print(i)
-                cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[i]), schema.Product(*products_list[i+1])], False, 'wb'))
+                cards_list.append(card_creator.create_duo_card([schema.Product(*products_list[i]), schema.Product(*products_list[i + 1])], False, 'wb'))
 
             cards_list.append(
                 card_creator.create_duo_card([schema.Product(*products_list[10]), schema.Product(*products_list[11])],
@@ -256,7 +257,7 @@ def get_stylist_card_information():
     # print(pr)
 
     products = [schema.Product(*product)
-                    for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
+                for product in db_wb.get_products_for_stile_card(product1, product2, product3, product4, current_date)]
 
     # for product in products:
         # print(product.name)

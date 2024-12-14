@@ -1,6 +1,7 @@
 from web_server import logger
 from db import db_ozon
-from parser_ozon import schema, parsing_categories
+from my_parsers.parser_ozon import schema
+from my_parsers.parser_ozon import parsing_categories
 from flask import request, Blueprint
 from cards_module import card_creator
 from datetime import date

@@ -4,11 +4,12 @@ import time
 
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
-from parser_ozon.schema import Product
+from my_parsers.parser_ozon.schema import Product
 from bs4 import BeautifulSoup
 import itertools
-from parser_ozon import logger, config
-from chrome_driver import driver
+from my_parsers.parser_ozon import logger
+from my_parsers.parser_ozon import config
+from chrome_driver_local import driver
 from db import db_ozon
 from text_recognizer.main import recognize_text
 
