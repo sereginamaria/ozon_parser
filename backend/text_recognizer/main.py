@@ -5,8 +5,8 @@ import requests
 from text_recognizer import config, logger
 def recognize_text(image_url):
     response = requests.get(image_url)
-    path_to_tesseract = config.PATH_TO_TESSERACT
-    tessdata_dir_config = config.PATH_TO_TESSDATA
+    path_to_tesseract = config.PATH_TO_TESSERACT_SERVER
+    tessdata_dir_config = config.PATH_TO_TESSDATA_SERVER
 
     try:
         img = Image.open(io.BytesIO(response.content))
