@@ -1,4 +1,5 @@
-from parser_wb import get_products
+from my_parsers.parser_wb import get_products
+
 
 def parse_trousers():
     # БРЮКИ
@@ -645,23 +646,35 @@ def parse_outer_wear():
                             'https://www.wildberries.ru/catalog/zhenshchinam/odezhda/verhnyaya-odezhda?sort=popular&page=1&xsubject=4377')
 
 
+def custom_request(category, request):
+    get_products.parse_page(category,
+                            'https://www.wildberries.ru/catalog/0/search.aspx?search=' + request)
+
+
+def my_request():
+    get_products.parse_page('Обувь',
+                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Вечерние+туфли+женские+новогодние&fcolor=16119260%3B16777215%3B11393254%3B32768%3B16776960%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+
+
 if __name__ == "__main__":
+    my_request()
+
     # parse_trousers()
-    parse_home_clothes()
+    # parse_home_clothes()
     # parse_jewelry()
-    parse_bag()
-    parse_tshirts()
+    # parse_bag()
+    # parse_tshirts()
     # parse_shirts()
-    parse_jeans()
+    # parse_jeans()
     # parse_jacket()
-    parse_dress()
+    # parse_dress()
     # parse_shoes()
     # parse_top()
     # parse_skirt()
-    parse_suit()
-    parse_accessories()
-    parse_blouse()
+    # parse_suit()
+    # parse_accessories()
+    # parse_blouse()
     # parse_kofta()
-    parse_outer_wear()
+    # parse_outer_wear()
     #
     # parse_shorts()

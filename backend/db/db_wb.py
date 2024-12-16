@@ -1,5 +1,5 @@
 from db import cursor, connection, logger
-from parser_wb import schema
+from my_parsers.parser_wb import schema
 def add_product(product: schema.Product):
     logger.info('Start add_product')
     sql = 'INSERT INTO public.wb_products (product_name, product_price_original, ' \

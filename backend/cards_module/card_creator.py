@@ -5,9 +5,9 @@ from flask import render_template
 from html2image import Html2Image
 from colorthief import ColorThief
 
-from parser_ozon.schema import Product
+from my_parsers.parser_ozon.schema import Product
 from cards_module import logger
-import os
+
 
 def create_triple_card(product: Product, front: bool, card_type: str) -> bytes:
     def get_html(product_name, product_article, product_price, palette_colors):
