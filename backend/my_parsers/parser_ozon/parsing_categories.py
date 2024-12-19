@@ -694,27 +694,33 @@ def custom_request(category, request):
 
 
 def my_request():
-    get_products.parse_page('Обувь',
-                            'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Вечерние+туфли+женские+новогодние&fcolor=16119260%3B16777215%3B11393254%3B32768%3B16776960%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+    for i in range(8):
+        # get_products.parse_page('Обувь',
+        #                         'https://www.wildberries.ru/catalog/0/search.aspx?page=1&sort=popular&search=Вечерние+туфли+женские+новогодние&fcolor=16119260%3B16777215%3B11393254%3B32768%3B16776960%3B10824234%3B16711680%3B16753920%3B16761035%3B8421504%3B255%3B15631086')
+
+        get_products.parse_page('Платье',
+                                'https://www.ozon.ru/search/?text=женское+платье+вечернее+новогоднее&from_global=true')
+
 
 
 if __name__ == "__main__":
+    my_request()
     # parse_trousers()
-    # parse_home_clothes()
+    parse_home_clothes()
     # parse_jewelry()
-    # parse_bag()
-    # parse_tshirts()
-    # parse_shirts()
-    # parse_jeans()
-    # parse_jacket()
+    parse_bag()
+    parse_tshirts()
+    parse_shirts()
+    parse_jeans()
+    parse_jacket()
     # parse_dress()
     # parse_shoes()
-    # parse_top()
+    parse_top()
     # parse_skirt()
-    # parse_suit()
+    parse_suit()
     # parse_accessories()
     parse_blouse()
-    parse_kofta()
+    # parse_kofta()
     parse_outer_wear()
 
     # parse_shorts()
