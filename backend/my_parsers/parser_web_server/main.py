@@ -8,4 +8,4 @@ app.register_blueprint(ozon)
 app.register_blueprint(wb)
 
 if __name__ == "__main__":
-    app.run(host=BASE_URL, port=5001, debug=True)
+    app.run(host=BASE_URL, port=5002, debug=True)
