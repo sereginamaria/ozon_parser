@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 import itertools
 from my_parsers.parser_ozon import logger
 from my_parsers.parser_ozon import config
-from chrome_driver_local import driver
+from chrome_driver import driver
 from db import db_ozon
 from text_recognizer.main import recognize_text
 

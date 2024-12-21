@@ -7,7 +7,7 @@ from my_parsers.parser_wb import config
 from db import db_wb
 from text_recognizer.main import recognize_text
 import requests
-from chrome_driver_local import driver
+from chrome_driver import driver
 
 def parse_page(publication_category, url):
     logger.info('Start parse_page')
